@@ -25,6 +25,13 @@
        inkscape:vp_z="744.09448 : 526.18109 : 1"
        inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
        id="perspective10" />
+    <inkscape:perspective
+       id="perspective4358"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -33,9 +40,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.79958885"
-     inkscape:cx="479.54791"
-     inkscape:cy="223.6749"
+     inkscape:zoom="1.1345904"
+     inkscape:cx="677.14631"
+     inkscape:cy="525.27584"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -66,7 +73,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -845,7 +852,7 @@
          x="26.574802"
          y="356.10233"><tspan
    style="font-size:24px"
-   id="tspan3062">Binary Homeworlds </tspan>John Cooper 2000</tspan></text>
+   id="tspan3062">Binary Homeworlds </tspan>John Cooper</tspan></text>
     <rect
        style="fill:#000000;stroke:none"
        id="rect3064"
@@ -867,12 +874,12 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="244.48819"
+       x="212.59842"
        y="393.30707"
        id="text3074"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="244.48819"
+         x="212.59842"
          y="393.30707"
          id="tspan4381">BOARD: Any surface</tspan></text>
     <path
@@ -926,7 +933,7 @@
        height="744.09448" />
     <path
        transform="translate(233.85827,95.66929)"
-       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       d="m -116.92912,292.32281 c 0,2.93537 -2.37959,5.31495 -5.31497,5.31495 -2.93537,0 -5.31497,-2.37958 -5.31497,-5.31495 0,-2.93536 2.3796,-5.31494 5.31497,-5.31494 2.93538,0 5.31497,2.37958 5.31497,5.31494 z"
        sodipodi:ry="5.3149467"
        sodipodi:rx="5.3149681"
        sodipodi:cy="292.32281"
@@ -1141,11 +1148,11 @@
        y="0"
        xlink:href="#text3317"
        id="use4116"
-       transform="translate(155.69177,-148.81889)"
+       transform="translate(155.69179,-127.55907)"
        width="1052.3622"
        height="744.09448" />
     <path
-       transform="translate(175.39369,233.85827)"
+       transform="translate(175.39371,255.11809)"
        d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
        sodipodi:ry="5.3149467"
        sodipodi:rx="5.3149681"
@@ -1177,17 +1184,17 @@
     </g>
     <path
        id="path4283"
-       d="m 552.7559,462.40154 473.0315,0"
+       d="m 552.75596,403.93699 473.03144,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <rect
-       y="558.07086"
-       x="74.409447"
-       height="42.519577"
-       width="95.669296"
+       y="579.33069"
+       x="74.40947"
+       height="42.519672"
+       width="100.98423"
        id="rect4395"
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <path
-       transform="translate(186.0236,297.63785)"
+       transform="translate(186.02362,318.89767)"
        d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
        sodipodi:ry="5.3149467"
        sodipodi:rx="5.3149681"
@@ -1201,27 +1208,27 @@
        id="rect4511"
        width="473.03149"
        height="5.31496"
-       x="26.574783"
-       y="499.60629" />
+       x="26.574802"
+       y="520.86609" />
     <text
        sodipodi:linespacing="125%"
        id="text4513"
-       y="531.49603"
-       x="69.09449"
+       y="552.75586"
+       x="69.094513"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         y="531.49603"
-         x="69.09449"
+         y="552.75586"
+         x="69.094513"
          sodipodi:role="line"
-         id="tspan5301">Taking pieces from STORAGE,</tspan><tspan
-         y="546.49603"
-         x="69.09449"
+         id="tspan5301">Taking any 3 pieces from STORAGE,</tspan><tspan
+         y="567.75586"
+         x="69.094513"
          sodipodi:role="line"
-         id="tspan5811">form a SYSTEM from 1 HOMEWORLD and 1 STARSHIP</tspan></text>
+         id="tspan5811">form a SYSTEM with 2 STARS and 1 STARSHIP</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(542.12599,-148.81888)"
+       transform="translate(494.29134,-111.61417)"
        id="use4521"
        xlink:href="#path4130"
        y="0"
@@ -1231,33 +1238,22 @@
        y="0"
        xlink:href="#text3317"
        id="use4523"
-       transform="translate(538.36895,-148.81889)"
+       transform="translate(490.5343,-111.61418)"
        width="1052.3622"
        height="744.09448" />
     <path
        id="path4533"
-       d="m 26.574806,616.5354 473.031494,0"
+       d="m 26.574826,637.79522 473.031494,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="26.574823"
-       y="659.05505"
-       id="text4535"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="26.574823"
-         y="659.05505"
-         id="tspan4537">HOMEWORLD:</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4539"
-       y="696.25977"
-       x="26.574823"
+       y="701.57477"
+       x="26.574802"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         y="696.25977"
-         x="26.574823"
+         y="701.57477"
+         x="26.574802"
          sodipodi:role="line"
          id="tspan4599">STARSHIP:</tspan></text>
     <text
@@ -1285,75 +1281,18 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="116.92915"
-       y="659.05505"
-       id="text4603"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="116.92915"
-         y="659.05505"
-         id="tspan5329">a stack of 2 upright pieces</tspan><tspan
-         sodipodi:role="line"
-         x="116.92915"
-         y="674.05505"
-         id="tspan5429">with the smaller on top</tspan></text>
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(681.87288,340.15747)"
-       id="use3560"
-       xlink:href="#text3317"
-       y="0"
-       x="0" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path3082"
-       id="use3562"
-       transform="translate(717.51968,414.56693)"
-       width="1052.3622"
-       height="744.09448" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3143"
-       id="use3564"
-       transform="translate(678.58217,414.56692)"
-       width="1052.3622"
-       height="744.09448" />
-    <path
-       transform="translate(701.57479,722.83465)"
-       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
-       sodipodi:ry="5.3149467"
-       sodipodi:rx="5.3149681"
-       sodipodi:cy="292.32281"
-       sodipodi:cx="-122.24409"
-       id="use3566"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000"
-       sodipodi:type="arc" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3211"
-       id="use3568"
-       transform="translate(669.68504,414.5669)"
-       width="1052.3622"
-       height="744.09448" />
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="643.11023"
-       y="1020.4724"
+       x="574.01575"
+       y="967.32281"
        id="text3570"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3572"
-         x="643.11023"
-         y="1020.4724">By agreement</tspan></text>
+         x="574.01575"
+         y="967.32281">Player's HOMEWORLD has no STARS</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(882.28347,340.15748)"
+       transform="translate(944.73425,285.67913)"
        id="use3574"
        xlink:href="#path4130"
        y="0"
@@ -1374,7 +1313,7 @@
        y="0"
        xlink:href="#text3602"
        id="use3606"
-       transform="translate(876.9685,313.5827)"
+       transform="translate(939.4192,259.10435)"
        width="1052.3622"
        height="744.09448" />
     <text
@@ -1402,14 +1341,6 @@
        xlink:href="#g3249"
        id="use4969"
        transform="translate(233.89713,85.039373)"
-       width="1052.3622"
-       height="744.09448" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3244"
-       id="use4971"
-       transform="translate(398.62206,318.89763)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -1733,7 +1664,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(558.07085,-74.40943)"
+       transform="translate(510.2362,-37.204725)"
        id="use5305"
        xlink:href="#path3082"
        y="0"
@@ -1743,7 +1674,7 @@
        y="0"
        xlink:href="#path4130"
        id="use5307"
-       transform="translate(600.59054,-148.81888)"
+       transform="translate(552.75589,-111.61417)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -1751,17 +1682,9 @@
        y="0"
        xlink:href="#text3321"
        id="use5311"
-       transform="translate(584.64566,-148.81889)"
+       transform="translate(536.81101,-111.61418)"
        width="1052.3622"
        height="744.09448" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(361.41734,271.06299)"
-       id="use5313"
-       xlink:href="#g5059"
-       y="0"
-       x="0" />
     <use
        height="744.09448"
        width="1052.3622"
@@ -1778,22 +1701,6 @@
        xlink:href="#g3244"
        y="0"
        x="0" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(467.71656,287.00787)"
-       id="use5321"
-       xlink:href="#g5083"
-       y="0"
-       x="0" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(467.71658,356.10236)"
-       id="use5323"
-       xlink:href="#g3227"
-       y="0"
-       x="0" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:Bitstream Charter Bold"
@@ -1808,22 +1715,18 @@
     <text
        sodipodi:linespacing="125%"
        id="text5331"
-       y="696.25977"
-       x="116.92915"
+       y="701.57477"
+       x="116.92914"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         id="tspan5335"
-         y="696.25977"
-         x="116.92915"
-         sodipodi:role="line">1 piece marked as yours</tspan><tspan
-         y="711.25977"
-         x="116.92915"
+         y="701.57477"
+         x="116.92914"
          sodipodi:role="line"
-         id="tspan5339">( = pointing away from you)</tspan></text>
+         id="tspan5339">1 piece owned by either player</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(361.41734,334.84252)"
+       transform="translate(403.93702,324.21258)"
        id="use5341"
        xlink:href="#g5101"
        y="0"
@@ -1869,13 +1772,13 @@
        y="0"
        xlink:href="#g5421"
        id="use5425"
-       transform="translate(364.07482,79.724411)"
+       transform="translate(406.5945,69.094471)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(467.71655,366.73228)"
+       transform="translate(510.23624,356.10234)"
        id="use5431"
        xlink:href="#g3249"
        y="0"
@@ -1885,13 +1788,13 @@
        y="0"
        xlink:href="#g5417"
        id="use5433"
-       transform="translate(422.53939,79.724401)"
+       transform="translate(465.05908,69.094461)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(196.65355,276.37799)"
+       transform="translate(201.9685,297.6378)"
        id="use5435"
        xlink:href="#g3235"
        y="0"
@@ -1899,7 +1802,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(199.31103,-37.204683)"
+       transform="translate(204.62598,-15.944881)"
        id="use5437"
        xlink:href="#g5421"
        y="0"
@@ -1907,7 +1810,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(154.13386,191.33862)"
+       transform="translate(154.13388,212.59844)"
        id="use5439"
        xlink:href="#g5059"
        y="0"
@@ -1917,7 +1820,7 @@
        y="0"
        xlink:href="#g3231"
        id="use5441"
-       transform="translate(191.33858,265.74807)"
+       transform="translate(191.3386,287.00789)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -1925,7 +1828,7 @@
        y="0"
        xlink:href="#path4130"
        id="use5443"
-       transform="translate(329.52756,-90.354305)"
+       transform="translate(334.84251,-69.094373)"
        width="1052.3622"
        height="744.09448" />
     <rect
@@ -1933,20 +1836,20 @@
        id="rect5445"
        width="90.35434"
        height="42.519558"
-       x="217.91339"
-       y="558.07086" />
+       x="223.22833"
+       y="579.33081" />
     <use
        x="0"
        y="0"
        xlink:href="#path3082"
        id="use5447"
-       transform="translate(329.52755,-10.629853)"
+       transform="translate(334.8425,10.630079)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(377.3622,217.91342)"
+       transform="translate(382.67715,239.17335)"
        id="use5449"
        xlink:href="#g5091"
        y="0"
@@ -1954,7 +1857,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(297.63779,276.37799)"
+       transform="translate(302.95274,297.63792)"
        id="use5451"
        xlink:href="#g3235"
        y="0"
@@ -1962,7 +1865,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(297.63779,239.17327)"
+       transform="translate(302.95274,260.4332)"
        id="use5453"
        xlink:href="#g3239"
        y="0"
@@ -1970,7 +1873,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(364.0748,-37.204693)"
+       transform="translate(369.38975,-15.944761)"
        id="use5455"
        xlink:href="#g5417"
        y="0"
@@ -1978,7 +1881,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(467.71654,-90.354306)"
+       transform="translate(473.03149,-69.094374)"
        id="use5457"
        xlink:href="#path4130"
        y="0"
@@ -1986,7 +1889,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(451.77165,-90.354316)"
+       transform="translate(457.0866,-69.094384)"
        id="use5459"
        xlink:href="#text3321"
        y="0"
@@ -2000,10 +1903,10 @@
        sodipodi:rx="5.3149681"
        sodipodi:ry="5.3149467"
        d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
-       transform="translate(175.39371,467.71653)" />
+       transform="translate(175.39373,483.66141)" />
     <rect
-       y="733.46454"
-       x="26.574804"
+       y="749.40942"
+       x="26.574821"
        height="5.31496"
        width="473.03149"
        id="rect5465"
@@ -2011,30 +1914,30 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="69.094513"
-       y="765.35425"
+       x="69.094543"
+       y="781.29913"
        id="text5467"
        sodipodi:linespacing="125%"><tspan
          id="tspan5469"
          sodipodi:role="line"
-         x="69.094513"
-         y="765.35425">1. PASS, ACT or SACRIFICE </tspan><tspan
+         x="69.094543"
+         y="781.29913">1. PASS, ACT or SACRIFICE </tspan><tspan
          sodipodi:role="line"
-         x="69.094513"
-         y="780.35425"
+         x="69.094543"
+         y="796.29913"
          id="tspan5517">2. PASS or CATASTROPHE</tspan></text>
     <use
        x="0"
        y="0"
        xlink:href="#path3082"
        id="use5475"
-       transform="translate(414.56693,175.3937)"
+       transform="translate(414.56695,191.33858)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(138.18899,85.039357)"
+       transform="translate(138.18901,100.98424)"
        id="use5479"
        xlink:href="#text3321"
        y="0"
@@ -2044,13 +1947,13 @@
        y="0"
        xlink:href="#text3321"
        id="use5481"
-       transform="translate(377.36222,100.98424)"
+       transform="translate(377.36224,116.92912)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(393.30711,100.98425)"
+       transform="translate(393.30713,116.92913)"
        id="use5491"
        xlink:href="#path4130"
        y="0"
@@ -2058,7 +1961,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(441.14175,100.98424)"
+       transform="translate(441.14177,116.92912)"
        id="use5511"
        xlink:href="#text3321"
        y="0"
@@ -2068,11 +1971,11 @@
        y="0"
        xlink:href="#path4130"
        id="use5513"
-       transform="translate(457.08664,100.98425)"
+       transform="translate(457.08666,116.92913)"
        width="1052.3622"
        height="744.09448" />
     <path
-       transform="translate(478.34647,483.6614)"
+       transform="translate(478.34649,499.60628)"
        d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
        sodipodi:ry="5.3149467"
        sodipodi:rx="5.3149681"
@@ -2083,59 +1986,59 @@
        sodipodi:type="arc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 26.574826,802.55902 473.031494,0"
+       d="m 552.75593,366.73225 473.03147,0"
        id="path5519" />
     <text
        sodipodi:linespacing="125%"
        id="text5521"
-       y="866.33856"
-       x="26.574821"
+       y="834.44885"
+       x="26.574816"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5523"
-         y="866.33856"
-         x="26.574821"
+         y="834.44885"
+         x="26.574816"
          sodipodi:role="line">ACT:</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5529"
-       y="866.33856"
+       y="834.44885"
        x="63.779526"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         y="866.33856"
+         y="834.44885"
          x="63.779526"
          sodipodi:role="line"
-         id="tspan5743">In any SYSTEM where you have at least 1 STARSHIP,</tspan><tspan
-         y="881.33856"
+         id="tspan5743">1. Select 1 of your STARSHIPS</tspan><tspan
+         y="849.44885"
          x="63.779526"
          sodipodi:role="line"
-         id="tspan5759">use the COLOUR POWER of any piece that is present</tspan></text>
+         id="tspan5759">2. Do the COLOUR ACTION of any piece colour present in its SYSTEM</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5557"
-       y="637.79523"
-       x="26.574804"
+       y="659.05505"
+       x="26.574823"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5559"
-         y="637.79523"
-         x="26.574804"
+         y="659.05505"
+         x="26.574823"
          sodipodi:role="line">SYSTEM:</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5561"
-       y="637.79523"
-       x="116.92913"
+       y="659.05505"
+       x="116.92915"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5565"
-         y="637.79523"
-         x="116.92913"
-         sodipodi:role="line">a single upright piece or HOMEWORLD, with at least 1 STARSHIP</tspan></text>
+         y="659.05505"
+         x="116.92915"
+         sodipodi:role="line">a STAR with any associated STARSHIPS</tspan></text>
     <rect
-       y="892.91339"
-       x="74.409447"
+       y="861.02368"
+       x="74.409454"
        height="42.519424"
        width="90.354347"
        id="rect5571"
@@ -2145,7 +2048,7 @@
        y="0"
        xlink:href="#g5091"
        id="use5573"
-       transform="translate(233.85828,552.75594)"
+       transform="translate(233.85828,520.86617)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2153,7 +2056,7 @@
        y="0"
        xlink:href="#g3235"
        id="use5575"
-       transform="translate(154.13387,611.22051)"
+       transform="translate(154.13387,579.33074)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2161,7 +2064,7 @@
        y="0"
        xlink:href="#g3239"
        id="use5577"
-       transform="translate(154.13387,574.01579)"
+       transform="translate(154.13387,542.12602)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2169,13 +2072,13 @@
        y="0"
        xlink:href="#g5417"
        id="use5579"
-       transform="translate(220.57088,297.63783)"
+       transform="translate(220.57088,265.74806)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(791.92913,164.76377)"
+       transform="translate(791.92919,106.29922)"
        id="use5581"
        xlink:href="#g3227"
        y="0"
@@ -2183,29 +2086,29 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="696.25983"
-       y="483.66138"
+       x="696.25989"
+       y="425.19684"
        id="text5583"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="696.25983"
-         y="483.66138"
+         x="696.25989"
+         y="425.19684"
          id="tspan5585">yellow or clear: MOVE</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="552.75592"
-       y="483.66138"
+       x="552.75598"
+       y="425.19684"
        id="text5587"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="552.75592"
-         y="483.66138"
-         id="tspan5589">COLOUR POWER:</tspan></text>
+         x="552.75598"
+         y="425.19684"
+         id="tspan5589">COLOUR ACTION:</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(791.92911,154.13385)"
+       transform="translate(791.92917,95.669303)"
        id="use5591"
        xlink:href="#g3249"
        y="0"
@@ -2213,7 +2116,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(962.00786,106.2992)"
+       transform="translate(962.00792,47.834653)"
        id="use5593"
        xlink:href="#g5083"
        y="0"
@@ -2221,7 +2124,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(962.00788,95.669291)"
+       transform="translate(962.00794,37.204744)"
        id="use5595"
        xlink:href="#g5077"
        y="0"
@@ -2229,7 +2132,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(807.87401,-5.3149626)"
+       transform="translate(807.87407,-63.779509)"
        id="use5597"
        xlink:href="#g4514"
        y="0"
@@ -2237,7 +2140,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(807.87401,-17.716543)"
+       transform="translate(807.87407,-76.181089)"
        id="use5599"
        xlink:href="#g3114"
        y="0"
@@ -2245,7 +2148,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(977.95276,-62.007883)"
+       transform="translate(977.95282,-120.47243)"
        id="use5601"
        xlink:href="#g4409"
        y="0"
@@ -2253,7 +2156,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(977.95275,-74.409453)"
+       transform="translate(977.95281,-132.874)"
        id="use5603"
        xlink:href="#g4307"
        y="0"
@@ -2261,52 +2164,52 @@
     <text
        sodipodi:linespacing="125%"
        id="text5605"
-       y="499.60632"
-       x="696.25983"
+       y="441.14178"
+       x="696.25989"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5607"
-         y="499.60632"
-         x="696.25983"
+         y="441.14178"
+         x="696.25989"
          sodipodi:role="line">green or teal: BUILD</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="866.33862"
-       y="483.66138"
+       x="866.33868"
+       y="425.19684"
        id="text5609"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="866.33862"
-         y="483.66138"
+         x="866.33868"
+         y="425.19684"
          id="tspan5611">red or orange: ATTACK</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5613"
-       y="499.60632"
-       x="866.33862"
+       y="441.14178"
+       x="866.33868"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5615"
-         y="499.60632"
-         x="866.33862"
+         y="441.14178"
+         x="866.33868"
          sodipodi:role="line">blue or purple: TRADE</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5617"
-       y="903.54333"
+       y="871.65363"
        x="175.39371"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
          id="tspan5619"
-         y="903.54333"
+         y="871.65363"
          x="175.39371"
          sodipodi:role="line">BUILD or</tspan><tspan
-         y="918.54333"
+         y="886.65363"
          x="175.39371"
          sodipodi:role="line"
          id="tspan5621">MOVE or</tspan><tspan
-         y="933.54333"
+         y="901.65363"
          x="175.39371"
          sodipodi:role="line"
          id="tspan5623">ATTACK</tspan></text>
@@ -2315,13 +2218,13 @@
        y="0"
        xlink:href="#g3249"
        id="use5627"
-       transform="translate(483.66142,584.64568)"
+       transform="translate(488.97639,552.75595)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(438.48426,297.6378)"
+       transform="translate(443.79923,265.74807)"
        id="use5629"
        xlink:href="#g5417"
        y="0"
@@ -2331,7 +2234,7 @@
        y="0"
        xlink:href="#g3244"
        id="use5631"
-       transform="translate(382.67717,584.64568)"
+       transform="translate(382.67717,552.75591)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2339,7 +2242,7 @@
        y="0"
        xlink:href="#g5421"
        id="use5633"
-       transform="translate(385.33465,297.63781)"
+       transform="translate(390.64962,265.74808)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2347,73 +2250,69 @@
        y="0"
        xlink:href="#g5059"
        id="use5635"
-       transform="translate(382.67716,526.18111)"
+       transform="translate(387.99213,494.29138)"
        width="1052.3622"
        height="744.09448" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect5637"
-       width="116.92906"
-       height="42.519367"
+       width="122.24411"
+       height="42.519669"
        x="265.74802"
-       y="892.91339" />
+       y="861.02368" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="393.30707"
-       y="919.48822"
+       x="398.62204"
+       y="887.59845"
        id="text5639"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="393.30707"
-         y="919.48822"
+         x="398.62204"
+         y="887.59845"
          id="tspan5641">BUILD or</tspan><tspan
          id="tspan5645"
          sodipodi:role="line"
-         x="393.30707"
-         y="934.48822">TRADE</tspan></text>
+         x="398.62204"
+         y="902.59845">TRADE</tspan></text>
     <path
        id="path5649"
-       d="m 26.574801,956.6929 473.031509,0"
+       d="m 26.574825,919.4882 473.031505,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="26.574799"
-       y="977.9527"
+       x="26.574816"
+       y="940.74805"
        id="text5651"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="26.574799"
-         y="977.9527"
+         x="26.574816"
+         y="940.74805"
          id="tspan5653">SACRIFICE:</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="100.98423"
-       y="977.9527"
+       x="100.98428"
+       y="940.74805"
        id="text5655"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="100.98423"
-         y="977.9527"
+         x="100.98428"
+         y="940.74805"
          id="tspan5733">1. Return 1 STARSHIP to STORAGE</tspan><tspan
          sodipodi:role="line"
-         x="100.98423"
-         y="992.9527"
-         id="tspan5773">2. In any SYSTEM where you have at least 1 STARSHIP,</tspan><tspan
+         x="100.98428"
+         y="955.74805"
+         id="tspan4261">2. Do 1 SACRIFICE ACTION if the returned STARSHIP was SMALL,</tspan><tspan
          sodipodi:role="line"
-         x="100.98423"
-         y="1007.9527"
-         id="tspan5779">    use the COLOUR POWER of the returned STARSHIP,</tspan><tspan
-         sodipodi:role="line"
-         x="100.98423"
-         y="1022.9527"
-         id="tspan5785">    once if SMALL, 1-2 times if MEDIUM, 1-3 times if LARGE</tspan></text>
+         x="100.98428"
+         y="970.74805"
+         id="tspan4042">    1 or 2 if it was MEDIUM, 1 to 3 if it was LARGE</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(186.02363,324.21264)"
+       transform="translate(186.02363,292.32287)"
        id="use5745"
        xlink:href="#path3082"
        y="0"
@@ -2427,7 +2326,7 @@
        sodipodi:rx="5.3149681"
        sodipodi:ry="5.3149467"
        d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
-       transform="translate(377.36219,632.48031)" />
+       transform="translate(377.36219,600.59054)" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot5761"
@@ -2438,97 +2337,29 @@
            height="17.508999"
            x="171.33806"
            y="610.2757" /></flowRegion><flowPara
-         id="flowPara5767"></flowPara></flowRoot>    <text
+         id="flowPara5767" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="106.29921"
-       y="483.66138"
-       id="text5787"
-       sodipodi:linespacing="125%"><tspan
-         id="tspan5789"
-         sodipodi:role="line"
-         x="106.29921"
-         y="483.66138">Any area for pieces not in play</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="26.574802"
-       y="483.66138"
+       x="382.67715"
+       y="393.30707"
        id="text5791"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="26.574802"
-         y="483.66138"
-         id="tspan5793">STORAGE:</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect5795"
-       width="313.58267"
-       height="74.40947"
-       x="637.79529"
-       y="366.73215" />
-    <path
-       sodipodi:type="arc"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000"
-       id="path5797"
-       sodipodi:cx="-122.24409"
-       sodipodi:cy="292.32281"
-       sodipodi:rx="5.3149681"
-       sodipodi:ry="5.3149467"
-       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
-       transform="translate(749.40943,116.92912)" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g5421"
-       id="use5801"
-       transform="translate(778.64173,-228.54337)"
-       width="1052.3622"
-       height="744.09448" />
+         x="382.67715"
+         y="393.30707"
+         id="tspan5793">STORAGE: Any area</tspan></text>
     <use
        x="0"
        y="0"
        xlink:href="#g5059"
        id="use5803"
-       transform="translate(733.46456,-5.6956032e-5)"
+       transform="translate(685.62992,611.22051)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(770.66928,74.409392)"
-       id="use5805"
-       xlink:href="#g3231"
-       y="0"
-       x="0" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(850.39369,-4.6956032e-5)"
-       id="use5807"
-       xlink:href="#g5059"
-       y="0"
-       x="0" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3231"
-       id="use5809"
-       transform="translate(887.59841,74.409402)"
-       width="1052.3622"
-       height="744.09448" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(775.98424,58.464513)"
-       id="use5837"
-       xlink:href="#g3239"
-       y="0"
-       x="0" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(932.77558,-196.65365)"
+       transform="translate(863.68111,382.6772)"
        id="use5847"
        xlink:href="#g5417"
        y="0"
@@ -2536,114 +2367,1076 @@
     <use
        x="0"
        y="0"
-       xlink:href="#g5421"
-       id="use5849"
-       transform="translate(879.62597,-196.65364)"
-       width="1052.3622"
-       height="744.09448" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(914.17321,58.464463)"
-       id="use5851"
-       xlink:href="#g5083"
-       y="0"
-       x="0" />
-    <use
-       x="0"
-       y="0"
        xlink:href="#g3231"
        id="use5853"
-       transform="translate(919.48817,116.92903)"
+       transform="translate(765.35434,696.25994)"
        width="1052.3622"
        height="744.09448" />
-    <use
-       height="744.09448"
-       width="1052.3622"
-       transform="translate(898.22834,-276.37801)"
-       id="use5855"
-       xlink:href="#path4130"
-       y="0"
-       x="0" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text5857"
-       y="430.51181"
-       x="882.28345"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       xml:space="preserve"><tspan
-         y="430.51181"
-         x="882.28345"
-         sodipodi:role="line"
-         id="tspan5861">BUILD</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g5077"
-       id="use5867"
-       transform="translate(977.95277,31.889663)"
-       width="1052.3622"
-       height="744.09448" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#text4957"
-       id="use5873"
-       transform="translate(1025.7874,-207.28356)"
-       width="1052.3622"
-       height="744.09448" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text5875"
-       y="403.93698"
-       x="643.11023"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       xml:space="preserve"><tspan
-         id="tspan5877"
-         y="403.93698"
-         x="643.11023"
-         sodipodi:role="line">1.</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="760.03937"
-       y="435.82675"
-       id="text5879"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="760.03937"
-         y="435.82675"
-         id="tspan5881">2.</tspan></text>
     <path
        id="path5883"
-       d="m 26.574803,845.07871 473.031497,0"
+       d="m 26.574803,813.18894 473.031497,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="26.574823"
-       y="823.81885"
+       x="552.75592"
+       y="387.99213"
        id="text5885"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="26.574823"
-         y="823.81885"
+         x="552.75592"
+         y="387.99213"
          id="tspan5887">PASS: Do nothing</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 552.75596,457.08658 473.03144,0"
+       id="path3753" />
     <text
        sodipodi:linespacing="125%"
-       id="text5897"
-       y="377.36218"
+       id="text3761"
+       y="478.34647"
+       x="552.75598"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3763"
+         y="478.34647"
+         x="552.75598"
+         sodipodi:role="line">MOVE:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="600.59064"
+       y="478.34647"
+       id="text3791"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="478.34647"
+         id="tspan3815">1. Move the selected STARSHIP to any SYSTEM which is CONNECTED</tspan><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="493.34647"
+         id="tspan3924">to its SYSTEM, or form a new CONNECTED SYSTEM using the STARSHIP</tspan><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="508.34647"
+         id="tspan3978">and 1 STAR from STORAGE </tspan><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="523.34644"
+         id="tspan3990">2. If the original SYSTEM now has no STARSHIPS,</tspan><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="538.34644"
+         id="tspan4255">return its STARS to STORAGE</tspan><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="553.34644"
+         id="tspan3918" /><tspan
+         sodipodi:role="line"
+         x="600.59064"
+         y="568.34644"
+         id="tspan3817" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="26.574821"
+       y="680.31494"
+       id="text3797"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="26.574821"
+         y="680.31494"
+         id="tspan3799">STAR:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="116.92915"
+       y="680.31494"
+       id="text3801"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="116.92915"
+         y="680.31494"
+         id="tspan3803">an unowned piece</tspan></text>
+    <path
+       id="path3819"
+       d="m 552.75591,669.68501 473.03139,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="552.75592"
+       y="690.94482"
+       id="text3821"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="552.75592"
+         y="690.94482"
+         id="tspan3823">BUILD:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3825"
+       y="690.94482"
+       x="600.59058"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         y="690.94482"
+         x="600.59058"
+         sodipodi:role="line"
+         id="tspan3890">Create a new STARSHIP in the same SYSTEM, using the smallest piece</tspan><tspan
+         y="705.94482"
+         x="600.59058"
+         sodipodi:role="line"
+         id="tspan3900">in STORAGE the same colour as the selected STARSHIP</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 552.75588,722.83462 473.03152,0"
+       id="path3852" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3854"
+       y="744.09448"
        x="552.75592"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         id="tspan5899"
-         y="377.36218"
+         id="tspan3856"
+         y="744.09448"
          x="552.75592"
-         sodipodi:role="line">SACRIFICE</tspan><tspan
-         y="392.36218"
-         x="552.75592"
+         sodipodi:role="line">ATTACK:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="611.22046"
+       y="744.09448"
+       id="text3858"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3864"
          sodipodi:role="line"
-         id="tspan5901"
-         style="font-style:italic">ctd.</tspan></text>
+         x="611.22046"
+         y="744.09448">Take control of any STARSHIP not larger than the selected STARSHIP</tspan></text>
+    <path
+       id="path3868"
+       d="m 552.75591,813.18894 473.03149,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="552.75592"
+       y="834.44879"
+       id="text3870"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="552.75592"
+         y="834.44879"
+         id="tspan3872">TRADE:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3874"
+       y="834.44879"
+       x="611.22046"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         y="834.44879"
+         x="611.22046"
+         sodipodi:role="line"
+         id="tspan3886">Swap the STARSHIP with any piece of the same size in STORAGE</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3932"
+       y="653.74011"
+       x="552.75592"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3934"
+         y="653.74011"
+         x="552.75592"
+         sodipodi:role="line">CONNECTED:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="637.79529"
+       y="653.74011"
+       id="text3936"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="637.79529"
+         y="653.74011"
+         id="tspan3940">Two SYSTEMS which together have no STARS the same size</tspan></text>
+    <path
+       id="path3946"
+       d="m 552.75588,850.39361 473.03152,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="552.75598"
+       y="871.6535"
+       id="text3948"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="552.75598"
+         y="871.6535"
+         id="tspan3950">CATASTROPHE:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3952"
+       y="871.6535"
+       x="659.05518"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3956"
+         y="871.6535"
+         x="659.05518"
+         sodipodi:role="line">1. Select a colour which has 4 or more pieces in any SYSTEM</tspan><tspan
+         y="886.6535"
+         x="659.05518"
+         sodipodi:role="line"
+         id="tspan3960">2. Remove all pieces of that colour from the SYSTEM</tspan><tspan
+         y="901.6535"
+         x="659.05518"
+         sodipodi:role="line"
+         id="tspan3962">3. If the SYSTEM now has no STARS or no STARSHIPS,</tspan><tspan
+         y="916.6535"
+         x="659.05518"
+         sodipodi:role="line"
+         id="tspan3964">    return all its pieces to STORAGE</tspan></text>
+    <rect
+       y="552.75586"
+       x="605.90558"
+       height="42.519707"
+       width="292.32275"
+       id="rect3992"
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(717.51968,-15.944849)"
+       id="use3994"
+       xlink:href="#path3082"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5091"
+       id="use3996"
+       transform="translate(765.35433,212.59842)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3235"
+       id="use3998"
+       transform="translate(685.62992,271.06299)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5417"
+       id="use4002"
+       transform="translate(752.06693,-42.519689)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3249"
+       id="use4004"
+       transform="translate(823.81891,244.48821)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(778.64175,-42.51967)"
+       id="use4006"
+       xlink:href="#g5417"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(876.96851,-100.98423)"
+       id="use4008"
+       xlink:href="#path4130"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(908.85829,212.59844)"
+       id="use4010"
+       xlink:href="#g5091"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(829.13388,271.06301)"
+       id="use4012"
+       xlink:href="#g3235"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(895.57089,-42.519669)"
+       id="use4016"
+       xlink:href="#g5417"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(999.21259,244.48821)"
+       id="use4018"
+       xlink:href="#g3249"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5417"
+       id="use4020"
+       transform="translate(954.03549,-42.519673)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5077"
+       id="use4022"
+       transform="translate(972.63783,186.02364)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#text3321"
+       id="use4024"
+       transform="translate(664.37008,287.00793)"
+       width="1052.3622"
+       height="744.09448" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4026"
+       y="504.92123"
+       x="26.574802"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan4028"
+         y="504.92123"
+         x="26.574802"
+         sodipodi:role="line">SETUP: Place all pieces in STORAGE</tspan></text>
+    <rect
+       y="478.34644"
+       x="26.574802"
+       height="5.31496"
+       width="473.03149"
+       id="rect4030"
+       style="fill:#000000;stroke:none" />
+    <rect
+       style="fill:#000000;stroke:none"
+       id="rect4032"
+       width="473.03149"
+       height="5.31496"
+       x="552.75592"
+       y="935.43304" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+       id="path4048"
+       sodipodi:cx="-122.24409"
+       sodipodi:cy="292.32281"
+       sodipodi:rx="5.3149681"
+       sodipodi:ry="5.3149467"
+       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       transform="matrix(0.5,0,0,0.5,156.79133,441.1417)" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="matrix(0.5,0,0,0.5,305.61023,287.00786)"
+       id="use4050"
+       xlink:href="#path3082"
+       y="0"
+       x="0" />
+    <path
+       transform="matrix(0.5,0,0,0.5,156.79133,722.83466)"
+       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       sodipodi:ry="5.3149467"
+       sodipodi:rx="5.3149681"
+       sodipodi:cy="292.32281"
+       sodipodi:cx="-122.24409"
+       id="path4054"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+       sodipodi:type="arc" />
+    <path
+       transform="matrix(0.5,0,0,0.5,688.28739,850.39371)"
+       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       sodipodi:ry="5.3149467"
+       sodipodi:rx="5.3149681"
+       sodipodi:cy="292.32281"
+       sodipodi:cx="-122.24409"
+       id="path4056"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+       sodipodi:type="arc" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4058"
+       width="287.00787"
+       height="42.51965"
+       x="605.90552"
+       y="977.95276" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path3082"
+       id="use4060"
+       transform="translate(717.51966,409.25202)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(823.81893,611.22052)"
+       id="use4062"
+       xlink:href="#g5077"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5417"
+       id="use4064"
+       transform="translate(778.64174,382.6772)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(799.90159,382.67721)"
+       id="use4068"
+       xlink:href="#g5421"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(797.2441,611.22051)"
+       id="use4070"
+       xlink:href="#g5059"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(876.96851,611.22051)"
+       id="use4072"
+       xlink:href="#g5069"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5421"
+       id="use4074"
+       transform="translate(725.49213,382.67721)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path4130"
+       id="use4076"
+       transform="translate(977.9528,324.21264)"
+       width="1052.3622"
+       height="744.09448" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4078"
+       y="1015.1575"
+       x="807.87402"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan4080"
+         y="1015.1575"
+         x="807.87402"
+         sodipodi:role="line">CATASTROPHE</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3311"
+       id="use4082"
+       transform="translate(1052.3622,347.59844)"
+       width="1052.3622"
+       height="744.09448" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="734.46753"
+       y="589.96057"
+       id="text4084"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="734.46753"
+         y="589.96057"
+         id="tspan4086">MOVE</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3239"
+       id="use4088"
+       transform="translate(488.97639,318.89764)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5091"
+       id="use4090"
+       transform="translate(568.7008,287.00787)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5417"
+       id="use4092"
+       transform="translate(555.4134,31.889758)"
+       width="1052.3622"
+       height="744.09448" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 446.45669,356.10236 15.94488,0"
+       id="path4094"
+       transform="translate(0,308.26769)"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4096"
+       d="m 260.43304,616.53551 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 111.61418,616.5354 15.94488,0"
+       id="path4098"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4100"
+       d="m 297.63779,898.22836 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 345.47244,898.22836 15.94488,0"
+       id="path4102"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 111.61418,898.22836 15.94488,0"
+       id="path4104"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4106"
+       d="m 643.11023,1015.1575 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 680.31495,1015.1575 15.94488,0"
+       id="path4108"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4110"
+       d="m 706.88976,1015.1575 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 754.7244,1015.1575 15.94488,0"
+       id="path4112"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4114"
+       d="m 643.11025,589.96061 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 680.31497,589.96061 15.94488,0"
+       id="path4116"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4118"
+       d="m 786.61419,589.96061 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 855.70867,589.9606 15.94488,0"
+       id="path4120"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g4224"
+       transform="matrix(0.66,0,0,0.66,206.00788,225.56693)">
+      <rect
+         y="574.01569"
+         x="605.90552"
+         height="42.519714"
+         width="318.89764"
+         id="rect4162"
+         style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         transform="translate(717.51964,313.58267)"
+         d="m -116.92912,292.32281 c 0,2.93537 -2.37959,5.31495 -5.31497,5.31495 -2.93537,0 -5.31497,-2.37958 -5.31497,-5.31495 0,-2.93536 2.3796,-5.31494 5.31497,-5.31494 2.93538,0 5.31497,2.37958 5.31497,5.31494 z"
+         sodipodi:ry="5.3149467"
+         sodipodi:rx="5.3149681"
+         sodipodi:cy="292.32281"
+         sodipodi:cx="-122.24409"
+         id="path4164"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000"
+         sodipodi:type="arc" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(733.46452,292.3228)"
+         id="use4166"
+         xlink:href="#g3235"
+         y="0"
+         x="0" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(736.122,-21.259878)"
+         id="use4168"
+         xlink:href="#g5421"
+         y="0"
+         x="0" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(685.6299,207.28344)"
+         id="use4170"
+         xlink:href="#g5059"
+         y="0"
+         x="0" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g3231"
+         id="use4172"
+         transform="translate(722.83462,281.69289)"
+         width="1052.3622"
+         height="744.09448" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+         id="path4174"
+         sodipodi:cx="-122.24409"
+         sodipodi:cy="292.32281"
+         sodipodi:rx="5.3149681"
+         sodipodi:ry="5.3149467"
+         d="m -116.92912,292.32281 c 0,2.93537 -2.37959,5.31495 -5.31497,5.31495 -2.93537,0 -5.31497,-2.37958 -5.31497,-5.31495 0,-2.93536 2.3796,-5.31494 5.31497,-5.31494 2.93538,0 5.31497,2.37958 5.31497,5.31494 z"
+         transform="matrix(0.5,0,0,0.5,688.28735,435.8267)" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 643.1102,611.2204 15.94488,0"
+         id="path4176"
+         sodipodi:nodetypes="cc" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g5077"
+         id="use4178"
+         transform="translate(834.44885,207.28347)"
+         width="1052.3622"
+         height="744.09448" />
+      <path
+         sodipodi:nodetypes="cc"
+         id="path4180"
+         d="m 690.94488,611.22044 15.94488,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g5417"
+         id="use4182"
+         transform="translate(789.27165,-21.259851)"
+         width="1052.3622"
+         height="744.09448" />
+      <text
+         xml:space="preserve"
+         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+         x="746.66382"
+         y="611.2204"
+         id="text4186"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="746.66382"
+           y="611.2204"
+           id="tspan4188">MOVE</tspan></text>
+      <g
+         transform="translate(914.17323,-79.724411)"
+         id="g4190">
+        <path
+           sodipodi:nodetypes="cc"
+           id="path4192"
+           d="m -180.70866,685.6299 26.5748,-26.57481"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           sodipodi:nodetypes="cc"
+           id="path4194"
+           d="m -154.13386,685.6299 -26.5748,-26.57481"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+           d="m -170.07874,680.31493 7.97244,-7.97244 -7.97244,-7.97244 0,3.98622 -3.98622,0 0,7.97244 3.98622,0 0,3.98622 z"
+           id="path4196" />
+      </g>
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(949.60631,265.74804)"
+         id="use4198"
+         xlink:href="#g3244"
+         y="0"
+         x="0" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g3235"
+         id="use4200"
+         transform="translate(954.92126,292.32285)"
+         width="1052.3622"
+         height="744.09448" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g5421"
+         id="use4202"
+         transform="translate(957.57874,-21.259844)"
+         width="1052.3622"
+         height="744.09448" />
+      <path
+         sodipodi:nodetypes="cc"
+         id="path4204"
+         d="m 864.56694,611.22045 15.94488,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g5059"
+         id="use4210"
+         transform="translate(839.76378,207.28347)"
+         width="1052.3622"
+         height="744.09448" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(876.9685,281.69292)"
+         id="use4212"
+         xlink:href="#g3231"
+         y="0"
+         x="0" />
+      <path
+         transform="matrix(0.5,0,0,0.5,842.42123,435.82673)"
+         d="m -116.92912,292.32281 c 0,2.93537 -2.37959,5.31495 -5.31497,5.31495 -2.93537,0 -5.31497,-2.37958 -5.31497,-5.31495 0,-2.93536 2.3796,-5.31494 5.31497,-5.31494 2.93538,0 5.31497,2.37958 5.31497,5.31494 z"
+         sodipodi:ry="5.3149467"
+         sodipodi:rx="5.3149681"
+         sodipodi:cy="292.32281"
+         sodipodi:cx="-122.24409"
+         id="path4214"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+         sodipodi:type="arc" />
+      <path
+         sodipodi:nodetypes="cc"
+         id="path4216"
+         d="m 797.24408,611.22043 15.94488,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(938.97641,207.28347)"
+         id="use4218"
+         xlink:href="#g5077"
+         y="0"
+         x="0" />
+      <use
+         height="744.09448"
+         width="1052.3622"
+         transform="translate(893.79921,-21.259858)"
+         id="use4222"
+         xlink:href="#g5417"
+         y="0"
+         x="0" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4269"
+       y="999.21259"
+       x="100.98425"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan4277"
+         y="999.21259"
+         x="100.98425"
+         sodipodi:role="line">1. Select 1 of your remaining STARSHIPS</tspan><tspan
+         id="tspan4279"
+         y="1014.2126"
+         x="100.98425"
+         sodipodi:role="line">2. Do the COLOUR ACTION of the colour of the returned STARSHIP</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4290"
+       y="999.21259"
+       x="26.5748"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan4292"
+         y="999.21259"
+         x="26.5748"
+         sodipodi:role="line">SACRIFICE</tspan><tspan
+         y="1014.2126"
+         x="26.5748"
+         sodipodi:role="line"
+         id="tspan4294">ACTION:</tspan></text>
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(829.13386,446.4567)"
+       id="use4302"
+       xlink:href="#g3249"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5417"
+       id="use4304"
+       transform="translate(783.9567,159.44882)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(722.83464,446.45666)"
+       id="use4306"
+       xlink:href="#g3244"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(730.80709,159.44883)"
+       id="use4308"
+       xlink:href="#g5421"
+       y="0"
+       x="0" />
+    <rect
+       y="754.72449"
+       x="605.90552"
+       height="42.519573"
+       width="271.06299"
+       id="rect4312"
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       transform="translate(717.51966,494.29129)"
+       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       sodipodi:ry="5.3149467"
+       sodipodi:rx="5.3149681"
+       sodipodi:cy="292.32281"
+       sodipodi:cx="-122.24409"
+       id="path4314"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000"
+       sodipodi:type="arc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 637.79526,791.92911 15.94488,0"
+       id="path4316"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4318"
+       d="m 685.62991,791.92911 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5101"
+       id="use4320"
+       transform="translate(728.14959,414.5669)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3249"
+       id="use4322"
+       transform="translate(977.95279,446.4567)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3244"
+       id="use4326"
+       transform="translate(871.65354,446.45666)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g5421"
+       id="use4328"
+       transform="translate(879.62599,159.44883)"
+       width="1052.3622"
+       height="744.09448" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path4330"
+       d="m 786.61416,791.92911 15.94488,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 834.44881,791.92911 15.94488,0"
+       id="path4332"
+       sodipodi:nodetypes="cc" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(876.96849,414.5669)"
+       id="use4334"
+       xlink:href="#g5101"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(906.20077,159.44879)"
+       id="use4336"
+       xlink:href="#g5421"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path4130"
+       id="use4338"
+       transform="translate(882.28346,100.98421)"
+       width="1052.3622"
+       height="744.09448" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4340"
+       y="791.92908"
+       x="739.78247"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         id="tspan4342"
+         y="791.92908"
+         x="739.78247"
+         sodipodi:role="line">ATTACK</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4344"
+       y="965.99408"
+       x="865.00983"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       xml:space="preserve"><tspan
+         y="965.99408"
+         x="865.00983"
+         id="tspan4346"
+         sodipodi:role="line">Opponent WINS</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path4130"
+       id="use4348"
+       transform="translate(1052.3622,324.2126)"
+       width="1052.3622"
+       height="744.09448" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="26.574795"
+       y="733.46454"
+       id="text4535"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="26.574795"
+         y="733.46454"
+         id="tspan4537">HOMEWORLD:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="116.92913"
+       y="733.46454"
+       id="text4603"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="116.92913"
+         y="733.46454"
+         id="tspan3751">the STARS in the first SYSTEM formed by a player</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3244"
+       id="use4971"
+       transform="translate(526.18109,377.3622)"
+       width="1052.3622"
+       height="744.09448" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(488.97637,329.52756)"
+       id="use5313"
+       xlink:href="#g5059"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(595.27559,345.47244)"
+       id="use5321"
+       xlink:href="#g5083"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(595.27561,414.56693)"
+       id="use5323"
+       xlink:href="#g3227"
+       y="0"
+       x="0" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2"
+       id="path4044"
+       sodipodi:cx="-122.24409"
+       sodipodi:cy="292.32281"
+       sodipodi:rx="5.3149681"
+       sodipodi:ry="5.3149467"
+       d="m -116.92912,292.32281 a 5.3149681,5.3149467 0 1 1 -10.62994,0 5.3149681,5.3149467 0 1 1 10.62994,0 z"
+       transform="matrix(0.5,0,0,0.5,491.63385,558.07083)" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="matrix(0.5,0,0,0.5,534.15354,403.93699)"
+       id="use4046"
+       xlink:href="#path3082"
+       y="0"
+       x="0" />
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(403.937,334.84252)"
+       id="use4399"
+       xlink:href="#g3239"
+       y="0"
+       x="0" />
   </g>
 </svg>

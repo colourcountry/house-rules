@@ -33,9 +33,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.1983554"
-     inkscape:cx="271.80491"
-     inkscape:cy="344.17649"
+     inkscape:zoom="1.1307894"
+     inkscape:cx="313.31745"
+     inkscape:cy="685.88822"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -66,7 +66,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -838,7 +838,7 @@
          x="26.574802"
          y="356.10233"><tspan
    style="font-size:24px"
-   id="tspan3062">Ice Towers </tspan>Andy Looney 2000</tspan></text>
+   id="tspan3062">Ice Towers </tspan>Andy Looney 1999</tspan></text>
     <rect
        style="fill:#000000;stroke:none"
        id="rect3064"
