@@ -33,9 +33,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1307894"
-     inkscape:cx="313.31745"
-     inkscape:cy="685.88822"
+     inkscape:zoom="0.79958885"
+     inkscape:cx="526.45271"
+     inkscape:cy="471.52986"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -76,7 +76,7 @@
      id="layer1"
      transform="translate(0,-308.26769)">
     <rect
-       y="861.02356"
+       y="876.96844"
        x="600.59064"
        height="85.039368"
        width="212.5984"
@@ -2884,11 +2884,11 @@
        y="0"
        xlink:href="#path3082"
        id="use3409"
-       transform="translate(712.20473,53.149561)"
+       transform="translate(712.20473,63.779477)"
        width="1052.3622"
        height="744.09448" />
     <rect
-       y="611.2204"
+       y="621.85034"
        x="600.59058"
        height="53.149563"
        width="191.33856"
@@ -2899,7 +2899,7 @@
        y="0"
        xlink:href="#path3341"
        id="use3413"
-       transform="translate(673.22838,187.79521)"
+       transform="translate(673.22838,198.42513)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2907,13 +2907,13 @@
        y="0"
        xlink:href="#g4678"
        id="use3415"
-       transform="translate(713.97641,120.47238)"
+       transform="translate(713.97641,131.1023)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(744.09452,109.84246)"
+       transform="translate(744.09452,120.47238)"
        id="use3417"
        xlink:href="#g3114"
        y="0"
@@ -2921,7 +2921,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(784.84252,198.42509)"
+       transform="translate(784.84252,209.05501)"
        id="use3421"
        xlink:href="#path3341"
        y="0"
@@ -2929,7 +2929,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(825.59056,131.10226)"
+       transform="translate(825.59056,141.73218)"
        id="use3423"
        xlink:href="#g4678"
        y="0"
@@ -2939,7 +2939,7 @@
        y="0"
        xlink:href="#g3114"
        id="use3425"
-       transform="translate(892.91336,141.73218)"
+       transform="translate(892.91336,152.3621)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -2947,13 +2947,13 @@
        y="0"
        xlink:href="#path3341"
        id="use3427"
-       transform="translate(742.32287,198.42514)"
+       transform="translate(742.32287,209.05506)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(673.22838,198.42514)"
+       transform="translate(673.22838,209.05506)"
        id="use3429"
        xlink:href="#path3341"
        y="0"
@@ -2961,22 +2961,22 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(823.81886,-26.574912)"
+       transform="translate(823.81886,-15.944996)"
        id="use3431"
        xlink:href="#g4262"
        y="0"
        x="0" />
     <path
        id="path3446"
-       d="m 552.75591,579.33068 473.03149,0"
+       d="m 552.75591,589.9606 473.03149,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        id="text3448"
-       y="600.59045"
+       y="611.2204"
        x="552.75592"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:Bitstream Charter Bold"
        xml:space="preserve"><tspan
-         y="600.59045"
+         y="611.2204"
          x="552.75592"
          id="tspan3450"
          sodipodi:role="line">DON'T</tspan></text>
@@ -2984,22 +2984,22 @@
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:Bitstream Charter Bold"
        x="595.27557"
-       y="600.59052"
+       y="611.22046"
        id="text3452"><tspan
          sodipodi:role="line"
          x="595.27557"
-         y="600.59052"
+         y="611.22046"
          id="tspan3456">Make more than one move at once </tspan></text>
     <use
        x="0"
        y="0"
        xlink:href="#path3082"
        id="use3460"
-       transform="matrix(0.66,0,0,0.66,674.25585,306.6732)"
+       transform="matrix(0.66,0,0,0.66,674.25585,317.30312)"
        width="1052.3622"
        height="744.09448" />
     <rect
-       y="674.99994"
+       y="685.62988"
        x="600.59058"
        height="35.078712"
        width="101.7283"
@@ -3010,7 +3010,7 @@
        y="0"
        xlink:href="#path3341"
        id="use3464"
-       transform="matrix(0.66,0,0,0.66,648.53146,395.53932)"
+       transform="matrix(0.66,0,0,0.66,648.53146,406.16924)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3018,13 +3018,13 @@
        y="0"
        xlink:href="#g4678"
        id="use3466"
-       transform="matrix(0.66,0,0,0.66,675.42516,351.10626)"
+       transform="matrix(0.66,0,0,0.66,675.42516,361.73618)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,695.30311,344.09052)"
+       transform="matrix(0.66,0,0,0.66,695.30311,354.72044)"
        id="use3468"
        xlink:href="#g3114"
        y="0"
@@ -3034,13 +3034,13 @@
        y="0"
        xlink:href="#path4130"
        id="use3470"
-       transform="matrix(0.66,0,0,0.66,730.38182,254.05507)"
+       transform="matrix(0.66,0,0,0.66,730.38182,264.68499)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,694.13382,395.53932)"
+       transform="matrix(0.66,0,0,0.66,694.13382,406.16924)"
        id="use3472"
        xlink:href="#path3341"
        y="0"
@@ -3048,7 +3048,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,721.0275,351.10626)"
+       transform="matrix(0.66,0,0,0.66,721.0275,361.73618)"
        id="use3474"
        xlink:href="#g4678"
        y="0"
@@ -3058,7 +3058,7 @@
        y="0"
        xlink:href="#g3114"
        id="use3476"
-       transform="matrix(0.66,0,0,0.66,768.96845,365.13775)"
+       transform="matrix(0.66,0,0,0.66,768.96845,375.76767)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3066,13 +3066,13 @@
        y="0"
        xlink:href="#path3341"
        id="use3478"
-       transform="matrix(0.66,0,0,0.66,694.13382,402.55507)"
+       transform="matrix(0.66,0,0,0.66,694.13382,413.18499)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,648.53146,402.55507)"
+       transform="matrix(0.66,0,0,0.66,648.53146,413.18499)"
        id="use3480"
        xlink:href="#path3341"
        y="0"
@@ -3080,7 +3080,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,793.52353,306.67319)"
+       transform="matrix(0.66,0,0,0.66,793.52353,317.30311)"
        id="use3482"
        xlink:href="#path3082"
        y="0"
@@ -3091,11 +3091,11 @@
        width="101.7283"
        height="35.078712"
        x="719.85828"
-       y="674.99994" />
+       y="685.62988" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,767.79914,395.53932)"
+       transform="matrix(0.66,0,0,0.66,767.79914,406.16924)"
        id="use3486"
        xlink:href="#path3341"
        y="0"
@@ -3103,7 +3103,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,794.69284,351.10626)"
+       transform="matrix(0.66,0,0,0.66,794.69284,361.73618)"
        id="use3488"
        xlink:href="#g4678"
        y="0"
@@ -3111,7 +3111,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,849.6495,254.05507)"
+       transform="matrix(0.66,0,0,0.66,849.6495,264.68499)"
        id="use3492"
        xlink:href="#path4130"
        y="0"
@@ -3121,7 +3121,7 @@
        y="0"
        xlink:href="#path3341"
        id="use3494"
-       transform="matrix(0.66,0,0,0.66,813.40151,402.55507)"
+       transform="matrix(0.66,0,0,0.66,813.40151,413.18499)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3129,13 +3129,13 @@
        y="0"
        xlink:href="#g4678"
        id="use3496"
-       transform="matrix(0.66,0,0,0.66,840.29519,358.12201)"
+       transform="matrix(0.66,0,0,0.66,840.29519,368.75193)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,841.4645,402.55507)"
+       transform="matrix(0.66,0,0,0.66,841.4645,413.18499)"
        id="use3500"
        xlink:href="#path3341"
        y="0"
@@ -3145,7 +3145,7 @@
        y="0"
        xlink:href="#path3341"
        id="use3502"
-       transform="matrix(0.66,0,0,0.66,767.79914,402.55506)"
+       transform="matrix(0.66,0,0,0.66,767.79914,413.18498)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3270,7 +3270,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(681.87288,79.724394)"
+       transform="translate(681.87288,95.669248)"
        id="use3560"
        xlink:href="#text3317"
        y="0"
@@ -3280,7 +3280,7 @@
        y="0"
        xlink:href="#path3082"
        id="use3562"
-       transform="translate(717.51968,154.13386)"
+       transform="translate(717.51968,170.07872)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3288,13 +3288,13 @@
        y="0"
        xlink:href="#g3143"
        id="use3564"
-       transform="translate(678.58217,154.13385)"
+       transform="translate(678.58217,170.07871)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(675,154.13388)"
+       transform="translate(675,170.07874)"
        id="use3566"
        xlink:href="#path3086"
        y="0"
@@ -3304,32 +3304,28 @@
        y="0"
        xlink:href="#g3211"
        id="use3568"
-       transform="translate(669.68504,154.13383)"
+       transform="translate(669.68504,170.07869)"
        width="1052.3622"
        height="744.09448" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        x="643.11023"
-       y="760.03931"
+       y="775.98419"
        id="text3570"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3572"
          x="643.11023"
-         y="760.03931">By agreement</tspan></text>
+         y="775.98419">By agreement</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(882.28347,79.724404)"
+       transform="translate(882.28347,95.669258)"
        id="use3574"
        xlink:href="#path4130"
        y="0"
        x="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 552.75591,733.46453 473.03149,0"
-       id="path3586" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
@@ -3379,7 +3375,7 @@
        y="0"
        xlink:href="#text3602"
        id="use3606"
-       transform="translate(876.9685,53.149628)"
+       transform="translate(876.9685,69.094481)"
        width="1052.3622"
        height="744.09448" />
     <rect
@@ -3388,30 +3384,30 @@
        width="473.03149"
        height="5.31496"
        x="552.75592"
-       y="781.29919" />
+       y="797.24408" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(680.31496,106.29923)"
+       transform="translate(680.31496,122.24409)"
        id="use3610"
        xlink:href="#text3602"
        y="0"
        x="0" />
     <text
        id="text3612"
-       y="813.18896"
+       y="829.13385"
        x="605.90552"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:Bitstream Charter Bold"
        xml:space="preserve"><tspan
          id="tspan3614"
-         y="813.18896"
+         y="829.13385"
          x="605.90552"
          sodipodi:role="line">Each player scores the total VALUE of all TOWERS</tspan><tspan
-         y="828.18896"
+         y="844.13385"
          x="605.90552"
          sodipodi:role="line"
          id="tspan3616">whose top piece is their colour</tspan><tspan
-         y="843.18896"
+         y="859.13385"
          x="605.90552"
          sodipodi:role="line"
          id="tspan3642">Player with the highest score WINS</tspan></text>
@@ -3420,7 +3416,7 @@
        y="0"
        xlink:href="#path3341"
        id="use3662"
-       transform="translate(715.74802,458.85827)"
+       transform="translate(715.74802,474.80313)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3428,13 +3424,13 @@
        y="0"
        xlink:href="#g4678"
        id="use3664"
-       transform="translate(713.97638,423.4252)"
+       transform="translate(713.97638,439.37006)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(786.61416,380.90552)"
+       transform="translate(786.61416,396.85038)"
        id="use3666"
        xlink:href="#g3114"
        y="0"
@@ -3442,7 +3438,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(829.13386,370.27556)"
+       transform="translate(829.13386,386.22042)"
        id="use3670"
        xlink:href="#g3114"
        y="0"
@@ -3452,13 +3448,13 @@
        y="0"
        xlink:href="#g4648"
        id="use3672"
-       transform="translate(715.74803,423.4252)"
+       transform="translate(715.74803,439.37006)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(799.01576,476.57481)"
+       transform="translate(799.01576,492.51967)"
        id="use3676"
        xlink:href="#path4215"
        y="0"
@@ -3466,7 +3462,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(799.01576,458.85826)"
+       transform="translate(799.01576,474.80312)"
        id="use3678"
        xlink:href="#path3339"
        y="0"
@@ -3474,7 +3470,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(758.26773,480.11811)"
+       transform="translate(758.26773,496.06297)"
        id="use3680"
        xlink:href="#path3341"
        y="0"
@@ -3482,7 +3478,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(799.01576,412.79527)"
+       transform="translate(799.01576,428.74013)"
        id="use3682"
        xlink:href="#g4678"
        y="0"
@@ -3490,7 +3486,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(829.13386,444.68505)"
+       transform="translate(829.13386,460.62991)"
        id="use3684"
        xlink:href="#path4303"
        y="0"
@@ -3500,7 +3496,7 @@
        y="0"
        xlink:href="#path4217"
        id="use3690"
-       transform="translate(715.74802,497.83466)"
+       transform="translate(715.74802,513.77952)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3508,7 +3504,7 @@
        y="0"
        xlink:href="#g4648"
        id="use3692"
-       transform="translate(800.7874,423.4252)"
+       transform="translate(800.7874,439.37006)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3516,13 +3512,13 @@
        y="0"
        xlink:href="#path4215"
        id="use3694"
-       transform="translate(756.49606,476.57482)"
+       transform="translate(756.49606,492.51968)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(843.3071,508.46457)"
+       transform="translate(843.3071,524.40943)"
        id="use3696"
        xlink:href="#path4217"
        y="0"
@@ -3532,7 +3528,7 @@
        y="0"
        xlink:href="#path3339"
        id="use3698"
-       transform="translate(884.05513,469.48819)"
+       transform="translate(884.05513,485.43305)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3540,7 +3536,7 @@
        y="0"
        xlink:href="#path3337"
        id="use3700"
-       transform="translate(829.13386,437.59842)"
+       transform="translate(829.13386,453.54328)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3548,17 +3544,17 @@
        y="0"
        xlink:href="#path3337"
        id="use3702"
-       transform="translate(871.65357,469.48819)"
+       transform="translate(871.65357,485.43305)"
        width="1052.3622"
        height="744.09448" />
     <text
        id="text3704"
-       y="983.2677"
+       y="999.21259"
        x="749.47333"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"
        sodipodi:linespacing="125%"><tspan
-         y="983.2677"
+         y="999.21259"
          x="749.47333"
          id="tspan3706"
          sodipodi:role="line">4</tspan></text>
@@ -3567,7 +3563,7 @@
        y="0"
        xlink:href="#path3086"
        id="use3720"
-       transform="translate(845.07876,361.41733)"
+       transform="translate(845.07876,377.36219)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3575,7 +3571,7 @@
        y="0"
        xlink:href="#path4303"
        id="use3722"
-       transform="translate(744.09449,497.83465)"
+       transform="translate(744.09449,513.77951)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3583,7 +3579,7 @@
        y="0"
        xlink:href="#g3311"
        id="use3724"
-       transform="translate(1015.1576,350.78742)"
+       transform="translate(1015.1576,366.73228)"
        width="1052.3622"
        height="744.09448" />
     <text
@@ -3633,7 +3629,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(887.59843,361.41733)"
+       transform="translate(887.59843,377.36219)"
        id="use3748"
        xlink:href="#path3086"
        y="0"
@@ -3643,7 +3639,7 @@
        y="0"
        xlink:href="#path3082"
        id="use3752"
-       transform="translate(829.13386,361.41734)"
+       transform="translate(829.13386,377.3622)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3651,13 +3647,13 @@
        y="0"
        xlink:href="#g3143"
        id="use3754"
-       transform="translate(731.73177,361.41733)"
+       transform="translate(731.73177,377.36219)"
        width="1052.3622"
        height="744.09448" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(744.09447,361.41734)"
+       transform="translate(744.09447,377.3622)"
        id="use3756"
        xlink:href="#path3082"
        y="0"
@@ -3666,21 +3662,21 @@
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        x="792.00494"
-       y="983.2677"
+       y="999.21259"
        id="text3758"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3760"
          x="792.00494"
-         y="983.2677">5</tspan></text>
+         y="999.21259">5</tspan></text>
     <text
        id="text3762"
-       y="983.2677"
+       y="999.21259"
        x="706.73163"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"
        sodipodi:linespacing="125%"><tspan
-         y="983.2677"
+         y="999.21259"
          x="706.73163"
          id="tspan3764"
          sodipodi:role="line">12</tspan></text>
@@ -3688,21 +3684,21 @@
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        x="664.21191"
-       y="983.2677"
+       y="999.21259"
        id="text3766"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3768"
          x="664.21191"
-         y="983.2677">12</tspan></text>
+         y="999.21259">12</tspan></text>
     <text
        id="text3770"
-       y="983.2677"
+       y="999.21259"
        x="621.92023"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"
        sodipodi:linespacing="125%"><tspan
-         y="983.2677"
+         y="999.21259"
          x="621.92023"
          id="tspan3772"
          sodipodi:role="line">3</tspan></text>
@@ -3711,24 +3707,24 @@
        y="0"
        xlink:href="#path3086"
        id="use3780"
-       transform="translate(962.0079,361.41733)"
+       transform="translate(962.0079,377.36219)"
        width="1052.3622"
        height="744.09448" />
     <text
        sodipodi:linespacing="125%"
        id="text3782"
-       y="983.2677"
+       y="999.21259"
        x="866.41437"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         y="983.2677"
+         y="999.21259"
          x="866.41437"
          id="tspan3784"
          sodipodi:role="line">9</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(1015.1575,361.41734)"
+       transform="translate(1015.1575,377.3622)"
        id="use3786"
        xlink:href="#path3082"
        y="0"
@@ -3738,16 +3734,16 @@
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        x="892.75519"
-       y="983.2677"
+       y="999.21259"
        id="text3788"><tspan
          sodipodi:role="line"
          id="tspan3790"
          x="892.75519"
-         y="983.2677">15</tspan></text>
+         y="999.21259">15</tspan></text>
     <use
        height="744.09448"
        width="1052.3622"
-       transform="translate(986.84988,361.41733)"
+       transform="translate(986.84988,377.36219)"
        id="use3792"
        xlink:href="#g3143"
        y="0"
@@ -3755,11 +3751,11 @@
     <text
        sodipodi:linespacing="125%"
        id="text3794"
-       y="983.2677"
+       y="999.21259"
        x="919.32996"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
        xml:space="preserve"><tspan
-         y="983.2677"
+         y="999.21259"
          x="919.32996"
          id="tspan3796"
          sodipodi:role="line">12</tspan></text>
@@ -3767,11 +3763,34 @@
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:Bitstream Charter Bold"
        x="829.13385"
-       y="972.63776"
+       y="988.58264"
        id="text3798"><tspan
          sodipodi:role="line"
          id="tspan3800"
          x="829.13385"
-         y="972.63776">=</tspan></text>
+         y="988.58264">=</tspan></text>
+    <use
+       height="744.09448"
+       width="1052.3622"
+       transform="translate(488.97638,-5.3149623)"
+       id="use14649"
+       xlink:href="#path4130"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path4130"
+       id="use14651"
+       transform="translate(504.92126,-5.3149623)"
+       width="1052.3622"
+       height="744.09448" />
+    <rect
+       y="744.09448"
+       x="552.75592"
+       height="5.31496"
+       width="473.03149"
+       id="rect14653"
+       style="fill:#000000;stroke:none" />
   </g>
 </svg>
