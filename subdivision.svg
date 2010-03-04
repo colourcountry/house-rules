@@ -61,9 +61,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.80227655"
-     inkscape:cx="590.54605"
-     inkscape:cy="404.6203"
+     inkscape:zoom="1.6045531"
+     inkscape:cx="246.03663"
+     inkscape:cy="127.8873"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -94,7 +94,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2050,7 +2050,7 @@
          sodipodi:role="line"
          id="tspan7943"
          x="79.724411"
-         y="930.1181">No legal moves for either player</tspan></text>
+         y="930.1181">Neither player has a legal move</tspan></text>
     <use
        x="0"
        y="0"
