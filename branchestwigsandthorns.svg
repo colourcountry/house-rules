@@ -47,9 +47,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.2691808"
-     inkscape:cx="223.92478"
-     inkscape:cy="229.1004"
+     inkscape:zoom="0.80227657"
+     inkscape:cx="566.19143"
+     inkscape:cy="438.63632"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -80,7 +80,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1400,11 +1400,11 @@
          y="721.88965"
          x="79.724411"
          sodipodi:role="line"
-         id="tspan9544">so that it points towards an ADJACENT square</tspan><tspan
+         id="tspan9544">so that it points towards a square abutting that square</tspan><tspan
          y="736.88965"
          x="79.724411"
          sodipodi:role="line"
-         id="tspan9538">containing a player's piece or the ROOT PIECE</tspan></text>
+         id="tspan9538">which contains a player's piece or the ROOT PIECE</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot5761"
@@ -1473,7 +1473,7 @@
          y="542.12598"
          x="754.72449"
          id="tspan4346"
-         sodipodi:role="line">Player with fewest PENALTY POINTS WINS</tspan></text>
+         sodipodi:role="line">Player with fewest PENALTY POINTS wins</tspan></text>
     <use
        x="0"
        y="0"
@@ -1919,18 +1919,7 @@
            height="14.102005"
            x="135.7318"
            y="400.35809" /></flowRegion><flowPara
-         id="flowPara9518" /></flowRoot>    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
-       x="26.574802"
-       y="892.91333"
-       id="text9553"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="26.574802"
-         y="892.91333"
-         id="tspan9555">ADJACENT: two squares sharing a side</tspan></text>
-    <path
+         id="flowPara9518" /></flowRoot>    <path
        id="path9565"
        d="m -122.24409,717.51965 -5.31497,5.31496 5.31497,5.31496 0,-10.62992 z"
        style="fill:#ffffff;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
@@ -1938,7 +1927,7 @@
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,270.9567,642.25987)"
+       transform="matrix(0.66,0,0,0.66,270.9567,615.68509)"
        id="use9615"
        xlink:href="#path3337"
        y="0"
@@ -3404,7 +3393,7 @@
          sodipodi:role="line"
          id="tspan10191">POINTS</tspan></text>
     <rect
-       y="908.85822"
+       y="882.28345"
        x="85.039368"
        height="49.110241"
        width="119.26772"
@@ -3415,75 +3404,75 @@
        y="0"
        xlink:href="#g5083"
        id="use10206"
-       transform="matrix(0.66,0,0,0.66,179.75197,677.33861)"
+       transform="matrix(0.66,0,0,0.66,179.75197,650.76383)"
        width="1052.3622"
        height="744.09448" />
     <path
        sodipodi:nodetypes="cc"
        id="path10208"
-       d="m 134.14962,933.41339 -49.110243,0"
+       d="m 134.14962,906.83861 -49.110241,0"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        id="path10210"
-       d="m 134.14962,954.46064 -49.110243,0"
+       d="m 134.14962,927.88586 -49.110241,0"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        id="path10212"
-       d="m 88.547247,957.96851 0,-49.11024"
+       d="m 88.547249,931.39373 0,-49.11024"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        id="path10214"
-       d="m 109.5945,957.96851 0,-49.11024"
+       d="m 109.5945,931.39373 0,-49.11024"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        id="path10216"
-       d="m 130.64174,957.96851 0,-49.11024"
+       d="m 130.64174,931.39373 0,-49.11024"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        id="path10218"
-       d="m 85.039377,912.36615 49.110243,0"
+       d="m 85.039379,885.79137 49.110241,0"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,249.90945,677.33862)"
+       transform="matrix(0.66,0,0,0.66,249.90945,650.76384)"
        id="use10228"
        xlink:href="#g5083"
        y="0"
        x="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 204.3071,933.4134 -49.11024,0"
+       d="m 204.3071,906.83862 -49.11024,0"
        id="path10230"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 204.3071,954.46064 -49.11024,0"
+       d="m 204.3071,927.88586 -49.11024,0"
        id="path10232"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 158.70474,957.96852 0,-49.11024"
+       d="m 158.70474,931.39374 0,-49.11024"
        id="path10234" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 179.75198,957.96852 0,-49.11024"
+       d="m 179.75198,931.39374 0,-49.11024"
        id="path10236" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 200.79922,957.96852 0,-49.11024"
+       d="m 200.79922,931.39374 0,-49.11024"
        id="path10238" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 155.19686,912.36616 49.11024,0"
+       d="m 155.19686,885.79138 49.11024,0"
        id="path10240" />
     <use
        x="0"
        y="0"
        xlink:href="#g4262"
        id="use10246"
-       transform="matrix(0.66,0,0,0.66,255.17127,489.66735)"
+       transform="matrix(0.66,0,0,0.66,255.17127,463.09257)"
        width="1052.3622"
        height="744.09448" />
     <use
@@ -3491,16 +3480,16 @@
        y="0"
        xlink:href="#use3152"
        id="use10248"
-       transform="matrix(0.66,0,0,0.66,141.16537,554.56302)"
+       transform="matrix(0.66,0,0,0.66,141.16537,527.98824)"
        width="1052.3622"
        height="744.09448" />
     <path
        id="path10250"
-       d="m 184.28728,937.94869 0,4.96089 2.48045,-2.48044 2.48044,-2.48045 -4.96089,0 z"
+       d="m 184.28728,911.37391 0,4.96089 2.48045,-2.48044 2.48044,-2.48045 -4.96089,0 z"
        style="fill:#ffffff;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
        sodipodi:nodetypes="ccccc" />
     <rect
-       y="930.11804"
+       y="903.54327"
        x="233.85826"
        height="28.063009"
        width="161.36221"
@@ -3509,32 +3498,32 @@
     <path
        sodipodi:nodetypes="cc"
        id="path10258"
-       d="m 304.01576,954.67319 -70.15748,0"
+       d="m 304.01576,928.09841 -70.15748,0"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        id="path10262"
-       d="m 237.36615,958.18109 0,-28.06299"
+       d="m 237.36615,931.60631 0,-28.06299"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        id="path10264"
-       d="m 258.4134,958.18109 0,-28.06299"
+       d="m 258.4134,931.60631 0,-28.06299"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        id="path10266"
-       d="m 279.46064,958.18109 0,-28.06299"
+       d="m 279.46064,931.60631 0,-28.06299"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        id="path10268"
-       d="m 233.85828,933.62597 70.15748,0"
+       d="m 233.85828,907.05119 70.15748,0"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,307.52363,554.7756)"
+       transform="matrix(0.66,0,0,0.66,307.52363,528.20082)"
        id="use10270"
        xlink:href="#path3082"
        y="0"
@@ -3544,56 +3533,56 @@
        y="0"
        xlink:href="#path4215"
        id="use10300"
-       transform="matrix(0.66,0,0,0.66,311.0315,663.51969)"
+       transform="matrix(0.66,0,0,0.66,311.0315,636.94491)"
        width="1052.3622"
        height="744.09448" />
     <path
        id="path10302"
-       d="m 240.87403,940.64173 -3.50788,3.50787 3.50788,3.50785 0,-7.01572 z"
+       d="m 240.87403,914.06695 -3.50788,3.50787 3.50788,3.50785 0,-7.01572 z"
        style="fill:#ffffff;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
        sodipodi:nodetypes="cccc" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 300.50788,958.18109 0,-28.06298"
+       d="m 300.50788,931.60631 0,-28.06298"
        id="path10304" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,425.03742,500.40356)"
+       transform="matrix(0.66,0,0,0.66,425.03742,473.82878)"
        id="use10306"
        xlink:href="#g4262"
        y="0"
        x="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 395.2205,954.67319 -70.15749,0"
+       d="m 395.2205,928.09841 -70.15749,0"
        id="path10308"
        sodipodi:nodetypes="cc" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 328.57089,958.18109 0,-28.06299"
+       d="m 328.57089,931.60631 0,-28.06299"
        id="path10310" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 349.61813,958.18109 0,-28.06299"
+       d="m 349.61813,931.60631 0,-28.06299"
        id="path10312" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 370.66538,958.18109 -1e-5,-28.06299"
+       d="m 370.66538,931.60631 -1e-5,-28.06299"
        id="path10314" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 325.06301,933.62597 70.15749,0"
+       d="m 325.06301,907.05119 70.15749,0"
        id="path10316" />
     <use
        height="744.09448"
        width="1052.3622"
-       transform="matrix(0.66,0,0,0.66,402.23623,663.51969)"
+       transform="matrix(0.66,0,0,0.66,402.23623,636.94491)"
        id="use10318"
        xlink:href="#path4215"
        y="0"
@@ -3601,11 +3590,11 @@
     <path
        sodipodi:nodetypes="cccc"
        style="fill:#ffffff;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
-       d="m 332.07876,940.64173 -3.50788,3.50787 3.50788,3.50785 0,-7.01572 z"
+       d="m 332.07876,914.06695 -3.50788,3.50787 3.50788,3.50785 0,-7.01572 z"
        id="path10320" />
     <path
        id="path10322"
-       d="m 391.71262,958.18109 -1e-5,-28.06298"
+       d="m 391.71262,931.60631 -1e-5,-28.06298"
        style="fill:none;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <use
@@ -3613,12 +3602,12 @@
        y="0"
        xlink:href="#path4215"
        id="use10332"
-       transform="matrix(0.66,0,0,0.66,444.33071,663.5197)"
+       transform="matrix(0.66,0,0,0.66,444.33071,636.94492)"
        width="1052.3622"
        height="744.09448" />
     <path
        id="path10334"
-       d="m 374.17324,940.64173 -3.50788,3.50788 3.50788,3.50784 0,-7.01572 z"
+       d="m 374.17324,914.06695 -3.50788,3.50788 3.50788,3.50784 0,-7.01572 z"
        style="fill:#ffffff;stroke:#000000;stroke-width:0.66000003px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
        sodipodi:nodetypes="cccc" />
     <use

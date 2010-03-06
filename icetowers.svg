@@ -35,7 +35,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.79958885"
      inkscape:cx="526.45271"
-     inkscape:cy="471.52986"
+     inkscape:cy="470.88418"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -3402,7 +3402,7 @@
          id="tspan3614"
          y="829.13385"
          x="605.90552"
-         sodipodi:role="line">Each player scores the total VALUE of all TOWERS</tspan><tspan
+         sodipodi:role="line">Each player scores POINTS to  the total VALUE of all TOWERS</tspan><tspan
          y="844.13385"
          x="605.90552"
          sodipodi:role="line"
@@ -3410,7 +3410,7 @@
          y="859.13385"
          x="605.90552"
          sodipodi:role="line"
-         id="tspan3642">Player with the highest score WINS</tspan></text>
+         id="tspan3642">Player with the most POINTS wins</tspan></text>
     <use
        x="0"
        y="0"
@@ -3792,5 +3792,16 @@
        width="473.03149"
        id="rect14653"
        style="fill:#000000;stroke:none" />
+    <text
+       sodipodi:linespacing="125%"
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans Bold"
+       x="577.35559"
+       y="999.21259"
+       id="text17558"><tspan
+         sodipodi:role="line"
+         id="tspan17560"
+         x="577.35559"
+         y="999.21259">POINTS</tspan></text>
   </g>
 </svg>
