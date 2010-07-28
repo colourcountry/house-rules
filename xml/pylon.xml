@@ -84,16 +84,142 @@
                     <diagram>
                         <stack>
                             <piece>
+                                <colour>black</colour>
                                 <size>large</size>
-                                <colour>black</colour>
                             </piece>
                             <piece>
+                                <colour>black</colour>
                                 <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>black</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>blue</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>blue</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>red</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>red</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>red</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>green</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>green</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>blue</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <size>small</size>
+                            </piece>
+                            <piece>
+                                <colour>green</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>yellow</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>yellow</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>yellow</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>purple</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>purple</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>purple</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>teal</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>teal</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>teal</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                            <piece>
+                                <colour>orange</colour>
+                                <size>large</size>
+                            </piece>
+                            <piece>
+                                <colour>orange</colour>
+                                <size>medium</size>
+                            </piece>
+                            <piece>
+                                <colour>orange</colour>
+                                <size>small</size>
+                            </piece>
+                        </stack>
+                        <stack>
+                        </stack>
+                        <stack>
+                            <piece>
                                 <colour>white</colour>
+                                <size>large</size>
                             </piece>
                             <piece>
+                                <colour>white</colour>
                                 <size>medium</size>
-                                <colour>black</colour>
+                            </piece>
+                            <piece>
+                                <colour>white</colour>
+                                <size>small</size>
                             </piece>
                         </stack>
                     </diagram>

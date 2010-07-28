@@ -4,6 +4,9 @@
      xmlns:svg="http://www.w3.org/2000/svg"
      xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
+    <xsl:include href="pieces-svg.xsl" />
+    <xsl:include href="elements-svg.xsl" />
+
    <xsl:output method="xml"/>
 
 <xsl:template match="text()[not(normalize-space(.)='')]">
@@ -12,6 +15,7 @@
 
 <xsl:template match="/">
     <fo:root>
+      <!--xsl:call-template name="svg-patterns"/-->
       <fo:layout-master-set>
         <fo:simple-page-master master-name="master">
           <fo:region-body 
@@ -71,19 +75,8 @@
     <xsl:attribute name="font-weight">bold</xsl:attribute>
 </xsl:attribute-set>
 
-<xsl:attribute-set name="phasename">
-    <xsl:attribute name="font-size">24pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:attribute name="fill">none</xsl:attribute>
-    <xsl:attribute name="stroke">black</xsl:attribute>
-    <xsl:attribute name="stroke-width">1pt</xsl:attribute>
-</xsl:attribute-set>
 
-<xsl:attribute-set name="outline">
-    <xsl:attribute name="fill">none</xsl:attribute>
-    <xsl:attribute name="stroke">black</xsl:attribute>
-    <xsl:attribute name="stroke-width">1pt</xsl:attribute>
-</xsl:attribute-set>
+
 
 <xsl:template match="game">
     <fo:block xsl:use-attribute-sets="top">
@@ -131,7 +124,7 @@
             <fo:list-item>
                 <fo:list-item-label>
                     <fo:block xsl:use-attribute-sets="dt">
-                        BOARD
+                        BOARD:
                     </fo:block>
                 </fo:list-item-label>
                 <fo:list-item-body start-indent="80pt">
@@ -146,7 +139,7 @@
             <fo:list-item>
                 <fo:list-item-label>
                     <fo:block xsl:use-attribute-sets="dt">
-                        SETUP
+                        SETUP:
                         <xsl:call-template name="phase-name">
                             <!-- Empty phase name to get the right height block -->
                             <xsl:with-param name="value"></xsl:with-param>
@@ -181,90 +174,54 @@
 
     <xsl:template match="repeat">
         <xsl:apply-templates />
-        <xsl:call-template name="right-arrow" />
-        <xsl:call-template name="right-arrow" />
+        <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-4pt">
+            <xsl:call-template name="repeat-arrow" />
+        </fo:instream-foreign-object>
     </xsl:template>
 
     <xsl:template match="goToPhase">
-        <xsl:call-template name="right-arrow" />
+        <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-4pt">
+            <xsl:call-template name="right-arrow" />
+        </fo:instream-foreign-object>
         <xsl:apply-templates />
     </xsl:template>
 
     
     <xsl:template match="phase/name|goToPhase/name">
-        <xsl:call-template name="phase-name">
-            <xsl:with-param name="value"><xsl:value-of select="."/></xsl:with-param>
-        </xsl:call-template>
-    </xsl:template>
-
-    <xsl:template name="phase-name">
-        <xsl:param name="value" />
-        <xsl:param name="width">14pt</xsl:param>
         <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-4pt">
-            <svg:svg width="{$width}" height="19pt">
-                <!-- 
-                    FIXME: MAGIC NUMBERS 19 is presumably
-                           fop specific, svg doesn't like "pt"
-                           and the scale factor is arbitrary
-                -->
-                <svg:text x="0" y="18" 
-                          xsl:use-attribute-sets="phasename"
-                    ><xsl:value-of select="$value" /></svg:text>
-            </svg:svg>
-        </fo:instream-foreign-object>
-    </xsl:template>
-
-    <xsl:template name="right-arrow">
-        <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-4pt">
-            <svg:svg width="18pt" height="18pt">
-                <svg:path d="M 5 5 L 5 13 L 9 13 L 9 17 L 17 9 L 9 1 L 9 5 Z"
-                          xsl:use-attribute-sets="phasename" />
-            </svg:svg>
+            <xsl:call-template name="phase-name">
+                <xsl:with-param name="value"><xsl:value-of select="."/></xsl:with-param>
+            </xsl:call-template>
         </fo:instream-foreign-object>
     </xsl:template>
 
     <xsl:template match="player">
         <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-1.5pt">
-            <svg:svg width="12pt" height="12pt">
-               <xsl:choose>
-                   <xsl:when test="text()='black'">
-                       <svg:circle cx="6" cy="6" r="5"
-                                   fill="black" />
-                    </xsl:when>
-                </xsl:choose>
-                <svg:circle cx="6" cy="6" r="5"
-                            xsl:use-attribute-sets="outline" />
-            </svg:svg>
+            <xsl:call-template name="player">
+                <xsl:with-param name="colour"><xsl:value-of select="."/></xsl:with-param>
+            </xsl:call-template>
         </fo:instream-foreign-object>
     </xsl:template>
 
     <xsl:template match="piece">
-        <xsl:variable name="width">
-               <xsl:choose>
-                   <xsl:when test="size/text()='medium'">20</xsl:when>
-                   <xsl:when test="size/text()='large'">30</xsl:when>
-                   <xsl:otherwise>10</xsl:otherwise>
-                </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="width-with-stroke">
-               <xsl:choose>
-                   <xsl:when test="size/text()='medium'">22</xsl:when>
-                   <xsl:when test="size/text()='large'">32</xsl:when>
-                   <xsl:otherwise>12</xsl:otherwise>
-                </xsl:choose>
-        </xsl:variable>
         <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-1.5pt">
-            <svg:svg width="{$width-with-stroke}" height="12pt">
-               <xsl:choose>
-                   <xsl:when test="colour/text()='black'">
-                       <svg:rect x="1" y="1" width="{$width}" height="10"
-                                   fill="black" />
-                    </xsl:when>
-                </xsl:choose>
-                <svg:rect x="1" y="1" width="{$width}" height="10"
-                          xsl:use-attribute-sets="outline" />
-            </svg:svg>
+            <xsl:call-template name="piece">
+                <xsl:with-param name="colour"><xsl:value-of select="colour"/></xsl:with-param>
+                <xsl:with-param name="size"><xsl:value-of select="size"/></xsl:with-param>
+            </xsl:call-template>
         </fo:instream-foreign-object>
+    </xsl:template>
+
+    <xsl:template match="stack">
+        <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-1.5pt">
+            <xsl:call-template name="stack"/>
+        </fo:instream-foreign-object>
+    </xsl:template>
+
+    <xsl:template match="diagram">
+        <fo:block>
+            <xsl:apply-templates />
+        </fo:block>
     </xsl:template>
 
     <xsl:template match="dl">
@@ -285,15 +242,15 @@
     </xsl:template>
 
     <xsl:template match="dt">
-                    <fo:block xsl:use-attribute-sets="dt">
-                        <xsl:apply-templates />
-                    </fo:block>
+      <fo:block xsl:use-attribute-sets="dt">
+          <xsl:apply-templates />:
+       </fo:block>
     </xsl:template>
 
     <xsl:template match="dd">
-                    <fo:block>
-                        <xsl:apply-templates />
-                    </fo:block>
+      <fo:block>
+          <xsl:apply-templates />
+      </fo:block>
     </xsl:template>
 
 </xsl:stylesheet>
