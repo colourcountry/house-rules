@@ -6,6 +6,7 @@
 
     <xsl:include href="pieces-svg.xsl" />
     <xsl:include href="elements-svg.xsl" />
+    <xsl:include href="grid-svg.xsl" />
 
    <xsl:output method="xml"/>
 
@@ -207,7 +208,7 @@
         <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-1.5pt">
             <xsl:call-template name="piece">
                 <xsl:with-param name="colour"><xsl:value-of select="colour"/></xsl:with-param>
-                <xsl:with-param name="size"><xsl:value-of select="size"/></xsl:with-param>
+                <xsl:with-param name="shape"><xsl:value-of select="shape"/></xsl:with-param>
             </xsl:call-template>
         </fo:instream-foreign-object>
     </xsl:template>
@@ -218,10 +219,33 @@
         </fo:instream-foreign-object>
     </xsl:template>
 
-    <xsl:template match="diagram">
+    <xsl:template match="legal">
         <fo:block>
-            <xsl:apply-templates />
+            <xsl:for-each select="*">
+                <xsl:if test="preceding-sibling::*">
+                    <xsl:call-template name="right-arrow" />
+                </xsl:if>
+                <xsl:apply-templates select="."/>
+            </xsl:for-each>
         </fo:block>
+    </xsl:template>
+
+    <xsl:template match="illegal">
+        <!--FIXME: crossed right arrow-->
+        <fo:block>
+            <xsl:for-each select="*">
+                <xsl:if test="preceding-sibling::*">
+                    <xsl:call-template name="right-arrow" />
+                </xsl:if>
+                <xsl:apply-templates select="."/>
+            </xsl:for-each>
+        </fo:block>
+    </xsl:template>
+
+    <xsl:template match="grid">
+        <fo:instream-foreign-object alignment-baseline="alphabetic" alignment-adjust="-1.5pt">
+            <xsl:call-template name="grid" />
+        </fo:instream-foreign-object>
     </xsl:template>
 
     <xsl:template match="dl">

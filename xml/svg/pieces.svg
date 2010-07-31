@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<svg
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <g id="fill-white">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="white"
+              stroke="none" />
+    </g>
+
+    <g id="fill-yellow">
+        <path d="M -20 -5 l 10 10
+                 M -15 -5 l 10 10 M -10 -5 l 10 10
+                 M -5  -5 l 10 10 M 0   -5 l 10 10
+                 M 5   -5 l 10 10 M 10  -5 l 10 10"
+              fill="none"
+              stroke="#ccaa00"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-purple">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="#660066"
+              stroke="none" />
+        <path d="M -20 -5 l 10 10
+                 M -15 -5 l 10 10 M -10 -5 l 10 10
+                 M -5  -5 l 10 10 M 0   -5 l 10 10
+                 M 5   -5 l 10 10 M 10  -5 l 10 10"
+              fill="none"
+              stroke="white"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-clear">
+        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
+                 M  7    -5 l 0 10 M 10    -5 l 0 10"
+              fill="none"
+              stroke="#888888"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-blue">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="#0000ff"
+              stroke="none" />
+        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
+                 M  7    -5 l 0 10 M 10    -5 l 0 10"
+              fill="none"
+              stroke="white"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-teal">
+        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
+                 M  7    -5 l 0 10 M 10    -5 l 0 10
+                 M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
+              fill="none"
+              stroke="#008888"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-red">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="#ff0000"
+              stroke="none" />
+        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
+                 M  7    -5 l 0 10 M 10    -5 l 0 10
+                 M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
+              fill="none"
+              stroke="white"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-green">
+        <path d="M -20 -5 l 10 10
+                 M -15 -5 l 10 10 M -10 -5 l 10 10
+                 M -5  -5 l 10 10 M 0   -5 l 10 10
+                 M 5   -5 l 10 10 M 10  -5 l 10 10
+                 M -20 5 l 10 -10
+                 M -15 5 l 10 -10 M -10 5 l 10 -10
+                 M -5  5 l 10 -10 M 0   5 l 10 -10
+                 M 5   5 l 10 -10 M 10  5 l 10 -10"
+              fill="none"
+              stroke="#00cc00"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-orange">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="#cc4400"
+              stroke="none" />
+        <path d="M -20 -5 l 10 10
+                 M -15 -5 l 10 10 M -10 -5 l 10 10
+                 M -5  -5 l 10 10 M 0   -5 l 10 10
+                 M 5   -5 l 10 10 M 10  -5 l 10 10
+                 M -20 5 l 10 -10
+                 M -15 5 l 10 -10 M -10 5 l 10 -10
+                 M -5  5 l 10 -10 M 0   5 l 10 -10
+                 M 5   5 l 10 -10 M 10  5 l 10 -10"
+              fill="none"
+              stroke="white"
+              stroke-width="1pt" />
+    </g>
+
+    <g id="fill-black">
+        <rect x="-15" y="-5"
+              width="30" height="10"
+              fill="black"
+              stroke="none" />
+    </g>
+
+    <g id="piece-small">
+        <rect
+            x="-4" y="-4"
+            width="8" height="8"
+            stroke-width="1pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-piece-small">
+        <use xlink:href="#piece-small"/>
+    </clipPath>
+
+    <g id="piece-medium">
+        <rect
+            x="-9" y="-4"
+            width="18" height="8"
+            stroke-width="1pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-piece-medium">
+        <use xlink:href="#piece-medium"/>
+    </clipPath>
+
+    <g id="piece-large">
+        <rect
+            x="-14" y="-4"
+            width="28" height="8"
+            stroke-width="1pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-piece-large">
+        <use xlink:href="#piece-large"/>
+    </clipPath>
+
+    <g id="player">
+        <circle
+            cx="0" cy="0" r="4"
+            stroke-width="1pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-player">
+        <use xlink:href="#player"/>
+    </clipPath>
+
+</svg>

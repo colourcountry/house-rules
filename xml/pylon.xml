@@ -7,43 +7,62 @@
         </about>
         <players>
             <player>white</player>
-            <pieces>
+<!--            <pieces>
                 5×
                 <piece>
-                    <size>small</size>
+                    <shape>small</shape>
                     <colour>white</colour>
                 </piece>
                 5×
                 <piece>
-                    <size>medium</size>
+                    <shape>medium</shape>
                     <colour>white</colour>
                 </piece>
                 5×
                 <piece>
-                    <size>large</size>
+                    <shape>large</shape>
                     <colour>white</colour>
                 </piece>
             </pieces>
+-->
+            <player>yellow</player>
+            <player>clear</player>
+            <player>green</player>
+            <player>teal</player>
+            <player>red</player>
+            <player>orange</player>
+            <player>blue</player>
+            <player>purple</player>
+            <player>black</player>
         </players>
         <players>
             <player>black</player>
-            <pieces>
+<!--            <pieces>
                 5×
                 <piece>
-                    <size>small</size>
+                    <shape>small</shape>
                     <colour>black</colour>
                 </piece>
                 5×
                 <piece>
-                    <size>medium</size>
+                    <shape>medium</shape>
                     <colour>black</colour>
                 </piece>
                 5×
                 <piece>
-                    <size>large</size>
+                    <shape>large</shape>
                     <colour>black</colour>
                 </piece>
-            </pieces>
+            </pieces>-->
+            <player>purple</player>
+            <player>blue</player>
+            <player>orange</player>
+            <player>red</player>
+            <player>teal</player>
+            <player>green</player>
+            <player>clear</player>
+            <player>yellow</player>
+            <player>white</player>
         </players>
         <board>
             5×6 square grid
@@ -69,7 +88,7 @@
         <phase>
             <name>1</name>
             <player>white</player>
-            No ematw souares
+            No empty squares
             <goToPhase>
                 <name>2</name>
                 <player>black</player>
@@ -81,129 +100,128 @@
                 <dt>pylon</dt>
                 <dd>
                     Three pieces in size order
-                    <diagram>
                         <stack>
                             <piece>
                                 <colour>black</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>black</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>black</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>blue</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>blue</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>red</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>red</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>red</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>green</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>clear</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>clear</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>green</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>blue</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>clear</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                             <piece>
                                 <colour>green</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>yellow</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>yellow</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>yellow</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>purple</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>purple</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>purple</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>teal</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>teal</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>teal</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
                             <piece>
                                 <colour>orange</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>orange</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>orange</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
                         <stack>
@@ -211,18 +229,109 @@
                         <stack>
                             <piece>
                                 <colour>white</colour>
-                                <size>large</size>
+                                <shape>large</shape>
                             </piece>
                             <piece>
                                 <colour>white</colour>
-                                <size>medium</size>
+                                <shape>medium</shape>
                             </piece>
                             <piece>
                                 <colour>white</colour>
-                                <size>small</size>
+                                <shape>small</shape>
                             </piece>
                         </stack>
-                    </diagram>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>move</dt>
+                <dd>
+                    <legal>
+                            <grid rows="4" columns="4" right="edge" bottom="edge" >
+                                <square x="3" y="1">
+                                    <stack id="mystack">
+                                        <piece>
+                                            <colour>purple</colour>
+                                            <shape>large</shape>
+                                        </piece>
+                                        <piece>
+                                            <colour>red</colour>
+                                            <shape>medium</shape>
+                                        </piece>
+                                        <piece>
+                                            <colour>blue</colour>
+                                            <shape>small</shape>
+                                        </piece>
+                                    </stack>
+                                </square>
+                                <square x="0" y="0">
+                                    <stack id="mystack2">
+                                        <piece>
+                                            <colour>yellow</colour>
+                                            <shape>large</shape>
+                                        </piece>
+                                    </stack>
+                                </square>
+                                <square x="2" y="2">
+                                    <stack id="mystack3">
+                                        <piece>
+                                            <colour>clear</colour>
+                                            <shape>medium</shape>
+                                        </piece>
+                                        <piece>
+                                            <colour>green</colour>
+                                            <shape>medium</shape>
+                                        </piece>
+                                    </stack>
+                                </square>
+                            
+                            </grid>
+                            <grid rows="4" columns="4" right="edge" bottom="edge" >
+                                <square x="1" y="3">
+                        <stack>
+                            <piece>
+                                <colour>green</colour>
+                                <shape>large</shape>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <shape>large</shape>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <shape>medium</shape>
+                            </piece>
+                            <piece>
+                                <colour>green</colour>
+                                <shape>medium</shape>
+                            </piece>
+                            <piece>
+                                <colour>blue</colour>
+                                <shape>medium</shape>
+                            </piece>
+                            <piece>
+                                <colour>clear</colour>
+                                <shape>small</shape>
+                            </piece>
+                            <piece>
+                                <colour>green</colour>
+                                <shape>small</shape>
+                            </piece>
+                        </stack>
+                                </square>
+                            </grid>
+                    </legal>
+                    <illegal>
+                            <grid rows="4" columns="4" right="edge" bottom="edge" >
+                                <square x="3" y="1">
+                                    <stack use="mystack" />
+                                </square>
+                            </grid>
+                            <grid rows="4" columns="4" right="edge" bottom="edge" >
+                                <square x="1" y="1">
+                                    <stack use="mystack" />
+                                </square>
+                            </grid>
+                    </illegal>
                 </dd>
             </dlentry>
         </dl>
