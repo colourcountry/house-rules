@@ -17,7 +17,7 @@
                  M 5   -5 l 10 10 M 10  -5 l 10 10"
               fill="none"
               stroke="#ccaa00"
-              stroke-width="1pt" />
+              stroke-width="0.85pt" />
     </g>
 
     <g id="fill-purple">
@@ -31,16 +31,17 @@
                  M 5   -5 l 10 10 M 10  -5 l 10 10"
               fill="none"
               stroke="white"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
     </g>
 
     <g id="fill-clear">
-        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
                  M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M  7    -5 l 0 10 M 10    -5 l 0 10"
+                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
+                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10"
               fill="none"
               stroke="#888888"
-              stroke-width="1pt" />
+              stroke-width="0.85pt" />
     </g>
 
     <g id="fill-blue">
@@ -48,22 +49,24 @@
               width="30" height="10"
               fill="#0000ff"
               stroke="none" />
-        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
                  M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M  7    -5 l 0 10 M 10    -5 l 0 10"
+                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
+                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10"
               fill="none"
               stroke="white"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
     </g>
 
     <g id="fill-teal">
-        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
                  M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M  7    -5 l 0 10 M 10    -5 l 0 10
+                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
+                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10
                  M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
               fill="none"
               stroke="#008888"
-              stroke-width="1pt" />
+              stroke-width="0.85pt" />
     </g>
 
     <g id="fill-red">
@@ -71,13 +74,14 @@
               width="30" height="10"
               fill="#ff0000"
               stroke="none" />
-        <path d="M -10   -5 l 0 10 M -7    -5 l 0 10
+        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
                  M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M  7    -5 l 0 10 M 10    -5 l 0 10
+                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
+                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10
                  M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
               fill="none"
               stroke="white"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
     </g>
 
     <g id="fill-green">
@@ -91,7 +95,7 @@
                  M 5   5 l 10 -10 M 10  5 l 10 -10"
               fill="none"
               stroke="#00cc00"
-              stroke-width="1pt" />
+              stroke-width="0.85pt" />
     </g>
 
     <g id="fill-orange">
@@ -109,7 +113,7 @@
                  M 5   5 l 10 -10 M 10  5 l 10 -10"
               fill="none"
               stroke="white"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
     </g>
 
     <g id="fill-black">

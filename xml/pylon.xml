@@ -6,335 +6,226 @@
             <date>2005</date>
         </about>
         <players>
-            <player>white</player>
-<!--            <pieces>
+            <player value="white" />
+            <pieces>
                 5×
-                <piece>
-                    <shape>small</shape>
-                    <colour>white</colour>
-                </piece>
+                <piece> <shape value="small" /> <colour value="white" /> </piece>
                 5×
-                <piece>
-                    <shape>medium</shape>
-                    <colour>white</colour>
-                </piece>
+                <piece> <shape value="medium" /> <colour value="white" /> </piece>
                 5×
-                <piece>
-                    <shape>large</shape>
-                    <colour>white</colour>
-                </piece>
+                <piece> <shape value="large" /> <colour value="white" /> </piece>
             </pieces>
--->
-            <player>yellow</player>
-            <player>clear</player>
-            <player>green</player>
-            <player>teal</player>
-            <player>red</player>
-            <player>orange</player>
-            <player>blue</player>
-            <player>purple</player>
-            <player>black</player>
         </players>
         <players>
-            <player>black</player>
-<!--            <pieces>
+            <player value="black" />
+            <pieces>
                 5×
-                <piece>
-                    <shape>small</shape>
-                    <colour>black</colour>
-                </piece>
+                <piece> <shape value="small" /> <colour value="black" /> </piece>
                 5×
-                <piece>
-                    <shape>medium</shape>
-                    <colour>black</colour>
-                </piece>
+                <piece> <shape value="medium" /> <colour value="black" /> </piece>
                 5×
-                <piece>
-                    <shape>large</shape>
-                    <colour>black</colour>
-                </piece>
-            </pieces>-->
-            <player>purple</player>
-            <player>blue</player>
-            <player>orange</player>
-            <player>red</player>
-            <player>teal</player>
-            <player>green</player>
-            <player>clear</player>
-            <player>yellow</player>
-            <player>white</player>
+                <piece> <shape value="large" /> <colour value="black" /> </piece>
+            </pieces>
         </players>
         <board>
-            5×6 square grid
+            <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge" scale="0.4" />
+            5×6
         </board>
         <setup>
             None
         </setup>
-        <phase>
-            <name>1</name>
-            <player>white</player>
-            Place one of your pieces in an empty square
-            <repeat>
-                <goToPhase>
-                    <name>1</name>
-                    <player>black</player>
-                </goToPhase>
-                <goToPhase>
-                    <name>1</name>
-                    <player>white</player>
-                </goToPhase>
-            </repeat>
-        </phase>
-        <phase>
-            <name>1</name>
-            <player>white</player>
-            No empty squares
-            <goToPhase>
-                <name>2</name>
-                <player>black</player>
-            </goToPhase>
-        </phase>
-        <section>
         <dl>
             <dlentry>
-                <dt>pylon</dt>
+                <dt><keyword>pylon</keyword></dt>
                 <dd>
-                    Three pieces in size order
-                        <stack>
-                            <piece>
-                                <colour>black</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>black</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>black</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>blue</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>blue</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>red</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>red</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>red</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>blue</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>small</shape>
-                            </piece>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>yellow</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>yellow</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>yellow</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>purple</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>purple</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>purple</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>teal</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>teal</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>teal</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>orange</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>orange</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>orange</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                        <stack>
-                        </stack>
-                        <stack>
-                            <piece>
-                                <colour>white</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>white</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>white</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt>move</dt>
-                <dd>
-                    <legal>
-                            <grid rows="4" columns="4" right="edge" bottom="edge" >
-                                <square x="3" y="1">
-                                    <stack id="mystack">
-                                        <piece>
-                                            <colour>purple</colour>
-                                            <shape>large</shape>
-                                        </piece>
-                                        <piece>
-                                            <colour>red</colour>
-                                            <shape>medium</shape>
-                                        </piece>
-                                        <piece>
-                                            <colour>blue</colour>
-                                            <shape>small</shape>
-                                        </piece>
-                                    </stack>
-                                </square>
-                                <square x="0" y="0">
-                                    <stack id="mystack2">
-                                        <piece>
-                                            <colour>yellow</colour>
-                                            <shape>large</shape>
-                                        </piece>
-                                    </stack>
-                                </square>
-                                <square x="2" y="2">
-                                    <stack id="mystack3">
-                                        <piece>
-                                            <colour>clear</colour>
-                                            <shape>medium</shape>
-                                        </piece>
-                                        <piece>
-                                            <colour>green</colour>
-                                            <shape>medium</shape>
-                                        </piece>
-                                    </stack>
-                                </square>
-                            
-                            </grid>
-                            <grid rows="4" columns="4" right="edge" bottom="edge" >
-                                <square x="1" y="3">
-                        <stack>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>large</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>blue</colour>
-                                <shape>medium</shape>
-                            </piece>
-                            <piece>
-                                <colour>clear</colour>
-                                <shape>small</shape>
-                            </piece>
-                            <piece>
-                                <colour>green</colour>
-                                <shape>small</shape>
-                            </piece>
-                        </stack>
-                                </square>
-                            </grid>
-                    </legal>
-                    <illegal>
-                            <grid rows="4" columns="4" right="edge" bottom="edge" >
-                                <square x="3" y="1">
-                                    <stack use="mystack" />
-                                </square>
-                            </grid>
-                            <grid rows="4" columns="4" right="edge" bottom="edge" >
-                                <square x="1" y="1">
-                                    <stack use="mystack" />
-                                </square>
-                            </grid>
-                    </illegal>
+                    one or more pieces
+                    stacked so that no piece is above a smaller piece
                 </dd>
             </dlentry>
         </dl>
-        </section>
+        <phase>
+            <phaseName>
+                <phaseNumber value="1" /> <player value="white" />
+            </phaseName>
+            <line>
+                Place one of your pieces in an empty square
+            </line>
+            <repeat>
+                <goToPhase>
+                    <phaseNumber value="1" /> <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseNumber value="1" /> <player value="black" />
+                </goToPhase>
+            </repeat>
+        </phase>
+        <subphase>
+            <phaseName>
+                <phaseNumber value="1" />
+            </phaseName>
+            No empty squares
+            <goToPhase>
+                <phaseNumber value="2" /> <player value="black" />
+            </goToPhase>
+        </subphase>
+        <phase>
+            <phaseName>
+                <phaseNumber value="2" /> <player value="black" />
+            </phaseName>
+            <line>
+                Place the
+                <keyword>pylon</keyword>    
+                in any square on top of a   
+                <keyword>pylon</keyword>
+                in an
+                abutting
+                square, to leave a
+                <keyword>pylon</keyword>
+                in that square
+            </line>
+            <repeat>
+                <goToPhase>
+                    <phaseNumber value="2" /> <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseNumber value="2" /> <player value="black" />
+                </goToPhase>
+            </repeat>
+            <example>
+                <legal>
+                    <grid rows="1" columns="2" id="before">
+                        <square x="0" y="0">
+                            <stack>
+                                <piece> <colour value="black" /> <shape value="large" /> </piece>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                            </stack>
+                        </square>
+                        <square x="1" y="0">
+                            <stack>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                            </stack>
+                        </square>
+                    </grid>
+                    <grid rows="1" columns="2">
+                        <square x="0" y="0">
+                            <stack>
+                                <piece> <colour value="black" /> <shape value="large" /> </piece>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                            </stack>
+                        </square>
+                    </grid>
+                </legal>
+                <illegal>
+                    <grid use="before"/>
+                    <grid rows="1" columns="2">
+                        <square x="1" y="0">
+                            <stack>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece> <colour value="black" /> <shape value="large" /> </piece>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                            </stack>
+                        </square>
+                    </grid>
+                </illegal>
+            </example>
+            <example>
+                <illegal>
+                    <grid use="before"/>
+                    <grid rows="1" columns="2">
+                        <square x="1" y="0">
+                            <stack>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece> <colour value="black" /> <shape value="large" /> </piece>
+                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                            </stack>
+                        </square>
+                    </grid>
+                </illegal>
+            </example>
+        </phase>
+        <subphase>
+            <phaseName>
+                <phaseNumber value="2" />
+            </phaseName>
+            No legal moves
+            <goToPhase>
+                <phaseNumber value="End" />
+            </goToPhase>
+        </subphase>
+        <phase>
+            <phaseName>
+                <phaseNumber value="End" />
+            </phaseName>
+            <line>Each player scores 1 point for each piece in all <keyword>pylons</keyword>
+                  with one of their pieces on top</line>
+            <line>Player with most points wins</line>
+            <example>
+            <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge">
+                <square x="4" y="0">
+                    <stack>
+                        <piece> <colour value="white" /> <shape value="large" /> </piece>
+                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="2" y="1">
+                    <stack>
+                        <piece> <colour value="white" /> <shape value="large" /> </piece>
+                        <piece> <colour value="black" /> <shape value="large" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="4" y="1">
+                    <stack>
+                        <piece> <colour value="black" /> <shape value="large" /> </piece>
+                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="1" y="2">
+                    <stack>
+                        <piece> <colour value="black" /> <shape value="large" /> </piece>
+                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="3" y="3">
+                    <stack>
+                        <piece> <colour value="black" /> <shape value="large" /> </piece>
+                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="4" y="3">
+                    <stack>
+                        <piece> <colour value="black" /> <shape value="large" /> </piece>
+                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="1" y="4">
+                    <stack>
+                        <piece> <colour value="white" /> <shape value="large" /> </piece>
+                        <piece> <colour value="white" /> <shape value="large" /> </piece>
+                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                    </stack>
+                </square>
+                <square x="5" y="4">
+                    <stack>
+                        <piece> <colour value="white" /> <shape value="large" /> </piece>
+                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+            </grid>
+            </example>
+        </phase>
     </gamebody>
 </game>

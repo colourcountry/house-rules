@@ -17,20 +17,16 @@
         <xsl:attribute name="stroke-width">1pt</xsl:attribute>
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="black-line">
-        <xsl:attribute name="fill">none</xsl:attribute>
-        <xsl:attribute name="stroke">black</xsl:attribute>
-        <xsl:attribute name="stroke-width">0.8pt</xsl:attribute>
-    </xsl:attribute-set>
+    <!--
+        Templates svg-with-* are called in mode="fo"
+        and must create a new svg:svg for embedding.
 
-    <xsl:attribute-set name="white-line">
-        <xsl:attribute name="fill">none</xsl:attribute>
-        <xsl:attribute name="stroke">white</xsl:attribute>
-        <xsl:attribute name="stroke-width">0.8pt</xsl:attribute>
-    </xsl:attribute-set>
+        Templates svg-* are called in the same context in mode="svg"
+        and should contain any SVG referenced by <use>
+        tags in svg-with-*
+    -->
 
-
-    <xsl:template name="player">
+    <xsl:template name="svg-with-player">
         <xsl:param name="colour"/>
         <svg:svg width="12pt" height="12pt">
             <svg:g transform="translate(6,6)">
@@ -42,7 +38,7 @@
         </svg:svg>
     </xsl:template>
 
-    <xsl:template name="piece">
+    <xsl:template name="svg-with-piece">
         <xsl:param name="colour"/>
         <xsl:param name="shape"/>
         <svg:svg width="30" height="12">
@@ -55,32 +51,59 @@
         </svg:svg>
     </xsl:template>
 
-    <xsl:template name="stack">
-        <xsl:param name="height"><xsl:value-of select="count(piece)*8 + 2"/></xsl:param>
+    <xsl:template name="get-stack-height">
+        <xsl:choose>
+            <xsl:when test="@use">
+                <xsl:variable name="use" select="@use" />
+                <xsl:for-each select="//*[@id=$use]">
+                    <xsl:call-template name="get-stack-height" />
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="count(piece)*8 + 2"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="svg-with-stack">
+        <xsl:param name="height"><xsl:call-template name="get-stack-height"/></xsl:param>
+        <xsl:variable name="id">
+            <xsl:choose>
+                <xsl:when test="@id"><xsl:value-of select="@id" /></xsl:when>
+                <xsl:otherwise><xsl:value-of select="generate-id(.)" /></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <svg:svg width="40" height="{$height}">
             <svg:g transform="translate(0,{$height})">
-                <xsl:call-template name="stack-impl" />
+                <svg:use xlink:href="out.svg#{$id}" />
             </svg:g>
         </svg:svg>
     </xsl:template>
 
-    <xsl:template match="stack" mode="svg">
-        <xsl:call-template name="stack-impl" />
-    </xsl:template>
-
-    <xsl:template name="stack-impl">
-        <xsl:for-each select="piece">
-            <xsl:call-template name="piece-impl">
-                <xsl:with-param name="colour"><xsl:value-of select="colour" /></xsl:with-param>
-                <xsl:with-param name="shape"><xsl:value-of select="shape" /></xsl:with-param>
-                <xsl:with-param name="cy"><xsl:value-of select="3 - position()*8"/></xsl:with-param>
-                <xsl:with-param name="cx">20</xsl:with-param>
-            </xsl:call-template>
-        </xsl:for-each>
-    </xsl:template>
-
-    <xsl:template match="piece" mode="svg">
-        <xsl:call-template name="piece-impl" />
+    <xsl:template name="svg-stack">
+        <xsl:variable name="id">
+            <xsl:choose>
+                <xsl:when test="@id"><xsl:value-of select="@id" /></xsl:when>
+                <xsl:otherwise><xsl:value-of select="generate-id(.)" /></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <svg:g id="{$id}">
+            <xsl:choose>
+                <xsl:when test="@use">
+                    <svg:use xlink:href="#{@use}" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:for-each select="piece">
+                        <xsl:call-template name="piece-impl">
+                            <xsl:with-param name="colour"><xsl:value-of select="colour/@value" /></xsl:with-param>
+                            <xsl:with-param name="shape"><xsl:value-of select="shape/@value" /></xsl:with-param>
+                            <xsl:with-param name="cy"><xsl:value-of select="3 - position()*8"/></xsl:with-param>
+                            <xsl:with-param name="cx">20</xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:otherwise>
+            </xsl:choose>
+        </svg:g>
     </xsl:template>
 
     <xsl:template name="piece-impl">
