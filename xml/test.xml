@@ -1,0 +1,106 @@
+<game>
+    <name>Test</name>
+    <gamebody>
+        <about>
+            <author>Me</author>
+            <date>2005</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                5×
+                <piece> <shape value="small" /> <colour value="white" /> </piece>
+                5×
+                <piece> <shape value="medium" /> <colour value="white" /> </piece>
+                5×
+                <piece> <shape value="large" /> <colour value="white" /> </piece>
+            </pieces>
+        </players>
+        <players>
+            <player value="red" />
+            <pieces>
+                <piece> <shape value="club" /> <colour value="black" /> </piece>
+                <piece> <shape value="heart" /> <colour value="red" /> </piece>
+                <piece> <shape value="diamond" /> <colour value="red" /> </piece>
+                <piece> <shape value="spade" /> <colour value="black" /> </piece>
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseNumber value="End" />
+            </phaseName>
+            <example>
+            <grid rows="4" columns="4" left="edge" right="edge" bottom="edge" top="edge">
+                <square x="2" y="1">
+                    <stack>
+                        <piece> <colour value="orange" /> <shape value="small" /> </piece>
+                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                    </stack>
+                </square>
+                <square x="0" y="3">
+                    <stack>
+                        <piece> <colour value="purple" /> <shape value="medium" /> </piece>
+                        <piece> <colour value="yellow" /> <shape value="large" /> </piece>
+                    </stack>
+                </square>
+                <square x="2" y="0">
+                    <piece> <colour value="green" /> <shape value="large" /> </piece>
+                </square>
+            </grid>
+            </example>
+            <example>
+            <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="0.7">
+                <square x="4" y="0">
+                        <piece> <colour value="white" /> <shape value="king" /> </piece>
+                </square>
+                <square x="2" y="1">
+                        <piece> <colour value="black" /> <shape value="king" /> </piece>
+                </square>
+                <square x="4" y="1">
+                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                </square>
+                <square x="1" y="2">
+                        <piece> <colour value="white" /> <shape value="rook" /> </piece>
+                </square>
+                <square x="3" y="3">
+                        <piece> <colour value="black" /> <shape value="knight" /> </piece>
+                </square>
+                <square x="4" y="3">
+                        <piece> <colour value="blue" /> <shape value="knight" /> </piece>
+                </square>
+                <square x="1" y="4">
+                        <piece> <colour value="white" /> <shape value="queen" /> </piece>
+                </square>
+                <square x="5" y="3">
+                        <piece> <colour value="red" /> <shape value="pawn" /> </piece>
+                </square>
+            </grid>
+            </example>
+            <example>
+            <grid rows="19" columns="19" left="edge" right="edge" bottom="edge" top="edge" size="0.35">
+                <square x="5" y="8">
+                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                </square>
+                <square x="6" y="9">
+                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                </square>
+                <square x="5" y="10">
+                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                </square>
+                <square x="4" y="9">
+                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                </square>
+                <square x="6" y="8">
+                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                </square>
+                <square x="7" y="9">
+                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                </square>
+                <square x="6" y="10">
+                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                </square>
+            </grid>
+            </example>
+        </phase>
+    </gamebody>
+</game>

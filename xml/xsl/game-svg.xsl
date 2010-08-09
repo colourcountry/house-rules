@@ -13,8 +13,14 @@
         </svg:svg>
     </xsl:template>
 
+    <xsl:template match="piece" mode="svg">
+        <xsl:call-template name="svg-piece"/>
+    </xsl:template>
+
     <xsl:template match="stack" mode="svg">
-        <xsl:call-template name="svg-stack"/>
+        <svg:g transform="translate(-20,17)">
+            <xsl:call-template name="svg-stack"/>
+        </svg:g>
     </xsl:template>
 
     <xsl:template match="grid" mode="svg">

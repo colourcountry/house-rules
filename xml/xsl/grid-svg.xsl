@@ -30,7 +30,13 @@
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="@rows * 36 + 20" />
+                <xsl:variable name="size">
+                    <xsl:choose>
+                        <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
+                        <xsl:otherwise>1</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:value-of select="(@rows + 0.5) * 36 * $size" />
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -44,8 +50,27 @@
                 </xsl:for-each>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="@columns * 36 + 20" />
+                <xsl:variable name="size">
+                    <xsl:choose>
+                        <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
+                        <xsl:otherwise>1</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:value-of select="(@columns + 0.5) * 36 * $size" />
             </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="get-grid-size">
+        <xsl:choose>
+            <xsl:when test="@use">
+                <xsl:variable name="use" select="@use" />
+                <xsl:for-each select="//*[@id=$use]">
+                    <xsl:call-template name="get-grid-size" />
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="@size"><xsl:value-of select="36 * @size"/></xsl:when>
+            <xsl:otherwise>36</xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
@@ -69,6 +94,8 @@
     <xsl:template name="svg-grid">
         <xsl:variable name="height"><xsl:call-template name="get-grid-height"/></xsl:variable>
         <xsl:variable name="width"><xsl:call-template name="get-grid-width"/></xsl:variable>
+        <xsl:variable name="size"><xsl:call-template name="get-grid-size"/></xsl:variable>
+        <xsl:variable name="border-thickness"><xsl:value-of select="$size div 4"/></xsl:variable>
         <xsl:variable name="id">
             <xsl:choose>
                 <xsl:when test="@id"><xsl:value-of select="@id" /></xsl:when>
@@ -86,55 +113,61 @@
                     <xsl:call-template name="grid-warp">
                         <xsl:with-param name="x"><xsl:value-of select="@columns" /></xsl:with-param>
                         <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
+                        <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                        <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
                     </xsl:call-template>
                     <xsl:call-template name="grid-weft">
                         <xsl:with-param name="y"><xsl:value-of select="@rows" /></xsl:with-param>
                         <xsl:with-param name="width"><xsl:value-of select="$width" /></xsl:with-param>
+                        <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                        <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
                     </xsl:call-template>
                     <xsl:if test="@right='edge'">
-                        <svg:rect x="{$width - 9.5}" y="0"
-                                  width="9.5" height="{$height}"
+                        <svg:rect x="{$width - $border-thickness + 0.5}" y="0"
+                                  width="{$border-thickness - 0.5}" height="{$height}"
                                   xsl:use-attribute-sets="grid-border" />
                     </xsl:if>
                     <xsl:if test="@left='edge'">
                         <svg:rect x="0" y="0"
-                                  width="9.5" height="{$height}"
+                                  width="{$border-thickness - 0.5}" height="{$height}"
                                   xsl:use-attribute-sets="grid-border" />
                     </xsl:if>
                     <xsl:if test="@bottom='edge'">
-                        <svg:rect x="0" y="{$height - 9.5}"
-                                  width="{$width}" height="9.5"
+                        <svg:rect x="0" y="{$height - $border-thickness + 0.5}"
+                                  width="{$width}" height="{$border-thickness - 0.5}"
                                   xsl:use-attribute-sets="grid-border" />
                     </xsl:if>
                     <xsl:if test="@top='edge'">
                         <svg:rect x="0" y="0"
-                                  width="{$width}" height="9.5"
+                                  width="{$width}" height="{$border-thickness - 0.5}"
                                   xsl:use-attribute-sets="grid-border" />
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:apply-templates mode="svg"/>
-        </svg:g>
-    </xsl:template>
-
-    <xsl:template match="square" mode="svg">
-        <svg:g transform="translate({@x * 36 + 8},{@y * 36 + 45})">
-            <xsl:apply-templates mode="svg"/>
+            <xsl:for-each select="square">
+                <svg:g transform="translate({(@x + 0.5) * $size + $border-thickness},{(@y + 0.5) * $size + $border-thickness})">
+                    <xsl:apply-templates mode="svg"/>
+                </svg:g>
+            </xsl:for-each>
         </svg:g>
     </xsl:template>
 
     <xsl:template name="grid-warp">
         <xsl:param name="x"/>
         <xsl:param name="height"/>
+        <xsl:param name="size"/>
+        <xsl:param name="border-thickness"/>
         <xsl:if test="$x >= 0">
             <svg:path xsl:use-attribute-sets="grid-line">
                 <xsl:attribute name="d">
-                    M <xsl:value-of select="$x * 36 + 10"/> 0 l 0 <xsl:value-of select="$height" />
+                     M <xsl:value-of select="$x * $size + $border-thickness"/> 0 l 0 <xsl:value-of select="$height" />
                 </xsl:attribute>
             </svg:path>
             <xsl:call-template name="grid-warp">
                 <xsl:with-param name="x"><xsl:value-of select="$x - 1" /></xsl:with-param>
                 <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
+                <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
@@ -142,15 +175,19 @@
     <xsl:template name="grid-weft">
         <xsl:param name="y"/>
         <xsl:param name="width"/>
+        <xsl:param name="size"/>
+        <xsl:param name="border-thickness"/>
         <xsl:if test="$y >= 0">
             <svg:path xsl:use-attribute-sets="grid-line">
                 <xsl:attribute name="d">
-                    M 0 <xsl:value-of select="$y * 36 + 10"/> l <xsl:value-of select="$width" /> 0
+                    M 0 <xsl:value-of select="$y * $size + $border-thickness"/> l <xsl:value-of select="$width" /> 0
                 </xsl:attribute>
             </svg:path>
             <xsl:call-template name="grid-weft">
                 <xsl:with-param name="y"><xsl:value-of select="$y - 1" /></xsl:with-param>
                 <xsl:with-param name="width"><xsl:value-of select="$width" /></xsl:with-param>
+                <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
