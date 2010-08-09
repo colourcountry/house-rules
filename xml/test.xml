@@ -49,7 +49,14 @@
             </grid>
             </example>
             <example>
-            <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="0.7">
+            <legal>
+            <grid use="cheese">
+                <square x="1" y="2">
+                        <highlight value="cross" />
+                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                </square>
+            </grid>
+            <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="0.7" id="cheese">
                 <square x="4" y="0">
                         <piece> <colour value="white" /> <shape value="king" /> </piece>
                 </square>
@@ -57,10 +64,20 @@
                         <piece> <colour value="black" /> <shape value="king" /> </piece>
                 </square>
                 <square x="4" y="1">
+                        <highlight value="shade" />
+                        <arrow x="2" y="2" />
                         <piece> <colour value="white" /> <shape value="pawn" /> </piece>
                 </square>
-                <square x="1" y="2">
-                        <piece> <colour value="white" /> <shape value="rook" /> </piece>
+                <square x="7" y="7">
+                        <highlight value="square" />
+                        <arrow>
+                            <arrow-segment x="-4" y="0" />
+                            <arrow-segment x="0" y="-2" />
+                        </arrow>
+                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                </square>
+                <square x="3" y="5">
+                        <highlight value="circle" />
                 </square>
                 <square x="3" y="3">
                         <piece> <colour value="black" /> <shape value="knight" /> </piece>
@@ -75,6 +92,7 @@
                         <piece> <colour value="red" /> <shape value="pawn" /> </piece>
                 </square>
             </grid>
+            </legal>
             </example>
             <example>
             <grid rows="19" columns="19" left="edge" right="edge" bottom="edge" top="edge" size="0.35">

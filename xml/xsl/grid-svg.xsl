@@ -11,6 +11,12 @@
         <xsl:attribute name="stroke-width">1pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="arrow">
+        <xsl:attribute name="fill">none</xsl:attribute>
+        <xsl:attribute name="stroke">#000055</xsl:attribute>
+        <xsl:attribute name="marker-end">url(svg/grid.svg#marker-arrow)</xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="grid-border">
         <xsl:attribute name="fill">#cccccc</xsl:attribute>
         <xsl:attribute name="stroke">none</xsl:attribute>
@@ -102,14 +108,21 @@
                 <xsl:otherwise>--<xsl:value-of select="generate-id(.)" /></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <svg:rect x="0" y="0" width="{$width}" height="{$height}"
+                         xsl:use-attribute-sets="grid-background" />
         <svg:g id="{$id}">
+            <xsl:for-each select="square">
+                <svg:g transform="translate({(@x + 0.5) * $size + $border-thickness},{(@y + 0.5) * $size + $border-thickness})">
+                    <xsl:apply-templates mode="svg">
+                        <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                    </xsl:apply-templates>
+                </svg:g>
+            </xsl:for-each>
             <xsl:choose>
                 <xsl:when test="@use">
                     <svg:use xlink:href="#{@use}" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <svg:rect x="0" y="0" width="{$width}" height="{$height}"
-                              xsl:use-attribute-sets="grid-background" />
                     <xsl:call-template name="grid-warp">
                         <xsl:with-param name="x"><xsl:value-of select="@columns" /></xsl:with-param>
                         <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
@@ -144,11 +157,6 @@
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:for-each select="square">
-                <svg:g transform="translate({(@x + 0.5) * $size + $border-thickness},{(@y + 0.5) * $size + $border-thickness})">
-                    <xsl:apply-templates mode="svg"/>
-                </svg:g>
-            </xsl:for-each>
         </svg:g>
     </xsl:template>
 
@@ -190,5 +198,38 @@
                 <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
             </xsl:call-template>
         </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="highlight" mode="svg">
+        <xsl:param name="size"/>
+        <svg:clipPath id="clip-path-{generate-id(.)}">
+            <svg:rect x="{-$size div 2}" y="{-$size div 2}"
+                      width="{$size}" height="{$size}" />
+        </svg:clipPath>
+        <svg:g clip-path="url(#clip-path-{generate-id(.)})">
+            <svg:g transform="scale({$size})">
+                <svg:use xlink:href="svg/grid.svg#highlight-{@value}" />
+            </svg:g>
+        </svg:g>
+    </xsl:template>
+
+    <xsl:template match="arrow" mode="svg">
+        <xsl:param name="size"/>
+
+        <!-- Stroke width here determines arrow size
+             so is scaled to square size -->
+        <svg:path xsl:use-attribute-sets="arrow"
+                  stroke-width="{$size div 20 }">
+            <xsl:attribute name="d">M 0 0
+                <xsl:if test="@x">l
+                    <xsl:value-of select="@x * $size"/>,
+                    <xsl:value-of select="@y * $size" />
+                </xsl:if>
+                <xsl:for-each select="arrow-segment"> l
+                    <xsl:value-of select="@x * $size"/>,
+                    <xsl:value-of select="@y * $size" />
+                </xsl:for-each>
+            </xsl:attribute>
+        </svg:path>
     </xsl:template>
 </xsl:stylesheet>

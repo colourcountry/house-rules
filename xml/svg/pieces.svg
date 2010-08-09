@@ -4,121 +4,139 @@
      xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <g id="fill-white">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="white"
               stroke="none" />
     </g>
 
     <g id="fill-yellow">
-        <path d="M -20 -5 l 10 10
-                 M -15 -5 l 10 10 M -10 -5 l 10 10
-                 M -5  -5 l 10 10 M 0   -5 l 10 10
-                 M 5   -5 l 10 10 M 10  -5 l 10 10"
+        <path d="M -40 -20 l 40 40
+                 M -35 -20 l 40 40 M -30 -20 l 40 40
+                 M -25 -20 l 40 40 M -20 -20 l 40 40
+                 M -15 -20 l 40 40 M -10 -20 l 40 40
+                 M -5  -20 l 40 40 M 0   -20 l 40 40
+                 M 5   -20 l 40 40 M 10  -20 l 40 40"
               fill="none"
               stroke="#ccaa00"
               stroke-width="0.85pt" />
     </g>
 
     <g id="fill-purple">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="#660066"
               stroke="none" />
-        <path d="M -20 -5 l 10 10
-                 M -15 -5 l 10 10 M -10 -5 l 10 10
-                 M -5  -5 l 10 10 M 0   -5 l 10 10
-                 M 5   -5 l 10 10 M 10  -5 l 10 10"
+        <path d="M -40 -20 l 40 40
+                 M -35 -20 l 40 40 M -30 -20 l 40 40
+                 M -25 -20 l 40 40 M -20 -20 l 40 40
+                 M -15 -20 l 40 40 M -10 -20 l 40 40
+                 M -5  -20 l 40 40 M 0   -20 l 40 40
+                 M 5   -20 l 40 40 M 10  -20 l 40 40"
               fill="none"
               stroke="white"
               stroke-width="0.7pt" />
     </g>
 
     <g id="fill-clear">
-        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
-                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
-                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10"
+        <path d="M -10.5 -20 l 0 40 M -7.5  -20 l 0 40
+                 M -1.5  -20 l 0 40 M 1.5   -20 l 0 40
+                 M -4.5  -20 l 0 40 M 4.5   -20 l 0 40
+                 M  7.5  -20 l 0 40 M 10.5  -20 l 0 40"
               fill="none"
               stroke="#888888"
               stroke-width="0.85pt" />
     </g>
 
     <g id="fill-blue">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="#0000ff"
               stroke="none" />
-        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
-                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
-                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10"
+        <path d="M -10.5 -20 l 0 40 M -7.5  -20 l 0 40
+                 M -1.5  -20 l 0 40 M 1.5   -20 l 0 40
+                 M -4.5  -20 l 0 40 M 4.5   -20 l 0 40
+                 M  7.5  -20 l 0 40 M 10.5  -20 l 0 40"
               fill="none"
               stroke="white"
               stroke-width="0.7pt" />
     </g>
 
     <g id="fill-teal">
-        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
-                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
-                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10
-                 M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
+        <path d="M -10.5 -20 l 0 40 M -7.5  -20 l 0 40
+                 M -1.5  -20 l 0 40 M 1.5   -20 l 0 40
+                 M -4.5  -20 l 0 40 M 4.5   -20 l 0 40
+                 M  7.5  -20 l 0 40 M 10.5  -20 l 0 40
+                 M -20 -1.5 l 40 0 M -20  1.5 l 40 0
+                 M -20 -4.5 l 40 0 M -20  4.5 l 40 0
+                 M -20 -7.5 l 40 0 M -20  7.5 l 40 0
+                 M -20 -10.5 l 40 0 M -20  10.5 l 40 0"
               fill="none"
               stroke="#008888"
               stroke-width="0.85pt" />
     </g>
 
     <g id="fill-red">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="#ff0000"
               stroke="none" />
-        <path d="M -10.5 -5 l 0 10 M -7.5  -5 l 0 10
-                 M -1.5  -5 l 0 10 M 1.5   -5 l 0 10
-                 M -4.5  -5 l 0 10 M 4.5   -5 l 0 10
-                 M  7.5  -5 l 0 10 M 10.5  -5 l 0 10
-                 M -15 -1.5 l 30 0 M -15  1.5 l 30 0"
+        <path d="M -10.5 -20 l 0 40 M -7.5  -20 l 0 40
+                 M -1.5  -20 l 0 40 M 1.5   -20 l 0 40
+                 M -4.5  -20 l 0 40 M 4.5   -20 l 0 40
+                 M  7.5  -20 l 0 40 M 10.5  -20 l 0 40
+                 M -20 -1.5 l 40 0 M -20  1.5 l 40 0
+                 M -20 -4.5 l 40 0 M -20  4.5 l 40 0
+                 M -20 -7.5 l 40 0 M -20  7.5 l 40 0
+                 M -20 -10.5 l 40 0 M -20  10.5 l 40 0"
               fill="none"
               stroke="white"
               stroke-width="0.7pt" />
     </g>
 
     <g id="fill-green">
-        <path d="M -20 -5 l 10 10
-                 M -15 -5 l 10 10 M -10 -5 l 10 10
-                 M -5  -5 l 10 10 M 0   -5 l 10 10
-                 M 5   -5 l 10 10 M 10  -5 l 10 10
-                 M -20 5 l 10 -10
-                 M -15 5 l 10 -10 M -10 5 l 10 -10
-                 M -5  5 l 10 -10 M 0   5 l 10 -10
-                 M 5   5 l 10 -10 M 10  5 l 10 -10"
+        <path d="M -40 -20 l 40 40
+                 M -35 -20 l 40 40 M -30 -20 l 40 40
+                 M -25 -20 l 40 40 M -20 -20 l 40 40
+                 M -15 -20 l 40 40 M -10 -20 l 40 40
+                 M -5  -20 l 40 40 M 0   -20 l 40 40
+                 M 5   -20 l 40 40 M 10  -20 l 40 40
+                 M -40 20 l 40 -40
+                 M -35 20 l 40 -40 M -30 20 l 40 -40
+                 M -25 20 l 40 -40 M -20 20 l 40 -40
+                 M -15 20 l 40 -40 M -10 20 l 40 -40
+                 M -5  20 l 40 -40 M 0   20 l 40 -40
+                 M 5   20 l 40 -40 M 10  20 l 40 -40"
               fill="none"
               stroke="#00cc00"
               stroke-width="0.85pt" />
     </g>
 
     <g id="fill-orange">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="#cc4400"
               stroke="none" />
-        <path d="M -20 -5 l 10 10
-                 M -15 -5 l 10 10 M -10 -5 l 10 10
-                 M -5  -5 l 10 10 M 0   -5 l 10 10
-                 M 5   -5 l 10 10 M 10  -5 l 10 10
-                 M -20 5 l 10 -10
-                 M -15 5 l 10 -10 M -10 5 l 10 -10
-                 M -5  5 l 10 -10 M 0   5 l 10 -10
-                 M 5   5 l 10 -10 M 10  5 l 10 -10"
+        <path d="M -40 -20 l 40 40
+                 M -35 -20 l 40 40 M -30 -20 l 40 40
+                 M -25 -20 l 40 40 M -20 -20 l 40 40
+                 M -15 -20 l 40 40 M -10 -20 l 40 40
+                 M -5  -20 l 40 40 M 0   -20 l 40 40
+                 M 5   -20 l 40 40 M 10  -20 l 40 40
+                 M -40 20 l 40 -40
+                 M -35 20 l 40 -40 M -30 20 l 40 -40
+                 M -25 20 l 40 -40 M -20 20 l 40 -40
+                 M -15 20 l 40 -40 M -10 20 l 40 -40
+                 M -5  20 l 40 -40 M 0   20 l 40 -40
+                 M 5   20 l 40 -40 M 10  20 l 40 -40"
               fill="none"
               stroke="white"
               stroke-width="0.7pt" />
     </g>
 
     <g id="fill-black">
-        <rect x="-15" y="-5"
-              width="30" height="10"
+        <rect x="-20" y="-20"
+              width="40" height="40"
               fill="black"
               stroke="none" />
     </g>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<svg
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- Highlights are in a coordinate system with 1 = size of square. -->
+
+    <g id="highlight-cross">
+        <path
+          d="M -0.5 -0.5 L 0.5 0.5 M -0.5 0.5 L 0.5 -0.5"
+          fill="none" stroke="#880000" stroke-width="0.05" />
+    </g>
+
+    <g id="highlight-circle">
+        <circle cx="0" cy="0" r="0.45"
+          fill="none" stroke="#005500" stroke-width="0.05" />
+    </g>
+
+    <g id="highlight-shade">
+        <rect x="-0.5" y="-0.5" width="1" height="1"
+          fill="#cccccc" stroke="none" />
+    </g>
+
+    <g id="highlight-square">
+        <rect x="-0.45" y="-0.45" width="0.9" height="0.9"
+          fill="none" stroke="#990000" stroke-width="0.05" />
+    </g>
+
+    <marker id="marker-arrow"
+      viewBox="0 0 6 6" refX="3" refY="3" 
+      fill="none" stroke="#000055" stroke-width="1"
+      markerUnits="strokeWidth"
+      markerWidth="6" markerHeight="6"
+      orient="auto">
+      <path d="M 0 0 L 3 3 L 0 6 " />
+    </marker>
+
+</svg>
+
