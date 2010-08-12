@@ -14,11 +14,11 @@
     <xsl:output method="xml"/>
 
     <xsl:template match="/">
-        <xsl:result-document href="out.svg"
+        <xsl:result-document href="scrap/out.svg"
                              indent="yes">
             <xsl:apply-templates select="." mode="svg"/>
         </xsl:result-document>
-        <xsl:result-document href="out.fo"
+        <xsl:result-document href="scrap/out.fo"
                              indent="yes">
             <xsl:apply-templates select="." mode="fo"/>
         </xsl:result-document>

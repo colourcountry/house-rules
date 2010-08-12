@@ -7,19 +7,25 @@
 
     <xsl:template name="svg-with-right-arrow">
         <svg:svg width="22pt" height="18pt">
-            <svg:use xlink:href="svg/elements.svg#right-arrow"/>
+            <svg:use xlink:href="../svg/elements.svg#right-arrow"/>
         </svg:svg>
     </xsl:template>
 
     <xsl:template name="svg-with-crossed-right-arrow">
         <svg:svg width="22pt" height="18pt">
-            <svg:use xlink:href="svg/elements.svg#crossed-right-arrow"/>
+            <svg:use xlink:href="../svg/elements.svg#crossed-right-arrow"/>
+        </svg:svg>
+    </xsl:template>
+
+    <xsl:template name="svg-with-forced-right-arrow">
+        <svg:svg width="30pt" height="18pt">
+            <svg:use xlink:href="../svg/elements.svg#forced-right-arrow"/>
         </svg:svg>
     </xsl:template>
 
     <xsl:template name="svg-with-repeat-arrow">
         <svg:svg width="40pt" height="18pt">
-            <svg:use xlink:href="svg/elements.svg#repeat-arrow"/>
+            <svg:use xlink:href="../svg/elements.svg#repeat-arrow"/>
         </svg:svg>
     </xsl:template>
 

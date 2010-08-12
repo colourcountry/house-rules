@@ -14,7 +14,7 @@
     <xsl:attribute-set name="arrow">
         <xsl:attribute name="fill">none</xsl:attribute>
         <xsl:attribute name="stroke">#000055</xsl:attribute>
-        <xsl:attribute name="marker-end">url(svg/grid.svg#marker-arrow)</xsl:attribute>
+        <xsl:attribute name="marker-end">url(../svg/grid.svg#marker-arrow)</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="grid-border">
@@ -38,6 +38,7 @@
             <xsl:otherwise>
                 <xsl:variable name="size">
                     <xsl:choose>
+                        <xsl:when test="@size='small'">0.5</xsl:when>
                         <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
                         <xsl:otherwise>1</xsl:otherwise>
                     </xsl:choose>
@@ -58,6 +59,7 @@
             <xsl:otherwise>
                 <xsl:variable name="size">
                     <xsl:choose>
+                        <xsl:when test="@size='small'">0.5</xsl:when>
                         <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
                         <xsl:otherwise>1</xsl:otherwise>
                     </xsl:choose>
@@ -75,6 +77,7 @@
                     <xsl:call-template name="get-grid-size" />
                 </xsl:for-each>
             </xsl:when>
+            <xsl:when test="@size='small'">18</xsl:when>
             <xsl:when test="@size"><xsl:value-of select="36 * @size"/></xsl:when>
             <xsl:otherwise>36</xsl:otherwise>
         </xsl:choose>
@@ -208,7 +211,7 @@
         </svg:clipPath>
         <svg:g clip-path="url(#clip-path-{generate-id(.)})">
             <svg:g transform="scale({$size})">
-                <svg:use xlink:href="svg/grid.svg#highlight-{@value}" />
+                <svg:use xlink:href="../svg/grid.svg#highlight-{@value}" />
             </svg:g>
         </svg:g>
     </xsl:template>

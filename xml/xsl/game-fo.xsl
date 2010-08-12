@@ -290,18 +290,13 @@
 
     <xsl:template match="player" mode="fo">
         <fo:instream-foreign-object xsl:use-attribute-sets="align-pieces">
-            <xsl:call-template name="svg-with-player">
-                <xsl:with-param name="colour"><xsl:value-of select="@value"/></xsl:with-param>
-            </xsl:call-template>
+            <xsl:call-template name="svg-with-player"/>
         </fo:instream-foreign-object>
     </xsl:template>
 
     <xsl:template match="piece" mode="fo">
         <fo:instream-foreign-object xsl:use-attribute-sets="align-pieces">
-            <xsl:call-template name="svg-with-piece">
-                <xsl:with-param name="colour"><xsl:value-of select="colour/@value"/></xsl:with-param>
-                <xsl:with-param name="shape"><xsl:value-of select="shape/@value"/></xsl:with-param>
-            </xsl:call-template>
+            <xsl:call-template name="svg-with-piece"/>
         </fo:instream-foreign-object>
     </xsl:template>
 
@@ -320,11 +315,21 @@
     <xsl:template match="legal" mode="fo">
         <fo:inline xsl:use-attribute-sets="legal-or-illegal">
                 <xsl:for-each select="*">
-                    <xsl:if test="preceding-sibling::*">
-                        <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
-                            <xsl:call-template name="svg-with-right-arrow" />
-                        </fo:instream-foreign-object>
-                    </xsl:if>
+                    <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
+                        <xsl:call-template name="svg-with-right-arrow" />
+                    </fo:instream-foreign-object>
+                    <xsl:apply-templates select="." mode="fo" />
+                </xsl:for-each>
+                <fo:leader leader-length="40px" />
+        </fo:inline>
+    </xsl:template>
+
+    <xsl:template match="forced" mode="fo">
+        <fo:inline xsl:use-attribute-sets="legal-or-illegal">
+                <xsl:for-each select="*">
+                    <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
+                        <xsl:call-template name="svg-with-forced-right-arrow" />
+                    </fo:instream-foreign-object>
                     <xsl:apply-templates select="." mode="fo" />
                 </xsl:for-each>
                 <fo:leader leader-length="40px" />
@@ -334,11 +339,9 @@
     <xsl:template match="illegal" mode="fo">
         <fo:inline xsl:use-attribute-sets="legal-or-illegal">
                 <xsl:for-each select="*">
-                    <xsl:if test="preceding-sibling::*">
-                        <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
-                            <xsl:call-template name="svg-with-crossed-right-arrow" />
-                        </fo:instream-foreign-object>
-                    </xsl:if>
+                    <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
+                        <xsl:call-template name="svg-with-crossed-right-arrow" />
+                    </fo:instream-foreign-object>
                     <xsl:apply-templates select="." mode="fo" />
                 </xsl:for-each>
         </fo:inline>

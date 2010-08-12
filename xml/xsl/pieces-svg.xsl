@@ -27,20 +27,27 @@
     -->
 
     <xsl:template name="svg-with-player">
-        <xsl:param name="colour"/>
+        <xsl:param name="colour"><xsl:value-of select="@value" /></xsl:param>
         <svg:svg width="12pt" height="12pt">
             <svg:g transform="translate(6,6)">
-                <svg:g clip-path="url(svg/pieces.svg#clip-path-player)">
-                    <svg:use xlink:href="svg/pieces.svg#fill-{$colour}"/>
+                <svg:g clip-path="url(../svg/pieces.svg#clip-path-player)">
+                    <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
                 </svg:g>
-                <svg:use xlink:href="svg/pieces.svg#player"/>
+                <svg:use xlink:href="../svg/pieces.svg#player"/>
             </svg:g>
         </svg:svg>
     </xsl:template>
 
     <xsl:template name="svg-with-piece">
-        <xsl:param name="colour"><xsl:value-of select="colour/@value" /></xsl:param>
-        <xsl:param name="shape"><xsl:value-of select="shape/@value" /></xsl:param>
+        <xsl:param name="colour"><xsl:value-of select="@colour" /></xsl:param>
+        <xsl:param name="shape">
+            <xsl:choose>
+                <xsl:when test="@shape">
+                    <xsl:value-of select="@shape" />
+                </xsl:when>
+                <xsl:otherwise>player</xsl:otherwise>
+            </xsl:choose>
+        </xsl:param>
         <xsl:param name="scale">
             <xsl:choose>
                 <xsl:when test="@scale">
@@ -66,8 +73,15 @@
     </xsl:template>
 
     <xsl:template name="svg-piece">
-        <xsl:param name="colour"><xsl:value-of select="colour/@value" /></xsl:param>
-        <xsl:param name="shape"><xsl:value-of select="shape/@value" /></xsl:param>
+        <xsl:param name="colour"><xsl:value-of select="@colour" /></xsl:param>
+        <xsl:param name="shape">
+            <xsl:choose>
+                <xsl:when test="@shape">
+                    <xsl:value-of select="@shape" />
+                </xsl:when>
+                <xsl:otherwise>player</xsl:otherwise>
+            </xsl:choose>
+        </xsl:param>
         <xsl:param name="scale">
             <xsl:choose>
                 <xsl:when test="@scale">
@@ -152,16 +166,16 @@
         <xsl:param name="cy">0</xsl:param>
         <xsl:param name="cx">0</xsl:param>
         <xsl:param name="colour"/>
-        <xsl:param name="shape"/>
+        <xsl:param name="shape">player</xsl:param>
         <xsl:param name="scale">1</xsl:param>
         <svg:g
             transform="translate({$cx},{$cy})">
         <svg:g
             transform="scale({$scale})">
-            <svg:g clip-path="url(svg/pieces.svg#clip-path-{$shape})">
-                <svg:use xlink:href="svg/pieces.svg#fill-{$colour}"/>
+            <svg:g clip-path="url(../svg/pieces.svg#clip-path-{$shape})">
+                <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
             </svg:g>
-            <svg:use xlink:href="svg/pieces.svg#{$shape}"/>
+            <svg:use xlink:href="../svg/pieces.svg#{$shape}"/>
         </svg:g>
         </svg:g>
     </xsl:template>

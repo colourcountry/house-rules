@@ -2,17 +2,17 @@
 
 if [ -z $1 ]
 then
-    echo "Usage: run_me.sh input.xml"
+    echo "Usage: run_me.sh input (for src/input.xml)"
     exit 1
 fi
 
 export XML="$1"
 export BASE=$(basename "$XML" .xml)
-echo "$BASE.xml --> $BASE.pdf"
-saxonb-xslt -ext:on "$BASE.xml" xsl/game.xsl
+echo "src/$BASE.xml --> pdf/$BASE.pdf"
+saxonb-xslt -ext:on src/"$BASE".xml xsl/game.xsl
 
 export HEADLESS="-Dlog4j.configuration=log4j.properties"
-fop out.fo "$BASE".pdf
+fop scrap/out.fo target/"$BASE".pdf
 
-evince "$BASE".pdf
+evince target/"$BASE".pdf
 

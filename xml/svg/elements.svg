@@ -7,6 +7,12 @@
           d="M 5 5 L 5 13 L 9 13 L 9 17 L 17 9 L 9 1 L 9 5 Z"
           fill="none" stroke="#005500" stroke-width="1pt" />
 
+    <g id="forced-right-arrow">
+       <path d="M 5 5 L 5 13 L 9 13 L 9 17 L 17 9 L 9 1 L 9 5 Z"
+          fill="none" stroke="#005500" stroke-width="1pt" />
+       <text x="15" y="20" font-size="48" fill="#005500">!</text>
+    </g>
+
     <path id="red-right-arrow"
           d="M 5 5 L 5 13 L 9 13 L 9 17 L 17 9 L 9 1 L 9 5 Z"
           fill="none" stroke="#880000" stroke-width="1pt" />
