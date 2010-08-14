@@ -1,0 +1,126 @@
+<game>
+    <name>Abyss</name>
+    <gamebody>
+        <about>
+            <author>Walter Joris</author>
+            <date>2002</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                6 ×
+                <piece colour="white" />
+            </pieces>
+        </players>
+        <players>
+            <player value="black" />
+            <pieces>
+                6 ×
+                <piece colour="black" />
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseNumber value="1" />
+                <player value="black" />
+            </phaseName>
+            Place all pieces in board squares
+            <goToPhase>
+                <phaseNumber value="2" />
+                <player value="white" />
+            </goToPhase>
+            <example>
+                <grid id="grid" rows="5" columns="5" size="small"
+                      left="edge" right="edge" bottom="edge" top="edge"/>
+                <legal>
+                    <grid use="grid">
+                        <square x="0" y="0"> <piece colour="white" /> </square>
+                        <square x="1" y="0"> <piece colour="black" /> </square>
+                        <square x="1" y="1"> <piece colour="black" /> </square>
+                        <square x="1" y="2"> <piece colour="black" /> </square>
+                        <square x="2" y="0"> <piece colour="white" /> </square>
+                        <square x="2" y="2"> <piece colour="black" /> </square>
+                        <square x="2" y="3"> <piece colour="white" /> </square>
+                        <square x="2" y="4"> <piece colour="white" /> </square>
+                        <square x="3" y="4"> <piece colour="white" /> </square>
+                        <square x="4" y="0"> <piece colour="black" /> </square>
+                        <square x="4" y="1"> <piece colour="black" /> </square>
+                        <square x="4" y="3"> <piece colour="white" /> </square>
+                    </grid>
+                </legal>
+            </example>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseNumber value="2" />
+                <player value="white" />
+            </phaseName>
+            Choose
+            <line>
+                swap sides and start second
+                <goToPhase>
+                    <phaseNumber value="3" />
+                    new <player value="white" />
+                </goToPhase>
+            </line>
+            <line>start second
+                <goToPhase>
+                    <phaseNumber value="3" />
+                    <player value="black" />
+                </goToPhase>
+            </line>
+            <line>start first but let <player value="black" /> decide colours
+                <goToPhase>
+                    <phaseNumber value="2" />
+                    <player value="black" />
+                </goToPhase>
+            </line>
+        </phase>
+        <subphase>
+            <phaseName>
+                <phaseNumber value="2" />
+                <player value="black" />
+            </phaseName>
+            Choose
+            <line>
+                swap sides and
+                start second
+                <goToPhase>
+                    <phaseNumber value="3" />
+                    new <player value="black" />
+                </goToPhase>
+            </line>
+            <line>start second
+                <goToPhase>
+                    <phaseNumber value="3" />
+                    <player value="white" />
+                </goToPhase>
+            </line>
+        </subphase>
+        <phase>
+            <phaseName>
+                <phaseNumber value="3" />
+            </phaseName>
+                Move a <piece colour="black" />
+                to an abutting square occupied by a
+                <piece colour="white" />
+                and capture the
+                <piece colour="white" />
+            <goToPhase>
+                <phaseNumber value="1" />
+                <player value="white" />
+            </goToPhase>
+        </phase>
+        <subphase>
+            <phaseName>
+                <phaseNumber value="1" />
+                <player value="black" /> or
+                <player value="white" />
+            </phaseName>
+                No legal moves
+            <goToPhase>
+                <phaseNumber value="End" />
+            </goToPhase>            
+        </subphase>
+    </gamebody>
+</game>

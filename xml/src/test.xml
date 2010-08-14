@@ -6,43 +6,61 @@
             <date>2010</date>
         </about>
         <players>
-            <player value="purple" />
+            <player value="white" />
             <pieces>
-                5×
-                <piece shape="small" colour="purple" />
-                5×
-                <piece shape="medium" colour="purple" />
-                5×
-                <piece shape="large" colour="purple" />
-                1×
-                <piece shape="king" colour="purple" />
-                1×
-                <piece shape="queen" colour="purple" />
-                2×
-                <piece shape="bishop" colour="purple" />
-                2×
-                <piece shape="rook" colour="purple" />
-                2×
-                <piece shape="knight" colour="purple" />
-                8×
-                <piece shape="pawn" colour="purple" />
+                1 ×
+                <piece shape="king" colour="white" />
+                1 ×
+                <piece shape="queen" colour="white" />
+                2 ×
+                <piece shape="bishop" colour="white" />
+                2 ×
+                <piece shape="rook" colour="white" />
+                2 ×
+                <piece shape="knight" colour="white" />
+                8 ×
+                <piece shape="pawn" colour="white" />
+                2 ×
+                <piece shape="knightrider" colour="white" />
+                2 ×
+                <piece shape="archbishop" colour="white" />
+                2 ×
+                <piece shape="chancellor" colour="white" />
+                2 ×
+                <piece shape="elephant" colour="white" />
+                2 ×
+                <piece shape="cannon" colour="white" />
+                2 ×
+                <piece shape="grasshopper" colour="white" />
             </pieces>
         </players>
         <players>
-            <player value="green" />
+            <player value="black" />
             <pieces>
-                2×
-                <piece shape="knightrider" colour="green" />
-                2×
-                <piece shape="archbishop" colour="green" />
-                2×
-                <piece shape="chancellor" colour="green" />
-                2×
-                <piece shape="elephant" colour="green" />
-                2×
-                <piece shape="cannon" colour="green" />
-                2×
-                <piece shape="grasshopper" colour="green" />
+                1 ×
+                <piece shape="king" colour="black" />
+                1 ×
+                <piece shape="queen" colour="black" />
+                2 ×
+                <piece shape="bishop" colour="black" />
+                2 ×
+                <piece shape="rook" colour="black" />
+                2 ×
+                <piece shape="knight" colour="black" />
+                8 ×
+                <piece shape="pawn" colour="black" />
+                2 ×
+                <piece shape="knightrider" colour="black" />
+                2 ×
+                <piece shape="archbishop" colour="black" />
+                2 ×
+                <piece shape="chancellor" colour="black" />
+                2 ×
+                <piece shape="elephant" colour="black" />
+                2 ×
+                <piece shape="cannon" colour="black" />
+                2 ×
+                <piece shape="grasshopper" colour="black" />
             </pieces>
         </players>
         <players>

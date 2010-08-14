@@ -8,7 +8,7 @@
     <xsl:attribute-set name="grid-line">
         <xsl:attribute name="fill">none</xsl:attribute>
         <xsl:attribute name="stroke">black</xsl:attribute>
-        <xsl:attribute name="stroke-width">1pt</xsl:attribute>
+        <xsl:attribute name="stroke-width">0.5pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="arrow">
