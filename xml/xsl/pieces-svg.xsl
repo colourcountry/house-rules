@@ -45,7 +45,7 @@
                 <xsl:when test="@shape">
                     <xsl:value-of select="@shape" />
                 </xsl:when>
-                <xsl:otherwise>player</xsl:otherwise>
+                <xsl:otherwise>circle</xsl:otherwise>
             </xsl:choose>
         </xsl:param>
         <xsl:param name="scale">
@@ -83,7 +83,7 @@
                 <xsl:when test="@shape">
                     <xsl:value-of select="@shape" />
                 </xsl:when>
-                <xsl:otherwise>player</xsl:otherwise>
+                <xsl:otherwise>circle</xsl:otherwise>
             </xsl:choose>
         </xsl:param>
         <xsl:param name="scale">
@@ -170,7 +170,7 @@
         <xsl:param name="cy">0</xsl:param>
         <xsl:param name="cx">0</xsl:param>
         <xsl:param name="colour"/>
-        <xsl:param name="shape">player</xsl:param>
+        <xsl:param name="shape">circle</xsl:param>
         <xsl:param name="scale">1</xsl:param>
         <svg:g
             transform="translate({$cx},{$cy})">
@@ -186,13 +186,13 @@
 
     <!-- FIXME -->
     <xsl:template name="get-piece-height">
-        <xsl:param name="shape">player</xsl:param>
+        <xsl:param name="shape">circle</xsl:param>
         <xsl:variable name="bounding-box-shape">bounding-box-<xsl:value-of select="$shape" /></xsl:variable>
         <xsl:value-of select="document('../svg/pieces.svg')//*[@id=$bounding-box-shape]/@height" />
     </xsl:template>
 
     <xsl:template name="get-piece-width">
-        <xsl:param name="shape">player</xsl:param>
+        <xsl:param name="shape">circle</xsl:param>
         <xsl:variable name="bounding-box-shape">bounding-box-<xsl:value-of select="$shape" /></xsl:variable>
         <xsl:value-of select="document('../svg/pieces.svg')//*[@id=$bounding-box-shape]/@width" />
     </xsl:template>

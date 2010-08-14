@@ -3,26 +3,55 @@
     <gamebody>
         <about>
             <author>Me</author>
-            <date>2005</date>
+            <date>2010</date>
         </about>
         <players>
-            <player value="white" />
+            <player value="purple" />
             <pieces>
                 5×
-                <piece> <shape value="small" /> <colour value="white" /> </piece>
+                <piece shape="small" colour="purple" />
                 5×
-                <piece> <shape value="medium" /> <colour value="white" /> </piece>
+                <piece shape="medium" colour="purple" />
                 5×
-                <piece> <shape value="large" /> <colour value="white" /> </piece>
+                <piece shape="large" colour="purple" />
+                1×
+                <piece shape="king" colour="purple" />
+                1×
+                <piece shape="queen" colour="purple" />
+                2×
+                <piece shape="bishop" colour="purple" />
+                2×
+                <piece shape="rook" colour="purple" />
+                2×
+                <piece shape="knight" colour="purple" />
+                8×
+                <piece shape="pawn" colour="purple" />
+            </pieces>
+        </players>
+        <players>
+            <player value="green" />
+            <pieces>
+                2×
+                <piece shape="knightrider" colour="green" />
+                2×
+                <piece shape="archbishop" colour="green" />
+                2×
+                <piece shape="chancellor" colour="green" />
+                2×
+                <piece shape="elephant" colour="green" />
+                2×
+                <piece shape="cannon" colour="green" />
+                2×
+                <piece shape="grasshopper" colour="green" />
             </pieces>
         </players>
         <players>
             <player value="red" />
             <pieces>
-                <piece> <shape value="club" /> <colour value="black" /> </piece>
-                <piece> <shape value="heart" /> <colour value="red" /> </piece>
-                <piece> <shape value="diamond" /> <colour value="red" /> </piece>
-                <piece> <shape value="spade" /> <colour value="black" /> </piece>
+                <piece shape="club" colour="black" />
+                <piece shape="heart" colour="red" />
+                <piece shape="diamond" colour="red" />
+                <piece shape="spade" colour="black" />
             </pieces>
         </players>
         <phase>
@@ -33,18 +62,18 @@
             <grid rows="4" columns="4" left="edge" right="edge" bottom="edge" top="edge">
                 <square x="2" y="1">
                     <stack>
-                        <piece> <colour value="orange" /> <shape value="small" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece shape="small" colour="orange" />
+                        <piece shape="small" colour="black" />
                     </stack>
                 </square>
                 <square x="0" y="3">
                     <stack>
-                        <piece> <colour value="purple" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="yellow" /> <shape value="large" /> </piece>
+                        <piece shape="medium" colour="purple" />
+                        <piece shape="large" colour="yellow" />
                     </stack>
                 </square>
                 <square x="2" y="0">
-                    <piece> <colour value="green" /> <shape value="large" /> </piece>
+                    <piece shape="large" colour="green" />
                 </square>
             </grid>
             </example>
@@ -53,20 +82,20 @@
             <grid use="cheese">
                 <square x="1" y="2">
                         <highlight value="cross" />
-                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                        <piece shape="pawn" colour="white" />
                 </square>
             </grid>
-            <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="0.7" id="cheese">
+            <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="small" id="cheese">
                 <square x="4" y="0">
-                        <piece> <colour value="white" /> <shape value="king" /> </piece>
+                        <piece shape="king" colour="white" />
                 </square>
                 <square x="2" y="1">
-                        <piece> <colour value="black" /> <shape value="king" /> </piece>
+                        <piece shape="king" colour="black" />
                 </square>
                 <square x="4" y="1">
                         <highlight value="shade" />
                         <arrow x="2" y="2" />
-                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                        <piece shape="pawn" colour="white" />
                 </square>
                 <square x="7" y="7">
                         <highlight value="square" />
@@ -74,22 +103,22 @@
                             <arrow-segment x="-4" y="0" />
                             <arrow-segment x="0" y="-2" />
                         </arrow>
-                        <piece> <colour value="white" /> <shape value="pawn" /> </piece>
+                        <piece shape="pawn" colour="white" />
                 </square>
                 <square x="3" y="5">
                         <highlight value="circle" />
                 </square>
                 <square x="3" y="3">
-                        <piece> <colour value="black" /> <shape value="knight" /> </piece>
+                        <piece shape="knight" colour="black" />
                 </square>
                 <square x="4" y="3">
-                        <piece> <colour value="blue" /> <shape value="knight" /> </piece>
+                        <piece shape="knight" colour="blue" />
                 </square>
                 <square x="1" y="4">
-                        <piece> <colour value="white" /> <shape value="queen" /> </piece>
+                        <piece shape="queen" colour="white" />
                 </square>
                 <square x="5" y="3">
-                        <piece> <colour value="red" /> <shape value="pawn" /> </piece>
+                        <piece shape="pawn" colour="red" />
                 </square>
             </grid>
             </legal>
@@ -97,25 +126,25 @@
             <example>
             <grid rows="19" columns="19" left="edge" right="edge" bottom="edge" top="edge" size="0.35">
                 <square x="5" y="8">
-                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="black" />
                 </square>
                 <square x="6" y="9">
-                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="black" />
                 </square>
                 <square x="5" y="10">
-                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="black" />
                 </square>
                 <square x="4" y="9">
-                        <piece> <colour value="black" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="black" />
                 </square>
                 <square x="6" y="8">
-                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="white" />
                 </square>
                 <square x="7" y="9">
-                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="white" />
                 </square>
                 <square x="6" y="10">
-                        <piece> <colour value="white" /> <shape value="player" /> </piece>
+                        <piece shape="player" colour="white" />
                 </square>
             </grid>
             </example>
