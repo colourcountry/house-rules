@@ -8,14 +8,14 @@
         <players>
             <player value="white" />
             <pieces>
-                22×
+                22 ×
                 <piece colour="white" />
             </pieces>
         </players>
         <players>
             <player value="black" />
             <pieces>
-                3×
+                3 ×
                 <piece colour="black" />
             </pieces>
         </players>
@@ -76,13 +76,11 @@
                 <phaseNumber value="1" />
                 <player value="black" />
             </phaseName>
-            <line>
                 Move a <piece colour="black" />
                 to an abutting square occupied by a
                 <piece colour="white" />
                 and capture the
                 <piece colour="white" />
-            </line>
             <goToPhase>
                 <phaseNumber value="1" />
                 <player value="white" />

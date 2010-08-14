@@ -14,7 +14,7 @@
     <xsl:template match="/" mode="fo">
         <fo:root>
           <fo:layout-master-set>
-            <fo:simple-page-master master-name="master"
+            <fo:simple-page-master master-name="A4"
                                    page-width="210mm"
                                    page-height="297mm">
               <fo:region-body 
@@ -31,9 +31,26 @@
                extent="1cm" 
                />
             </fo:simple-page-master>
+            <fo:simple-page-master master-name="A5"
+                                   page-width="148.5mm"
+                                   page-height="210mm">
+              <fo:region-body 
+               region-name="xsl-region-body" 
+               margin="1cm" 
+                />
+              <fo:region-before 
+               region-name="xsl-region-before" 
+               extent="1cm" 
+                display-align="before" />
+              <fo:region-after 
+               region-name="xsl-region-after" 
+               display-align="after"
+               extent="1cm" 
+               />
+            </fo:simple-page-master>
           </fo:layout-master-set>
 
-          <fo:page-sequence master-reference="master">
+          <fo:page-sequence master-reference="A5">
             <fo:flow flow-name="xsl-region-body">
                 <fo:block xsl:use-attribute-sets="all">
                   <xsl:apply-templates mode="fo"/>
@@ -275,10 +292,12 @@
     </xsl:template>
 
     <xsl:template match="goToPhase" mode="fo">
-        <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
-            <xsl:call-template name="svg-with-right-arrow" />
-        </fo:instream-foreign-object>
-        <xsl:apply-templates mode="fo" />
+        <fo:inline keep-together.within-line="always">
+            <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
+                <xsl:call-template name="svg-with-right-arrow" />
+            </fo:instream-foreign-object>
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
     </xsl:template>
 
     

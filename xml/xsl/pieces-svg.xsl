@@ -57,17 +57,21 @@
             </xsl:choose>
         </xsl:param>
         <xsl:variable name="piece-height">
-            <xsl:call-template name="get-piece-height" />
+            <xsl:call-template name="get-piece-height">
+                <xsl:with-param name="shape" select="$shape" />
+            </xsl:call-template>
         </xsl:variable>
         <xsl:variable name="piece-width">
-            <xsl:call-template name="get-piece-width" />
+            <xsl:call-template name="get-piece-width">
+                <xsl:with-param name="shape" select="$shape" />
+            </xsl:call-template>
         </xsl:variable>
         <svg:svg width="{$piece-width * $scale}" height="{$piece-height * $scale}">
             <xsl:call-template name="svg-piece">
                 <xsl:with-param name="colour"><xsl:value-of select="$colour" /></xsl:with-param>
                 <xsl:with-param name="shape"><xsl:value-of select="$shape" /></xsl:with-param>
-                <xsl:with-param name="cy"><xsl:value-of select="$piece-height * $scale / 2" /></xsl:with-param>
-                <xsl:with-param name="cx"><xsl:value-of select="$piece-width * $scale / 2" /></xsl:with-param>
+                <xsl:with-param name="cy"><xsl:value-of select="$piece-height * $scale div 2" /></xsl:with-param>
+                <xsl:with-param name="cx"><xsl:value-of select="$piece-width * $scale div 2" /></xsl:with-param>
             </xsl:call-template>
         </svg:svg>
     </xsl:template>
@@ -181,8 +185,16 @@
     </xsl:template>
 
     <!-- FIXME -->
-    <xsl:template name="get-piece-height">12</xsl:template>
+    <xsl:template name="get-piece-height">
+        <xsl:param name="shape">player</xsl:param>
+        <xsl:variable name="bounding-box-shape">bounding-box-<xsl:value-of select="$shape" /></xsl:variable>
+        <xsl:value-of select="document('../svg/pieces.svg')//*[@id=$bounding-box-shape]/@height" />
+    </xsl:template>
 
-    <xsl:template name="get-piece-width">30</xsl:template>
+    <xsl:template name="get-piece-width">
+        <xsl:param name="shape">player</xsl:param>
+        <xsl:variable name="bounding-box-shape">bounding-box-<xsl:value-of select="$shape" /></xsl:variable>
+        <xsl:value-of select="document('../svg/pieces.svg')//*[@id=$bounding-box-shape]/@width" />
+    </xsl:template>
 
 </xsl:stylesheet>
