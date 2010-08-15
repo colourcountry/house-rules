@@ -1,0 +1,96 @@
+<game>
+    <name>Symbols</name>
+    <gamebody>
+        <dl>
+            <dlentry>
+                <dt>
+                    <player value="white" />,
+                    <player value="black" />,
+                    <player value="green" />,
+                    <player value="orange" />
+                    ...
+                </dt>
+                <dd>
+                    Players.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    2 <player value="white" />,
+                    5 <player value="black" />
+                    ...
+                </dt>
+                <dd>
+                    Victory points.
+                </dd>
+                <dd>
+                    If no other end condition is mentioned,
+                    the player with the most victory points
+                    wins the game.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece shape="king" colour="white" />
+                    <piece shape="queen" colour="white" />
+                    <piece shape="bishop" colour="white" />
+                    <piece shape="rook" colour="white" />
+                    <piece shape="knight" colour="white" />
+                    <piece shape="pawn" colour="white" />
+                    <piece shape="knightrider" colour="white" />
+                    <piece shape="archbishop" colour="white" />
+                    <piece shape="chancellor" colour="white" />
+                    <piece shape="elephant" colour="white" />
+                    <piece shape="cannon" colour="white" />
+                    <piece shape="grasshopper" colour="white" />
+                </dt>
+                <dd>
+                    Chess pieces.
+                </dd>
+                <dd>
+                    These pieces have a specific move which is
+                    determined by their shape. Some chess pieces
+                    use a different move when they are capturing
+                    another piece.
+                </dd>
+                <dd>
+                    Chess pieces which are the same colour as a player
+                    can only be used by that player.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece shape="north" colour="white" />
+                </dt>
+                <dd>
+                    Directional pieces.
+                </dd>
+                <dd>
+                    These pieces have a significant direction
+                    <piece shape="north" colour="white" />
+                    <piece shape="west" colour="white" />
+                    <piece shape="south" colour="white" />
+                    <piece shape="east" colour="white" />.
+                    "Forward", "backward", "left" and "right" are
+                    always relative to this direction.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    2 <piece shape="club" colour="black" />,
+                    7 <piece shape="heart" colour="red" />,
+                    Q <piece shape="diamond" colour="red" />,
+                    K <piece shape="spade" colour="black" />,
+                </dt>
+                <dd>
+                    Cards.
+                </dd>
+                <dd>
+                    The identity of a card may be hidden,
+                    visible to only one player, or visible to
+                    all players.
+                </dd>
+            </dlentry>
+        </dl>
+    </gamebody>
+</game>

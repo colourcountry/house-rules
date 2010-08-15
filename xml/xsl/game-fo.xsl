@@ -141,13 +141,15 @@
             <xsl:apply-templates select="name" mode="fo-top" />
             <xsl:apply-templates select="gamebody/about" mode="fo-top" />
         </fo:block>
-        <fo:block xsl:use-attribute-sets="subsection">
-            <fo:list-block>
-                <xsl:apply-templates select="gamebody/players" mode="fo-top" />
-                <xsl:apply-templates select="gamebody/board" mode="fo-top" />
-                <xsl:apply-templates select="gamebody/setup" mode="fo-top" />
-            </fo:list-block>
-        </fo:block>
+        <xsl:if test="gamebody/players|gamebody/board|gamebody/setup">
+            <fo:block xsl:use-attribute-sets="subsection">
+                <fo:list-block>
+                    <xsl:apply-templates select="gamebody/players" mode="fo-top" />
+                    <xsl:apply-templates select="gamebody/board" mode="fo-top" />
+                    <xsl:apply-templates select="gamebody/setup" mode="fo-top" />
+                </fo:list-block>
+            </fo:block>
+        </xsl:if>
         <xsl:apply-templates select="gamebody" mode="fo" />
     </xsl:template>
 
