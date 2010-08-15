@@ -63,17 +63,17 @@
 
     <xsl:attribute-set name="all">
         <xsl:attribute name="font-family">Helvetica</xsl:attribute>
-        <xsl:attribute name="font-size">12pt</xsl:attribute>
+        <xsl:attribute name="font-size">10pt</xsl:attribute>
         <xsl:attribute name="line-height">18pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="top">
-        <xsl:attribute name="padding-bottom">12pt</xsl:attribute>
-        <xsl:attribute name="border-bottom">6pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
+        <xsl:attribute name="padding-bottom">6pt</xsl:attribute>
+        <xsl:attribute name="border-bottom">4pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="section">
-        <xsl:attribute name="padding-top">6pt</xsl:attribute>
+        <xsl:attribute name="padding-top">4pt</xsl:attribute>
         <xsl:attribute name="padding-bottom">18pt</xsl:attribute>
         <xsl:attribute name="border-top">2pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
@@ -102,12 +102,12 @@
     </xsl:attribute-set>
 
     <xsl:attribute-set name="title">
-        <xsl:attribute name="font-size">32pt</xsl:attribute>
+        <xsl:attribute name="font-size">24pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="subtitle">
-        <xsl:attribute name="font-size">20pt</xsl:attribute>
+        <xsl:attribute name="font-size">14pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="keyword">
@@ -123,8 +123,8 @@
 
     <xsl:attribute-set name="phase-name">
         <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
-        <xsl:attribute name="alignment-adjust">-4pt</xsl:attribute>
-        <xsl:attribute name="font-size">24pt</xsl:attribute>
+        <xsl:attribute name="alignment-adjust">-1pt</xsl:attribute>
+        <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="color"><xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
@@ -365,6 +365,8 @@
                 </xsl:for-each>
         </fo:inline>
     </xsl:template>
+
+    <xsl:template match="hide" mode="fo" />
 
     <xsl:template match="grid" mode="fo">
         <xsl:variable name="height"><xsl:call-template name="get-grid-height"/></xsl:variable>

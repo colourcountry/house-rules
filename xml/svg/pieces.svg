@@ -3,6 +3,8 @@
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
 
+    <!-- FILLS -->
+
     <g id="fill-white">
         <rect x="-20" y="-20"
               width="40" height="40"
@@ -141,11 +143,40 @@
               stroke="none" />
     </g>
 
+    <!-- PLAYER -->
+
+    <g id="player">
+        <path
+            d="m 0.01576969,-4.1541865 c 0.17167817,0 1.26706091,2.5127551 1.40595171,2.613665 0.1388905,0.1009099 2.8671549,0.3661969 2.9202065,0.529473 C 4.3949789,-0.84777281 2.3436988,0.97048209 2.2906475,1.1337581 2.2375955,1.2970338 2.8283728,3.9737455 2.6894823,4.0746554 2.5505915,4.1755656 0.18744786,2.7865533 0.01576934,2.7865533 c -0.17167814,0 -2.53482214,1.389012 -2.67371264,1.2881021 -0.1388909,-0.1009099 0.4518864,-2.7776219 0.3988348,-2.9408976 -0.053052,-0.16327571 -2.104332,-1.98153101 -2.0512804,-2.1448067 0.053052,-0.1632757 2.781316,-0.4285627 2.9202065,-0.5294726 0.1388908,-0.1009099 1.2342736,-2.613665 1.40595209,-2.613665 z"
+            stroke-width="0.7pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-player">
+        <use xlink:href="#player"/>
+    </clipPath>
+
+    <rect id="bounding-box-player"
+          x="-5" y="-5" width="10" height="10" />
+
+
+
+
+
+
+
+
+
+
+    <!-- SIMPLE PIECES -->
+
     <g id="circle">
         <circle
             cx="0" cy="0"
             r="4"
-            stroke-width="1pt"
+            stroke-width="0.7pt"
             stroke="black"
             fill="none"
         />
@@ -158,11 +189,84 @@
     <rect id="bounding-box-circle"
           x="-5" y="-5" width="10" height="10" />
 
+
+
+
+
+
+
+
+
+    <!-- DIRECTIONAL PIECES -->
+
+    <g id="east">
+        <path
+              d="m -4 -1.5 l 0 3 l 4 0 l 0 3 l 4.5 -4.5 l -4.5 -4.5 l 0 3 z"
+              fill="none"
+              stroke="black"
+              stroke-width="0.7pt" />
+    </g>
+
+    <clipPath id="clip-path-north">
+        <use xlink:href="#north"/>
+    </clipPath>
+
+    <rect id="bounding-box-north"
+          x="-5" y="-5" width="10" height="10" />
+
+    <g id="north">
+        <g transform="rotate(-90)">
+            <use xlink:href="#east" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-east">
+        <use xlink:href="#east"/>
+    </clipPath>
+
+    <rect id="bounding-box-east"
+          x="-5" y="-5" width="10" height="10" />
+
+    <g id="west">
+        <g transform="rotate(-180)">
+            <use xlink:href="#east" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-south">
+        <use xlink:href="#south"/>
+    </clipPath>
+
+    <rect id="bounding-box-south"
+          x="-5" y="-5" width="10" height="10" />
+
+    <g id="south">
+        <g transform="rotate(-270)">
+            <use xlink:href="#east" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-west">
+        <use xlink:href="#west"/>
+    </clipPath>
+
+    <rect id="bounding-box-west"
+          x="-5" y="-5" width="10" height="10" />
+
+
+
+
+
+
+
+
+    <!-- STACKING PIECES -->
+
     <g id="small">
         <rect
             x="-4" y="-4"
             width="8" height="8"
-            stroke-width="1pt"
+            stroke-width="0.7pt"
             stroke="black"
             fill="none"
         />
@@ -180,7 +284,7 @@
         <rect
             x="-9" y="-4"
             width="18" height="8"
-            stroke-width="1pt"
+            stroke-width="0.7pt"
             stroke="black"
             fill="none"
         />
@@ -197,7 +301,7 @@
         <rect
             x="-14" y="-4"
             width="28" height="8"
-            stroke-width="1pt"
+            stroke-width="0.7pt"
             stroke="black"
             fill="none"
         />
@@ -210,21 +314,13 @@
     <rect id="bounding-box-large"
           x="-15" y="-5" width="30" height="10" />
 
-    <g id="player">
-        <path
-            d="m 0.01576969,-4.1541865 c 0.17167817,0 1.26706091,2.5127551 1.40595171,2.613665 0.1388905,0.1009099 2.8671549,0.3661969 2.9202065,0.529473 C 4.3949789,-0.84777281 2.3436988,0.97048209 2.2906475,1.1337581 2.2375955,1.2970338 2.8283728,3.9737455 2.6894823,4.0746554 2.5505915,4.1755656 0.18744786,2.7865533 0.01576934,2.7865533 c -0.17167814,0 -2.53482214,1.389012 -2.67371264,1.2881021 -0.1388909,-0.1009099 0.4518864,-2.7776219 0.3988348,-2.9408976 -0.053052,-0.16327571 -2.104332,-1.98153101 -2.0512804,-2.1448067 0.053052,-0.1632757 2.781316,-0.4285627 2.9202065,-0.5294726 0.1388908,-0.1009099 1.2342736,-2.613665 1.40595209,-2.613665 z"
-            stroke-width="1pt"
-            stroke="black"
-            fill="none"
-        />
-    </g>
 
-    <clipPath id="clip-path-player">
-        <use xlink:href="#player"/>
-    </clipPath>
 
-    <rect id="bounding-box-player"
-          x="-5" y="-5" width="10" height="10" />
+
+
+
+
+
 
 
     <!-- CHESS PIECES -->
@@ -334,6 +430,12 @@
 
 
 
+
+
+
+
+
+
     <!-- CHINESE CHESS PIECES -->
 
     <!-- rook == chess rook -->
@@ -371,6 +473,14 @@
     <clipPath id="clip-path-cannon">
         <use xlink:href="#cannon"/>
     </clipPath>
+
+
+
+
+
+
+
+
 
 
     <!-- FAIRY CHESS PIECES -->
@@ -451,6 +561,12 @@
 
 
 
+
+
+
+
+
+
     <!-- PLAYING CARD SUITS -->
 
     <g id="spade">
@@ -474,7 +590,7 @@
 0.63998,0.08 0.912,0.144"
               fill="none"
               stroke="black"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
         </g>
     </g>
 
@@ -503,7 +619,7 @@
 0.528,0.176 1.168,0.328 1.92,0.456"
               fill="none"
               stroke="black"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
         </g>
     </g>
 
@@ -531,7 +647,7 @@
 2.2319999,-0.648"
               fill="none"
               stroke="black"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
         </g>
     </g>
 
@@ -549,10 +665,10 @@
 1.47198,1.98402 2.65598,3.47202 3.552,4.46399996 -1.12001,1.28002004 -2.32802,2.80002004 
 -3.624,4.56000004 -1.2800199,1.76 -2.18401995,3.12 -2.71199995,4.08 C -1.2491803,6.51037 
 -3.3451803,3.63039 -6.3531603,-0.01763004 -3.2651803,-3.74561 -1.1691803,-6.61761 
--0.06516025,-8.6336201" />
+-0.06516025,-8.6336201"
               fill="none"
               stroke="black"
-              stroke-width="1pt" />
+              stroke-width="0.7pt" />
         </g>
     </g>
 
