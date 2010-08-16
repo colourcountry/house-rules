@@ -56,25 +56,25 @@
                 <player value="white" />
             </phaseName>
             Choose
-            <line>
+            <p>
                 swap sides and start second
                 <goToPhase>
                     <phaseNumber value="3" />
                     new <player value="white" />
                 </goToPhase>
-            </line>
-            <line>start second
+            </p>
+            <p>start second
                 <goToPhase>
                     <phaseNumber value="3" />
                     <player value="black" />
                 </goToPhase>
-            </line>
-            <line>start first but let <player value="black" /> decide colours
+            </p>
+            <p>start first but let <player value="black" /> decide colours
                 <goToPhase>
                     <phaseNumber value="2" />
                     <player value="black" />
                 </goToPhase>
-            </line>
+            </p>
         </phase>
         <subphase>
             <phaseName>
@@ -82,20 +82,20 @@
                 <player value="black" />
             </phaseName>
             Choose
-            <line>
+            <p>
                 swap sides and
                 start second
                 <goToPhase>
                     <phaseNumber value="3" />
                     new <player value="black" />
                 </goToPhase>
-            </line>
-            <line>start second
+            </p>
+            <p>start second
                 <goToPhase>
                     <phaseNumber value="3" />
                     <player value="white" />
                 </goToPhase>
-            </line>
+            </p>
         </subphase>
         <phase>
             <phaseName>

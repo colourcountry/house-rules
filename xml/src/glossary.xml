@@ -4,11 +4,16 @@
         <dl>
             <dlentry>
                 <dt>
-                    <player value="white" />,
-                    <player value="black" />,
-                    <player value="green" />,
+                    <player value="black" />
+                    <player value="white" />
+                    <player value="red" />
                     <player value="orange" />
-                    ...
+                    <player value="yellow" />
+                    <player value="green" />
+                    <player value="teal" />
+                    <player value="blue" />
+                    <player value="purple" />
+                    <player value="clear" />
                 </dt>
                 <dd>
                     Players.
@@ -16,8 +21,8 @@
             </dlentry>
             <dlentry>
                 <dt>
-                    2 <player value="white" />,
-                    5 <player value="black" />
+                    5 <player value="black" />,
+                    2 <player value="white" />
                     ...
                 </dt>
                 <dd>
@@ -31,7 +36,73 @@
             </dlentry>
             <dlentry>
                 <dt>
+                    <piece shape="circle" colour="black" />
+                    <piece shape="circle" colour="white" />
+                    <piece shape="circle" colour="red" />
+                    <piece shape="circle" colour="orange" />
+                    <piece shape="circle" colour="yellow" />
+                    <piece shape="circle" colour="green" />
+                    <piece shape="circle" colour="teal" />
+                    <piece shape="circle" colour="blue" />
+                    <piece shape="circle" colour="purple" />
+                    <piece shape="circle" colour="clear" />
+                    <piece shape="double-circle" colour="black" />
+                    <piece shape="double-circle" colour="white" />
+                    <piece shape="double-circle" colour="red" />
+                    <piece shape="double-circle" colour="orange" />
+                    <piece shape="double-circle" colour="yellow" />
+                    <piece shape="double-circle" colour="green" />
+                    <piece shape="double-circle" colour="teal" />
+                    <piece shape="double-circle" colour="blue" />
+                    <piece shape="double-circle" colour="purple" />
+                    <piece shape="double-circle" colour="clear" />
+                    <piece shape="triple-circle" colour="black" />
+                    <piece shape="triple-circle" colour="white" />
+                    <piece shape="triple-circle" colour="red" />
+                    <piece shape="triple-circle" colour="orange" />
+                    <piece shape="triple-circle" colour="yellow" />
+                    <piece shape="triple-circle" colour="green" />
+                    <piece shape="triple-circle" colour="teal" />
+                    <piece shape="triple-circle" colour="blue" />
+                    <piece shape="triple-circle" colour="purple" />
+                    <piece shape="triple-circle" colour="clear" />
+                </dt>
+                <dd>
+                    Standard pieces.
+                </dd>
+                <dd>
+                    These pieces normally move about a board.
+                    They may be able to capture other pieces.
+                    Rules vary for moving and capturing.
+                </dd>
+                <dd>
+                    Standard pieces which are the same colour as a player
+                    can only be used by that player.
+                    For pieces of other colours, rules vary.
+                </dd>
+                <dd>
+                    Players often have several types of pieces
+                    with different strengths, normally
+                    <piece shape="circle" colour="black" /> &lt;
+                    <piece shape="double-circle" colour="black" /> &lt;
+                    <piece shape="triple-circle" colour="black" />.
+                    If only one type of piece is available,
+                    stronger pieces can be represented by stacks
+                    of pieces.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece shape="king" colour="black" />
                     <piece shape="king" colour="white" />
+                    <piece shape="king" colour="red" />
+                    <piece shape="king" colour="orange" />
+                    <piece shape="king" colour="yellow" />
+                    <piece shape="king" colour="green" />
+                    <piece shape="king" colour="teal" />
+                    <piece shape="king" colour="blue" />
+                    <piece shape="king" colour="purple" />
+                    <piece shape="king" colour="clear" />
                     <piece shape="queen" colour="white" />
                     <piece shape="bishop" colour="white" />
                     <piece shape="rook" colour="white" />
@@ -48,8 +119,13 @@
                     Chess pieces.
                 </dd>
                 <dd>
-                    These pieces have a specific move which is
-                    determined by their shape. Some chess pieces
+                    These pieces are like standard pieces, but
+                    they have a specific move which is
+                    determined by their shape. The move is the
+                    same in any game that uses the piece.
+                </dd>
+                <dd>
+                    Some chess pieces
                     use a different move when they are capturing
                     another piece.
                 </dd>
@@ -57,38 +133,56 @@
                     Chess pieces which are the same colour as a player
                     can only be used by that player.
                 </dd>
+                <dd>
+                    In some games, chess pieces can be transformed into
+                    other pieces. This is normally shown by replacing the
+                    piece with a spare (or captured) piece, or by
+                    improvising. Rules vary.
+                </dd>
             </dlentry>
             <dlentry>
                 <dt>
-                    <piece shape="north" colour="white" />
+                    <piece shape="north" colour="black" />
+                    <piece shape="east" colour="white" />
+                    <piece shape="south" colour="red" />
+                    <piece shape="west" colour="orange" />
+                    <piece shape="north" colour="yellow" />
+                    <piece shape="south" colour="green" />
+                    <piece shape="east" colour="teal" />
+                    <piece shape="north" colour="blue" />
+                    <piece shape="west" colour="purple" />
+                    <piece shape="south" colour="clear" />
                 </dt>
                 <dd>
                     Directional pieces.
                 </dd>
                 <dd>
-                    These pieces have a significant direction
-                    <piece shape="north" colour="white" />
-                    <piece shape="west" colour="white" />
-                    <piece shape="south" colour="white" />
-                    <piece shape="east" colour="white" />.
-                    "Forward", "backward", "left" and "right" are
-                    always relative to this direction.
+                    These pieces have a significant direction,
+                    and can be rotated to change the direction.
+                    The terms "forward", "backward", "left" and "right"
+                    are always relative to a piece's direction.
                 </dd>
             </dlentry>
             <dlentry>
                 <dt>
-                    2 <piece shape="club" colour="black" />,
-                    7 <piece shape="heart" colour="red" />,
+                    <card>
+                        2 <piece shape="club" colour="black" />
+                    </card>
                     Q <piece shape="diamond" colour="red" />,
                     K <piece shape="spade" colour="black" />,
                 </dt>
                 <dd>
-                    Cards.
+                    Mystery pieces.
                 </dd>
                 <dd>
-                    The identity of a card may be hidden,
+                    The identity of these pieces may be hidden,
                     visible to only one player, or visible to
-                    all players.
+                    all players. (Even if a piece is hidden,
+                    all players can still see that it is there.)
+                </dd>
+                <dd>
+                    This class of piece includes playing cards,
+                    dominoes and "Stratego" pieces.
                 </dd>
             </dlentry>
         </dl>

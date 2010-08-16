@@ -104,6 +104,15 @@
                 </square>
             </grid>
             <grid rows="8" columns="8" left="edge" right="edge" bottom="edge" top="edge" size="small" id="cheese">
+                <square x="0" y="7">
+                        <piece shape="double-circle" colour="red" />
+                </square>
+                <square x="0" y="6">
+                        <piece shape="circle" colour="red" />
+                </square>
+                <square x="1" y="7">
+                        <piece shape="circle" colour="red" />
+                </square>
                 <square x="4" y="0">
                         <piece shape="king" colour="white" />
                 </square>

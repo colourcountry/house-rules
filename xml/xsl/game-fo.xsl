@@ -63,23 +63,37 @@
 
     <xsl:attribute-set name="all">
         <xsl:attribute name="font-family">Helvetica</xsl:attribute>
-        <xsl:attribute name="font-size">12pt</xsl:attribute>
-        <xsl:attribute name="line-height">18pt</xsl:attribute>
+        <xsl:attribute name="font-size">10pt</xsl:attribute>
+        <xsl:attribute name="line-height">14pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="top">
-        <xsl:attribute name="padding-bottom">12pt</xsl:attribute>
-        <xsl:attribute name="border-bottom">6pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
+        <xsl:attribute name="padding-bottom">6pt</xsl:attribute>
+        <xsl:attribute name="border-bottom">4pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="list-label">
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="color"> <xsl:value-of select="$rule-colour" /></xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="condition">
+        <xsl:attribute name="font-style">italic</xsl:attribute>
+        <xsl:attribute name="color"> <xsl:value-of select="$rule-colour" /></xsl:attribute>
+    </xsl:attribute-set>
+    
     <xsl:attribute-set name="section">
-        <xsl:attribute name="padding-top">6pt</xsl:attribute>
+        <xsl:attribute name="padding-top">4pt</xsl:attribute>
         <xsl:attribute name="padding-bottom">18pt</xsl:attribute>
         <xsl:attribute name="border-top">2pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="subsection">
         <xsl:attribute name="padding-bottom">18pt</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="paragraph">
+        <xsl:attribute name="padding-bottom">8pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="subsection-body">
@@ -102,12 +116,12 @@
     </xsl:attribute-set>
 
     <xsl:attribute-set name="title">
-        <xsl:attribute name="font-size">32pt</xsl:attribute>
+        <xsl:attribute name="font-size">24pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="subtitle">
-        <xsl:attribute name="font-size">20pt</xsl:attribute>
+        <xsl:attribute name="font-size">14pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="keyword">
@@ -123,8 +137,8 @@
 
     <xsl:attribute-set name="phase-name">
         <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
-        <xsl:attribute name="alignment-adjust">-4pt</xsl:attribute>
-        <xsl:attribute name="font-size">24pt</xsl:attribute>
+        <xsl:attribute name="alignment-adjust">-1pt</xsl:attribute>
+        <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="color"><xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
@@ -143,11 +157,15 @@
         </fo:block>
         <xsl:if test="gamebody/players|gamebody/board|gamebody/setup">
             <fo:block xsl:use-attribute-sets="subsection">
-                <fo:list-block>
-                    <xsl:apply-templates select="gamebody/players" mode="fo-top" />
-                    <xsl:apply-templates select="gamebody/board" mode="fo-top" />
-                    <xsl:apply-templates select="gamebody/setup" mode="fo-top" />
-                </fo:list-block>
+                <fo:table>
+                    <fo:table-column column-width="80pt" />
+                    <fo:table-column />
+                    <fo:table-body>
+                        <xsl:apply-templates select="gamebody/players" mode="fo-top" />
+                        <xsl:apply-templates select="gamebody/board" mode="fo-top" />
+                        <xsl:apply-templates select="gamebody/setup" mode="fo-top" />
+                    </fo:table-body>
+                </fo:table>
             </fo:block>
         </xsl:if>
         <xsl:apply-templates select="gamebody" mode="fo" />
@@ -166,43 +184,43 @@
     </xsl:template>
 
     <xsl:template match="players" mode="fo-top">
-            <fo:list-item>
-                <fo:list-item-label>
+            <fo:table-row>
+                <fo:table-cell>
                     <fo:block>
                       <fo:inline xsl:use-attribute-sets="keyword">
                         PLAYER
                       </fo:inline>
                       <xsl:apply-templates select="player" mode="fo" />
                     </fo:block>
-                </fo:list-item-label>
-                <fo:list-item-body margin-left="80pt">
+                </fo:table-cell>
+                <fo:table-cell>
                     <fo:block>
                         <xsl:apply-templates select="pieces" mode="fo" />
                     </fo:block>
-                </fo:list-item-body>
-            </fo:list-item>
+                </fo:table-cell>
+            </fo:table-row>
     </xsl:template>
 
     <xsl:template match="board" mode="fo-top">
-            <fo:list-item>
-                <fo:list-item-label>
+            <fo:table-row>
+                <fo:table-cell>
                     <fo:block>
                       <fo:inline xsl:use-attribute-sets="keyword">
                         BOARD
                       </fo:inline>:
                     </fo:block>
-                </fo:list-item-label>
-                <fo:list-item-body margin-left="80pt">
+                </fo:table-cell>
+                <fo:table-cell>
                     <fo:block>
                         <xsl:apply-templates mode="fo" />
                     </fo:block>
-                </fo:list-item-body>
-            </fo:list-item>
+                </fo:table-cell>
+            </fo:table-row>
     </xsl:template>
 
     <xsl:template match="setup" mode="fo-top">
-            <fo:list-item>
-                <fo:list-item-label>
+            <fo:table-row>
+                <fo:table-cell>
                     <fo:block>
                         <fo:inline xsl:use-attribute-sets="keyword">
                             SETUP
@@ -212,8 +230,8 @@
                             <xsl:with-param name="value"></xsl:with-param>
                         </xsl:call-template>
                     </fo:block>
-                </fo:list-item-label>
-                <fo:list-item-body margin-left="80pt">
+                </fo:table-cell>
+                <fo:table-cell>
                     <fo:block>
                         <xsl:apply-templates mode="fo" />
                         <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
@@ -223,8 +241,8 @@
                             <xsl:with-param name="value">1</xsl:with-param>
                         </xsl:call-template>
                     </fo:block>
-                </fo:list-item-body>
-            </fo:list-item>
+                </fo:table-cell>
+            </fo:table-row>
     </xsl:template>
 
     <xsl:template match="about|players|board|setup" mode="fo" />
@@ -237,39 +255,47 @@
 
     <xsl:template match="phase" mode="fo">
         <fo:block xsl:use-attribute-sets="section">
-            <fo:list-block>
-                <fo:list-item>
-                    <fo:list-item-label>
+            <fo:table>
+            <fo:table-column column-width="80pt" />
+            <fo:table-column />
+            <fo:table-body>
+                <fo:table-row>
+                    <fo:table-cell>
                         <fo:block>
                             <xsl:apply-templates select="phaseName" mode="fo-label" />
                         </fo:block>
-                    </fo:list-item-label>
-                    <fo:list-item-body margin-left="80pt">
+                    </fo:table-cell>
+                    <fo:table-cell>
                         <fo:block>
                             <xsl:apply-templates mode="fo" />
                         </fo:block>
-                    </fo:list-item-body>
-                </fo:list-item>
-            </fo:list-block>
+                    </fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+            </fo:table>
         </fo:block>
     </xsl:template>
 
     <xsl:template match="subphase" mode="fo">
         <fo:block xsl:use-attribute-sets="subsection">
-            <fo:list-block>
-                <fo:list-item>
-                    <fo:list-item-label>
+            <fo:table>
+            <fo:table-column column-width="80pt" />
+            <fo:table-column />
+            <fo:table-body>
+                <fo:table-row>
+                    <fo:table-cell>
                         <fo:block>
                             <xsl:apply-templates select="phaseName" mode="fo-label" />
                         </fo:block>
-                    </fo:list-item-label>
-                    <fo:list-item-body margin-left="80pt">
+                    </fo:table-cell>
+                    <fo:table-cell>
                         <fo:block xsl:use-attribute-sets="subsection-body">
                             <xsl:apply-templates mode="fo" />
                         </fo:block>
-                    </fo:list-item-body>
-                </fo:list-item>
-            </fo:list-block>
+                    </fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+            </fo:table>
         </fo:block>
     </xsl:template>
 
@@ -368,6 +394,8 @@
         </fo:inline>
     </xsl:template>
 
+    <xsl:template match="hide" mode="fo" />
+
     <xsl:template match="grid" mode="fo">
         <xsl:variable name="height"><xsl:call-template name="get-grid-height"/></xsl:variable>
         <xsl:variable name="scale">
@@ -386,9 +414,13 @@
 
     <xsl:template match="dl" mode="fo">
         <fo:block xsl:use-attribute-sets="section">
-            <fo:list-block>
+            <fo:table>
+            <fo:table-column column-width="80pt" />
+            <fo:table-column />
+            <fo:table-body>
                 <xsl:apply-templates mode="fo" />
-            </fo:list-block>
+            </fo:table-body>
+            </fo:table>
         </fo:block>
     </xsl:template>
 
@@ -399,14 +431,25 @@
     </xsl:template>
 
     <xsl:template match="dlentry" mode="fo">
-            <fo:list-item>
-                <fo:list-item-label>
+            <fo:table-row>
+                <fo:table-cell>
                     <xsl:apply-templates select="dt" mode="fo" />
-                </fo:list-item-label>
-                <fo:list-item-body margin-left="80pt">
-                    <xsl:apply-templates select="dd" mode="fo" />
-                </fo:list-item-body>
-            </fo:list-item>
+                </fo:table-cell>
+                <fo:table-cell>
+                    <xsl:choose>
+                        <xsl:when test="preceding-sibling::dlentry">
+                            <fo:block xsl:use-attribute-sets="subsection-body">
+                                <xsl:apply-templates select="dd" mode="fo" />
+                            </fo:block>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <fo:block>
+                                <xsl:apply-templates select="dd" mode="fo" />
+                            </fo:block>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </fo:table-cell>
+            </fo:table-row>
     </xsl:template>
 
     <xsl:template match="dt" mode="fo">
@@ -415,16 +458,74 @@
        </fo:block>
     </xsl:template>
 
-    <xsl:template match="line" mode="fo">
-      <fo:block>
+    <xsl:template match="p" mode="fo">
+      <fo:block xsl:use-attribute-sets="paragraph">
           <xsl:apply-templates mode="fo" />
        </fo:block>
     </xsl:template>
 
+    <xsl:template match="ul" mode="fo">
+      <fo:block xsl:use-attribute-sets="paragraph">
+          <fo:list-block>
+              <xsl:apply-templates mode="fo" />
+          </fo:list-block>
+       </fo:block>
+    </xsl:template>
+
+    <xsl:template match="ol/li" mode="fo">
+        <fo:list-item>
+            <fo:list-item-label>
+                <fo:block xsl:use-attribute-sets="list-label">
+                    <xsl:value-of select="count(preceding-sibling::li) + 1" />
+                </fo:block>
+            </fo:list-item-label>
+            <fo:list-item-body margin-left="10pt">
+                <fo:block>
+                  <xsl:apply-templates mode="fo" />
+                </fo:block>
+            </fo:list-item-body>
+        </fo:list-item>
+    </xsl:template>
+
+    <xsl:template match="ul/li" mode="fo">
+        <fo:list-item>
+            <fo:list-item-label>
+                <fo:block xsl:use-attribute-sets="list-label">
+                    ·
+                </fo:block>
+            </fo:list-item-label>
+            <fo:list-item-body margin-left="10pt">
+                <fo:block>
+                  <xsl:apply-templates mode="fo" />
+                </fo:block>
+            </fo:list-item-body>
+        </fo:list-item>
+    </xsl:template>
+
+    <xsl:template match="ol" mode="fo">
+      <fo:block xsl:use-attribute-sets="paragraph">
+          <fo:list-block>
+              <xsl:apply-templates mode="fo" />
+          </fo:list-block>
+       </fo:block>
+    </xsl:template>
+
     <xsl:template match="dd" mode="fo">
-      <fo:block>
+      <fo:block xsl:use-attribute-sets="paragraph">
           <xsl:apply-templates mode="fo" />
       </fo:block>
+    </xsl:template>
+
+    <xsl:template match="condition" mode="fo">
+        <fo:inline xsl:use-attribute-sets="condition">
+            <xsl:value-of select="@value" />
+        </fo:inline>
+    </xsl:template>
+
+    <xsl:template match="step" mode="fo">
+        <fo:inline xsl:use-attribute-sets="list-label">
+           <xsl:value-of select="@value" />
+        </fo:inline>
     </xsl:template>
 
 </xsl:stylesheet>

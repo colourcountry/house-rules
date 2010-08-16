@@ -9,22 +9,22 @@
             <player value="white" />
             <pieces>
                 5×
-                <piece> <shape value="small" /> <colour value="white" /> </piece>
+                <piece colour="white" shape="small" />
                 5×
-                <piece> <shape value="medium" /> <colour value="white" /> </piece>
+                <piece colour="white" shape="medium" />
                 5×
-                <piece> <shape value="large" /> <colour value="white" /> </piece>
+                <piece colour="white" shape="large" />
             </pieces>
         </players>
         <players>
             <player value="black" />
             <pieces>
                 5×
-                <piece> <shape value="small" /> <colour value="black" /> </piece>
+                <piece colour="black" shape="small" />
                 5×
-                <piece> <shape value="medium" /> <colour value="black" /> </piece>
+                <piece colour="black" shape="medium" />
                 5×
-                <piece> <shape value="large" /> <colour value="black" /> </piece>
+                <piece colour="black" shape="large" />
             </pieces>
         </players>
         <board>
@@ -47,9 +47,9 @@
             <phaseName>
                 <phaseNumber value="1" /> <player value="white" />
             </phaseName>
-            <line>
+            <p>
                 Place one of your pieces in an empty square
-            </line>
+            </p>
             <repeat>
                 <goToPhase>
                     <phaseNumber value="1" /> <player value="white" />
@@ -72,7 +72,7 @@
             <phaseName>
                 <phaseNumber value="2" /> <player value="black" />
             </phaseName>
-            <line>
+            <p>
                 Place the
                 <keyword>pylon</keyword>    
                 in any square on top of a   
@@ -82,7 +82,7 @@
                 square, to leave a
                 <keyword>pylon</keyword>
                 in that square
-            </line>
+            </p>
             <repeat>
                 <goToPhase>
                     <phaseNumber value="2" /> <player value="white" />
@@ -96,22 +96,22 @@
                     <grid rows="1" columns="2" id="before">
                         <square x="0" y="0">
                             <stack>
-                                <piece> <colour value="black" /> <shape value="large" /> </piece>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece colour="black" shape="large" />
+                                <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                         <square x="1" y="0">
                             <stack>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                     </grid>
                     <grid rows="1" columns="2">
                         <square x="0" y="0">
                             <stack>
-                                <piece> <colour value="black" /> <shape value="large" /> </piece>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece colour="black" shape="large" />
+                                <piece colour="white" shape="medium" />
+                                <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                     </grid>
@@ -121,9 +121,9 @@
                     <grid rows="1" columns="2">
                         <square x="1" y="0">
                             <stack>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                                <piece> <colour value="black" /> <shape value="large" /> </piece>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece colour="white" shape="medium" />
+                                <piece colour="black" shape="large" />
+                                <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                     </grid>
@@ -135,9 +135,9 @@
                     <grid rows="1" columns="2">
                         <square x="1" y="0">
                             <stack>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                                <piece> <colour value="black" /> <shape value="large" /> </piece>
-                                <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                                <piece colour="white" shape="medium" />
+                                <piece colour="black" shape="large" />
+                                <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                     </grid>
@@ -157,71 +157,71 @@
             <phaseName>
                 <phaseNumber value="End" />
             </phaseName>
-            <line>Each player scores 1 point for each piece in all <keyword>pylons</keyword>
-                  with one of their pieces on top</line>
-            <line>Player with most points wins</line>
+            <p>Each player scores 1 point for each piece in all <keyword>pylons</keyword>
+                  with one of their pieces on top</p>
+            <p>Player with most points wins</p>
             <example>
             <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge">
                 <square x="4" y="0">
                     <stack>
-                        <piece> <colour value="white" /> <shape value="large" /> </piece>
-                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece colour="white" shape="large" />
+                        <piece colour="white" shape="medium" />
+                        <piece colour="black" shape="medium" />
+                        <piece colour="black" shape="small" />
+                        <piece colour="black" shape="small" />
                     </stack>
                 </square>
                 <square x="2" y="1">
                     <stack>
-                        <piece> <colour value="white" /> <shape value="large" /> </piece>
-                        <piece> <colour value="black" /> <shape value="large" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece colour="white" shape="large" />
+                        <piece colour="black" shape="large" />
+                        <piece colour="black" shape="small" />
                     </stack>
                 </square>
                 <square x="4" y="1">
                     <stack>
-                        <piece> <colour value="black" /> <shape value="large" /> </piece>
-                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                        <piece colour="black" shape="large" />
+                        <piece colour="white" shape="small" />
                     </stack>
                 </square>
                 <square x="1" y="2">
                     <stack>
-                        <piece> <colour value="black" /> <shape value="large" /> </piece>
-                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                        <piece colour="black" shape="large" />
+                        <piece colour="white" shape="medium" />
+                        <piece colour="white" shape="medium" />
+                        <piece colour="white" shape="small" />
                     </stack>
                 </square>
                 <square x="3" y="3">
                     <stack>
-                        <piece> <colour value="black" /> <shape value="large" /> </piece>
-                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="white" /> <shape value="small" /> </piece>
-                        <piece> <colour value="white" /> <shape value="small" /> </piece>
+                        <piece colour="black" shape="large" />
+                        <piece colour="black" shape="medium" />
+                        <piece colour="white" shape="small" />
+                        <piece colour="white" shape="small" />
                     </stack>
                 </square>
                 <square x="4" y="3">
                     <stack>
-                        <piece> <colour value="black" /> <shape value="large" /> </piece>
-                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="white" /> <shape value="small" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece colour="black" shape="large" />
+                        <piece colour="white" shape="medium" />
+                        <piece colour="white" shape="small" />
+                        <piece colour="black" shape="small" />
                     </stack>
                 </square>
                 <square x="1" y="4">
                     <stack>
-                        <piece> <colour value="white" /> <shape value="large" /> </piece>
-                        <piece> <colour value="white" /> <shape value="large" /> </piece>
-                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="white" /> <shape value="medium" /> </piece>
+                        <piece colour="white" shape="large" />
+                        <piece colour="white" shape="large" />
+                        <piece colour="black" shape="medium" />
+                        <piece colour="white" shape="medium" />
                     </stack>
                 </square>
                 <square x="5" y="4">
                     <stack>
-                        <piece> <colour value="white" /> <shape value="large" /> </piece>
-                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="black" /> <shape value="medium" /> </piece>
-                        <piece> <colour value="black" /> <shape value="small" /> </piece>
+                        <piece colour="white" shape="large" />
+                        <piece colour="black" shape="medium" />
+                        <piece colour="black" shape="medium" />
+                        <piece colour="black" shape="small" />
                     </stack>
                 </square>
             </grid>
