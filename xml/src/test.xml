@@ -21,7 +21,7 @@
                 8 ×
                 <piece shape="pawn" colour="white" />
                 2 ×
-                <piece shape="knightrider" colour="white" />
+                <piece shape="nightrider" colour="white" />
                 2 ×
                 <piece shape="archbishop" colour="white" />
                 2 ×
@@ -50,7 +50,7 @@
                 8 ×
                 <piece shape="pawn" colour="black" />
                 2 ×
-                <piece shape="knightrider" colour="black" />
+                <piece shape="nightrider" colour="black" />
                 2 ×
                 <piece shape="archbishop" colour="black" />
                 2 ×

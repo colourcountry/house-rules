@@ -108,12 +108,19 @@
                     <piece shape="rook" colour="white" />
                     <piece shape="knight" colour="white" />
                     <piece shape="pawn" colour="white" />
-                    <piece shape="knightrider" colour="white" />
+                    <piece shape="nightrider" colour="white" />
                     <piece shape="archbishop" colour="white" />
                     <piece shape="chancellor" colour="white" />
                     <piece shape="elephant" colour="white" />
                     <piece shape="cannon" colour="white" />
-                    <piece shape="grasshopper" colour="white" />
+                    <piece shape="general" colour="white" />
+                    <piece shape="vizier" colour="white" />
+                    <piece shape="mandarin" colour="white" />
+                    <piece shape="small-rook" colour="white" />
+                    <piece shape="wheeled-knight" colour="white" />
+                    <piece shape="wheeled-elephant" colour="white" />
+                    <piece shape="wheeled-super-elephant" colour="white" />
+                    <piece shape="elephant-queen" colour="white" />
                 </dt>
                 <dd>
                     Chess pieces.
