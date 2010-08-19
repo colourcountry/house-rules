@@ -227,6 +227,20 @@
                     </grid>
                 </dd>
             </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="elephant-queen" />
+                    <piece colour="white" shape="elephant-queen" />
+                </dt>
+                <dd>
+                    Elephant queen.
+                </dd>
+                <dd>
+                    <p>
+                        ?
+                    </p>
+                </dd>
+            </dlentry>
         </dl>
     </gamebody>
 </game>

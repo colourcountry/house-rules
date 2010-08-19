@@ -13,7 +13,7 @@
 
     <xsl:attribute-set name="arrow">
         <xsl:attribute name="fill">none</xsl:attribute>
-        <xsl:attribute name="stroke">#000055</xsl:attribute>
+        <xsl:attribute name="stroke">#0000cc</xsl:attribute>
         <xsl:attribute name="marker-end">url(../svg/grid.svg#marker-arrow)</xsl:attribute>
     </xsl:attribute-set>
 

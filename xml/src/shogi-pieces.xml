@@ -1,0 +1,209 @@
+<game>
+    <name>Pieces used in Shogi</name>
+    <gamebody>
+        <dl>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="gold-general" />
+                    <piece colour="white" shape="gold-general" />
+                </dt>
+                <dd>
+                    Gold General.
+                </dd>
+                <dd>
+                    <p>
+                        Moves 1 square in any orthogonal
+                        direction, or 1 square diagonally forward.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow x="-1" y="0" />
+                            <arrow x="1" y="0" />
+                            <arrow x="0" y="-1" />
+                            <arrow x="0" y="1" />
+                            <arrow x="-1" y="-1" />
+                            <arrow x="1" y="-1" />
+                            <piece colour="black" shape="gold-general" />
+                        </square>
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="3"> <highlight value="circle" /> </square>
+                        <square x="3" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="3"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="silver-general" />
+                    <piece colour="white" shape="silver-general" />
+                </dt>
+                <dd>
+                    Silver General.
+                </dd>
+                <dd>
+                    <p>
+                        Moves 1 square in any diagonal
+                        direction, or 1 square forward.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow x="1" y="1" />
+                            <arrow x="1" y="-1" />
+                            <arrow x="-1" y="-1" />
+                            <arrow x="-1" y="1" />
+                            <arrow x="0" y="-1" />
+                            <piece colour="black" shape="silver-general" />
+                        </square>
+                        <square x="4" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="2" y="4"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="shogi-knight" />
+                    <piece colour="white" shape="shogi-knight" />
+                </dt>
+                <dd>
+                    Shogi knight.
+                </dd>
+                <dd>
+                    <p>
+                        Moves 1 square forward, then 1 square diagonally forward.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow> <arrow-segment x="0" y="-1" /> <arrow-segment x="1" y="-1" /> </arrow>
+                            <arrow> <arrow-segment x="0" y="-1" /> <arrow-segment x="-1" y="-1" /> </arrow>
+                            <piece colour="black" shape="shogi-knight" />
+                        </square>
+                        <square x="2" y="1"> <highlight value="circle" /> </square>
+                        <square x="4" y="1"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="lance" />
+                    <piece colour="white" shape="lance" />
+                </dt>
+                <dd>
+                    Lance.
+                </dd>
+                <dd>
+                    <p>
+                        Moves any number of squares forward from its current square.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow x="0" y="-3.7" />
+                            <piece colour="black" shape="lance" />
+                        </square>
+                        <square x="3" y="0"> <highlight value="circle" /> </square>
+                        <square x="3" y="1"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="dragon-king" />
+                    <piece colour="white" shape="dragon-king" />
+                </dt>
+                <dd>
+                    Dragon king.
+                </dd>
+                <dd>
+                    <p>
+                        Has the moves of
+                        <piece colour="black" shape="rook" />
+                        and
+                        <piece colour="black" shape="king" />
+                        combined.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow x="-3.7" y="0" />
+                            <arrow x="3.7" y="0" />
+                            <arrow x="0" y="-3.7" />
+                            <arrow x="0" y="3.7" />
+                            <arrow x="1" y="1" />
+                            <arrow x="1" y="-1" />
+                            <arrow x="-1" y="-1" />
+                            <arrow x="-1" y="1" />
+                            <piece colour="black" shape="dragon-king" />
+                        </square>
+                        <square x="3" y="0"> <highlight value="circle" /> </square>
+                        <square x="3" y="1"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="4"> <highlight value="circle" /> </square>
+                        <square x="3" y="5"> <highlight value="circle" /> </square>
+                        <square x="3" y="6"> <highlight value="circle" /> </square>
+                        <square x="0" y="3"> <highlight value="circle" /> </square>
+                        <square x="1" y="3"> <highlight value="circle" /> </square>
+                        <square x="2" y="3"> <highlight value="circle" /> </square>
+                        <square x="4" y="3"> <highlight value="circle" /> </square>
+                        <square x="5" y="3"> <highlight value="circle" /> </square>
+                        <square x="6" y="3"> <highlight value="circle" /> </square>
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="2" y="4"> <highlight value="circle" /> </square>
+                        <square x="4" y="4"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
+                    <piece colour="black" shape="dragon-horse" />
+                    <piece colour="white" shape="dragon-horse" />
+                </dt>
+                <dd>
+                    Dragon horse.
+                </dd>
+                <dd>
+                    <p>
+                        Has the moves of
+                        <piece colour="black" shape="bishop" />
+                        and
+                        <piece colour="black" shape="king" />
+                        combined.
+                    </p>
+                    <grid rows="7" columns="7" size="small">
+                        <square x="3" y="3">
+                            <arrow x="3.7" y="3.7" />
+                            <arrow x="3.7" y="-3.7" />
+                            <arrow x="-3.7" y="-3.7" />
+                            <arrow x="-3.7" y="3.7" />
+                            <arrow x="-1" y="0" />
+                            <arrow x="1" y="0" />
+                            <arrow x="0" y="-1" />
+                            <arrow x="0" y="1" />
+                            <piece colour="black" shape="dragon-horse" />
+                        </square>
+                        <square x="4" y="4"> <highlight value="circle" /> </square>
+                        <square x="5" y="5"> <highlight value="circle" /> </square>
+                        <square x="6" y="6"> <highlight value="circle" /> </square>
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="1" y="1"> <highlight value="circle" /> </square>
+                        <square x="0" y="0"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="5" y="1"> <highlight value="circle" /> </square>
+                        <square x="6" y="0"> <highlight value="circle" /> </square>
+                        <square x="2" y="4"> <highlight value="circle" /> </square>
+                        <square x="1" y="5"> <highlight value="circle" /> </square>
+                        <square x="0" y="6"> <highlight value="circle" /> </square>
+                        <square x="4" y="3"> <highlight value="circle" /> </square>
+                        <square x="3" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="3"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                    </grid>
+                </dd>
+            </dlentry>
+        </dl>
+    </gamebody>
+</game>
