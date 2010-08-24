@@ -12,9 +12,9 @@
                 </dd>
                 <dd>
                     <p>
-                        A royal piece which moves to any abutting square.
+                        Moves to any abutting square.
                     </p>
-                    <grid rows="7" columns="7" size="small">
+                    <grid rows="7" columns="7" size="small" id="general">
                         <square x="3" y="3">
                             <arrow x="-1" y="0" />
                             <arrow x="1" y="0" />

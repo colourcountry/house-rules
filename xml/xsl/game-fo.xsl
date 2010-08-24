@@ -157,15 +157,14 @@
             <xsl:apply-templates select="name" mode="fo-top" />
             <xsl:apply-templates select="gamebody/about" mode="fo-top" />
         </fo:block>
-        <xsl:if test="gamebody/players|gamebody/board|gamebody/setup">
+        <xsl:if test="gamebody/players">
             <fo:block xsl:use-attribute-sets="subsection">
                 <fo:table>
                     <fo:table-column column-width="80pt" />
                     <fo:table-column />
                     <fo:table-body>
                         <xsl:apply-templates select="gamebody/players" mode="fo-top" />
-                        <xsl:apply-templates select="gamebody/board" mode="fo-top" />
-                        <xsl:apply-templates select="gamebody/setup" mode="fo-top" />
+                        <xsl:apply-templates select="gamebody/pieces" mode="fo-top" />
                     </fo:table-body>
                 </fo:table>
             </fo:block>
@@ -185,7 +184,7 @@
         </fo:inline>
     </xsl:template>
 
-    <xsl:template match="players" mode="fo-top">
+    <xsl:template match="players[pieces]" mode="fo-top" priority="2">
             <fo:table-row>
                 <fo:table-cell>
                     <fo:block>
@@ -197,18 +196,19 @@
                 </fo:table-cell>
                 <fo:table-cell>
                     <fo:block>
-                        <xsl:apply-templates select="pieces" mode="fo" />
+                        <xsl:apply-templates select="pieces/node()" mode="fo" />
                     </fo:block>
                 </fo:table-cell>
             </fo:table-row>
     </xsl:template>
 
-    <xsl:template match="board" mode="fo-top">
+    <xsl:template match="players" mode="fo-top">
             <fo:table-row>
                 <fo:table-cell>
                     <fo:block>
                       <fo:inline xsl:use-attribute-sets="keyword">
-                        BOARD</fo:inline>:
+                        PLAYERS:
+                      </fo:inline>
                     </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
@@ -219,16 +219,13 @@
             </fo:table-row>
     </xsl:template>
 
-    <xsl:template match="setup" mode="fo-top">
+    <xsl:template match="pieces" mode="fo-top">
             <fo:table-row>
                 <fo:table-cell>
                     <fo:block>
-                        <fo:inline xsl:use-attribute-sets="keyword">
-                            SETUP</fo:inline>:
-                        <xsl:call-template name="phase-name">
-                            <!-- Empty phase name to get the right height block -->
-                            <xsl:with-param name="value"></xsl:with-param>
-                        </xsl:call-template>
+                      <fo:inline xsl:use-attribute-sets="keyword">
+                        PIECES:
+                      </fo:inline>
                     </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
@@ -239,7 +236,7 @@
             </fo:table-row>
     </xsl:template>
 
-    <xsl:template match="about|players|board|setup" mode="fo" />
+    <xsl:template match="about|players|pieces" mode="fo" />
 
     <xsl:template match="section" mode="fo">
         <fo:block xsl:use-attribute-sets="section">
@@ -398,6 +395,9 @@
                 <xsl:otherwise>0.7</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:if test="preceding-sibling::*[1]/name()='grid'">
+            <fo:leader leader-length="40px" />
+        </xsl:if>
         <fo:instream-foreign-object alignment-baseline="alphabetic"
                                     alignment-adjust="{-$height div 2 * $scale + 5}px">
             <xsl:call-template name="svg-with-grid">

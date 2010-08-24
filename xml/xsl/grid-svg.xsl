@@ -43,7 +43,7 @@
                 <xsl:variable name="use" select="@use" />
                 <xsl:for-each select="//*[@id=$use]">
                     <xsl:call-template name="get-grid-height" />
-                </xsl:for-each>
+                </xsl:for-each>                
             </xsl:when>
             <xsl:otherwise>
                 <xsl:variable name="size">
@@ -65,7 +65,7 @@
                 <xsl:variable name="use" select="@use" />
                 <xsl:for-each select="//*[@id=$use]">
                     <xsl:call-template name="get-grid-width" />
-                </xsl:for-each>
+                </xsl:for-each>                
             </xsl:when>
             <xsl:otherwise>
                 <xsl:variable name="size">
@@ -87,7 +87,7 @@
                 <xsl:variable name="use" select="@use" />
                 <xsl:for-each select="//*[@id=$use]">
                     <xsl:call-template name="get-grid-size" />
-                </xsl:for-each>
+                </xsl:for-each>                
             </xsl:when>
             <xsl:when test="@size='small'">18</xsl:when>
             <xsl:when test="@size='medium'">24</xsl:when>

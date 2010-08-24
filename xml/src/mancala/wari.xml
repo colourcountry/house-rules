@@ -1,0 +1,45 @@
+<game>
+    <name>Wari</name>
+    <gamebody>
+        <about>
+            <author>Haar Hoolim</author>
+            <date>1969</date>
+        </about>
+        <players>
+            <player value="white" />
+            <player value="black" />
+        </players>
+        <pieces>
+                32 ×
+                <piece colour="black" />
+        </pieces>
+        <phase>
+            <phaseName>
+                <phaseNumber value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="2" columns="6"
+                      left="edge" right="edge" bottom="edge" top="edge"/>
+            </hide>
+            <grid use="grid">
+                <square x="0" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="0" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="1" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="1" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="2" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="2" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="3" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="3" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="4" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="5" y="0"> <piece colour="black" shape="circle-x4" /> </square>
+                <square x="5" y="1"> <piece colour="black" shape="circle-x4" /> </square>
+            </grid>
+                6 × 2
+            <goToPhase>
+                <phaseNumber value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+    </gamebody>
+</game>
