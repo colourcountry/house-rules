@@ -8,44 +8,44 @@
         <players>
             <player value="white" />
             <pieces>
-                5×
+                5 × small
                 <piece colour="white" shape="small" />
-                5×
+                5 × medium
                 <piece colour="white" shape="medium" />
-                5×
+                5 × large
                 <piece colour="white" shape="large" />
             </pieces>
         </players>
         <players>
             <player value="black" />
             <pieces>
-                5×
+                5 × small
                 <piece colour="black" shape="small" />
-                5×
+                5 × medium
                 <piece colour="black" shape="medium" />
-                5×
+                5 × large
                 <piece colour="black" shape="large" />
             </pieces>
         </players>
-        <board>
-            <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge" scale="0.4" />
-            5×6
-        </board>
         <setup>
-            None
+            <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge" scale="0.4" />
+            5 × 6
+            <goToPhase>
+                <phaseNumber value="1" /> <player value="black" />
+            </goToPhase>
         </setup>
         <dl>
             <dlentry>
                 <dt><keyword>pylon</keyword></dt>
                 <dd>
-                    one or more pieces
+                    two or more pieces
                     stacked so that no piece is above a smaller piece
                 </dd>
             </dlentry>
         </dl>
         <phase>
             <phaseName>
-                <phaseNumber value="1" /> <player value="white" />
+                <phaseNumber value="1" />
             </phaseName>
             <p>
                 Place one of your pieces in an empty square
@@ -70,12 +70,12 @@
         </subphase>
         <phase>
             <phaseName>
-                <phaseNumber value="2" /> <player value="black" />
+                <phaseNumber value="2" />
             </phaseName>
             <p>
-                Place the
-                <keyword>pylon</keyword>    
-                in any square on top of a   
+                Place the piece or
+                <keyword>pylon</keyword>
+                in any square on top of the piece or   
                 <keyword>pylon</keyword>
                 in an
                 abutting
@@ -92,7 +92,6 @@
                 </goToPhase>
             </repeat>
             <example>
-                <legal>
                     <grid rows="1" columns="2" id="before">
                         <square x="0" y="0">
                             <stack>
@@ -102,46 +101,36 @@
                         </square>
                         <square x="1" y="0">
                             <stack>
-                                <piece colour="white" shape="medium" />
+                                <piece colour="white" shape="small" />
                             </stack>
                         </square>
                     </grid>
+                <legal>
                     <grid rows="1" columns="2">
                         <square x="0" y="0">
                             <stack>
                                 <piece colour="black" shape="large" />
                                 <piece colour="white" shape="medium" />
-                                <piece colour="white" shape="medium" />
+                                <piece colour="white" shape="small" />
                             </stack>
                         </square>
                     </grid>
                 </legal>
-                <illegal>
-                    <grid use="before"/>
-                    <grid rows="1" columns="2">
-                        <square x="1" y="0">
-                            <stack>
-                                <piece colour="white" shape="medium" />
-                                <piece colour="black" shape="large" />
-                                <piece colour="white" shape="medium" />
-                            </stack>
-                        </square>
-                    </grid>
-                </illegal>
             </example>
             <example>
+                <grid use="before"/>
                 <illegal>
-                    <grid use="before"/>
                     <grid rows="1" columns="2">
                         <square x="1" y="0">
                             <stack>
-                                <piece colour="white" shape="medium" />
+                                <piece colour="white" shape="small" />
                                 <piece colour="black" shape="large" />
                                 <piece colour="white" shape="medium" />
                             </stack>
                         </square>
                     </grid>
                 </illegal>
+                not a <keyword>pylon</keyword>
             </example>
         </phase>
         <subphase>
@@ -151,15 +140,22 @@
             No legal moves
             <goToPhase>
                 <phaseNumber value="End" />
+                <player value="black" />
+                <player value="white" />
             </goToPhase>
         </subphase>
         <phase>
             <phaseName>
                 <phaseNumber value="End" />
             </phaseName>
-            <p>Each player scores 1 point for each piece in all <keyword>pylons</keyword>
-                  with one of their pieces on top</p>
-            <p>Player with most points wins</p>
+            <p>Take all <keyword>pylons</keyword>
+               which have one of your pieces on top, and any of your pieces
+               which are not in a <keyword>pylon</keyword>
+            </p>
+            <p>
+                Score 1 <keyword>victory point</keyword>
+                for each piece you have taken
+            </p>
             <example>
             <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge">
                 <square x="4" y="0">
@@ -170,6 +166,10 @@
                         <piece colour="black" shape="small" />
                         <piece colour="black" shape="small" />
                     </stack>
+                    <callout x="-1" y="0">
+                        5
+                        <player value="black" />
+                    </callout>
                 </square>
                 <square x="2" y="1">
                     <stack>
@@ -177,12 +177,20 @@
                         <piece colour="black" shape="large" />
                         <piece colour="black" shape="small" />
                     </stack>
+                    <callout x="-1" y="0">
+                        3
+                        <player value="black" />
+                    </callout>
                 </square>
                 <square x="4" y="1">
                     <stack>
                         <piece colour="black" shape="large" />
                         <piece colour="white" shape="small" />
                     </stack>
+                    <callout x="1" y="0">
+                        2
+                        <player value="white" />
+                    </callout>
                 </square>
                 <square x="1" y="2">
                     <stack>
@@ -191,6 +199,10 @@
                         <piece colour="white" shape="medium" />
                         <piece colour="white" shape="small" />
                     </stack>
+                    <callout x="-1" y="0">
+                        4
+                        <player value="white" />
+                    </callout>
                 </square>
                 <square x="3" y="3">
                     <stack>
@@ -199,6 +211,10 @@
                         <piece colour="white" shape="small" />
                         <piece colour="white" shape="small" />
                     </stack>
+                    <callout x="-1" y="0">
+                        4
+                        <player value="white" />
+                    </callout>
                 </square>
                 <square x="4" y="3">
                     <stack>
@@ -207,6 +223,10 @@
                         <piece colour="white" shape="small" />
                         <piece colour="black" shape="small" />
                     </stack>
+                    <callout x="1" y="0">
+                        4
+                        <player value="black" />
+                    </callout>
                 </square>
                 <square x="1" y="4">
                     <stack>
@@ -215,6 +235,10 @@
                         <piece colour="black" shape="medium" />
                         <piece colour="white" shape="medium" />
                     </stack>
+                    <callout x="-1" y="0">
+                        4
+                        <player value="white" />
+                    </callout>
                 </square>
                 <square x="5" y="4">
                     <stack>
@@ -223,8 +247,19 @@
                         <piece colour="black" shape="medium" />
                         <piece colour="black" shape="small" />
                     </stack>
+                    <callout x="-1" y="0">
+                        4
+                        <player value="black" />
+                    </callout>
                 </square>
             </grid>
+            <p>
+                16 <player value="black" />, 14 <player value="white" />
+                <goToPhase>
+                    <phaseNumber value="Win" />
+                    <player value="black" />
+                </goToPhase>
+            </p>
             </example>
         </phase>
     </gamebody>

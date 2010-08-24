@@ -1,0 +1,47 @@
+<game>
+    <name>Backgammon</name>
+    <gamebody>
+        <about>
+            <author>Haar Hoolim</author>
+            <date>1969</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                15 ×
+                <piece colour="white" />
+            </pieces>
+        </players>
+        <players>
+            <player value="black" />
+            <pieces>
+                15 ×
+                <piece colour="black" />
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseNumber value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="2" columns="12" size="0.9"
+                      left="edge" right="edge" bottom="edge" top="edge"/>
+            </hide>
+            <grid use="grid">
+                <square x="0" y="0"> <piece colour="white" shape="circle-x5" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="circle-x3" /> </square>
+                <square x="6" y="0"> <piece colour="black" shape="circle-x5" /> </square>
+                <square x="11" y="0"> <piece colour="white" shape="circle-x2" /> </square>
+                <square x="0" y="1"> <piece colour="black" shape="circle-x5" /> </square>
+                <square x="4" y="1"> <piece colour="white" shape="circle-x3" /> </square>
+                <square x="6" y="1"> <piece colour="white" shape="circle-x5" /> </square>
+                <square x="11" y="1"> <piece colour="black" shape="circle-x2" /> </square>
+            </grid>
+                12 × 2
+            <goToPhase>
+                <phaseNumber value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+    </gamebody>
+</game>

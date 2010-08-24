@@ -4,30 +4,34 @@
         <players>
             <player value="black" />
             <pieces>
-                <piece colour="black" shape="king" />
-                <piece colour="black" shape="queen" />
-                2 ×
-                <piece colour="black" shape="bishop" />
-                2 ×
-                <piece colour="black" shape="knight" />
-                2 ×
-                <piece colour="black" shape="rook" />
-                8 ×
+                king
+                <piece colour="black" shape="king" />,
+                queen
+                <piece colour="black" shape="queen" />,
+                2 × bishop
+                <piece colour="black" shape="bishop" />,
+                2 × knight
+                <piece colour="black" shape="knight" />,
+                2 × rook
+                <piece colour="black" shape="rook" />,
+                8 × pawn
                 <piece colour="black" shape="pawn" />
             </pieces>
         </players>
         <players>
             <player value="white" />
             <pieces>
-                <piece colour="white" shape="king" />
-                <piece colour="white" shape="queen" />
-                2 ×
-                <piece colour="white" shape="bishop" />
-                2 ×
-                <piece colour="white" shape="knight" />
-                2 ×
-                <piece colour="white" shape="rook" />
-                8 ×
+                king
+                <piece colour="white" shape="king" />,
+                queen
+                <piece colour="white" shape="queen" />,
+                2 × bishop
+                <piece colour="white" shape="bishop" />,
+                2 × knight
+                <piece colour="white" shape="knight" />,
+                2 × rook
+                <piece colour="white" shape="rook" />,
+                8 × pawn
                 <piece colour="white" shape="pawn" />
             </pieces>
         </players>
@@ -35,9 +39,10 @@
             <phaseName>
                 <phaseNumber value="Setup" />
             </phaseName>
-            <grid id="grid" rows="8" columns="8" size="small"
-                  left="edge" right="edge" bottom="edge" top="edge"/>
-            <legal>
+            <hide>
+                <grid id="grid" rows="8" columns="8" size="small"
+                      left="edge" right="edge" bottom="white-edge" top="black-edge"/>
+            </hide>
             <grid use="grid">
                 <square x="0" y="0"> <piece colour="black" shape="rook" /> </square>
                 <square x="1" y="0"> <piece colour="black" shape="knight" /> </square>
@@ -72,7 +77,7 @@
                 <square x="6" y="6"> <piece colour="white" shape="pawn" /> </square>
                 <square x="7" y="6"> <piece colour="white" shape="pawn" /> </square>
             </grid>
-            </legal>
+                8 × 8
             <goToPhase>
                 <phaseNumber value="1" />
                 <player value="white" />
@@ -104,10 +109,8 @@
                     </p>
                     <ul>
                     <li>
-                        Only
                         <piece colour="white" shape="knight" />
-                        may pass through a square
-                        containing another piece.
+                        may jump over any other pieces
                     </li>
                     <li>
                         <piece colour="white" shape="king" />
@@ -124,6 +127,12 @@
                         <piece colour="white" shape="bishop" />
                         <piece colour="white" shape="rook" />
                         <piece colour="white" shape="queen" />
+                    </li>
+                    <li>
+                        A
+                        <piece colour="white" shape="pawn" />
+                        which has not yet moved
+                        may move 2 squares forward
                     </li>
                     </ul>
                 </dd>
@@ -150,7 +159,18 @@
                         one space diagonally forward of it
                         (on either side)
                         which is occupied by an enemy piece,
-                        capturing that piece.
+                        capturing that piece, or
+                    </li>
+                    <li>
+                        move a 
+                        <piece colour="white" shape="pawn" />
+                        which has not yet moved
+                        to a square
+                        one space diagonally forward of it
+                        (on either side)
+                        which is occupied by an enemy piece,
+                        capturing that piece, and then
+                        move 1 extra square forward
                     </li>
                     </ul>
                 </dd>

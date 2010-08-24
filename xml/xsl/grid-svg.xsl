@@ -17,9 +17,19 @@
         <xsl:attribute name="marker-end">url(../svg/grid.svg#marker-arrow)</xsl:attribute>
     </xsl:attribute-set>
 
-    <xsl:attribute-set name="grid-border">
-        <xsl:attribute name="fill">#cccccc</xsl:attribute>
+    <xsl:attribute-set name="callout">
+        <xsl:attribute name="fill">none</xsl:attribute>
+        <xsl:attribute name="stroke"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="callout-point">
         <xsl:attribute name="stroke">none</xsl:attribute>
+        <xsl:attribute name="fill"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="callout-box">
+        <xsl:attribute name="fill">white</xsl:attribute>
+        <xsl:attribute name="stroke"><xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="grid-background">
@@ -39,6 +49,7 @@
                 <xsl:variable name="size">
                     <xsl:choose>
                         <xsl:when test="@size='small'">0.5</xsl:when>
+                        <xsl:when test="@size='medium'">0.75</xsl:when>
                         <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
                         <xsl:otherwise>1</xsl:otherwise>
                     </xsl:choose>
@@ -60,6 +71,7 @@
                 <xsl:variable name="size">
                     <xsl:choose>
                         <xsl:when test="@size='small'">0.5</xsl:when>
+                        <xsl:when test="@size='medium'">0.75</xsl:when>
                         <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
                         <xsl:otherwise>1</xsl:otherwise>
                     </xsl:choose>
@@ -78,6 +90,7 @@
                 </xsl:for-each>
             </xsl:when>
             <xsl:when test="@size='small'">18</xsl:when>
+            <xsl:when test="@size='medium'">24</xsl:when>
             <xsl:when test="@size"><xsl:value-of select="36 * @size"/></xsl:when>
             <xsl:otherwise>36</xsl:otherwise>
         </xsl:choose>
@@ -98,6 +111,27 @@
                 <svg:use xlink:href="out.svg#{$id}" />
             </svg:g>
         </svg:svg>
+    </xsl:template>
+
+    <xsl:template name="grid-attributes">
+        <xsl:param name="name" />
+        <xsl:choose>
+            <xsl:when test="$name='edge'">
+                <xsl:attribute name="fill">#cccccc</xsl:attribute>
+                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
+                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="$name='white-edge'">
+                <xsl:attribute name="fill">#ffffff</xsl:attribute>
+                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
+                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="$name='black-edge'">
+                <xsl:attribute name="fill">#000000</xsl:attribute>
+                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
+                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template name="svg-grid">
@@ -138,25 +172,37 @@
                         <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
                         <xsl:with-param name="border-thickness"><xsl:value-of select="$border-thickness" /></xsl:with-param>
                     </xsl:call-template>
-                    <xsl:if test="@right='edge'">
-                        <svg:rect x="{$width - $border-thickness + 0.5}" y="0"
-                                  width="{$border-thickness - 0.5}" height="{$height}"
-                                  xsl:use-attribute-sets="grid-border" />
+                    <xsl:if test="@right">
+                        <svg:rect x="{$width - $border-thickness + 0.4}" y="0"
+                                  width="{$border-thickness - 0.4}" height="{$height}">
+                            <xsl:call-template name="grid-attributes">
+                                <xsl:with-param name="name" select="@right" />
+                            </xsl:call-template>
+                        </svg:rect>
                     </xsl:if>
-                    <xsl:if test="@left='edge'">
+                    <xsl:if test="@left">
                         <svg:rect x="0" y="0"
-                                  width="{$border-thickness - 0.5}" height="{$height}"
-                                  xsl:use-attribute-sets="grid-border" />
+                                  width="{$border-thickness - 0.4}" height="{$height}">
+                            <xsl:call-template name="grid-attributes">
+                                <xsl:with-param name="name" select="@left" />
+                            </xsl:call-template>
+                        </svg:rect>
                     </xsl:if>
-                    <xsl:if test="@bottom='edge'">
-                        <svg:rect x="0" y="{$height - $border-thickness + 0.5}"
-                                  width="{$width}" height="{$border-thickness - 0.5}"
-                                  xsl:use-attribute-sets="grid-border" />
+                    <xsl:if test="@bottom">
+                        <svg:rect x="0" y="{$height - $border-thickness + 0.4}"
+                                  width="{$width}" height="{$border-thickness - 0.4}">
+                            <xsl:call-template name="grid-attributes">
+                                <xsl:with-param name="name" select="@bottom" />
+                            </xsl:call-template>
+                        </svg:rect>
                     </xsl:if>
-                    <xsl:if test="@top='edge'">
+                    <xsl:if test="@top">
                         <svg:rect x="0" y="0"
-                                  width="{$width}" height="{$border-thickness - 0.5}"
-                                  xsl:use-attribute-sets="grid-border" />
+                                  width="{$width}" height="{$border-thickness - 0.4}">
+                            <xsl:call-template name="grid-attributes">
+                                <xsl:with-param name="name" select="@top" />
+                            </xsl:call-template>
+                        </svg:rect>
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
@@ -235,4 +281,84 @@
             </xsl:attribute>
         </svg:path>
     </xsl:template>
+
+    <xsl:template match="callout" mode="svg">
+        <xsl:param name="size"/>
+
+        <svg:circle xsl:use-attribute-sets="callout-point"
+                    x="0" y="0" r="{$size div 20}" />
+        <svg:path xsl:use-attribute-sets="callout"
+                  stroke-width="{$size div 40 }">
+            <xsl:attribute name="d">M 0 0
+                <xsl:if test="@x">l
+                    <xsl:value-of select="@x * $size"/>,
+                    <xsl:value-of select="@y * $size" />
+                </xsl:if>
+                <xsl:for-each select="callout-segment"> l
+                    <xsl:value-of select="@x * $size"/>,
+                    <xsl:value-of select="@y * $size" />
+                </xsl:for-each>
+            </xsl:attribute>
+        </svg:path>
+        <xsl:call-template name="callout-text">
+            <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+        </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template name="callout-text">
+        <xsl:param name="size"/>
+        <xsl:variable name="x" select="@x" />
+        <xsl:variable name="y" select="@y" />
+            <svg:g transform="translate({$x * $size},{$y * $size})">
+                <xsl:choose>
+                    <xsl:when test="callout-segment">
+                        <xsl:for-each select="callout-segment[1]">
+                            <xsl:call-template name="callout-text">
+                                <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:for-each>
+                    </xsl:when>
+                    <xsl:when test="following-sibling::callout-segment">
+                        <xsl:for-each select="following-sibling::callout-segment[1]">
+                            <xsl:call-template name="callout-text">
+                                <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:for-each>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <svg:g transform="translate(0 {-count(node()) * 3})">
+                            <svg:rect x="-8" y="-4" width="16" height="{count(node()) * 6 + 8}"
+                                  xsl:use-attribute-sets="callout-box"
+                                  stroke-width="{$size div 40 }"/>
+                            <xsl:apply-templates mode="svg-callout" />
+                        </svg:g>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </svg:g>
+    </xsl:template>
+
+    <xsl:template match="text()[not(normalize-space(.)='')]" mode="svg-callout">
+        <svg:text text-anchor="middle" y="{position() * 6}">
+            <xsl:value-of select="." />
+        </svg:text>
+    </xsl:template>
+
+    <xsl:template match="p" mode="svg-callout">
+        <svg:text text-anchor="middle" y="{position() * 6}">
+            <xsl:value-of select="." />
+        </svg:text>
+    </xsl:template>
+
+    <xsl:template match="player" mode="svg-callout">
+        <svg:g transform="translate(0 {position() * 6})">
+            <xsl:call-template name="svg-player"/>
+        </svg:g>
+    </xsl:template>
+
+    <xsl:template match="piece" mode="svg-callout">
+        <svg:g transform="translate(0 {position() * 6})">
+            <xsl:call-template name="svg-piece"/>
+        </svg:g>
+    </xsl:template>
+
 </xsl:stylesheet>

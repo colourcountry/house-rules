@@ -16,44 +16,45 @@
             <player value="black" />
             <pieces>
                 3 ×
-                <piece colour="black" />
+                <piece colour="black" shape="double-circle" />
             </pieces>
         </players>
         <phase>
             <phaseName>
                 <phaseNumber value="Setup" />
             </phaseName>
-            <grid id="grid" rows="5" columns="5" size="small"
-                  left="edge" right="edge" bottom="edge" top="edge"/>
-            <legal>
+            <hide>
+                <grid id="grid" rows="5" columns="5" size="small"
+                      left="edge" right="edge" bottom="edge" top="edge"/>
+            </hide>
             <grid use="grid">
-                <square x="0" y="0"> <piece colour="white" /> </square>
-                <square x="0" y="1"> <piece colour="white" /> </square>
-                <square x="0" y="2"> <piece colour="white" /> </square>
-                <square x="0" y="3"> <piece colour="white" /> </square>
-                <square x="0" y="4"> <piece colour="black" /> </square>
-                <square x="1" y="0"> <piece colour="white" /> </square>
-                <square x="1" y="1"> <piece colour="white" /> </square>
-                <square x="1" y="2"> <piece colour="white" /> </square>
-                <square x="1" y="3"> <piece colour="white" /> </square>
-                <square x="1" y="4"> <piece colour="white" /> </square>
-                <square x="2" y="0"> <piece colour="white" /> </square>
-                <square x="2" y="1"> <piece colour="white" /> </square>
-                <square x="2" y="2"> <piece colour="black" /> </square>
-                <square x="2" y="3"> <piece colour="white" /> </square>
-                <square x="2" y="4"> <piece colour="white" /> </square>
-                <square x="3" y="0"> <piece colour="white" /> </square>
-                <square x="3" y="1"> <piece colour="white" /> </square>
-                <square x="3" y="2"> <piece colour="white" /> </square>
-                <square x="3" y="3"> <piece colour="white" /> </square>
-                <square x="3" y="4"> <piece colour="white" /> </square>
-                <square x="4" y="0"> <piece colour="black" /> </square>
-                <square x="4" y="1"> <piece colour="white" /> </square>
-                <square x="4" y="2"> <piece colour="white" /> </square>
-                <square x="4" y="3"> <piece colour="white" /> </square>
-                <square x="4" y="4"> <piece colour="white" /> </square>
+                <square x="0" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="4"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="1" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="2"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="2" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
             </grid>
-            </legal>
+                5 × 5
             <goToPhase>
                 <phaseNumber value="1" />
                 <player value="black" />
@@ -64,7 +65,7 @@
                 <phaseNumber value="1" />
                 <player value="white" />
             </phaseName>
-                Move a <piece colour="white" />
+                Move a <piece colour="white" shape="small-rook" />
                 to an abutting square
             <goToPhase>
                 <phaseNumber value="1" />
@@ -76,11 +77,11 @@
                 <phaseNumber value="1" />
                 <player value="black" />
             </phaseName>
-                Move a <piece colour="black" />
+                Move a <piece colour="black" shape="double-circle" />
                 to an abutting square occupied by a
-                <piece colour="white" />
+                <piece colour="white" shape="small-rook" />
                 and capture the
-                <piece colour="white" />
+                <piece colour="white" shape="small-rook" />
             <goToPhase>
                 <phaseNumber value="1" />
                 <player value="white" />
@@ -102,7 +103,7 @@
                     <phaseNumber value="1" />
                     <player value="black" />
                 </phaseName>
-                    All <piece colour="black" />
+                    All <piece colour="black" shape="double-circle" />
                     are on the same rank or file
                 <goToPhase>
                     <phaseNumber value="Win" />
@@ -110,30 +111,30 @@
                 </goToPhase>            
                 <example>
                         <grid use="grid">
-                            <square x="0" y="2"> <piece colour="white" /> </square>
-                            <square x="1" y="0"> <piece colour="black" /> </square>
-                            <square x="1" y="1"> <piece colour="black" /> </square>
-                            <square x="1" y="3"> <piece colour="white" /> </square>
-                            <square x="2" y="3"> <piece colour="black" /> </square>
-                            <square x="3" y="0"> <piece colour="white" /> </square>
-                            <square x="3" y="4"> <piece colour="white" /> </square>
-                            <square x="4" y="1"> <piece colour="white" /> </square>
-                            <square x="4" y="2"> <piece colour="white" /> </square>
-                            <square x="4" y="4"> <piece colour="white" /> </square>
+                            <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="1" y="0"> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="1"> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="2" y="3"> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
                         </grid>
                     <forced>
                         <grid use="grid">
-                            <square x="0" y="2"> <piece colour="white" /> </square>
-                            <square x="1" y="0"> <highlight value="shade" /> <piece colour="black" /> </square>
-                            <square x="1" y="1"> <highlight value="shade" /> <piece colour="black" /> </square>
+                            <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="1" y="0"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="1"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
                             <square x="1" y="2"> <highlight value="shade" /> </square>
-                            <square x="1" y="3"> <highlight value="shade" /> <piece colour="black" /> </square>
+                            <square x="1" y="3"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
                             <square x="1" y="4"> <highlight value="shade" /> </square>
-                            <square x="3" y="0"> <piece colour="white" /> </square>
-                            <square x="3" y="4"> <piece colour="white" /> </square>
-                            <square x="4" y="1"> <piece colour="white" /> </square>
-                            <square x="4" y="2"> <piece colour="white" /> </square>
-                            <square x="4" y="4"> <piece colour="white" /> </square>
+                            <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
                         </grid>
                     </forced>
                     <goToPhase>

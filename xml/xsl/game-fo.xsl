@@ -103,9 +103,11 @@
 
     <xsl:attribute-set name="example">
         <xsl:attribute name="border-top">1pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
+        <xsl:attribute name="border-left">1pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
         <xsl:attribute name="padding">6pt</xsl:attribute>
         <xsl:attribute name="margin-top">12pt</xsl:attribute>
         <xsl:attribute name="margin-right">40pt</xsl:attribute>
+        <xsl:attribute name="margin-left">2pt</xsl:attribute>
         <!-- Doesn't work -->
         <xsl:attribute name="keep-together.within-line">always</xsl:attribute>
     </xsl:attribute-set>
@@ -190,7 +192,7 @@
                       <fo:inline xsl:use-attribute-sets="keyword">
                         PLAYER
                       </fo:inline>
-                      <xsl:apply-templates select="player" mode="fo" />
+                      <xsl:apply-templates select="player" mode="fo" />:
                     </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
@@ -206,8 +208,7 @@
                 <fo:table-cell>
                     <fo:block>
                       <fo:inline xsl:use-attribute-sets="keyword">
-                        BOARD
-                      </fo:inline>:
+                        BOARD</fo:inline>:
                     </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
@@ -223,8 +224,7 @@
                 <fo:table-cell>
                     <fo:block>
                         <fo:inline xsl:use-attribute-sets="keyword">
-                            SETUP
-                        </fo:inline>:
+                            SETUP</fo:inline>:
                         <xsl:call-template name="phase-name">
                             <!-- Empty phase name to get the right height block -->
                             <xsl:with-param name="value"></xsl:with-param>
@@ -234,12 +234,6 @@
                 <fo:table-cell>
                     <fo:block>
                         <xsl:apply-templates mode="fo" />
-                        <fo:instream-foreign-object xsl:use-attribute-sets="align-arrows">
-                            <xsl:call-template name="svg-with-right-arrow" />
-                        </fo:instream-foreign-object>
-                        <xsl:call-template name="phase-name">
-                            <xsl:with-param name="value">1</xsl:with-param>
-                        </xsl:call-template>
                     </fo:block>
                 </fo:table-cell>
             </fo:table-row>

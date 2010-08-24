@@ -30,12 +30,19 @@
         <xsl:param name="colour"><xsl:value-of select="@value" /></xsl:param>
         <svg:svg width="12pt" height="12pt">
             <svg:g transform="translate(6,6)">
-                <svg:g clip-path="url(../svg/pieces.svg#clip-path-player)">
-                    <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
-                </svg:g>
-                <svg:use xlink:href="../svg/pieces.svg#player"/>
+                <xsl:call-template name="svg-player">
+                    <xsl:with-param name="colour" select="$colour" />
+                </xsl:call-template>
             </svg:g>
         </svg:svg>
+    </xsl:template>
+
+    <xsl:template name="svg-player">
+        <xsl:param name="colour"><xsl:value-of select="@value" /></xsl:param>
+            <svg:g clip-path="url(../svg/pieces.svg#clip-path-player)">
+                <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
+            </svg:g>
+            <svg:use xlink:href="../svg/pieces.svg#player"/>
     </xsl:template>
 
     <xsl:template name="svg-with-piece">

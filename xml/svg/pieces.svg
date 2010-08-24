@@ -245,6 +245,196 @@
 
 
 
+    <!-- MULTI-PIECES (backgammon, mancala, etc) -->
+
+    <g id="circle-x1">
+        <circle
+            cx="0" cy="0"
+            r="3"
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none"
+        />
+    </g>
+
+    <clipPath id="clip-path-circle-x1">
+        <use xlink:href="#circle-x1"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x1"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x2">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x2">
+        <use xlink:href="#circle-x2"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x2"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x3">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="0" cy="0" r="3" />
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x3">
+        <use xlink:href="#circle-x3"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x3"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x4">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x4">
+        <use xlink:href="#circle-x4"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x4"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x5">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="0" cy="0" r="3" />
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x5">
+        <use xlink:href="#circle-x5"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x5"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x6">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="-6" cy="0" r="3" />
+            <circle cx="6" cy="0" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x6">
+        <use xlink:href="#circle-x6"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x6"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x7">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="0" cy="0" r="3" />
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="-6" cy="0" r="3" />
+            <circle cx="6" cy="0" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x7">
+        <use xlink:href="#circle-x7"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x7"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x8">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="0" cy="-3" r="3" />
+            <circle cx="0" cy="3" r="3" />
+            <circle cx="-6" cy="0" r="3" />
+            <circle cx="6" cy="0" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x8">
+        <use xlink:href="#circle-x8"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x8"
+          x="-11" y="-11" width="22" height="22" />
+
+    <g id="circle-x9">
+        <g
+            stroke-width="0.5pt"
+            stroke="black"
+            fill="none">
+            <circle cx="-6" cy="6" r="3" />
+            <circle cx="6" cy="-6" r="3" />
+            <circle cx="-6" cy="-6" r="3" />
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="0" cy="-6" r="3" />
+            <circle cx="0" cy="6" r="3" />
+            <circle cx="-6" cy="0" r="3" />
+            <circle cx="6" cy="0" r="3" />
+            <circle cx="0" cy="0" r="3" />
+        </g>
+    </g>
+
+    <clipPath id="clip-path-circle-x9">
+        <use xlink:href="#circle-x9"/>
+    </clipPath>
+
+    <rect id="bounding-box-circle-x9"
+          x="-11" y="-11" width="22" height="22" />
+
+
+
+
+
+
+
+
     <!-- DIRECTIONAL PIECES -->
 
     <g id="east">
@@ -598,7 +788,7 @@
     </clipPath>
 
     <rect id="bounding-box-small-rook"
-          x="-7.5" y="-7.5" width="15" height="15" />
+          x="-6" y="-7.5" width="12" height="15" />
 
     <g id="small-rook">
         <g transform="scale(1.5)">
@@ -626,7 +816,7 @@
     <!-- SHOGI PIECES -->
 
     <rect id="bounding-box-gold-general"
-          x="-7.5" y="-7.5" width="15" height="15" />
+          x="-6" y="-7.5" width="12" height="15" />
 
     <g id="gold-general">
         <g transform="scale(1.5)">
@@ -644,7 +834,7 @@
 
 
     <rect id="bounding-box-silver-general"
-          x="-7.5" y="-7.5" width="15" height="15" />
+          x="-6" y="-7.5" width="12" height="15" />
 
     <g id="silver-general">
         <g transform="scale(1.5)">
