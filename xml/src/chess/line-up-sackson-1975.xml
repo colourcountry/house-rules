@@ -44,19 +44,6 @@
             </phaseName>
             <repeat>
             <p>
-                <player value="white" />
-                <keyword>Use</keyword> <piece colour="white" shape="small-rook" />
-                <goToPhase>
-                    <player value="black" />
-                </goToPhase>
-                <keyword>Use</keyword> <piece colour="black" shape="small-rook-with-dot" />
-                <goToPhase>
-                    <player value="white" />
-                </goToPhase>
-                <keyword>Use</keyword> <piece colour="white" shape="king" />
-                <goToPhase/>
-            </p>
-            <p>
                 <player value="black" />
                 <keyword>Use</keyword> <piece colour="black" shape="small-rook" />
                 <goToPhase>
@@ -68,6 +55,18 @@
                 </goToPhase>
                 <keyword>Use</keyword> <piece colour="black" shape="king" />
             </p>
+            <p>
+                <player value="white" />
+                <keyword>Use</keyword> <piece colour="white" shape="small-rook" />
+                <goToPhase>
+                    <player value="black" />
+                </goToPhase>
+                <keyword>Use</keyword> <piece colour="black" shape="small-rook-with-dot" />
+                <goToPhase>
+                    <player value="white" />
+                </goToPhase>
+                <keyword>Use</keyword> <piece colour="white" shape="king" />
+            </p>
             <goToPhase>
                 <phaseNumber value="1" />
             </goToPhase>
@@ -78,7 +77,7 @@
                 <dt><keyword>use</keyword></dt>
                 <dd>
                     If there are any unplaced pieces of this type,
-                    place one in any unoccupied space.
+                    place one in any unoccupied space
                 </dd>
                 <dd>
                     Otherwise, <keyword>move</keyword>
@@ -155,30 +154,48 @@
             <phaseName>
                 <phaseNumber value="1" />
             </phaseName>
-            Make an orthogonal or diagonal line with 4 of your pieces
+            <p>Make an orthogonal or diagonal line with 4 of your pieces</p>
             <goToPhase>
                 <phaseNumber value="Win" />
             </goToPhase>
             <example>
                 <player value="white" /> (<piece colour="white" shape="small-rook" />)
-                <grid use="grid" scale="1">
-                    <square x="1" y="0"> <piece colour="black" shape="small-rook" /> </square>
-                    <square x="2" y="0"> <piece colour="white" shape="small-rook-with-dot" /> </square>
-                    <square x="1" y="1">
-                        <arrow x="0" y="1" />
+                <hide>
+                <grid use="grid" id="wins">
+                    <square x="1" y="0"> <piece colour="white" shape="small-rook-with-dot" /> </square>
+                    <square x="2" y="0"> <piece colour="black" shape="small-rook" /> </square>
+                    <square x="3" y="0"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                        <square x="1" y="1">
                         <piece colour="white" shape="small-rook" />
                     </square>
                     <square x="2" y="1"> <piece colour="black" shape="king" /> </square>
-                    <square x="3" y="1"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                     <square x="0" y="2"> <piece colour="white" shape="king" /> </square>
                     <square x="2" y="2"> <piece colour="white" shape="small-rook" /> </square>
                     <square x="3" y="2"> <piece colour="white" shape="small-rook-with-dot" /> </square>
+                    <square x="0" y="3"> <piece colour="black" shape="small-rook" /> </square>
                     <square x="1" y="3"> <piece colour="black" shape="small-rook-with-dot" /> </square>
-                    <square x="2" y="3"> <piece colour="black" shape="small-rook" /> </square>
+                </grid>
+                </hide>
+                <grid use="wins" scale="1">
+                    <square x="1" y="1">
+                        <arrow x="0" y="1" />
+                    </square>
                 </grid>
                 <goToPhase>
                     <phaseNumber value="Win" />
                     <player value="white" />
+                </goToPhase>
+            </example>
+            <example>
+                <player value="black" /> (<piece colour="black" shape="small-rook-with-dot" />)
+                <grid use="wins" scale="1">
+                    <square x="1" y="3">
+                        <arrow x="0" y="-1" />
+                    </square>
+                </grid>
+                <goToPhase>
+                    <phaseNumber value="Win" />
+                    <player value="black" />
                 </goToPhase>
             </example>
         </phase>
@@ -190,6 +207,22 @@
             <goToPhase>
                 <phaseNumber value="Lose" />
             </goToPhase>
+            <example>
+                <player value="black" /> (<piece colour="black" shape="small-rook" />)
+                <grid use="wins" scale="1">
+                    <square x="2" y="0">
+                        <highlight value="cross" />
+                    </square>
+                    <square x="0" y="3">
+                        <highlight value="cross" />
+                    </square>
+                </grid>
+                <goToPhase>
+                    <phaseNumber value="Win" />
+                    <player value="white" />
+                </goToPhase>
+            </example>
+<!--
             <example>
                 <player value="white" /> (<piece colour="white" shape="small-rook" />)
                 <grid use="grid" scale="1">
@@ -215,6 +248,14 @@
                     <player value="black" />
                 </goToPhase>
             </example>
+-->
         </subphase>
+        <log>
+            <status value="complete" />
+            <changelog>
+                <changedate>2010-08-31</changedate>
+                <changetext>First release</changetext>
+            </changelog>
+        </log>
     </gamebody>
 </game>

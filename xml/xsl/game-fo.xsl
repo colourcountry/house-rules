@@ -387,6 +387,8 @@
 
     <xsl:template match="hide" mode="fo" />
 
+    <xsl:template match="log" mode="fo" />
+
     <xsl:template match="grid" mode="fo">
         <xsl:variable name="height"><xsl:call-template name="get-grid-height"/></xsl:variable>
         <xsl:variable name="scale">
