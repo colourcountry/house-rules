@@ -252,9 +252,18 @@
         </subphase>
         <log>
             <status value="complete" />
+            <sources>
+                <source>
+                    <title>Sly: Six Exciting Games For Family Fun</title>
+                    <copyright-holder>Amway Corp., U.S.A.</copyright-holder>
+                    <copyright-year>1975</copyright-year>
+                </source>
+            </sources>
             <changelog>
-                <changedate>2010-08-31</changedate>
-                <changetext>First release</changetext>
+                <change>
+                    <changedate>2010-08-31</changedate>
+                    <changetext>First release</changetext>
+                </change>
             </changelog>
         </log>
     </gamebody>

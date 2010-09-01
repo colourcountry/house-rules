@@ -21,18 +21,8 @@
         <players>
             <player value="white" />
             <pieces>
-                king
-                <piece colour="white" shape="king" />,
-                queen
-                <piece colour="white" shape="queen" />,
-                2 × bishop
-                <piece colour="white" shape="bishop" />,
-                2 × knight
-                <piece colour="white" shape="knight" />,
-                2 × rook
-                <piece colour="white" shape="rook" />,
-                8 × pawn
-                <piece colour="white" shape="pawn" />
+                as
+                <player value="black" />
             </pieces>
         </players>
         <phase>
@@ -88,7 +78,14 @@
                 <phaseNumber value="1" />
                 <player value="white" />
             </phaseName>
+            <ol>
+            <li>
             <keyword>Move</keyword> or <keyword>capture</keyword> with one of your pieces
+            <li>
+            <li>
+            <keyword>Promote</keyword>
+            </li>
+            </ol>
             <repeat>
                 <goToPhase>
                     <phaseNumber value="1" />
@@ -104,35 +101,18 @@
             <dlentry>
                 <dt><keyword>move</keyword></dt>
                 <dd>
-                    <p>
-                        Move the piece to an empty square
-                    </p>
                     <ul>
                     <li>
-                        <piece colour="white" shape="knight" />
-                        may jump over any other pieces
+                        Move the piece normally, to an empty square, or
                     </li>
                     <li>
-                        <piece colour="white" shape="king" />
-                        and
-                        <piece colour="black" shape="king" />
-                        may not occupy adjacent squares
+                        make a <keyword>double move</keyword> with a
+                        <piece shape="pawn" />, or
                     </li>
                     <li>
-                        After moving a
-                        <piece colour="white" shape="pawn" />
-                        to the last rank, immediately
-                        replace it with any of
-                        <piece colour="white" shape="knight" />
-                        <piece colour="white" shape="bishop" />
-                        <piece colour="white" shape="rook" />
-                        <piece colour="white" shape="queen" />
-                    </li>
-                    <li>
-                        A
-                        <piece colour="white" shape="pawn" />
-                        which has not yet moved
-                        may move 2 squares forward
+                        <keyword>castle</keyword> with a
+                        <piece shape="rook" /> and
+                        <piece shape="king" />
                     </li>
                     </ul>
                 </dd>
@@ -143,38 +123,129 @@
                     <ul>
                     <li>
                         Move
-                        <piece colour="white" shape="king" />
-                        <piece colour="white" shape="queen" />
-                        <piece colour="white" shape="rook" />
-                        <piece colour="white" shape="bishop" />
+                        <piece shape="king" />
+                        <piece shape="queen" />
+                        <piece shape="rook" />
+                        <piece shape="bishop" />
                         or
-                        <piece colour="white" shape="knight" />
-                        to a square occupied by
+                        <piece shape="knight" />
+                        normally,
+                        to a space occupied by
                         an enemy piece, capturing that piece, or
                     </li>
                     <li>
-                        move
-                        <piece colour="white" shape="pawn" />
-                        to a square
-                        one space diagonally forward of it
-                        (on either side)
-                        which is occupied by an enemy piece,
+                        if either of the two spaces
+                        diagonally forward of a
+                        <piece shape="pawn" />
+                        are occupied by an enemy piece,
+                        move the
+                        <piece shape="pawn" />
+                        to that space,
                         capturing that piece, or
                     </li>
                     <li>
-                        move a 
-                        <piece colour="white" shape="pawn" />
-                        which has not yet moved
-                        to a square
-                        one space diagonally forward of it
-                        (on either side)
-                        which is occupied by an enemy piece,
-                        capturing that piece, and then
-                        move 1 extra square forward
+                        <keyword>capture en passant</keyword> with a
+                        <piece shape="pawn" />
                     </li>
                     </ul>
                 </dd>
             </dlentry>
+            <dlentry>
+                <dt><keyword>knight jump</keyword></dt>
+                <dd>
+                        <piece shape="knight" />
+                        may jump over any other pieces
+                        to <keyword>move</keyword>
+                        or <keyword>capture</keyword>;
+                        other pieces must pass through
+                        only empty spaces
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>no king check</keyword></dt>
+                <dd>
+                        <piece colour="white" shape="king" />
+                        and
+                        <piece colour="black" shape="king" />
+                        may not occupy adjacent squares
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>double move</keyword></dt>
+                <dd>
+                        Move a
+                        <piece shape="pawn" />
+                        which has not yet moved
+                        2 spaces forward
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>castle</keyword></dt>
+                <dd>
+                        If your
+                        <piece shape="king" />
+                        has not yet moved,
+                        and there are no occupied spaces between it
+                        and a
+                        <piece shape="rook" />
+                        which has also not moved,
+                        move the 
+                        <piece shape="king" />
+                        2 spaces toward the
+                        <piece shape="rook" />
+                        and move the
+                        <piece shape="rook" />
+                        to the space the
+                        <piece shape="king" />
+                        just passed through
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>promote</keyword></dt>
+                <dd>
+                        Replace any
+                        <piece shape="pawn" />
+                        which has reached the forwardmost row of the board
+                        with your choice of
+                        <piece shape="knight" />
+                        <piece shape="bishop" />
+                        <piece shape="rook" />
+                        <piece shape="queen" />
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture en passant</keyword></dt>
+                <dd>
+                    If an opposing
+                        <piece shape="pawn" />
+                    has just made a <keyword>double move</keyword>
+                    to a space with a
+                        <piece shape="pawn" />
+                    in the space on either side,
+                    move the
+                        <piece shape="pawn" />
+                        to the space
+                        immediately behind the
+                        <piece shape="pawn" />,
+                        capturing it
+                </dd>
+            </dlentry>
         </dl>
+        <log>
+            <status value="in-progress" />
+            <sources>
+                <source>
+                    <title>Chess</title>
+                    <copyright-holder>Wikipedia</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>  
+                    <changedate>2010-09-01</changedate>
+                    <changetext>Rules ready, needs examples</changetext>
+                </change>
+            </changelog>
+        </log>
     </gamebody>
 </game>

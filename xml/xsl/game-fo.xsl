@@ -454,56 +454,44 @@
        </fo:block>
     </xsl:template>
 
-    <xsl:template match="p" mode="fo">
+    <xsl:template match="p|ol|ul" mode="fo">
       <fo:block xsl:use-attribute-sets="paragraph">
           <xsl:apply-templates mode="fo" />
        </fo:block>
     </xsl:template>
 
-    <xsl:template match="ul" mode="fo">
-      <fo:block xsl:use-attribute-sets="paragraph">
-          <fo:list-block>
-              <xsl:apply-templates mode="fo" />
-          </fo:list-block>
-       </fo:block>
-    </xsl:template>
-
     <xsl:template match="ol/li" mode="fo">
-        <fo:list-item>
-            <fo:list-item-label>
-                <fo:block xsl:use-attribute-sets="list-label">
+        <fo:block>
+            <xsl:if test="ancestor::li">
+                <xsl:attribute name="margin-left">15pt</xsl:attribute>
+            </xsl:if>
+                <fo:inline xsl:use-attribute-sets="list-label">
                     <xsl:value-of select="count(preceding-sibling::li) + 1" />
-                </fo:block>
-            </fo:list-item-label>
-            <fo:list-item-body margin-left="10pt">
-                <fo:block>
-                  <xsl:apply-templates mode="fo" />
-                </fo:block>
-            </fo:list-item-body>
-        </fo:list-item>
+                </fo:inline>
+                <xsl:apply-templates mode="fo" />
+        </fo:block>
     </xsl:template>
 
     <xsl:template match="ul/li" mode="fo">
-        <fo:list-item>
-            <fo:list-item-label>
-                <fo:block xsl:use-attribute-sets="list-label">
-                    ·
-                </fo:block>
-            </fo:list-item-label>
-            <fo:list-item-body margin-left="10pt">
-                <fo:block>
-                  <xsl:apply-templates mode="fo" />
-                </fo:block>
-            </fo:list-item-body>
-        </fo:list-item>
-    </xsl:template>
-
-    <xsl:template match="ol" mode="fo">
-      <fo:block xsl:use-attribute-sets="paragraph">
-          <fo:list-block>
-              <xsl:apply-templates mode="fo" />
-          </fo:list-block>
-       </fo:block>
+        <fo:block>
+            <xsl:if test="ancestor::li">
+                <xsl:attribute name="margin-left">15pt</xsl:attribute>
+            </xsl:if>
+                <fo:inline xsl:use-attribute-sets="list-label">
+                    <xsl:choose>
+                        <xsl:when test="preceding-sibling::li">
+                            or
+                        </xsl:when>
+                        <xsl:when test="count(following-sibling::li) gt 1">
+                            One of
+                        </xsl:when>
+                        <xsl:otherwise>
+                            Either
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </fo:inline>
+                <xsl:apply-templates mode="fo" />
+        </fo:block>
     </xsl:template>
 
     <xsl:template match="dd" mode="fo">
