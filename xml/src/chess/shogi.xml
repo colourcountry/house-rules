@@ -1,5 +1,5 @@
-<game>
-    <name>将棋 Shogi</name>
+<game xml:lang="en">
+    <name><ph xml:lang="ja">将棋</ph> Shogi</name>
     <gamebody>
         <players>
             <player value="black" />
@@ -7,21 +7,21 @@
         </players>
         <pieces>
             <p>
-                2 × 王將 king
+                2 × <ph xml:lang="ja">王將</ph> king
                 <piece shape="king" />,
-                2 × 角行 bishop
+                2 × <ph xml:lang="ja">角行</ph> bishop
                 <piece shape="bishop" />,
-                2 × 飛車 rook
+                2 × <ph xml:lang="ja">飛車</ph> rook
                 <piece shape="rook" />,
-                4 × 桂馬 knight 
+                4 × <ph xml:lang="ja">桂馬</ph> knight 
                 <piece shape="shogi-knight" />,
-                4 × 香車 lance
+                4 × <ph xml:lang="ja">香車</ph> lance
                 <piece shape="lance" />,
-                4 × 金将 gold general
+                4 × <ph xml:lang="ja">金将</ph> gold general
                 <piece shape="gold-general" />,
-                4 × 銀将 silver general
+                4 × <ph xml:lang="ja">銀将</ph> silver general
                 <piece shape="silver-general" />,
-                18 × 歩兵 pawn
+                18 × <ph xml:lang="ja">歩兵</ph> pawn
                 <piece shape="pawn" />
             </p>
             <p>

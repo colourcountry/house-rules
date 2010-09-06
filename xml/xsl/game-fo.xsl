@@ -61,8 +61,40 @@
         </fo:root>
     </xsl:template>
 
+    <xsl:template name="get-font-family">
+        <xsl:attribute name="font-family">
+        <xsl:choose>
+            <xsl:when test="@xml:lang">
+                <xsl:variable name="lang"><xsl:value-of select="@xml:lang"/></xsl:variable>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" /> for <xsl:value-of select="$lang" /> 
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" /> as default
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" />
+            </xsl:otherwise>
+        </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+
     <xsl:attribute-set name="all">
-        <xsl:attribute name="font-family">Fontin</xsl:attribute>
+        <xsl:attribute name="font-family">
+        <xsl:choose>
+            <xsl:when test="@xml:lang">
+                <xsl:variable name="lang"><xsl:value-of select="@xml:lang"/></xsl:variable>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" /> for <xsl:value-of select="$lang" /> 
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" /> as default
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" />
+            </xsl:otherwise>
+        </xsl:choose>
+        </xsl:attribute>
         <xsl:attribute name="font-size">10pt</xsl:attribute>
         <xsl:attribute name="line-height">14pt</xsl:attribute>
     </xsl:attribute-set>
@@ -179,7 +211,14 @@
 
     <xsl:template match="name" mode="fo-top">
         <fo:inline xsl:use-attribute-sets="title">
-            <xsl:value-of select="." />
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
+    </xsl:template>
+
+    <xsl:template match="ph" mode="fo">
+        <fo:inline>
+            <xsl:call-template name="get-font-family" />
+            <xsl:apply-templates  mode="fo" />
         </fo:inline>
     </xsl:template>
 
