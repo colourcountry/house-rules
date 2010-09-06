@@ -11,8 +11,8 @@ export BASE=$(basename "$XML" .xml)
 echo "$1 --> pdf/$BASE.pdf"
 saxonb-xslt -ext:on "$1" xsl/game.xsl
 
-export HEADLESS="-Dlog4j.configuration=log4j.properties"
-fop scrap/out.fo target/"$BASE".pdf
+#export HEADLESS="-Dlog4j.configuration=log4j.properties"
+fop -c fop.conf scrap/out.fo target/"$BASE".pdf
 
 evince target/"$BASE".pdf
 

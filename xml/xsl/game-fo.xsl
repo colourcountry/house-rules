@@ -62,7 +62,7 @@
     </xsl:template>
 
     <xsl:attribute-set name="all">
-        <xsl:attribute name="font-family">Helvetica</xsl:attribute>
+        <xsl:attribute name="font-family">Fontin</xsl:attribute>
         <xsl:attribute name="font-size">10pt</xsl:attribute>
         <xsl:attribute name="line-height">14pt</xsl:attribute>
     </xsl:attribute-set>
@@ -137,6 +137,11 @@
         <xsl:attribute name="alignment-adjust">-4pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="align-bullets">
+        <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
+        <xsl:attribute name="alignment-adjust">-6pt</xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="phase-name">
         <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
         <xsl:attribute name="alignment-adjust">-1pt</xsl:attribute>
@@ -180,7 +185,10 @@
 
     <xsl:template match="about" mode="fo-top">
         <fo:inline xsl:use-attribute-sets="subtitle">
-            <xsl:value-of select="." />
+            <fo:leader leader-length="5px" />
+            <xsl:value-of select="author" />
+            <fo:leader leader-length="5px" />
+            <xsl:value-of select="date" />
         </fo:inline>
     </xsl:template>
 
@@ -485,7 +493,9 @@
         <fo:list-item>
             <fo:list-item-label>
                 <fo:block xsl:use-attribute-sets="list-label">
-                    ·
+                    <fo:instream-foreign-object xsl:use-attribute-sets="align-bullets">
+                        <xsl:call-template name="svg-with-bullet" />
+                    </fo:instream-foreign-object>
                 </fo:block>
             </fo:list-item-label>
             <fo:list-item-body margin-left="10pt">
