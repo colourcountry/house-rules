@@ -1,0 +1,241 @@
+<game>
+    <name>将棋 Shogi</name>
+    <gamebody>
+        <players>
+            <player value="black" />
+            <player value="white" />
+        </players>
+        <pieces>
+            <p>
+                2 × 王將 king
+                <piece shape="king" />,
+                2 × 角行 bishop
+                <piece shape="bishop" />,
+                2 × 飛車 rook
+                <piece shape="rook" />,
+                4 × 桂馬 knight 
+                <piece shape="shogi-knight" />,
+                4 × 香車 lance
+                <piece shape="lance" />,
+                4 × 金将 gold general
+                <piece shape="gold-general" />,
+                4 × 銀将 silver general
+                <piece shape="silver-general" />,
+                18 × 歩兵 pawn
+                <piece shape="pawn" />
+            </p>
+            <p>
+                Pieces can change ownership:
+                <piece shape="king" /> =
+                <piece colour="black" shape="king" /> =
+                <piece colour="white" shape="king" />
+            </p>
+            <p>
+                Pieces have 2 states:
+                unpromoted and promoted
+            </p>
+        </pieces>
+        <phase>
+            <phaseName>
+                <phaseNumber value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="9" columns="9" size="small"
+                      left="edge" right="edge" bottom="white-edge" top="black-edge"/>
+            </hide>
+            <grid use="grid">
+                <square x="0" y="0"> <piece colour="black" shape="lance" /> <player value="black" /> </square>
+                <square x="1" y="0"> <piece colour="black" shape="knight" /> </square>
+                <square x="2" y="0"> <piece colour="black" shape="silver-general" /> </square>
+                <square x="3" y="0"> <piece colour="black" shape="gold-general" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="king" /> </square>
+                <square x="5" y="0"> <piece colour="black" shape="gold-general" /> </square>
+                <square x="6" y="0"> <piece colour="black" shape="silver-general" /> </square>
+                <square x="7" y="0"> <piece colour="black" shape="knight" /> </square>
+                <square x="8" y="0"> <piece colour="black" shape="lance" /> </square>
+                <square x="1" y="1"> <piece colour="black" shape="bishop" /> </square>
+                <square x="7" y="1"> <piece colour="black" shape="rook" /> </square>
+                <square x="0" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="1" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="2" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="3" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="4" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="5" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="6" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="7" y="2"> <piece colour="black" shape="pawn" /> </square>
+                <square x="8" y="2"> <piece colour="black" shape="pawn" /> </square>
+
+                <square x="0" y="8"> <piece colour="white" shape="lance" /> </square>
+                <square x="1" y="8"> <piece colour="white" shape="knight" /> </square>
+                <square x="2" y="8"> <piece colour="white" shape="silver-general" /> </square>
+                <square x="3" y="8"> <piece colour="white" shape="gold-general" /> </square>
+                <square x="4" y="8"> <piece colour="white" shape="king" /> </square>
+                <square x="5" y="8"> <piece colour="white" shape="gold-general" /> </square>
+                <square x="6" y="8"> <piece colour="white" shape="silver-general" /> </square>
+                <square x="7" y="8"> <piece colour="white" shape="knight" /> </square>
+                <square x="8" y="8"> <piece colour="white" shape="lance" /> </square>
+                <square x="1" y="7"> <piece colour="white" shape="rook" /> </square>
+                <square x="7" y="7"> <piece colour="white" shape="bishop" /> </square>
+                <square x="0" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="1" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="2" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="3" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="4" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="5" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="6" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="7" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="8" y="6"> <piece colour="white" shape="pawn" /> </square>
+            </grid>
+                9 × 9
+            <goToPhase>
+                <phaseNumber value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseNumber value="1" />
+                <player value="black" />
+            </phaseName>
+            <ul>
+            <li>
+            <ol>
+            <li>
+            <keyword>Move</keyword> or <keyword>capture</keyword> with one of the pieces
+            you control
+            </li>
+            <li>
+            <keyword>Promote</keyword>
+            </li>
+            </ol>
+            </li>
+            <li>
+            <keyword>drop</keyword> a captured piece
+            </li>
+            </ul>
+            <repeat>
+                <goToPhase>
+                    <phaseNumber value="1" />
+                    <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseNumber value="1" />
+                    <player value="black" />
+                </goToPhase>
+            </repeat>
+        </phase>
+        <dl>
+            <dlentry>
+                <dt><keyword>move</keyword></dt>
+                <dd>
+                    <ul>
+                    <li>
+                        Move an unpromoted piece normally, to an empty square
+                    </li>
+                    <li>
+                        Move a promoted
+                        <square x="0" y="8"> <piece shape="silver-general" /> </square>
+                        <square x="0" y="8"> <piece shape="shogi-knight" /> </square>
+                        <square x="0" y="8"> <piece shape="lance" /> </square>
+                        or
+                        <square x="0" y="8"> <piece shape="pawn" /> </square>
+                        as a
+                        <square x="0" y="8"> <piece shape="gold-general" /> </square>
+                        to an empty square
+                    </li>
+                    <li>
+                        Move a promoted
+                        <square x="0" y="8"> <piece shape="bishop" /> </square>
+                        as a
+                        <square x="0" y="8"> <piece shape="dragon-horse" /> </square>
+                        to an empty square
+                    </li>
+                    <li>
+                        Move a promoted
+                        <square x="0" y="8"> <piece shape="rook" /> </square>
+                        as a
+                        <square x="0" y="8"> <piece shape="dragon-king" /> </square>
+                        to an empty square
+                    </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                        Move the piece as for a <keyword>move</keyword>,
+                        but to a space occupied by
+                        an enemy piece, capturing that piece
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>drop</keyword></dt>
+                <dd>
+                    <p>
+                        Place any piece you have captured on any
+                        empty space: you now control the piece
+                    </p>
+                    <p>
+                        If the piece was promoted when captured,
+                        it becomes unpromoted
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>knight jump</keyword></dt>
+                <dd>
+                        <piece shape="knight" />
+                        may jump over any other pieces
+                        to <keyword>move</keyword>
+                        or <keyword>capture</keyword>;
+                        other pieces must pass through
+                        only empty spaces
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>promote</keyword></dt>
+                <dd>
+                <ol>
+                <li>
+                        Promote any
+                        <piece shape="pawn" />
+                        or
+                        <piece shape="lance" />
+                        which ended the turn in the forwardmost row of the board
+                </li>
+                <li>
+                        Promote any
+                        <piece shape="shogi-knight" />
+                        which ended the turn in the forwardmost 2 rows of the board
+                </li>
+                <li>
+                        Optionally promote any piece
+                        which began or ended the turn in the forwardmost 3 rows of the board
+                </li>
+                </ol>
+                </dd>
+            </dlentry>
+        </dl>
+        <log>
+            <status value="in-progress" />
+            <sources>
+                <source>
+                    <title>Shogi</title>
+                    <copyright-holder>Wikipedia</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+                <source>
+                    <title>Shogi</title>
+                    <copyright-holder>chessvariants.com</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>  
+                    <changedate>2010-09-01</changedate>
+                    <changetext>Rules ready, needs examples</changetext>
+                </change>
+            </changelog>
+        </log>
+    </gamebody>
+</game>

@@ -46,7 +46,7 @@
     </xsl:template>
 
     <xsl:template name="svg-with-piece">
-        <xsl:param name="colour"><xsl:value-of select="@colour" /></xsl:param>
+        <xsl:param name="colour"><xsl:call-template name="get-colour" /></xsl:param>
         <xsl:param name="shape">
             <xsl:choose>
                 <xsl:when test="@shape">
@@ -83,8 +83,15 @@
         </svg:svg>
     </xsl:template>
 
+    <xsl:template name="get-colour">
+        <xsl:choose>
+            <xsl:when test="@colour"><xsl:value-of select="@colour" /></xsl:when>
+            <xsl:otherwise>grey</xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template name="svg-piece">
-        <xsl:param name="colour"><xsl:value-of select="@colour" /></xsl:param>
+        <xsl:param name="colour"><xsl:call-template name="get-colour" /></xsl:param>
         <xsl:param name="shape">
             <xsl:choose>
                 <xsl:when test="@shape">
