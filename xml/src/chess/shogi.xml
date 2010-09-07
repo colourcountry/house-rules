@@ -37,21 +37,21 @@
         </pieces>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <hide>
                 <grid id="grid" rows="9" columns="9" size="small"
                       left="edge" right="edge" bottom="white-edge" top="black-edge"/>
             </hide>
-            <grid use="grid">
+            <grid use="#grid">
                 <square x="0" y="0"> <piece colour="black" shape="lance" /> <player value="black" /> </square>
-                <square x="1" y="0"> <piece colour="black" shape="knight" /> </square>
+                <square x="1" y="0"> <piece colour="black" shape="shogi-knight" /> </square>
                 <square x="2" y="0"> <piece colour="black" shape="silver-general" /> </square>
                 <square x="3" y="0"> <piece colour="black" shape="gold-general" /> </square>
                 <square x="4" y="0"> <piece colour="black" shape="king" /> </square>
                 <square x="5" y="0"> <piece colour="black" shape="gold-general" /> </square>
                 <square x="6" y="0"> <piece colour="black" shape="silver-general" /> </square>
-                <square x="7" y="0"> <piece colour="black" shape="knight" /> </square>
+                <square x="7" y="0"> <piece colour="black" shape="shogi-knight" /> </square>
                 <square x="8" y="0"> <piece colour="black" shape="lance" /> </square>
                 <square x="1" y="1"> <piece colour="black" shape="bishop" /> </square>
                 <square x="7" y="1"> <piece colour="black" shape="rook" /> </square>
@@ -66,13 +66,13 @@
                 <square x="8" y="2"> <piece colour="black" shape="pawn" /> </square>
 
                 <square x="0" y="8"> <piece colour="white" shape="lance" /> </square>
-                <square x="1" y="8"> <piece colour="white" shape="knight" /> </square>
+                <square x="1" y="8"> <piece colour="white" shape="shogi-knight" /> </square>
                 <square x="2" y="8"> <piece colour="white" shape="silver-general" /> </square>
                 <square x="3" y="8"> <piece colour="white" shape="gold-general" /> </square>
                 <square x="4" y="8"> <piece colour="white" shape="king" /> </square>
                 <square x="5" y="8"> <piece colour="white" shape="gold-general" /> </square>
                 <square x="6" y="8"> <piece colour="white" shape="silver-general" /> </square>
-                <square x="7" y="8"> <piece colour="white" shape="knight" /> </square>
+                <square x="7" y="8"> <piece colour="white" shape="shogi-knight" /> </square>
                 <square x="8" y="8"> <piece colour="white" shape="lance" /> </square>
                 <square x="1" y="7"> <piece colour="white" shape="rook" /> </square>
                 <square x="7" y="7"> <piece colour="white" shape="bishop" /> </square>
@@ -88,14 +88,15 @@
             </grid>
                 9 × 9
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="A" />
                 <player value="black" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="A" />
                 <player value="black" />
+                (<player value="white" />)
             </phaseName>
             <ul>
             <li>
@@ -115,47 +116,65 @@
             </ul>
             <repeat>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="A" />
                     <player value="white" />
                 </goToPhase>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="A" />
                     <player value="black" />
                 </goToPhase>
             </repeat>
-        </phase>
         <dl>
             <dlentry>
                 <dt><keyword>move</keyword></dt>
                 <dd>
+                    Move the piece to an empty square
                     <ul>
                     <li>
-                        Move an unpromoted piece normally, to an empty square
+                        Move a <piece colour="black" shape="gold-general" />:
+                        <grid use="shogi-pieces.xml#gold-general" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="silver-general" />:
+                        <grid use="shogi-pieces.xml#silver-general" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="shogi-knight" />:
+                        <grid use="shogi-pieces.xml#shogi-knight" scale="0.4"/>
+                        + <keyword>knight jump</keyword>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="lance" />:
+                        <grid use="shogi-pieces.xml#lance" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="pawn" />:
+                        <grid use="chess-pieces.xml#pawn" scale="0.4"/>
                     </li>
                     <li>
                         Move a promoted
-                        <square x="0" y="8"> <piece shape="silver-general" /> </square>
-                        <square x="0" y="8"> <piece shape="shogi-knight" /> </square>
-                        <square x="0" y="8"> <piece shape="lance" /> </square>
+                        <piece colour="black" shape="silver-general" /> 
+                        <piece colour="black" shape="shogi-knight" /> 
+                        <piece colour="black" shape="lance" /> 
                         or
-                        <square x="0" y="8"> <piece shape="pawn" /> </square>
+                        <piece colour="black" shape="pawn" /> 
                         as a
-                        <square x="0" y="8"> <piece shape="gold-general" /> </square>
-                        to an empty square
+                        <piece colour="black" shape="gold-general" />:
+                        <grid use="shogi-pieces.xml#gold-general" scale="0.4"/>
                     </li>
                     <li>
                         Move a promoted
-                        <square x="0" y="8"> <piece shape="bishop" /> </square>
+                        <piece colour="black" shape="bishop" /> 
                         as a
-                        <square x="0" y="8"> <piece shape="dragon-horse" /> </square>
-                        to an empty square
+                        <piece colour="black" shape="dragon-horse" />:
+                        <grid use="shogi-pieces.xml#dragon-horse" scale="0.4"/>
                     </li>
                     <li>
                         Move a promoted
-                        <square x="0" y="8"> <piece shape="rook" /> </square>
+                        <piece colour="black" shape="rook" /> 
                         as a
-                        <square x="0" y="8"> <piece shape="dragon-king" /> </square>
-                        to an empty square
+                        <piece colour="black" shape="dragon-king" />:
+                        <grid use="shogi-pieces.xml#dragon-king" scale="0.4"/>
                     </li>
                     </ul>
                 </dd>
@@ -182,30 +201,19 @@
                 </dd>
             </dlentry>
             <dlentry>
-                <dt><keyword>knight jump</keyword></dt>
-                <dd>
-                        <piece shape="knight" />
-                        may jump over any other pieces
-                        to <keyword>move</keyword>
-                        or <keyword>capture</keyword>;
-                        other pieces must pass through
-                        only empty spaces
-                </dd>
-            </dlentry>
-            <dlentry>
                 <dt><keyword>promote</keyword></dt>
                 <dd>
                 <ol>
                 <li>
                         Promote any
-                        <piece shape="pawn" />
+                        <piece colour="black" shape="pawn" />
                         or
-                        <piece shape="lance" />
+                        <piece colour="black" shape="lance" />
                         which ended the turn in the forwardmost row of the board
                 </li>
                 <li>
                         Promote any
-                        <piece shape="shogi-knight" />
+                        <piece colour="black" shape="shogi-knight" />
                         which ended the turn in the forwardmost 2 rows of the board
                 </li>
                 <li>
@@ -215,7 +223,19 @@
                 </ol>
                 </dd>
             </dlentry>
+            <dlentry>
+                <dt><keyword>knight jump</keyword></dt>
+                <dd>
+                        <piece colour="black" shape="shogi-knight" />
+                        may jump over any other pieces
+                        to <keyword>move</keyword>
+                        or <keyword>capture</keyword>;
+                        other pieces must pass through
+                        only empty spaces
+                </dd>
+            </dlentry>
         </dl>
+        </phase>
         <log>
             <status value="in-progress" />
             <sources>
@@ -233,7 +253,7 @@
             <changelog>
                 <change>  
                     <changedate>2010-09-01</changedate>
-                    <changetext>Rules ready, needs examples</changetext>
+                    <changetext>Rules ready (except checkmate), needs examples</changetext>
                 </change>
             </changelog>
         </log>

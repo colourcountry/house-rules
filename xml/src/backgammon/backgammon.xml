@@ -21,7 +21,7 @@
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <hide>
                 <grid id="grid" rows="2" columns="12" size="0.9"
@@ -39,7 +39,7 @@
             </grid>
                 12 × 2
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </goToPhase>
         </phase>

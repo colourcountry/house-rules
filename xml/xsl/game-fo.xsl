@@ -291,6 +291,18 @@
         </fo:block>
     </xsl:template>
 
+    <xsl:template match="dottle" mode="fo">
+        <fo:block xsl:use-attribute-sets="section">
+            <fo:table>
+            <fo:table-column column-width="80pt" />
+            <fo:table-column />
+            <fo:table-body>
+                <xsl:apply-templates select="dl/dlentry" mode="fo" />
+            </fo:table-body>
+            </fo:table>
+        </fo:block>
+    </xsl:template>
+
     <xsl:template match="phase" mode="fo">
         <fo:block xsl:use-attribute-sets="section">
             <fo:table>
@@ -309,6 +321,7 @@
                         </fo:block>
                     </fo:table-cell>
                 </fo:table-row>
+                <xsl:apply-templates select="dl/dlentry" mode="fo" />
             </fo:table-body>
             </fo:table>
         </fo:block>
@@ -332,6 +345,7 @@
                         </fo:block>
                     </fo:table-cell>
                 </fo:table-row>
+                <xsl:apply-templates select="dl/dlentry" mode="fo" />
             </fo:table-body>
             </fo:table>
         </fo:block>
@@ -366,11 +380,29 @@
         </fo:inline>
     </xsl:template>
 
-    
-    <xsl:template match="phaseNumber" mode="fo">
+    <xsl:template match="*" mode="fo-dt">
+        <xsl:apply-templates select="." mode="fo" />
+    </xsl:template>
+
+    <xsl:template match="phaseRef" mode="fo">
         <xsl:call-template name="phase-name">
             <xsl:with-param name="value"><xsl:value-of select="@value"/></xsl:with-param>
         </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template match="phaseRef" mode="fo-dt" priority="2">
+        <xsl:choose>
+            <xsl:when test="following-sibling::phaseRef">
+                <fo:inline xsl:use-attribute-sets="list-label">
+                    <xsl:value-of select="@value"/>,
+                </fo:inline>
+            </xsl:when>
+            <xsl:otherwise>
+                <fo:inline xsl:use-attribute-sets="list-label">
+                    <xsl:value-of select="@value"/>:
+                </fo:inline>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="player" mode="fo">
@@ -455,17 +487,8 @@
         </fo:instream-foreign-object>
     </xsl:template>
 
-    <xsl:template match="dl" mode="fo">
-        <fo:block xsl:use-attribute-sets="section">
-            <fo:table>
-            <fo:table-column column-width="80pt" />
-            <fo:table-column />
-            <fo:table-body>
-                <xsl:apply-templates mode="fo" />
-            </fo:table-body>
-            </fo:table>
-        </fo:block>
-    </xsl:template>
+    <!-- NOTE: dl will be suppressed unless dlentry is specifically invoked -->
+    <xsl:template match="dl" mode="fo" />
 
     <xsl:template match="keyword" mode="fo">
         <fo:inline xsl:use-attribute-sets="keyword">
@@ -476,7 +499,9 @@
     <xsl:template match="dlentry" mode="fo">
             <fo:table-row>
                 <fo:table-cell>
-                    <xsl:apply-templates select="dt" mode="fo" />
+                    <fo:block>
+                        <xsl:apply-templates select="dt" mode="fo" />
+                    </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
                     <xsl:choose>
@@ -495,10 +520,26 @@
             </fo:table-row>
     </xsl:template>
 
+    <xsl:template match="phase/dlentry" mode="fo" priority="2">
+            <fo:table-row>
+                <fo:table-cell>
+                    <fo:block>
+                        <fo:inline xsl:use-attribute-sets="list-label">
+                            <xsl:value-of select="../../phaseName/phaseRef/@value" />:
+                        </fo:inline>
+                        <xsl:apply-templates select="dt" mode="fo" />
+                    </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                    <fo:block xsl:use-attribute-sets="subsection-body">
+                        <xsl:apply-templates select="dd" mode="fo" />
+                    </fo:block>
+                </fo:table-cell>
+            </fo:table-row>
+    </xsl:template>
+
     <xsl:template match="dt" mode="fo">
-      <fo:block>
-          <xsl:apply-templates mode="fo" />:
-       </fo:block>
+      <xsl:apply-templates mode="fo-dt" />
     </xsl:template>
 
     <xsl:template match="p|ol|ul" mode="fo">

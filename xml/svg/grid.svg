@@ -12,8 +12,8 @@
     </g>
 
     <g id="highlight-circle">
-        <circle cx="0" cy="0" r="0.45"
-          fill="none" stroke="#00cc00" stroke-width="0.05" />
+        <circle cx="0" cy="0" r="0.4"
+          fill="#00dd00" stroke="#00bb00" stroke-width="0.05" />
     </g>
 
     <g id="highlight-shade">

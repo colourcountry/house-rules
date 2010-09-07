@@ -18,12 +18,12 @@
         </pieces>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="blue" />
             </phaseName>
             Place each piece in a space
             <goToPhase>
-                <phaseNumber value="2" />
+                <phaseRef value="2" />
                 <player value="red" />
             </goToPhase>
             <example>
@@ -53,7 +53,7 @@
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="2" />
+                <phaseRef value="2" />
                 <player value="red" />
             </phaseName>
             Choose:
@@ -65,7 +65,7 @@
                 becomes
                 <player value="white" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="white" />
                     (<player value="blue" />)
                 </goToPhase>
@@ -77,7 +77,7 @@
                 becomes
                 <player value="black" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="black" />
                     (<player value="blue" />)
                 </goToPhase>
@@ -85,10 +85,10 @@
             <li>
                 Let <player value="blue" /> decide
                 (you will start
-                <phaseNumber value="3" />
+                <phaseRef value="3" />
                 first)
                 <goToPhase>
-                    <phaseNumber value="2" />
+                    <phaseRef value="2" />
                     <player value="blue" />
                 </goToPhase>
             </li>
@@ -96,7 +96,7 @@
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="2" />
+                <phaseRef value="2" />
                 <player value="blue" />
             </phaseName>
             Choose
@@ -108,7 +108,7 @@
                 becomes
                 <player value="white" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="white" />
                     (<player value="red" />)
                 </goToPhase>
@@ -120,7 +120,7 @@
                 becomes
                 <player value="black" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="black" />
                     (<player value="red" />)
                 </goToPhase>
@@ -129,7 +129,7 @@
         </subphase>
         <phase>
             <phaseName>
-                <phaseNumber value="3" />
+                <phaseRef value="3" />
                 <player value="white" />
             </phaseName>
             <p>
@@ -137,13 +137,13 @@
                 <keyword>push</keyword> a
                 <piece colour="white" shape="rook" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="black" />
                 </goToPhase>
                 <keyword>push</keyword> a
                 <piece colour="black" shape="rook" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="white" />
                 </goToPhase>
                 </repeat>
@@ -151,13 +151,13 @@
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="3" />
+                <phaseRef value="3" />
                 <player value="white" /> or
                 <player value="black" />
             </phaseName>
                 No legal moves
             <goToPhase>
-                <phaseNumber value="End" />
+                <phaseRef value="End" />
             </goToPhase>            
         </subphase>
         <dl>

@@ -29,18 +29,18 @@
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <grid id="grid" rows="4" columns="4" size="small" scale="1"
                   left="edge" right="edge" bottom="edge" top="edge"/>
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             <repeat>
             <p>
@@ -68,7 +68,7 @@
                 <keyword>Use</keyword> <piece colour="white" shape="king" />
             </p>
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </goToPhase>
             </repeat>
         </phase>
@@ -152,11 +152,11 @@
         </dl>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             <p>Make an orthogonal or diagonal line with 4 of your pieces</p>
             <goToPhase>
-                <phaseNumber value="Win" />
+                <phaseRef value="Win" />
             </goToPhase>
             <example>
                 <player value="white" /> (<piece colour="white" shape="small-rook" />)
@@ -182,7 +182,7 @@
                     </square>
                 </grid>
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="white" />
                 </goToPhase>
             </example>
@@ -194,18 +194,18 @@
                     </square>
                 </grid>
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="black" />
                 </goToPhase>
             </example>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             No legal move
             <goToPhase>
-                <phaseNumber value="Lose" />
+                <phaseRef value="Lose" />
             </goToPhase>
             <example>
                 <player value="black" /> (<piece colour="black" shape="small-rook" />)
@@ -218,7 +218,7 @@
                     </square>
                 </grid>
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="white" />
                 </goToPhase>
             </example>
@@ -244,7 +244,7 @@
                     <square x="2" y="3"> <piece colour="black" shape="small-rook" /> </square>
                 </grid>
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="black" />
                 </goToPhase>
             </example>

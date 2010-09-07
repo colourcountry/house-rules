@@ -31,7 +31,7 @@
             <grid rows="5" columns="6" left="edge" right="edge" bottom="edge" top="edge" scale="0.4" />
             5 × 6
             <goToPhase>
-                <phaseNumber value="1" /> <player value="black" />
+                <phaseRef value="1" /> <player value="black" />
             </goToPhase>
         </setup>
         <dl>
@@ -45,32 +45,32 @@
         </dl>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             <p>
                 Place one of your pieces in an empty square
             </p>
             <repeat>
                 <goToPhase>
-                    <phaseNumber value="1" /> <player value="white" />
+                    <phaseRef value="1" /> <player value="white" />
                 </goToPhase>
                 <goToPhase>
-                    <phaseNumber value="1" /> <player value="black" />
+                    <phaseRef value="1" /> <player value="black" />
                 </goToPhase>
             </repeat>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             No empty squares
             <goToPhase>
-                <phaseNumber value="2" /> <player value="black" />
+                <phaseRef value="2" /> <player value="black" />
             </goToPhase>
         </subphase>
         <phase>
             <phaseName>
-                <phaseNumber value="2" />
+                <phaseRef value="2" />
             </phaseName>
             <p>
                 Place the piece or
@@ -85,10 +85,10 @@
             </p>
             <repeat>
                 <goToPhase>
-                    <phaseNumber value="2" /> <player value="white" />
+                    <phaseRef value="2" /> <player value="white" />
                 </goToPhase>
                 <goToPhase>
-                    <phaseNumber value="2" /> <player value="black" />
+                    <phaseRef value="2" /> <player value="black" />
                 </goToPhase>
             </repeat>
             <example>
@@ -135,18 +135,18 @@
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="2" />
+                <phaseRef value="2" />
             </phaseName>
             No legal moves
             <goToPhase>
-                <phaseNumber value="End" />
+                <phaseRef value="End" />
                 <player value="black" />
                 <player value="white" />
             </goToPhase>
         </subphase>
         <phase>
             <phaseName>
-                <phaseNumber value="End" />
+                <phaseRef value="End" />
             </phaseName>
             <p>Take all <keyword>pylons</keyword>
                which have one of your pieces on top, and any of your pieces
@@ -256,7 +256,7 @@
             <p>
                 16 <player value="black" />, 14 <player value="white" />
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="black" />
                 </goToPhase>
             </p>

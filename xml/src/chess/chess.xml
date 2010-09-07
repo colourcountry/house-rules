@@ -27,7 +27,7 @@
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <hide>
                 <grid id="grid" rows="8" columns="8" size="small"
@@ -69,13 +69,13 @@
             </grid>
                 8 × 8
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="white" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="white" />
             </phaseName>
             <ol>
@@ -88,11 +88,11 @@
             </ol>
             <repeat>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="1" />
                     <player value="black" />
                 </goToPhase>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="1" />
                     <player value="white" />
                 </goToPhase>
             </repeat>
