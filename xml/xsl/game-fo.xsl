@@ -560,6 +560,12 @@
         </fo:block>
     </xsl:template>
 
+    <xsl:template match="i" mode="fo">
+        <fo:inline xsl:use-attribute-sets="list-label">
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
+    </xsl:template>
+
     <xsl:template match="ul/li" mode="fo">
         <fo:block>
             <xsl:if test="ancestor::li">

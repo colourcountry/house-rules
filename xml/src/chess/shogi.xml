@@ -234,6 +234,9 @@
                         only empty spaces
                 </dd>
             </dlentry>
+            <dlentry use="common-rules.xml#threatened-space" />
+            <dlentry use="common-rules.xml#check" />
+            <dlentry use="common-rules.xml#checkmate" />
         </dl>
         </phase>
         <log>

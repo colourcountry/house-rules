@@ -22,20 +22,26 @@
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="@use" mode="use">
+    <xsl:template match="@*" mode="use" />
+
+    <xsl:template match="@use" mode="use" priority="2">
         <xsl:choose>
             <xsl:when test="substring-before(.,'#')">
                 <xsl:variable name="elem-id" select="substring-after(.,'#')"/>
                 <xsl:message>found other-file 'use': <xsl:value-of select="." /></xsl:message>
-                <xsl:apply-templates select="document(substring-before(.,'#'),.)//*[@id=$elem-id]" />
+                <xsl:apply-templates select="document(substring-before(.,'#'),.)//*[@id=$elem-id]/@*" />
+                <xsl:apply-templates select="document(substring-before(.,'#'),.)//*[@id=$elem-id]/@*" mode="use"/>
+                <xsl:apply-templates select="document(substring-before(.,'#'),.)//*[@id=$elem-id]/*" />
             </xsl:when>
             <xsl:when test="contains(.,'#')">
                 <xsl:variable name="elem-id" select="substring-after(.,'#')"/>
                 <xsl:message>found within-file 'use': <xsl:value-of select="." /></xsl:message>
-                <xsl:apply-templates select="//*[@id=$elem-id]"/>
+                <xsl:apply-templates select="//*[@id=$elem-id]/@*"/>
+                <xsl:apply-templates select="//*[@id=$elem-id]/@*" mode="use"/>
+                <xsl:apply-templates select="//*[@id=$elem-id]/*"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:message>found old style 'use': <xsl:value-of select="." /></xsl:message>
+                <xsl:message>ignored old style 'use' on non-grid: <xsl:value-of select="." /></xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -51,6 +57,7 @@
                 <xsl:message>found other-file 'use': <xsl:value-of select="." /></xsl:message>
                 <xsl:variable name="used-grid" select="document(substring-before(.,'#'),.)//grid[@id=$elem-id]" />
                     <xsl:apply-templates select="$used-grid/@*" />
+                    <xsl:apply-templates select="$used-grid/@*" mode="use"/>
                     <xsl:apply-templates select="$used-grid/*" />
                     <xsl:apply-templates select="../*" />
             </xsl:when>
@@ -58,19 +65,19 @@
                 <xsl:variable name="elem-id" select="substring-after(.,'#')"/>
                 <xsl:message>found within-file 'use': <xsl:value-of select="." /></xsl:message>
                 <xsl:variable name="used-grid" select="//grid[@id=$elem-id]" />
-                    <xsl:apply-templates select="$used-grid/@*" />
-                    <xsl:apply-templates select="$used-grid/*" />
-                    <xsl:apply-templates select="../*" />
+                <xsl:apply-templates select="$used-grid/@*" />
+                <xsl:apply-templates select="$used-grid/@*" mode="use"/>
+                <xsl:apply-templates select="$used-grid/*" />
+                <xsl:apply-templates select="../*" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:variable name="elem-id" select="normalize-space(.)"/>
                 <xsl:message>found old style 'use': <xsl:value-of select="." /></xsl:message>
                 <xsl:variable name="used-grid" select="//grid[@id=$elem-id]" />
-                <grid>
-                    <xsl:apply-templates select="$used-grid/@*" />
-                    <xsl:apply-templates select="$used-grid/*" />
-                    <xsl:apply-templates select="../*" />
-                </grid>
+                <xsl:apply-templates select="$used-grid/@*" />
+                <xsl:apply-templates select="$used-grid/@*" mode="use"/>
+                <xsl:apply-templates select="$used-grid/*" />
+                <xsl:apply-templates select="../*" />
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

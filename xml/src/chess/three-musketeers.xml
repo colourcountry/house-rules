@@ -1,0 +1,147 @@
+<game>
+    <name>Three Musketeers</name>
+    <gamebody>
+        <about>
+            <author>Haar Hoolim</author>
+            <date>1969</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                22 ×
+                <piece colour="white" shape="small-rook" />
+            </pieces>
+        </players>
+        <players>
+            <player value="black" />
+            <pieces>
+                3 ×
+                <piece colour="black" shape="small-rook-with-dot" />
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="5" columns="5" size="small"
+                      left="edge" right="edge" bottom="edge" top="edge"/>
+            </hide>
+            <grid use="grid">
+                <square x="0" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="0" y="4"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                <square x="1" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="1" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="2"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                <square x="2" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="2" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
+            </grid>
+                5 × 5
+            <goToPhase>
+                <phaseRef value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="1" />
+                <player value="white" />
+            </phaseName>
+                Move a <piece colour="white" shape="small-rook" />
+                1 space orthogonally, to an empty square
+            <goToPhase>
+                <phaseRef value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="1" />
+                <player value="black" />
+            </phaseName>
+                Capture a
+                <piece colour="white" shape="small-rook" />
+                by moving a
+                <piece colour="black" shape="small-rook-with-dot" />
+                1 space orthogonally onto its space
+            <goToPhase>
+                <phaseRef value="1" />
+                <player value="white" />
+            </goToPhase>
+        </phase>
+        <subphase>
+            <phaseName>
+                <phaseRef value="1" />
+                <player value="black" />
+            </phaseName>
+                No legal moves
+            <goToPhase>
+                <phaseRef value="Win" />
+                <player value="black" />
+            </goToPhase>            
+        </subphase>
+            <subphase>
+                <phaseName>
+                    <phaseRef value="1" />
+                    <player value="black" />
+                </phaseName>
+                    All <piece colour="black" shape="small-rook-with-dot" />
+                    are on the same rank or file
+                <goToPhase>
+                    <phaseRef value="Win" />
+                    <player value="white" />
+                </goToPhase>            
+                <example>
+                        <grid use="grid">
+                            <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="1" y="0"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="1"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="3"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="2" y="3"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                        </grid>
+                    <forced>
+                        <grid use="grid">
+                            <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="1" y="0"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="1"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="2"> <highlight value="shade" /> </square>
+                            <square x="1" y="3"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="4"> <highlight value="shade" /> </square>
+                            <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
+                            <square x="4" y="4"> <piece colour="white" shape="small-rook" /> </square>
+                        </grid>
+                    </forced>
+                    <goToPhase>
+                        <phaseRef value="Win" />
+                        <player value="white" />
+                    </goToPhase>            
+                </example>
+            </subphase>
+    </gamebody>
+</game>

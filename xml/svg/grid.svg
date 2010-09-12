@@ -13,7 +13,12 @@
 
     <g id="highlight-circle">
         <circle cx="0" cy="0" r="0.4"
-          fill="#00dd00" stroke="#00bb00" stroke-width="0.05" />
+          fill="#ddffdd" stroke="#008800" stroke-width="0.05" />
+    </g>
+
+    <g id="highlight-red-circle">
+        <circle cx="0" cy="0" r="0.4"
+          fill="#ffeeee" stroke="#cc0000" stroke-width="0.05" />
     </g>
 
     <g id="highlight-shade">
@@ -22,8 +27,13 @@
     </g>
 
     <g id="highlight-square">
-        <rect x="-0.45" y="-0.45" width="0.9" height="0.9"
-          fill="none" stroke="#990000" stroke-width="0.05" />
+        <rect x="-0.4" y="-0.4" width="0.8" height="0.8"
+          fill="#ddffdd" stroke="#008800" stroke-width="0.05" />
+    </g>
+
+    <g id="highlight-red-square">
+        <rect x="-0.4" y="-0.4" width="0.8" height="0.8"
+          fill="#ffeeee" stroke="#cc0000" stroke-width="0.05" />
     </g>
 
     <marker id="marker-arrow"

@@ -1,0 +1,38 @@
+<game>
+    <name>Common rules</name>
+    <gamebody>
+        <phase>
+            <dl>
+            <dlentry id="threatened-space">
+                <dt><keyword>threatened space</keyword></dt>
+                <dd>
+                        A space where your opponent could
+                        make a legal
+                        <keyword>capture</keyword>
+                        on their next move
+                </dd>
+            </dlentry>
+            <dlentry id="check">
+                <dt><keyword>check</keyword></dt>
+                <dd>
+                        You may not make any move which ends with your
+                        <piece colour="black" shape="king" />
+                        in a <keyword>threatened space</keyword>
+                </dd>
+            </dlentry>
+            <dlentry id="checkmate">
+                <dt><keyword>checkmate</keyword></dt>
+                <dd>
+                        You have no way to satisfy the rule of <keyword>check</keyword>:
+                        all legal moves would leave your
+                        <piece colour="black" shape="king" />
+                        in a <keyword>threatened space</keyword>
+                        <goToPhase>
+                            <phaseRef value="Lose" />
+                        </goToPhase>
+                </dd>
+            </dlentry>
+            </dl>
+        </phase>
+    </gamebody>
+</game>

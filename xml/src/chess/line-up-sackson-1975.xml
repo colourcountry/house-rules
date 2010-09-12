@@ -35,7 +35,6 @@
                   left="edge" right="edge" bottom="edge" top="edge"/>
             <goToPhase>
                 <phaseRef value="1" />
-                <player value="black" />
             </goToPhase>
         </phase>
         <phase>

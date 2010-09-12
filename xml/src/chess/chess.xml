@@ -76,43 +76,89 @@
         <phase>
             <phaseName>
                 <phaseRef value="1" />
-                <player value="white" />
+                <player value="black" />
+                (<player value="white" />)
             </phaseName>
             <ol>
-            <li>
-            <keyword>Move</keyword> or <keyword>capture</keyword> with one of your pieces
-            </li>
-            <li>
-            <keyword>Promote</keyword>
-            </li>
+                <li>
+                    <ul>
+                        <li><keyword>Move</keyword>
+                            <piece colour="black" shape="king" />
+                            <piece colour="black" shape="queen" />
+                            <piece colour="black" shape="rook" />
+                            <piece colour="black" shape="bishop" />
+                            <piece colour="black" shape="knight" />
+                            or
+                            <piece colour="black" shape="pawn" />
+                        </li>
+                        <li>
+                            <keyword>double move</keyword> with a
+                            <piece colour="black" shape="pawn" />
+                        </li>
+                        <li>
+                            <keyword>castle</keyword> with a
+                            <piece colour="black" shape="rook" /> and
+                            <piece colour="black" shape="king" />
+                        </li>
+                        <li><keyword>capture</keyword> with
+                            <piece colour="black" shape="king" />
+                            <piece colour="black" shape="queen" />
+                            <piece colour="black" shape="rook" />
+                            <piece colour="black" shape="bishop" />
+                            <piece colour="black" shape="knight" />
+                            or
+                            <piece colour="black" shape="pawn" />
+                        </li>
+                        <li>
+                            <keyword>capture en passant</keyword> with a
+                            <piece colour="black" shape="pawn" />
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <keyword>Promote</keyword>
+                </li>
             </ol>
             <repeat>
                 <goToPhase>
                     <phaseRef value="1" />
-                    <player value="black" />
+                    <player value="white" />
                 </goToPhase>
                 <goToPhase>
                     <phaseRef value="1" />
-                    <player value="white" />
+                    <player value="black" />
                 </goToPhase>
             </repeat>
-        </phase>
         <dl>
             <dlentry>
                 <dt><keyword>move</keyword></dt>
                 <dd>
+                    Move the piece to an empty square
                     <ul>
                     <li>
-                        Move the piece normally, to an empty square, or
+                        Move a <piece colour="black" shape="pawn" />:
+                        <grid use="chess-pieces.xml#pawn" scale="0.4"/>
                     </li>
                     <li>
-                        make a <keyword>double move</keyword> with a
-                        <piece shape="pawn" />, or
+                        Move a <piece colour="black" shape="rook" />:
+                        <grid use="chess-pieces.xml#rook" scale="0.4"/>
                     </li>
                     <li>
-                        <keyword>castle</keyword> with a
-                        <piece shape="rook" /> and
-                        <piece shape="king" />
+                        Move a <piece colour="black" shape="bishop" />:
+                        <grid use="chess-pieces.xml#bishop" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="knight" />:
+                        <grid use="chess-pieces.xml#knight" scale="0.4"/>
+                        + <keyword>knight jump</keyword>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="queen" />:
+                        <grid use="chess-pieces.xml#queen" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move <piece colour="black" shape="king" />:
+                        <grid use="chess-pieces.xml#king" scale="0.4"/>
                     </li>
                     </ul>
                 </dd>
@@ -120,40 +166,53 @@
             <dlentry>
                 <dt><keyword>capture</keyword></dt>
                 <dd>
+                    Move the piece
+                    to a space occupied by
+                    an enemy piece, capturing that piece
                     <ul>
                     <li>
                         Move
-                        <piece shape="king" />
-                        <piece shape="queen" />
-                        <piece shape="rook" />
-                        <piece shape="bishop" />
+                        <piece colour="black" shape="king" />
+                        <piece colour="black" shape="queen" />
+                        <piece colour="black" shape="rook" />
+                        <piece colour="black" shape="bishop" />
                         or
-                        <piece shape="knight" />
-                        normally,
-                        to a space occupied by
-                        an enemy piece, capturing that piece, or
+                        <piece colour="black" shape="knight" />
+                        as for <keyword>move</keyword>
                     </li>
                     <li>
-                        if either of the two spaces
-                        diagonally forward of a
-                        <piece shape="pawn" />
-                        are occupied by an enemy piece,
-                        move the
-                        <piece shape="pawn" />
-                        to that space,
-                        capturing that piece, or
-                    </li>
-                    <li>
-                        <keyword>capture en passant</keyword> with a
-                        <piece shape="pawn" />
+                        Move
+                        <piece colour="black" shape="pawn" />
+                        as a
+                        <piece colour="black" shape="double-pawn" />:
+                        <grid rows="7" columns="7" size="small" scale="0.4">
+                            <square x="2" y="2">
+                                <highlight value="red-circle" />
+                                <square x="2" y="2"> <piece colour="white" shape="pawn" /> </square>
+                            </square>
+                            <square x="4" y="2">
+                                <highlight value="red-circle" />
+                                <square x="2" y="2"> <piece colour="white" shape="knight" /> </square>
+                            </square>
+                            <square x="3" y="3">
+                                <piece colour="black" shape="pawn" />
+                                <arrow x="-1" y="-1" />
+                                <arrow x="1" y="-1" />
+                            </square>
+                        </grid>
                     </li>
                     </ul>
                 </dd>
             </dlentry>
+
+            <dlentry use="common-rules.xml#threatened-space" />
+            <dlentry use="common-rules.xml#check" />
+            <dlentry use="common-rules.xml#checkmate" />
+
             <dlentry>
                 <dt><keyword>knight jump</keyword></dt>
                 <dd>
-                        <piece shape="knight" />
+                        <piece colour="black" shape="knight" />
                         may jump over any other pieces
                         to <keyword>move</keyword>
                         or <keyword>capture</keyword>;
@@ -162,75 +221,199 @@
                 </dd>
             </dlentry>
             <dlentry>
-                <dt><keyword>no king check</keyword></dt>
-                <dd>
-                        <piece colour="white" shape="king" />
-                        and
-                        <piece colour="black" shape="king" />
-                        may not occupy adjacent squares
-                </dd>
-            </dlentry>
-            <dlentry>
                 <dt><keyword>double move</keyword></dt>
                 <dd>
-                        Move a
-                        <piece shape="pawn" />
-                        which has not yet moved
-                        2 spaces forward
+                        <p>
+                        If a
+                        <piece colour="black" shape="pawn" />
+                        has not yet moved, <i>and</i> the 2 spaces forward of it
+                        are empty, move it 2 spaces forward
+                        </p>
+                        <hide>
+                        <grid rows="5" columns="8" size="small" bottom="black" left="edge" right="edge" id="start">
+                            <square x="1" y="3"> <piece colour="black" shape="bishop" /> </square>
+                            <square x="7" y="0"> <piece colour="black" shape="queen" /> </square>
+                            <square x="5" y="4"> <piece colour="black" shape="bishop" /> </square>
+                            <square x="6" y="4"> <piece colour="black" shape="knight" /> </square>
+                            <square x="7" y="4"> <piece colour="black" shape="rook" /> </square>
+                            <square x="0" y="1"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="1" y="2"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="2" y="3"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="5" y="3"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="6" y="3"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="7" y="3"> <piece colour="black" shape="pawn" /> </square>
+                        </grid>
+                        <grid rows="5" columns="8" size="small" bottom="black" left="edge" right="edge" id="before-double" use="#start">
+                            <square x="3" y="2"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="2" y="2"> <piece colour="black" shape="knight" /> </square>
+                            <square x="0" y="4"> <piece colour="black" shape="rook" /> </square>
+                            <square x="4" y="4"> <piece colour="black" shape="king" /> </square>
+                        </grid>
+                        </hide>
+                        <player value="black" />
+                        <grid use="#before-double">
+                            <square x="4" y="1"> <highlight value="circle" /> </square>
+                            <square x="4" y="3">
+                                <piece colour="black" shape="pawn" />
+                                <arrow x="0" y="-2" />
+                            </square>
+                        </grid>
+                        <legal>
+                        <grid use="#before-double">
+                            <square x="4" y="1">
+                                <piece colour="black" shape="pawn" />
+                            </square>
+                        </grid>
+                        </legal>
                 </dd>
             </dlentry>
             <dlentry>
                 <dt><keyword>castle</keyword></dt>
                 <dd>
-                        If your
-                        <piece shape="king" />
-                        has not yet moved,
-                        and there are no occupied spaces between it
-                        and a
-                        <piece shape="rook" />
-                        which has also not moved,
-                        move the 
-                        <piece shape="king" />
-                        2 spaces toward the
-                        <piece shape="rook" />
-                        and move the
-                        <piece shape="rook" />
-                        to the space the
-                        <piece shape="king" />
-                        just passed through
+                        <p>
+                            If your
+                            <piece colour="black" shape="king" />
+                            has not yet moved,
+                            <i>and</i> there are no occupied spaces between it
+                            and a
+                            <piece colour="black" shape="rook" />
+                            which has also not moved, <i>and</i> the
+                            space next to the
+                            <piece colour="black" shape="king" />
+                            in the direction of the
+                            <piece colour="black" shape="rook" />
+                            is not a <keyword>threatened space</keyword>
+                        </p>
+                        <ol>
+                            <li>
+                                move the 
+                                <piece colour="black" shape="king" />
+                                2 spaces toward the
+                                <piece colour="black" shape="rook" />
+                            </li><li>
+                                move the
+                                <piece colour="black" shape="rook" />
+                                to the space the
+                                <piece colour="black" shape="king" />
+                                just passed through (jumping over the
+                                <piece colour="black" shape="king" />)
+                            </li>
+                        </ol>
+                        <hide>
+                        <grid rows="5" columns="8" size="small" bottom="black" left="edge" right="edge" id="before-castle" use="#start">
+                            <square x="3" y="2"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="2" y="2"> <piece colour="black" shape="knight" /> </square>
+                            <square x="4" y="3"> <piece colour="black" shape="pawn" /> </square>
+                        </grid>
+                        </hide>
+                        <player value="black" />
+                        <p>
+                        <grid use="#before-castle">
+                            <square x="2" y="4"> <highlight value="circle" /> </square>
+                            <square x="3" y="4"> <highlight value="square" /> </square>
+                            <square x="0" y="4">
+                                <piece colour="black" shape="rook" />
+                                <arrow> <arrow-segment x="0.1" y="-0.1" /> <arrow-segment x="2.9" y="0" /> </arrow>
+                            </square>
+                            <square x="4" y="4">
+                                <piece colour="black" shape="king" />
+                                <arrow> <arrow-segment x="-0.1" y="0.1" /> <arrow-segment x="-1.9" y="0" /> </arrow>
+                            </square>
+                        </grid>
+                        <legal>
+                            <grid use="#before-castle">
+                                <square x="3" y="4"> <piece colour="black" shape="rook" /> </square>
+                                <square x="2" y="4"> <piece colour="black" shape="king" /> </square>
+                            </grid>
+                        </legal>
+                        </p>
+                        <p>
+                        <grid use="#start">
+                            <square x="4" y="3"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="3" y="1"> <piece colour="white" shape="rook" /> </square>
+                            <square x="3" y="4">
+                                <highlight value="cross" />
+                            </square>
+                            <square x="1" y="4">
+                                <highlight value="cross" />
+                                <piece colour="black" shape="knight" />
+                            </square>
+                            <square x="0" y="4">
+                                <piece colour="black" shape="rook" />
+                                <arrow> <arrow-segment x="0.1" y="-0.1" /> <arrow-segment x="2.9" y="0" /> </arrow>
+                            </square>
+                            <square x="4" y="4">
+                                <piece colour="black" shape="king" />
+                                <arrow> <arrow-segment x="-0.1" y="0.1" /> <arrow-segment x="-1.9" y="0" /> </arrow>
+                            </square>
+                        </grid>
+                        <illegal>
+                            <grid use="#start">
+                                <square x="4" y="3"> <piece colour="black" shape="pawn" /> </square>
+                                <square x="3" y="1"> <piece colour="white" shape="rook" /> </square>
+                                <square x="3" y="4"> <piece colour="black" shape="rook" /> </square>
+                                <square x="2" y="4"> <piece colour="black" shape="king" /> </square>
+                                <square x="1" y="4">
+                                    <piece colour="black" shape="knight" />
+                                </square>
+                            </grid>
+                        </illegal>
+                        </p>
                 </dd>
             </dlentry>
             <dlentry>
                 <dt><keyword>promote</keyword></dt>
                 <dd>
                         Replace any
-                        <piece shape="pawn" />
+                        <piece colour="black" shape="pawn" />
                         which has reached the forwardmost row of the board
                         with your choice of
-                        <piece shape="knight" />
-                        <piece shape="bishop" />
-                        <piece shape="rook" />
-                        <piece shape="queen" />
+                        <piece colour="black" shape="knight" />
+                        <piece colour="black" shape="bishop" />
+                        <piece colour="black" shape="rook" />
+                        <piece colour="black" shape="queen" />
                 </dd>
             </dlentry>
             <dlentry>
                 <dt><keyword>capture en passant</keyword></dt>
                 <dd>
-                    If an opposing
-                        <piece shape="pawn" />
+                    <p>
+                    If an (opposing)
+                        <piece colour="white" shape="pawn" />
                     has just made a <keyword>double move</keyword>
                     to a space with a
-                        <piece shape="pawn" />
+                        <piece colour="black" shape="pawn" />
                     in the space on either side,
                     move the
-                        <piece shape="pawn" />
+                        <piece colour="black" shape="pawn" />
                         to the space
                         immediately behind the
-                        <piece shape="pawn" />,
+                        <piece colour="black" shape="pawn" />,
                         capturing it
+                    </p>
+                        <player value="white" />
+                        <grid use="#before-double">
+                            <square x="4" y="2"> <highlight value="circle" /> </square>
+                            <square x="4" y="1">
+                                <highlight value="red-square" />
+                                <piece colour="black" shape="pawn" />
+                            </square>
+                            <square x="3" y="1">
+                                <piece colour="white" shape="pawn" />
+                                <arrow x="1" y="1" />
+                            </square>
+                        </grid>
+                        <legal>
+                        <grid use="#before-double">
+                            <square x="4" y="2">
+                                <piece colour="white" shape="pawn" />
+                            </square>
+                        </grid>
+                        </legal>
                 </dd>
             </dlentry>
         </dl>
+        </phase>
         <log>
             <status value="in-progress" />
             <sources>

@@ -68,6 +68,29 @@
             </dlentry>
             <dlentry>
                 <dt>
+                    <piece colour="black" shape="double-pawn" />
+                    <piece colour="white" shape="double-pawn" />
+                </dt>
+                <dd>
+                    Draughtsman.
+                </dd>
+                <dd>
+                    <p>
+                        Moves to either of the spaces diagonally forward of its space.
+                    </p>
+                    <grid rows="7" columns="7" size="small" id="double-pawn">
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="3">
+                            <piece colour="black" shape="pawn" />
+                            <arrow x="-1" y="-1" />
+                            <arrow x="1" y="-1" />
+                        </square>
+                    </grid>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
                     <piece colour="black" shape="super-elephant" />
                     <piece colour="white" shape="super-elephant" />
                 </dt>
