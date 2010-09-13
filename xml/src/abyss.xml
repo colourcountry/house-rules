@@ -4,123 +4,242 @@
         <about>
             <author>Walter Joris</author>
             <date>2002</date>
+            <status>finished</status>
         </about>
         <players>
-            <player value="white" />
-            <pieces>
-                6 ×
-                <piece colour="white" />
-            </pieces>
+            <player value="red" />
+            <player value="blue" />
         </players>
-        <players>
-            <player value="black" />
-            <pieces>
+        <pieces>
                 6 ×
-                <piece colour="black" />
-            </pieces>
-        </players>
+            <piece colour="white" shape="rook" />,
+                6 ×
+            <piece colour="black" shape="rook" />
+        </pieces>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
-                <player value="black" />
+                <phaseRef value="1" />
+                <player value="blue" />
             </phaseName>
-            Place all pieces in board squares
+            Place each piece in a space
             <goToPhase>
-                <phaseNumber value="2" />
-                <player value="white" />
+                <phaseRef value="2" />
+                <player value="red" />
             </goToPhase>
             <example>
                 <grid id="grid" rows="5" columns="5" size="small"
                       left="edge" right="edge" bottom="edge" top="edge"/>
+                    <hide>
+                        <grid use="grid" id="start">
+                            <square x="1" y="1"> <piece colour="black" shape="rook" /> </square>
+                            <square x="1" y="2"> <piece colour="black" shape="rook" /> </square>
+                            <square x="3" y="4"> <piece colour="white" shape="rook" /> </square>
+                            <square x="4" y="1"> <piece colour="black" shape="rook" /> </square>
+                            <square x="4" y="3"> <piece colour="white" shape="rook" /> </square>
+                        </grid>
+                    </hide>
                 <legal>
-                    <grid use="grid">
-                        <square x="0" y="0"> <piece colour="white" /> </square>
-                        <square x="1" y="0"> <piece colour="black" /> </square>
-                        <square x="1" y="1"> <piece colour="black" /> </square>
-                        <square x="1" y="2"> <piece colour="black" /> </square>
-                        <square x="2" y="0"> <piece colour="white" /> </square>
-                        <square x="2" y="2"> <piece colour="black" /> </square>
-                        <square x="2" y="3"> <piece colour="white" /> </square>
-                        <square x="2" y="4"> <piece colour="white" /> </square>
-                        <square x="3" y="4"> <piece colour="white" /> </square>
-                        <square x="4" y="0"> <piece colour="black" /> </square>
-                        <square x="4" y="1"> <piece colour="black" /> </square>
-                        <square x="4" y="3"> <piece colour="white" /> </square>
+                    <grid use="start">
+                        <square x="0" y="0"> <piece colour="white" shape="rook" /> </square>
+                        <square x="1" y="0"> <piece colour="black" shape="rook" /> </square>
+                        <square x="2" y="0"> <piece colour="white" shape="rook" /> </square>
+                        <square x="4" y="0"> <piece colour="black" shape="rook" /> </square>
+                        <square x="2" y="1"> <piece colour="black" shape="rook" /> </square>
+                        <square x="2" y="3"> <piece colour="white" shape="rook" /> </square>
+                        <square x="2" y="4"> <piece colour="white" shape="rook" /> </square>
                     </grid>
                 </legal>
             </example>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="2" />
-                <player value="white" />
+                <phaseRef value="2" />
+                <player value="red" />
             </phaseName>
-            Choose
-            <p>
-                swap sides and start second
+            Choose:
+            <ul>
+            <li>
+                Become
+                <player value="black" />,
+                <player value="blue" />
+                becomes
+                <player value="white" />
                 <goToPhase>
-                    <phaseNumber value="3" />
-                    new <player value="white" />
+                    <phaseRef value="3" />
+                    <player value="white" />
+                    (<player value="blue" />)
                 </goToPhase>
-            </p>
-            <p>start second
+            </li>
+            <li>
+                Become
+                <player value="white" />,
+                <player value="blue" />
+                becomes
+                <player value="black" />
                 <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="black" />
+                    (<player value="blue" />)
                 </goToPhase>
-            </p>
-            <p>start first but let <player value="black" /> decide colours
+            </li>
+            <li>
+                Let <player value="blue" /> decide
+                (you will start
+                <phaseRef value="3" />
+                first)
                 <goToPhase>
-                    <phaseNumber value="2" />
-                    <player value="black" />
+                    <phaseRef value="2" />
+                    <player value="blue" />
                 </goToPhase>
-            </p>
+            </li>
+            </ul>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="2" />
-                <player value="black" />
+                <phaseRef value="2" />
+                <player value="blue" />
             </phaseName>
             Choose
-            <p>
-                swap sides and
-                start second
+            <ul>
+            <li>
+                Become
+                <player value="black" />,
+                <player value="red" />
+                becomes
+                <player value="white" />
                 <goToPhase>
-                    <phaseNumber value="3" />
-                    new <player value="black" />
-                </goToPhase>
-            </p>
-            <p>start second
-                <goToPhase>
-                    <phaseNumber value="3" />
+                    <phaseRef value="3" />
                     <player value="white" />
+                    (<player value="red" />)
                 </goToPhase>
-            </p>
+            </li>
+            <li>
+                Become
+                <player value="white" />,
+                <player value="red" />
+                becomes
+                <player value="black" />
+                <goToPhase>
+                    <phaseRef value="3" />
+                    <player value="black" />
+                    (<player value="red" />)
+                </goToPhase>
+            </li>
+            </ul>
         </subphase>
         <phase>
             <phaseName>
-                <phaseNumber value="3" />
-            </phaseName>
-                Move a <piece colour="black" />
-                to an abutting square occupied by a
-                <piece colour="white" />
-                and capture the
-                <piece colour="white" />
-            <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="3" />
                 <player value="white" />
-            </goToPhase>
+            </phaseName>
+            <p>
+                <repeat>
+                <keyword>push</keyword> a
+                <piece colour="white" shape="rook" />
+                <goToPhase>
+                    <phaseRef value="3" />
+                    <player value="black" />
+                </goToPhase>
+                <keyword>push</keyword> a
+                <piece colour="black" shape="rook" />
+                <goToPhase>
+                    <phaseRef value="3" />
+                    <player value="white" />
+                </goToPhase>
+                </repeat>
+            </p>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="1" />
-                <player value="black" /> or
-                <player value="white" />
+                <phaseRef value="3" />
+                <player value="white" /> or
+                <player value="black" />
             </phaseName>
                 No legal moves
             <goToPhase>
-                <phaseNumber value="End" />
+                <phaseRef value="End" />
             </goToPhase>            
         </subphase>
+        <dl>
+            <dlentry>
+                <dt><keyword>push</keyword></dt>
+                <dd><p>Move the
+                    <piece colour="white" shape="rook" />
+                    any number of spaces orthogonally
+                </p>
+            <p>
+                If the
+                <piece colour="white" shape="rook" />
+                passes through occupied spaces, push the
+                pieces in those spaces in the direction the
+                <piece colour="white" shape="rook" />
+                is moving, so that they never share a space
+            </p>
+            <p>
+                If a piece on the edge of the board needs to be
+                pushed, capture it and score 1 <keyword>victory point</keyword>
+            </p>
+            <example>
+                <player value="black" />
+                <grid use="start">
+                    <square x="0" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="1" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="2" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="4" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="2" y="3"> <piece colour="white" shape="rook" /> </square>
+                    <square x="2" y="4"> <piece colour="white" shape="rook" /> </square>
+                    <square x="2" y="1">
+                        <arrow x="0" y="3" />
+                        <piece colour="black" shape="rook" />
+                    </square>
+                </grid>
+                <legal>
+                <grid use="start">
+                    <square x="0" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="1" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="2" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="4" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="2" y="4">
+                        <highlight value="circle" />
+                        <piece colour="black" shape="rook" />
+                    </square>
+                </grid>
+                </legal>
+                + 2
+                <player value="black" />
+            </example>
+            <example>
+                <player value="white" />
+                <grid use="start">
+                    <square x="1" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="2" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="4" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="0" y="0">
+                        <arrow x="2" y="0" />
+                        <piece colour="white" shape="rook" />
+                    </square>
+                    <square x="2" y="4">
+                        <piece colour="black" shape="rook" />
+                    </square>
+                </grid>
+                <legal>
+                <grid use="start">
+                    <square x="2" y="0">
+                        <highlight value="circle" />
+                        <piece colour="white" shape="rook" />
+                    </square>
+                    <square x="3" y="0"> <piece colour="black" shape="rook" /> </square>
+                    <square x="4" y="0"> <piece colour="white" shape="rook" /> </square>
+                    <square x="2" y="4">
+                        <piece colour="black" shape="rook" />
+                    </square>
+                </grid>
+                </legal>
+                + 1
+                <player value="white" />
+            </example>
+            </dd>
+            </dlentry>
+        </dl>
     </gamebody>
 </game>

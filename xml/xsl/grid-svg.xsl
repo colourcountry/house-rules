@@ -150,6 +150,13 @@
         <svg:g id="{$id}">
             <xsl:for-each select="square">
                 <svg:g transform="translate({(@x + 0.5) * $size + $border-thickness},{(@y + 0.5) * $size + $border-thickness})">
+                    <xsl:apply-templates mode="svg-below">
+                        <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
+                    </xsl:apply-templates>
+                </svg:g>
+            </xsl:for-each>
+            <xsl:for-each select="square">
+                <svg:g transform="translate({(@x + 0.5) * $size + $border-thickness},{(@y + 0.5) * $size + $border-thickness})">
                     <xsl:apply-templates mode="svg">
                         <xsl:with-param name="size"><xsl:value-of select="$size" /></xsl:with-param>
                     </xsl:apply-templates>
@@ -249,7 +256,8 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="highlight" mode="svg">
+    <xsl:template match="highlight" mode="svg" />
+    <xsl:template match="highlight" mode="svg-below">
         <xsl:param name="size"/>
         <svg:clipPath id="clip-path-{generate-id(.)}">
             <svg:rect x="{-$size div 2}" y="{-$size div 2}"
@@ -262,7 +270,8 @@
         </svg:g>
     </xsl:template>
 
-    <xsl:template match="arrow" mode="svg">
+    <xsl:template match="arrow" mode="svg" />
+    <xsl:template match="arrow" mode="svg-below">
         <xsl:param name="size"/>
 
         <!-- Stroke width here determines arrow size
@@ -281,6 +290,8 @@
             </xsl:attribute>
         </svg:path>
     </xsl:template>
+
+    <xsl:template match="piece" mode="svg-below" />
 
     <xsl:template match="callout" mode="svg">
         <xsl:param name="size"/>

@@ -149,6 +149,31 @@
             </dlentry>
             <dlentry>
                 <dt>
+                    <piece shape="pawn" colour="white" />
+                    <piece shape="double-pawn" colour="white" />
+                    <piece shape="gold-general" colour="white" />
+                    <piece shape="silver-general" colour="white" />
+                </dt>
+                <dd>
+                    Directional pieces.
+                </dd>
+                <dd>
+                    These pieces have a significant direction.
+                    The terms "forward", "backward",
+                    "in front of", "behind", "left", "right", and "beside"
+                    are only used for directional pieces and are always
+                    relative to the piece's direction.
+                </dd>
+                <dd>
+                    In some games, each player "owns" one side of the
+                    board. This side is the "near" side for their pieces,
+                    and the opposite side is the "far" side.
+                    Unless otherwise stated, the significant direction of all pieces
+                    is from near to far.
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt>
                     <piece shape="north" colour="black" />
                     <piece shape="east" colour="white" />
                     <piece shape="south" colour="red" />
@@ -161,13 +186,11 @@
                     <piece shape="south" colour="clear" />
                 </dt>
                 <dd>
-                    Directional pieces.
+                    Rotatable pieces.
                 </dd>
                 <dd>
                     These pieces have a significant direction,
-                    and can be rotated to change the direction.
-                    The terms "forward", "backward", "left" and "right"
-                    are always relative to a piece's direction.
+                    which can be changed during the game.
                 </dd>
             </dlentry>
             <dlentry>

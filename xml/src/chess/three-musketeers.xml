@@ -9,19 +9,19 @@
             <player value="white" />
             <pieces>
                 22 ×
-                <piece colour="white" />
+                <piece colour="white" shape="small-rook" />
             </pieces>
         </players>
         <players>
             <player value="black" />
             <pieces>
                 3 ×
-                <piece colour="black" shape="double-circle" />
+                <piece colour="black" shape="small-rook-with-dot" />
             </pieces>
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <hide>
                 <grid id="grid" rows="5" columns="5" size="small"
@@ -32,7 +32,7 @@
                 <square x="0" y="1"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="0" y="3"> <piece colour="white" shape="small-rook" /> </square>
-                <square x="0" y="4"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="0" y="4"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                 <square x="1" y="0"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="1" y="1"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="1" y="2"> <piece colour="white" shape="small-rook" /> </square>
@@ -40,7 +40,7 @@
                 <square x="1" y="4"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="2" y="0"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="2" y="1"> <piece colour="white" shape="small-rook" /> </square>
-                <square x="2" y="2"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="2" y="2"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                 <square x="2" y="3"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="2" y="4"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
@@ -48,7 +48,7 @@
                 <square x="3" y="2"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="3" y="3"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
-                <square x="4" y="0"> <piece colour="black" shape="double-circle" /> </square>
+                <square x="4" y="0"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                 <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="4" y="2"> <piece colour="white" shape="small-rook" /> </square>
                 <square x="4" y="3"> <piece colour="white" shape="small-rook" /> </square>
@@ -56,66 +56,66 @@
             </grid>
                 5 × 5
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="white" />
             </phaseName>
                 Move a <piece colour="white" shape="small-rook" />
-                to an abutting square
+                1 space orthogonally, to an empty square
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </phaseName>
-                Move a <piece colour="black" shape="double-circle" />
-                to an abutting square occupied by a
+                Capture a
                 <piece colour="white" shape="small-rook" />
-                and capture the
-                <piece colour="white" shape="small-rook" />
+                by moving a
+                <piece colour="black" shape="small-rook-with-dot" />
+                1 space orthogonally onto its space
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="white" />
             </goToPhase>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </phaseName>
                 No legal moves
             <goToPhase>
-                <phaseNumber value="Win" />
+                <phaseRef value="Win" />
                 <player value="black" />
             </goToPhase>            
         </subphase>
             <subphase>
                 <phaseName>
-                    <phaseNumber value="1" />
+                    <phaseRef value="1" />
                     <player value="black" />
                 </phaseName>
-                    All <piece colour="black" shape="double-circle" />
+                    All <piece colour="black" shape="small-rook-with-dot" />
                     are on the same rank or file
                 <goToPhase>
-                    <phaseNumber value="Win" />
+                    <phaseRef value="Win" />
                     <player value="white" />
                 </goToPhase>            
                 <example>
                         <grid use="grid">
                             <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
-                            <square x="1" y="0"> <piece colour="black" shape="double-circle" /> </square>
-                            <square x="1" y="1"> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="0"> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="1"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                             <square x="1" y="3"> <piece colour="white" shape="small-rook" /> </square>
-                            <square x="2" y="3"> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="2" y="3"> <piece colour="black" shape="small-rook-with-dot" /> </square>
                             <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
                             <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
                             <square x="4" y="1"> <piece colour="white" shape="small-rook" /> </square>
@@ -125,10 +125,10 @@
                     <forced>
                         <grid use="grid">
                             <square x="0" y="2"> <piece colour="white" shape="small-rook" /> </square>
-                            <square x="1" y="0"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
-                            <square x="1" y="1"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="0"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
+                            <square x="1" y="1"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
                             <square x="1" y="2"> <highlight value="shade" /> </square>
-                            <square x="1" y="3"> <highlight value="shade" /> <piece colour="black" shape="double-circle" /> </square>
+                            <square x="1" y="3"> <highlight value="shade" /> <piece colour="black" shape="small-rook-with-dot" /> </square>
                             <square x="1" y="4"> <highlight value="shade" /> </square>
                             <square x="3" y="0"> <piece colour="white" shape="small-rook" /> </square>
                             <square x="3" y="4"> <piece colour="white" shape="small-rook" /> </square>
@@ -138,7 +138,7 @@
                         </grid>
                     </forced>
                     <goToPhase>
-                        <phaseNumber value="Win" />
+                        <phaseRef value="Win" />
                         <player value="white" />
                     </goToPhase>            
                 </example>

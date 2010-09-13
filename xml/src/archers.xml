@@ -31,7 +31,7 @@
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="Setup" />
+                <phaseRef value="Setup" />
             </phaseName>
             <grid id="grid" rows="9" columns="9" size="small"
                   left="edge" right="edge" bottom="edge" top="edge"/>
@@ -59,13 +59,13 @@
             </grid>
             </legal>
             <goToPhase>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </goToPhase>
         </phase>
         <phase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
                 <player value="black" />
             </phaseName>
             <ol>
@@ -86,18 +86,18 @@
             </ol>
             <repeat>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="1" />
                     <player value="white" />
                 </goToPhase>
                 <goToPhase>
-                    <phaseNumber value="1" />
+                    <phaseRef value="1" />
                     <player value="black" />
                 </goToPhase>
             </repeat>
         </phase>
         <subphase>
             <phaseName>
-                <phaseNumber value="1" />
+                <phaseRef value="1" />
             </phaseName>
             An <keyword>action</keyword> may not move any piece
             into an enemy piece's <keyword>zone of control</keyword>

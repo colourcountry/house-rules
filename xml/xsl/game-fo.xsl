@@ -61,8 +61,40 @@
         </fo:root>
     </xsl:template>
 
+    <xsl:template name="get-font-family">
+        <xsl:attribute name="font-family">
+        <xsl:choose>
+            <xsl:when test="@xml:lang">
+                <xsl:variable name="lang"><xsl:value-of select="@xml:lang"/></xsl:variable>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" /> for <xsl:value-of select="$lang" /> 
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" /> as default
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" />
+            </xsl:otherwise>
+        </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+
     <xsl:attribute-set name="all">
-        <xsl:attribute name="font-family">Helvetica</xsl:attribute>
+        <xsl:attribute name="font-family">
+        <xsl:choose>
+            <xsl:when test="@xml:lang">
+                <xsl:variable name="lang"><xsl:value-of select="@xml:lang"/></xsl:variable>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" /> for <xsl:value-of select="$lang" /> 
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code=$lang]/@font" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>Using <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" /> as default
+                </xsl:message>
+                <xsl:value-of select="document('lang.conf')//lang[@code='en']/@font" />
+            </xsl:otherwise>
+        </xsl:choose>
+        </xsl:attribute>
         <xsl:attribute name="font-size">10pt</xsl:attribute>
         <xsl:attribute name="line-height">14pt</xsl:attribute>
     </xsl:attribute-set>
@@ -137,6 +169,11 @@
         <xsl:attribute name="alignment-adjust">-4pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="align-bullets">
+        <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
+        <xsl:attribute name="alignment-adjust">-6pt</xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="phase-name">
         <xsl:attribute name="alignment-baseline">alphabetic</xsl:attribute>
         <xsl:attribute name="alignment-adjust">-1pt</xsl:attribute>
@@ -174,13 +211,23 @@
 
     <xsl:template match="name" mode="fo-top">
         <fo:inline xsl:use-attribute-sets="title">
-            <xsl:value-of select="." />
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
+    </xsl:template>
+
+    <xsl:template match="ph" mode="fo">
+        <fo:inline>
+            <xsl:call-template name="get-font-family" />
+            <xsl:apply-templates  mode="fo" />
         </fo:inline>
     </xsl:template>
 
     <xsl:template match="about" mode="fo-top">
         <fo:inline xsl:use-attribute-sets="subtitle">
-            <xsl:value-of select="." />
+            <fo:leader leader-length="5px" />
+            <xsl:value-of select="author" />
+            <fo:leader leader-length="5px" />
+            <xsl:value-of select="date" />
         </fo:inline>
     </xsl:template>
 
@@ -244,6 +291,18 @@
         </fo:block>
     </xsl:template>
 
+    <xsl:template match="defs" mode="fo">
+        <fo:block xsl:use-attribute-sets="section">
+            <fo:table>
+            <fo:table-column column-width="80pt" />
+            <fo:table-column />
+            <fo:table-body>
+                <xsl:apply-templates select="dl/dlentry" mode="fo" />
+            </fo:table-body>
+            </fo:table>
+        </fo:block>
+    </xsl:template>
+
     <xsl:template match="phase" mode="fo">
         <fo:block xsl:use-attribute-sets="section">
             <fo:table>
@@ -262,21 +321,27 @@
                         </fo:block>
                     </fo:table-cell>
                 </fo:table-row>
+                <xsl:apply-templates select="subphase" mode="fo-phase" />
+                <xsl:apply-templates select="dl/dlentry" mode="fo-phase" />
             </fo:table-body>
             </fo:table>
         </fo:block>
     </xsl:template>
 
-    <xsl:template match="subphase" mode="fo">
-        <fo:block xsl:use-attribute-sets="subsection">
-            <fo:table>
-            <fo:table-column column-width="80pt" />
-            <fo:table-column />
-            <fo:table-body>
-                <fo:table-row>
+    <xsl:template match="phase/subphase" mode="fo" />
+
+    <xsl:template match="subphase" mode="fo-phase">
+                <fo:table-row xsl:use-attribute-sets="subsection">
                     <fo:table-cell>
                         <fo:block>
-                            <xsl:apply-templates select="phaseName" mode="fo-label" />
+                            <xsl:choose>
+                                <xsl:when test="phaseName">
+                                    <xsl:apply-templates select="phaseName" mode="fo-dt" />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:apply-templates select="../phaseName" mode="fo-dt" />
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
@@ -285,9 +350,6 @@
                         </fo:block>
                     </fo:table-cell>
                 </fo:table-row>
-            </fo:table-body>
-            </fo:table>
-        </fo:block>
     </xsl:template>
 
     <xsl:template match="phaseName" mode="fo-label">
@@ -319,11 +381,33 @@
         </fo:inline>
     </xsl:template>
 
-    
-    <xsl:template match="phaseNumber" mode="fo">
+    <xsl:template match="*" mode="fo-dt">
+        <xsl:apply-templates select="." mode="fo" />
+    </xsl:template>
+
+    <xsl:template match="phaseRef" mode="fo">
         <xsl:call-template name="phase-name">
             <xsl:with-param name="value"><xsl:value-of select="@value"/></xsl:with-param>
         </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template match="phaseName" mode="fo-dt" priority="2">
+        <xsl:apply-templates mode="fo-dt" />
+    </xsl:template>
+
+    <xsl:template match="phaseRef" mode="fo-dt" priority="2">
+        <xsl:choose>
+            <xsl:when test="following-sibling::phaseRef">
+                <fo:inline xsl:use-attribute-sets="list-label">
+                    <xsl:value-of select="@value"/>,
+                </fo:inline>
+            </xsl:when>
+            <xsl:otherwise>
+                <fo:inline xsl:use-attribute-sets="list-label">
+                    <xsl:value-of select="@value"/>
+                </fo:inline>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="player" mode="fo">
@@ -333,15 +417,29 @@
     </xsl:template>
 
     <xsl:template match="piece" mode="fo">
+        <fo:external-graphic xsl:use-attribute-sets="align-pieces" src="piece-{generate-id(.)}.svg" />
+        <xsl:result-document href="scrap/piece-{generate-id(.)}.svg">
+            <xsl:call-template name="svg-with-piece"/>
+        </xsl:result-document>
+
+<!--    causes OutOfMemoryError
         <fo:instream-foreign-object xsl:use-attribute-sets="align-pieces">
             <xsl:call-template name="svg-with-piece"/>
         </fo:instream-foreign-object>
+-->
     </xsl:template>
 
     <xsl:template match="stack" mode="fo">
+        <fo:external-graphic xsl:use-attribute-sets="align-pieces" src="stack-{generate-id(.)}.svg" />
+        <xsl:result-document href="scrap/stack-{generate-id(.)}.svg">
+            <xsl:call-template name="svg-with-stack"/>
+        </xsl:result-document>
+
+<!--    causes OutOfMemoryError
         <fo:instream-foreign-object xsl:use-attribute-sets="align-pieces">
             <xsl:call-template name="svg-with-stack"/>
         </fo:instream-foreign-object>
+-->
     </xsl:template>
 
     <xsl:template match="example" mode="fo">
@@ -400,25 +498,25 @@
         <xsl:if test="preceding-sibling::*[1]/name()='grid'">
             <fo:leader leader-length="40px" />
         </xsl:if>
+        <fo:external-graphic alignment-baseline="alphabetic"
+                             alignment-adjust="{-$height div 2 * $scale + 5}px" src="grid-{generate-id(.)}.svg" />
+        <xsl:result-document href="scrap/grid-{generate-id(.)}.svg">
+            <xsl:call-template name="svg-with-grid">
+                <xsl:with-param name="scale" select="$scale" />
+            </xsl:call-template>
+        </xsl:result-document>
+
+<!--    causes OutOfMemoryError
         <fo:instream-foreign-object alignment-baseline="alphabetic"
                                     alignment-adjust="{-$height div 2 * $scale + 5}px">
             <xsl:call-template name="svg-with-grid">
                 <xsl:with-param name="scale" select="$scale" />
             </xsl:call-template>
         </fo:instream-foreign-object>
+-->
     </xsl:template>
 
-    <xsl:template match="dl" mode="fo">
-        <fo:block xsl:use-attribute-sets="section">
-            <fo:table>
-            <fo:table-column column-width="80pt" />
-            <fo:table-column />
-            <fo:table-body>
-                <xsl:apply-templates mode="fo" />
-            </fo:table-body>
-            </fo:table>
-        </fo:block>
-    </xsl:template>
+    <xsl:template match="dl" mode="fo" />
 
     <xsl:template match="keyword" mode="fo">
         <fo:inline xsl:use-attribute-sets="keyword">
@@ -429,29 +527,47 @@
     <xsl:template match="dlentry" mode="fo">
             <fo:table-row>
                 <fo:table-cell>
-                    <xsl:apply-templates select="dt" mode="fo" />
+                    <fo:block>
+                        <xsl:apply-templates select="dt" mode="fo" />
+                    </fo:block>
                 </fo:table-cell>
                 <fo:table-cell>
                     <xsl:choose>
                         <xsl:when test="preceding-sibling::dlentry">
-                            <fo:block xsl:use-attribute-sets="subsection-body">
-                                <xsl:apply-templates select="dd" mode="fo" />
-                            </fo:block>
+                             <fo:block xsl:use-attribute-sets="subsection-body">
+                                 <xsl:apply-templates select="dd" mode="fo" />
+                             </fo:block>
                         </xsl:when>
                         <xsl:otherwise>
-                            <fo:block>
-                                <xsl:apply-templates select="dd" mode="fo" />
-                            </fo:block>
+                             <fo:block>
+                                 <xsl:apply-templates select="dd" mode="fo" />
+                             </fo:block>
                         </xsl:otherwise>
                     </xsl:choose>
                 </fo:table-cell>
             </fo:table-row>
     </xsl:template>
 
+    <xsl:template match="dlentry" mode="fo-phase" priority="2">
+            <fo:table-row>
+                <fo:table-cell>
+                    <fo:block>
+                        <xsl:apply-templates select="../../phaseName" mode="fo-dt" />
+                    </fo:block>
+                    <fo:block>
+                        <xsl:apply-templates select="dt" mode="fo" />
+                    </fo:block>
+                </fo:table-cell>
+                <fo:table-cell>
+                    <fo:block xsl:use-attribute-sets="subsection-body">
+                        <xsl:apply-templates select="dd" mode="fo" />
+                    </fo:block>
+                </fo:table-cell>
+            </fo:table-row>
+    </xsl:template>
+
     <xsl:template match="dt" mode="fo">
-      <fo:block>
-          <xsl:apply-templates mode="fo" />:
-       </fo:block>
+      <xsl:apply-templates mode="fo-dt" />
     </xsl:template>
 
     <xsl:template match="p|ol|ul" mode="fo">
@@ -470,6 +586,12 @@
                 </fo:inline>
                 <xsl:apply-templates mode="fo" />
         </fo:block>
+    </xsl:template>
+
+    <xsl:template match="i" mode="fo">
+        <fo:inline xsl:use-attribute-sets="list-label">
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
     </xsl:template>
 
     <xsl:template match="ul/li" mode="fo">

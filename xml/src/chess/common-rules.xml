@@ -1,0 +1,49 @@
+<game>
+    <name>Common rules</name>
+    <gamebody>
+        <phase>
+        <subphase id="subphase-check">
+            <p>
+                    You may not make any move
+                    that ends with your
+                    <piece colour="black" shape="king" />
+                    in <keyword>check</keyword>
+            </p>
+        </subphase>
+        <subphase id="subphase-checkmate">
+            <keyword>checkmate</keyword>
+            <goToPhase>
+                <phaseRef value="Lose" />
+            </goToPhase>
+        </subphase>
+            <dl>
+            <dlentry id="threatened-space">
+                <dt><keyword>threatened space</keyword></dt>
+                <dd>
+                        A space where your opponent could
+                        make a legal
+                        <keyword>capture</keyword>
+                        on their next move
+                </dd>
+            </dlentry>
+            <dlentry id="check">
+                <dt><keyword>check</keyword></dt>
+                <dd>
+                    A position where your
+                    <piece colour="black" shape="king" />
+                    is in a <keyword>threatened space</keyword>
+                </dd>
+            </dlentry>
+            <dlentry id="checkmate">
+                <dt><keyword>checkmate</keyword></dt>
+                <dd>
+                        A position where you are in 
+                        <keyword>check</keyword>, <i>and</i>
+                        no move is available which enables
+                        you to get out of <keyword>check</keyword>
+                </dd>
+            </dlentry>
+            </dl>
+        </phase>
+    </gamebody>
+</game>

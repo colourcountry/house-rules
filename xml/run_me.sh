@@ -6,13 +6,17 @@ then
     exit 1
 fi
 
+rm -f scrap/*
+
 export XML="$1"
 export BASE=$(basename "$XML" .xml)
 echo "$1 --> pdf/$BASE.pdf"
-saxonb-xslt -ext:on "$1" xsl/game.xsl
+saxonb-xslt -o scrap/game.xml "$1" xsl/preprocess.xsl
+saxonb-xslt -ext:on scrap/game.xml xsl/game.xsl
 
-export HEADLESS="-Dlog4j.configuration=log4j.properties"
-fop scrap/out.fo target/"$BASE".pdf
+#export HEADLESS="-Dlog4j.configuration=log4j.properties -Xms768m -Xmx1024m"
+export HEADLESS="-Xmx2048m"
+fop -c fop.conf scrap/out.fo target/"$BASE".pdf
 
 evince target/"$BASE".pdf
 

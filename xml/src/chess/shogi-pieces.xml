@@ -15,7 +15,13 @@
                         Moves 1 square in any orthogonal
                         direction, or 1 square diagonally forward.
                     </p>
-                    <grid rows="7" columns="7" size="small">
+                    <grid rows="7" columns="7" size="small" id="gold-general">
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="3"> <highlight value="circle" /> </square>
+                        <square x="3" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="3"> <highlight value="circle" /> </square>
                         <square x="3" y="3">
                             <arrow x="-1" y="0" />
                             <arrow x="1" y="0" />
@@ -25,12 +31,6 @@
                             <arrow x="1" y="-1" />
                             <piece colour="black" shape="gold-general" />
                         </square>
-                        <square x="2" y="2"> <highlight value="circle" /> </square>
-                        <square x="3" y="2"> <highlight value="circle" /> </square>
-                        <square x="4" y="2"> <highlight value="circle" /> </square>
-                        <square x="4" y="3"> <highlight value="circle" /> </square>
-                        <square x="3" y="4"> <highlight value="circle" /> </square>
-                        <square x="2" y="3"> <highlight value="circle" /> </square>
                     </grid>
                 </dd>
             </dlentry>
@@ -47,7 +47,12 @@
                         Moves 1 square in any diagonal
                         direction, or 1 square forward.
                     </p>
-                    <grid rows="7" columns="7" size="small">
+                    <grid rows="7" columns="7" size="small" id="silver-general">
+                        <square x="4" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="2" y="4"> <highlight value="circle" /> </square>
                         <square x="3" y="3">
                             <arrow x="1" y="1" />
                             <arrow x="1" y="-1" />
@@ -56,11 +61,6 @@
                             <arrow x="0" y="-1" />
                             <piece colour="black" shape="silver-general" />
                         </square>
-                        <square x="4" y="4"> <highlight value="circle" /> </square>
-                        <square x="2" y="2"> <highlight value="circle" /> </square>
-                        <square x="3" y="2"> <highlight value="circle" /> </square>
-                        <square x="4" y="2"> <highlight value="circle" /> </square>
-                        <square x="2" y="4"> <highlight value="circle" /> </square>
                     </grid>
                 </dd>
             </dlentry>
@@ -76,14 +76,14 @@
                     <p>
                         Moves 1 square forward, then 1 square diagonally forward.
                     </p>
-                    <grid rows="7" columns="7" size="small">
+                    <grid rows="7" columns="7" size="small" id="shogi-knight">
+                        <square x="2" y="1"> <highlight value="circle" /> </square>
+                        <square x="4" y="1"> <highlight value="circle" /> </square>
                         <square x="3" y="3">
                             <arrow> <arrow-segment x="0" y="-1" /> <arrow-segment x="1" y="-1" /> </arrow>
                             <arrow> <arrow-segment x="0" y="-1" /> <arrow-segment x="-1" y="-1" /> </arrow>
                             <piece colour="black" shape="shogi-knight" />
                         </square>
-                        <square x="2" y="1"> <highlight value="circle" /> </square>
-                        <square x="4" y="1"> <highlight value="circle" /> </square>
                     </grid>
                 </dd>
             </dlentry>
@@ -99,14 +99,14 @@
                     <p>
                         Moves any number of squares forward from its current square.
                     </p>
-                    <grid rows="7" columns="7" size="small">
+                    <grid rows="7" columns="7" size="small" id="lance">
+                        <square x="3" y="0"> <highlight value="circle" /> </square>
+                        <square x="3" y="1"> <highlight value="circle" /> </square>
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
                         <square x="3" y="3">
                             <arrow x="0" y="-3.7" />
                             <piece colour="black" shape="lance" />
                         </square>
-                        <square x="3" y="0"> <highlight value="circle" /> </square>
-                        <square x="3" y="1"> <highlight value="circle" /> </square>
-                        <square x="3" y="2"> <highlight value="circle" /> </square>
                     </grid>
                 </dd>
             </dlentry>
@@ -126,18 +126,7 @@
                         <piece colour="black" shape="king" />
                         combined.
                     </p>
-                    <grid rows="7" columns="7" size="small">
-                        <square x="3" y="3">
-                            <arrow x="-3.7" y="0" />
-                            <arrow x="3.7" y="0" />
-                            <arrow x="0" y="-3.7" />
-                            <arrow x="0" y="3.7" />
-                            <arrow x="1" y="1" />
-                            <arrow x="1" y="-1" />
-                            <arrow x="-1" y="-1" />
-                            <arrow x="-1" y="1" />
-                            <piece colour="black" shape="dragon-king" />
-                        </square>
+                    <grid rows="7" columns="7" size="small" id="dragon-king">
                         <square x="3" y="0"> <highlight value="circle" /> </square>
                         <square x="3" y="1"> <highlight value="circle" /> </square>
                         <square x="3" y="2"> <highlight value="circle" /> </square>
@@ -154,6 +143,17 @@
                         <square x="2" y="4"> <highlight value="circle" /> </square>
                         <square x="4" y="4"> <highlight value="circle" /> </square>
                         <square x="4" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="3">
+                            <arrow x="-3.7" y="0" />
+                            <arrow x="3.7" y="0" />
+                            <arrow x="0" y="-3.7" />
+                            <arrow x="0" y="3.7" />
+                            <arrow x="1" y="1" />
+                            <arrow x="1" y="-1" />
+                            <arrow x="-1" y="-1" />
+                            <arrow x="-1" y="1" />
+                            <piece colour="black" shape="dragon-king" />
+                        </square>
                     </grid>
                 </dd>
             </dlentry>
@@ -173,18 +173,7 @@
                         <piece colour="black" shape="king" />
                         combined.
                     </p>
-                    <grid rows="7" columns="7" size="small">
-                        <square x="3" y="3">
-                            <arrow x="3.7" y="3.7" />
-                            <arrow x="3.7" y="-3.7" />
-                            <arrow x="-3.7" y="-3.7" />
-                            <arrow x="-3.7" y="3.7" />
-                            <arrow x="-1" y="0" />
-                            <arrow x="1" y="0" />
-                            <arrow x="0" y="-1" />
-                            <arrow x="0" y="1" />
-                            <piece colour="black" shape="dragon-horse" />
-                        </square>
+                    <grid rows="7" columns="7" size="small" id="dragon-horse">
                         <square x="4" y="4"> <highlight value="circle" /> </square>
                         <square x="5" y="5"> <highlight value="circle" /> </square>
                         <square x="6" y="6"> <highlight value="circle" /> </square>
@@ -201,6 +190,17 @@
                         <square x="3" y="4"> <highlight value="circle" /> </square>
                         <square x="2" y="3"> <highlight value="circle" /> </square>
                         <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="3" y="3">
+                            <arrow x="3.7" y="3.7" />
+                            <arrow x="3.7" y="-3.7" />
+                            <arrow x="-3.7" y="-3.7" />
+                            <arrow x="-3.7" y="3.7" />
+                            <arrow x="-1" y="0" />
+                            <arrow x="1" y="0" />
+                            <arrow x="0" y="-1" />
+                            <arrow x="0" y="1" />
+                            <piece colour="black" shape="dragon-horse" />
+                        </square>
                     </grid>
                 </dd>
             </dlentry>

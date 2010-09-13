@@ -33,5 +33,9 @@
         </g>
     </g>
 
+    <g id="bullet">
+        <circle cx="3" cy="3" r="2" 
+                stroke="none" />
+    </g>
 </svg>
 

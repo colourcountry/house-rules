@@ -74,7 +74,7 @@
         </players>
         <phase>
             <phaseName>
-                <phaseNumber value="End" />
+                <phaseRef value="End" />
             </phaseName>
             <example>
             <grid rows="4" columns="4" left="edge" right="edge" bottom="edge" top="edge">
@@ -176,5 +176,17 @@
             </grid>
             </example>
         </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>generic</keyword></dt>
+                <dd>definition</dd>
+            </dlentry>
+            <dlentry>
+                <dt><phaseRef value="A" /><phaseRef value="B" /><keyword>generic</keyword></dt>
+                <dd>definition</dd>
+            </dlentry>
+        </dl>
+        </defs>
     </gamebody>
 </game>

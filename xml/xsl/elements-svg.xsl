@@ -5,6 +5,14 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
+    <xsl:template name="svg-with-bullet">
+        <svg:svg width="6pt" height="6pt">
+            <svg:g fill="{$rule-colour}">
+                <svg:use xlink:href="../svg/elements.svg#bullet"/>
+            </svg:g>
+        </svg:svg>
+    </xsl:template>
+
     <xsl:template name="svg-with-right-arrow">
         <svg:svg width="22pt" height="18pt">
             <svg:use xlink:href="../svg/elements.svg#right-arrow"/>
