@@ -306,8 +306,8 @@
                             <square x="4" y="3"> <piece colour="black" shape="pawn" /> </square>
                         </grid>
                         </hide>
-                        <player value="black" />
                         <p>
+                        <player value="black" />
                         <grid use="#before-castle">
                             <square x="2" y="4"> <highlight value="circle" /> </square>
                             <square x="3" y="4"> <highlight value="square" /> </square>
@@ -328,6 +328,7 @@
                         </legal>
                         </p>
                         <p>
+                        <player value="black" />
                         <grid use="#start">
                             <square x="4" y="3"> <piece colour="black" shape="pawn" /> </square>
                             <square x="3" y="1"> <piece colour="white" shape="rook" /> </square>
@@ -391,22 +392,41 @@
                         <piece colour="black" shape="pawn" />,
                         capturing it
                     </p>
-                        <player value="white" />
-                        <grid use="#before-double">
+                        <player value="black" />
+                        <hide>
+                        <grid rows="5" columns="8" size="small" top="white" left="edge" right="edge" id="before-en-passant">
+                            <square x="7" y="4"> <piece colour="white" shape="queen" /> </square>
+                            <square x="0" y="3"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="1" y="2"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="3" y="2"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="2" y="2"> <piece colour="white" shape="knight" /> </square>
+                            <square x="2" y="1"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="5" y="1"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="6" y="1"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="7" y="1"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="1" y="1"> <piece colour="white" shape="bishop" /> </square>
+                            <square x="5" y="0"> <piece colour="white" shape="bishop" /> </square>
+                            <square x="6" y="0"> <piece colour="white" shape="knight" /> </square>
+                            <square x="7" y="0"> <piece colour="white" shape="rook" /> </square>
+                            <square x="0" y="0"> <piece colour="white" shape="rook" /> </square>
+                            <square x="4" y="0"> <piece colour="white" shape="king" /> </square>
+                        </grid>
+                        </hide>
+                        <grid use="#before-en-passant">
                             <square x="4" y="2"> <highlight value="circle" /> </square>
-                            <square x="4" y="1">
+                            <square x="4" y="3">
                                 <highlight value="red-square" />
-                                <piece colour="black" shape="pawn" />
-                            </square>
-                            <square x="3" y="1">
                                 <piece colour="white" shape="pawn" />
-                                <arrow x="1" y="1" />
+                            </square>
+                            <square x="3" y="3">
+                                <piece colour="black" shape="pawn" />
+                                <arrow x="1" y="-1" />
                             </square>
                         </grid>
                         <legal>
-                        <grid use="#before-double">
+                        <grid use="#before-en-passant">
                             <square x="4" y="2">
-                                <piece colour="white" shape="pawn" />
+                                <piece colour="black" shape="pawn" />
                             </square>
                         </grid>
                         </legal>
