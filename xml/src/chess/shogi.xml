@@ -124,6 +124,16 @@
                 </goToPhase>
             </repeat>
         </phase>
+        <subphase>
+            <phaseName>
+                <phaseNumber value="1" />
+            </phaseName>
+            <piece shape="king" /> in
+            <keyword>checkmate</keyword>
+            <goToPhase>
+                <phaseNumber value="Lose" />
+            </goToPhase>
+        </subphase>
         <dl>
             <dlentry>
                 <dt><keyword>move</keyword></dt>
@@ -131,6 +141,7 @@
                     <ul>
                     <li>
                         Move an unpromoted piece normally, to an empty square
+                        (but see <keyword>knight jump</keyword>)
                     </li>
                     <li>
                         Move a promoted
@@ -158,26 +169,9 @@
                         to an empty square
                     </li>
                     </ul>
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt><keyword>capture</keyword></dt>
-                <dd>
-                        Move the piece as for a <keyword>move</keyword>,
-                        but to a space occupied by
-                        an enemy piece, capturing that piece
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt><keyword>drop</keyword></dt>
-                <dd>
                     <p>
-                        Place any piece you have captured on any
-                        empty space: you now control the piece
-                    </p>
-                    <p>
-                        If the piece was promoted when captured,
-                        it becomes unpromoted
+                        You may not make a <keyword>move</keyword> which leaves you
+                        in <keyword>check</keyword>
                     </p>
                 </dd>
             </dlentry>
@@ -190,6 +184,104 @@
                         or <keyword>capture</keyword>;
                         other pieces must pass through
                         only empty spaces
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>check</keyword></dt>
+                <dd>
+                    <p>
+                        Your <piece shape="king" /> 
+                        is in a position
+                        where it could be captured on the next turn
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>checkmate</keyword></dt>
+                <dd>
+                    <p>
+                        You have no way to avoid ending your turn with your
+                        <piece shape="king" /> in <keyword>check</keyword>
+                    </p>
+                    <goToPhase>
+                        <phaseNumber value="Lose" />
+                    </goToPhase>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                    <ol>
+                    <li>
+                        Move a piece as in <keyword>move</keyword>,
+                        to a space occupied by an opponent's piece
+                    </li>
+                    <li>
+                        Remove the opponent's piece and add to your
+                        <keyword>prisoners</keyword>
+                    </li>
+                    </ol>
+                    <p>
+                        You may not make a <keyword>capture</keyword> which leaves you
+                        in <keyword>check</keyword>
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>drop</keyword></dt>
+                <dd>
+                    <ol>
+                    <li>
+                        Take a piece from your <keyword>prisoners</keyword>
+                        you have captured and place it 
+                        on a <keyword>drop space</keyword>
+                        for that piece
+                    </li>
+                    <li>
+                        The dropped piece becomes one of your pieces
+                    </li>
+                    <li>
+                        If the dropped piece was promoted, it becomes unpromoted
+                    </li>
+                    </ol>
+                    <p>
+                        You may not make a <keyword>drop</keyword> which leaves you
+                        in <keyword>check</keyword>
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>drop space</keyword></dt>
+                <dd>
+                    For
+                    <piece shape="bishop" />
+                    <piece shape="rook" />
+                    <piece shape="shogi-knight" />
+                    <piece shape="lance" />
+                    <piece shape="gold-general" /> or
+                    <piece shape="silver-general" />,
+                    any space from which the
+                    piece would be able to make a
+                    normal move
+                </dd>
+                <dd>
+                    <p>For
+                    <piece shape="pawn" />,
+                    any space such that</p>
+                    <ol>
+                    <li>the 
+                    <piece shape="pawn" />
+                    would be able to make a normal move</li>
+                    <li>no other
+                    <piece shape="pawn" /> is in any of the
+                    spaces
+                    forward or backward of the dropped
+                    <piece shape="pawn" /></li>
+                    <li>the dropped
+                    <piece shape="pawn" />
+                    does not immediately cause
+                    <keyword>checkmate</keyword></li>
+                    </ol>
                 </dd>
             </dlentry>
             <dlentry>
