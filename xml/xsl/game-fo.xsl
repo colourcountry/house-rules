@@ -141,7 +141,7 @@
         <xsl:attribute name="margin-right">40pt</xsl:attribute>
         <xsl:attribute name="margin-left">2pt</xsl:attribute>
         <!-- Doesn't work -->
-        <xsl:attribute name="keep-together.within-line">always</xsl:attribute>
+        <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="legal-or-illegal">
@@ -417,6 +417,12 @@
     </xsl:template>
 
     <xsl:template match="piece" mode="fo">
+        <xsl:if test="@count">
+            <fo:inline>
+                <xsl:value-of select="@count" /> ×
+            </fo:inline>
+        </xsl:if>
+
         <fo:external-graphic xsl:use-attribute-sets="align-pieces" src="piece-{generate-id(.)}.svg" />
         <xsl:result-document href="scrap/piece-{generate-id(.)}.svg">
             <xsl:call-template name="svg-with-piece"/>

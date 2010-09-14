@@ -1,0 +1,237 @@
+<game xml:lang="en">
+    <name><ph xml:lang="ja">五分摩訶将棋</ph> Micro shogi</name>
+    <gamebody>
+        <players>
+            <player value="black" />
+            <player value="white" />
+        </players>
+        <pieces>
+            <p>
+                <piece count="2" shape="king" />
+                <ph xml:lang="ja">王將</ph> king,
+                <piece count="2" shape="bishop" />
+                <ph xml:lang="ja">角行</ph> bishop,
+                <piece count="2" shape="gold-general" />
+                <ph xml:lang="ja">金将</ph> gold general,
+                <piece count="2" shape="silver-general" />
+                <ph xml:lang="ja">銀将</ph> silver general,
+                <piece count="2" shape="pawn" />
+                <ph xml:lang="ja">歩兵</ph> pawn
+            </p>
+            <p>
+                Pieces can change owner:
+                <piece shape="king" /> =
+                <piece colour="black" shape="king" /> =
+                <piece colour="white" shape="king" />
+            </p>
+            <p>
+                <piece shape="bishop" />
+                <piece shape="gold-general" />
+                <piece shape="silver-general" /> and
+                <piece shape="pawn" />
+                have 2 states:
+                normal and mutated
+            </p>
+        </pieces>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="5" columns="4" size="small" scale="1"
+                      left="edge" right="edge" bottom="white-edge" top="black-edge"/>
+            </hide>
+            <grid use="#grid">
+                <square x="0" y="0"> <piece colour="black" shape="king" /> </square>
+                <square x="1" y="0"> <piece colour="black" shape="bishop" /> </square>
+                <square x="2" y="0"> <piece colour="black" shape="gold-general" /> </square>
+                <square x="3" y="0"> <piece colour="black" shape="silver-general" /> </square>
+                <square x="0" y="1"> <piece colour="black" shape="pawn" /> </square>
+
+                <square x="3" y="4"> <piece colour="white" shape="king" /> </square>
+                <square x="2" y="4"> <piece colour="white" shape="bishop" /> </square>
+                <square x="1" y="4"> <piece colour="white" shape="gold-general" /> </square>
+                <square x="0" y="4"> <piece colour="white" shape="silver-general" /> </square>
+                <square x="3" y="3"> <piece colour="white" shape="pawn" /> </square>
+            </grid>
+                5 × 4
+            <goToPhase>
+                <phaseRef value="A" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="A" />
+                <player value="black" />
+                (<player value="white" />)
+            </phaseName>
+            <ul>
+            <li>
+            <keyword>Move</keyword> or <keyword>capture</keyword> with 
+                <piece colour="black" shape="king" />
+                <piece colour="black" shape="bishop" />
+                <piece colour="black" shape="gold-general" />
+                <piece colour="black" shape="silver-general" /> or
+                <piece colour="black" shape="pawn" />
+            </li>
+            <li>
+            <keyword>drop</keyword> a captured piece
+            </li>
+            </ul>
+            <repeat>
+                <goToPhase>
+                    <phaseRef value="A" />
+                    <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseRef value="A" />
+                    <player value="black" />
+                </goToPhase>
+            </repeat>
+        <subphase use="../common-rules.xml#subphase-check" /> 
+        <subphase use="../common-rules.xml#subphase-checkmate" /> 
+        </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>move</keyword></dt>
+                <dd>
+                    Move the piece to an empty square
+                    <ul>
+                    <li>
+                        Move a normal <piece colour="black" shape="gold-general" />:
+                        <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a normal <piece colour="black" shape="silver-general" />:
+                        <grid use="../shogi-pieces.xml#silver-general" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a normal <piece colour="black" shape="bishop" />:
+                        <grid use="../chess-pieces.xml#bishop" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a normal <piece colour="black" shape="pawn" />:
+                        <grid use="../chess-pieces.xml#pawn" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a mutated
+                        <piece colour="black" shape="gold-general" /> 
+                        as a
+                        <piece colour="black" shape="rook" />:
+                        <grid use="../chess-pieces.xml#rook" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a mutated
+                        <piece colour="black" shape="silver-general" /> 
+                        as a
+                        <piece colour="black" shape="lance" />:
+                        <grid use="../shogi-pieces.xml#lance" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a mutated
+                        <piece colour="black" shape="bishop" /> 
+                        as a
+                        <piece colour="black" shape="gold-general" />:
+                        <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a mutated
+                        <piece colour="black" shape="pawn" /> 
+                        as a
+                        <piece colour="black" shape="shogi-knight" />:
+                        <grid use="../shogi-pieces.xml#shogi-knight" scale="0.4"/>
+                    </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>knight jump</keyword></dt>
+                <dd>
+                        A mutated 
+                        <piece colour="black" shape="pawn" /> 
+                        (<piece colour="black" shape="shogi-knight" />)
+                        may jump over any other pieces
+                        to <keyword>move</keyword>
+                        or <keyword>capture</keyword>;
+                        other pieces must pass through
+                        only empty spaces
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                    <ol>
+                    <li>
+                        Move a piece as in <keyword>move</keyword>,
+                        to a space occupied by an opponent's piece
+                    </li>
+                    <li>
+                        Remove the opponent's piece and add to your
+                        <keyword>prisoners</keyword>
+                    </li>
+                    <li>
+                        If your piece was
+                        <piece shape="bishop" />
+                        <piece shape="gold-general" />
+                        <piece shape="silver-general" /> or
+                        <piece shape="pawn" />,
+                        mutate it if it was normal, or
+                        return it to normal if it was mutated
+                    </li>
+                    </ol>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>drop</keyword></dt>
+                <dd>
+                    <p>
+                        Take a piece from your <keyword>prisoners</keyword>
+                        and place it as one of your pieces
+                        on a <keyword>drop space</keyword>
+                        for that piece
+                    </p>
+                    <p>
+                        If the piece is
+                        <piece shape="bishop" />
+                        <piece shape="gold-general" />
+                        <piece shape="silver-general" /> or
+                        <piece shape="pawn" />,
+                        you may choose to drop it in either normal
+                        or mutated form
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>drop space</keyword></dt>
+                <dd>
+                    Any space from which the
+                    piece would be able to make a
+                    <keyword>move</keyword>
+                    (ignoring other pieces)
+                </dd>
+            </dlentry>
+            <dlentry use="../common-rules.xml#threatened-space" />
+            <dlentry use="../common-rules.xml#check" />
+            <dlentry use="../common-rules.xml#checkmate" />
+        </dl>
+        </defs>
+        <log>
+            <status value="in-progress" />
+            <sources>
+                <source>
+                    <title>Micro shogi</title>
+                    <copyright-holder>Wikipedia</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>  
+                    <changedate>2010-09-14</changedate>
+                    <changetext>Rules ready (except checkmate), needs examples</changetext>
+                </change>
+            </changelog>
+        </log>
+    </gamebody>
+</game>
