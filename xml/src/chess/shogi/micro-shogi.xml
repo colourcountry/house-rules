@@ -1,6 +1,10 @@
 <game xml:lang="en">
     <name><ph xml:lang="ja">五分摩訶将棋</ph> Micro shogi</name>
     <gamebody>
+        <about>
+            <author><ph xml:lang="ja">大山康晴</ph> Yasuharu Oyama (?)</author>
+            <date>?</date>
+        </about>
         <players>
             <player value="black" />
             <player value="white" />
@@ -25,13 +29,26 @@
                 <piece colour="white" shape="king" />
             </p>
             <p>
-                <piece shape="bishop" />
-                <piece shape="gold-general" />
-                <piece shape="silver-general" /> and
-                <piece shape="pawn" />
-                have 2 states:
-                normal and mutated
+                Pieces have 2 states
             </p>
+            <simpletable>
+                <strow>
+                    <stentry>unflipped</stentry>
+                    <stentry><piece shape="king" /></stentry>
+                    <stentry><piece shape="bishop" /></stentry>
+                    <stentry><piece shape="gold-general" /></stentry>
+                    <stentry><piece shape="silver-general" /></stentry>
+                    <stentry><piece shape="pawn" /></stentry>
+                </strow>
+                <strow>
+                    <stentry>flipped</stentry>
+                    <stentry>(<piece shape="king" />)</stentry>
+                    <stentry><piece shape="tokin" /></stentry>
+                    <stentry><piece shape="rook" /></stentry>
+                    <stentry><piece shape="lance" /></stentry>
+                    <stentry><piece shape="shogi-knight" /></stentry>
+                </strow>
+            </simpletable>
         </pieces>
         <phase>
             <phaseName>
@@ -97,50 +114,60 @@
             <dlentry>
                 <dt><keyword>move</keyword></dt>
                 <dd>
-                    Move the piece to an empty square
+                    <p>
+                        Move the piece to an empty space
+                    </p>
                     <ul>
                     <li>
-                        Move a normal <piece colour="black" shape="gold-general" />:
+                        Move an unflipped <piece colour="black" shape="gold-general" />:
+                        <space />
                         <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="silver-general" />:
+                        Move an unflipped <piece colour="black" shape="silver-general" />:
+                        <space />
                         <grid use="../shogi-pieces.xml#silver-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="bishop" />:
+                        Move an unflipped <piece colour="black" shape="bishop" />:
+                        <space />
                         <grid use="../chess-pieces.xml#bishop" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="pawn" />:
+                        Move an unflipped <piece colour="black" shape="pawn" />:
+                        <space />
                         <grid use="../chess-pieces.xml#pawn" scale="0.4"/>
                     </li>
                     <li>
-                        Move a mutated
-                        <piece colour="black" shape="gold-general" /> 
-                        as a
-                        <piece colour="black" shape="rook" />:
+                        Move a
+                        <piece colour="black" shape="rook" />
+                        (flipped
+                        <piece colour="black" shape="gold-general" />):
+                        <space />
                         <grid use="../chess-pieces.xml#rook" scale="0.4"/>
                     </li>
                     <li>
-                        Move a mutated
-                        <piece colour="black" shape="silver-general" /> 
-                        as a
-                        <piece colour="black" shape="lance" />:
+                        Move a
+                        <piece colour="black" shape="lance" />
+                        (flipped
+                        <piece colour="black" shape="silver-general" />):
+                        <space />
                         <grid use="../shogi-pieces.xml#lance" scale="0.4"/>
                     </li>
                     <li>
-                        Move a mutated
-                        <piece colour="black" shape="bishop" /> 
-                        as a
-                        <piece colour="black" shape="gold-general" />:
+                        Move a
+                        <piece colour="black" shape="tokin" />
+                        (flipped
+                        <piece colour="black" shape="bishop" />):
+                        <space />
                         <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a mutated
-                        <piece colour="black" shape="pawn" /> 
-                        as a
-                        <piece colour="black" shape="shogi-knight" />:
+                        <keyword>knight jump</keyword> a
+                        <piece colour="black" shape="shogi-knight" />
+                        (flipped
+                        <piece colour="black" shape="pawn" /> ):
+                        <space />
                         <grid use="../shogi-pieces.xml#shogi-knight" scale="0.4"/>
                     </li>
                     </ul>
@@ -149,9 +176,9 @@
             <dlentry>
                 <dt><keyword>knight jump</keyword></dt>
                 <dd>
-                        A mutated 
-                        <piece colour="black" shape="pawn" /> 
-                        (<piece colour="black" shape="shogi-knight" />)
+                        A
+                        <piece colour="black" shape="shogi-knight" />
+                        (flipped <piece colour="black" shape="pawn" />)
                         may jump over any other pieces
                         to <keyword>move</keyword>
                         or <keyword>capture</keyword>;
@@ -172,13 +199,10 @@
                         <keyword>prisoners</keyword>
                     </li>
                     <li>
-                        If your piece was
-                        <piece shape="bishop" />
-                        <piece shape="gold-general" />
-                        <piece shape="silver-general" /> or
-                        <piece shape="pawn" />,
-                        mutate it if it was normal, or
-                        return it to normal if it was mutated
+                        For any piece except
+                        <piece colour="black" shape="king" />,
+                        flip it if it was unflipped, or
+                        return it to unflipped if it was flipped
                     </li>
                     </ol>
                 </dd>
@@ -193,23 +217,41 @@
                         for that piece
                     </p>
                     <p>
-                        If the piece is
-                        <piece shape="bishop" />
-                        <piece shape="gold-general" />
-                        <piece shape="silver-general" /> or
-                        <piece shape="pawn" />,
-                        you may choose to drop it in either normal
-                        or mutated form
+                        For any piece except
+                        <piece colour="black" shape="king" />,
+                        you may choose to drop it in either unflipped
+                        or flipped form
                     </p>
                 </dd>
             </dlentry>
             <dlentry>
                 <dt><keyword>drop space</keyword></dt>
                 <dd>
-                    Any space from which the
-                    piece would be able to make a
-                    <keyword>move</keyword>
-                    (ignoring other pieces)
+                    <p>
+                        For
+                        <piece colour="black" shape="bishop" />
+                        <piece colour="black" shape="gold-general" />,
+                        <piece colour="black" shape="silver-general" /> or
+                        <piece colour="black" shape="tokin" />
+                        (flipped
+                        <piece colour="black" shape="bishop" />),
+                        any empty space
+                    </p>
+                    <p>
+                        For
+                        <piece colour="black" shape="pawn" /> or 
+                        <piece colour="black" shape="lance" />
+                        (flipped
+                        <piece colour="black" shape="silver-general" />),
+                        any empty space in the nearest 8 rows
+                    </p>
+                    <p>
+                        For a
+                        <piece colour="black" shape="shogi-knight" />
+                        (flipped
+                        <piece colour="black" shape="pawn" />),
+                        any empty space in the nearest 7 rows
+                    </p>
                 </dd>
             </dlentry>
             <dlentry use="../common-rules.xml#threatened-space" />
@@ -228,8 +270,8 @@
             </sources>
             <changelog>
                 <change>  
-                    <changedate>2010-09-14</changedate>
-                    <changetext>Rules ready (except checkmate), needs examples</changetext>
+                    <changedate>2010-09-16</changedate>
+                    <changetext>Rules ready, needs examples</changetext>
                 </change>
             </changelog>
         </log>

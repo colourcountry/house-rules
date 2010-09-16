@@ -8,7 +8,8 @@
         <pieces>
             <p>
                 <piece count="2" shape="king" />
-                <ph xml:lang="ja">王將</ph> king,
+                <ph xml:lang="ja">王將</ph
+                >/<ph xml:lang="ja">玉將</ph> king,
                 <piece count="2" shape="bishop" />
                 <ph xml:lang="ja">角行</ph> bishop,
                 <piece count="2" shape="rook" />
@@ -31,9 +32,38 @@
                 <piece colour="white" shape="king" />
             </p>
             <p>
-                Pieces have 2 states:
-                normal and promoted
+                Pieces have 2 states
             </p>
+            <simpletable>
+                <strow>
+                    <stentry>unpromoted</stentry>
+                    <stentry><piece shape="king" /></stentry>
+                    <stentry><piece shape="bishop" /></stentry>
+                    <stentry><piece shape="rook" /></stentry>
+                    <stentry><piece shape="shogi-knight" /></stentry>
+                </strow>
+                <strow>
+                    <stentry>promoted</stentry>
+                    <stentry>(<piece shape="king" />)</stentry>
+                    <stentry><piece shape="dragon-horse" /> <ph xml:lang="ja">龍馬</ph></stentry>
+                    <stentry><piece shape="dragon-king" /> <ph xml:lang="ja">龍王</ph></stentry>
+                    <stentry><piece shape="tokin" /> <ph xml:lang="ja">桂馬</ph></stentry>
+                </strow>
+                <strow>
+                    <stentry>unpromoted</stentry>
+                    <stentry><piece shape="lance" /></stentry>
+                    <stentry><piece shape="gold-general" /></stentry>
+                    <stentry><piece shape="silver-general" /></stentry>
+                    <stentry><piece shape="pawn" /></stentry>
+                </strow>
+                <strow>
+                    <stentry>promoted</stentry>
+                    <stentry><piece shape="tokin" /> <ph xml:lang="ja">成香</ph></stentry>
+                    <stentry>(<piece shape="gold-general" />)</stentry>
+                    <stentry><piece shape="tokin" /> <ph xml:lang="ja">成銀</ph></stentry>
+                    <stentry><piece shape="tokin" /> <ph xml:lang="ja">と金</ph></stentry>
+                </strow>
+            </simpletable>
         </pieces>
         <phase>
             <phaseName>
@@ -102,15 +132,7 @@
             <li>
             <ol>
             <li>
-            <keyword>Move</keyword> or <keyword>capture</keyword> with 
-                <piece colour="black" shape="king" />
-                <piece colour="black" shape="bishop" />
-                <piece colour="black" shape="rook" />
-                <piece colour="black" shape="shogi-knight" />
-                <piece colour="black" shape="lance" />
-                <piece colour="black" shape="gold-general" />
-                <piece colour="black" shape="silver-general" /> or
-                <piece colour="black" shape="pawn" />
+            <keyword>Move</keyword> or <keyword>capture</keyword> with one of your pieces
             </li>
             <li>
             <keyword>Promote</keyword>
@@ -139,60 +161,74 @@
             <dlentry>
                 <dt><keyword>move</keyword></dt>
                 <dd>
-                    Move the piece to an empty square
+                    <p>
+                        Move the piece to an empty space
+                    </p>
                     <ul>
                     <li>
-                        Move a normal <piece colour="black" shape="gold-general" />:
+                        Move <piece colour="black" shape="king" />:
+                        <space />
+                        <grid use="../chess-pieces.xml#king" scale="0.4"/>
+                    </li>
+                    <li>
+                        Move a <piece colour="black" shape="gold-general" />:
+                        <space />
                         <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="silver-general" />:
+                        Move an unpromoted <piece colour="black" shape="silver-general" />:
+                        <space />
                         <grid use="../shogi-pieces.xml#silver-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="shogi-knight" />:
+                        <keyword>knight jump</keyword> with an unpromoted <piece colour="black" shape="shogi-knight" />
+                        <space />
                         <grid use="../shogi-pieces.xml#shogi-knight" scale="0.4"/>
-                        + <keyword>knight jump</keyword>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="lance" />:
+                        Move an unpromoted <piece colour="black" shape="lance" />:
+                        <space />
                         <grid use="../shogi-pieces.xml#lance" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="bishop" />:
+                        Move an unpromoted <piece colour="black" shape="bishop" />:
+                        <space />
                         <grid use="../chess-pieces.xml#bishop" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="rook" />:
+                        Move an unpromoted <piece colour="black" shape="rook" />:
+                        <space />
                         <grid use="../chess-pieces.xml#rook" scale="0.4"/>
                     </li>
                     <li>
-                        Move a normal <piece colour="black" shape="pawn" />:
+                        Move an unpromoted <piece colour="black" shape="pawn" />:
+                        <space />
                         <grid use="../chess-pieces.xml#pawn" scale="0.4"/>
                     </li>
                     <li>
-                        Move a promoted
+                        Move a
+                        <piece colour="black" shape="tokin" />
+                        (promoted
                         <piece colour="black" shape="silver-general" /> 
                         <piece colour="black" shape="shogi-knight" /> 
                         <piece colour="black" shape="lance" /> 
                         or
-                        <piece colour="black" shape="pawn" /> 
-                        as a
-                        <piece colour="black" shape="gold-general" />:
+                        <piece colour="black" shape="pawn" />)
+                        <space />
                         <grid use="../shogi-pieces.xml#gold-general" scale="0.4"/>
                     </li>
                     <li>
-                        Move a promoted
-                        <piece colour="black" shape="bishop" /> 
-                        as a
-                        <piece colour="black" shape="dragon-horse" />:
+                        Move a
+                        <piece colour="black" shape="dragon-horse" />
+                        (promoted <piece colour="black" shape="bishop" />)
+                        <space />
                         <grid use="../shogi-pieces.xml#dragon-horse" scale="0.4"/>
                     </li>
                     <li>
-                        Move a promoted
-                        <piece colour="black" shape="rook" /> 
-                        as a
-                        <piece colour="black" shape="dragon-king" />:
+                        Move a
+                        <piece colour="black" shape="dragon-king" />
+                        (promoted <piece colour="black" shape="rook" />)
+                        <space />
                         <grid use="../shogi-pieces.xml#dragon-king" scale="0.4"/>
                     </li>
                     </ul>
@@ -218,6 +254,9 @@
                         to a space occupied by an opponent's piece
                     </li>
                     <li>
+                        Return the opponent's piece to unpromoted form
+                    </li>
+                    <li>
                         Remove the opponent's piece and add to your
                         <keyword>prisoners</keyword>
                     </li>
@@ -234,7 +273,7 @@
                         for that piece
                     </p>
                     <p>
-                        The dropped piece must be placed in its normal (unpromoted) form
+                        The dropped piece must be placed in its unpromoted form
                     </p>
                 </dd>
             </dlentry>
@@ -244,25 +283,24 @@
                     For
                     <piece colour="black" shape="bishop" />
                     <piece colour="black" shape="rook" />
-                    <piece colour="black" shape="shogi-knight" />
-                    <piece colour="black" shape="lance" />
                     <piece colour="black" shape="gold-general" /> or
                     <piece colour="black" shape="silver-general" />,
-                    any space from which the
-                    piece would be able to make a
-                    <keyword>move</keyword>
+                    any empty space
+                </dd>
+                <dd>For
+                    <piece colour="black" shape="lance" />,
+                    any empty space in the nearest 8 rows
+                </dd>
+                <dd>For
+                    <piece colour="black" shape="shogi-knight" />,
+                    any empty space in the nearest 7 rows
                 </dd>
                 <dd>
                     <p>For
                     <piece colour="black" shape="pawn" />,
-                    any space such that</p>
+                    any empty space in the nearest 8 rows such that
+                    </p>
                     <ol>
-                    <li>
-                        the 
-                        <piece colour="black" shape="pawn" />
-                        would be able to make a normal move
-                        (ignoring other pieces)
-                    </li>
                     <li>
                         no other
                         <piece colour="black" shape="pawn" /> is in any of the

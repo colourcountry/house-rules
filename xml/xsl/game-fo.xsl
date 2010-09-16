@@ -128,6 +128,12 @@
         <xsl:attribute name="padding-bottom">8pt</xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="stentry">
+        <xsl:attribute name="display-align">center</xsl:attribute>
+        <xsl:attribute name="border-top">1pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
+        <xsl:attribute name="border-left">1pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="subsection-body">
         <xsl:attribute name="padding-top">6pt</xsl:attribute>
         <xsl:attribute name="border-top">2pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
@@ -191,8 +197,12 @@
 
     <xsl:template match="game" mode="fo">
         <fo:block xsl:use-attribute-sets="top">
-            <xsl:apply-templates select="name" mode="fo-top" />
-            <xsl:apply-templates select="gamebody/about" mode="fo-top" />
+            <fo:block>
+                <xsl:apply-templates select="name" mode="fo-top" />
+            </fo:block>
+            <fo:block>
+                <xsl:apply-templates select="gamebody/about" mode="fo-top" />
+            </fo:block>
         </fo:block>
         <xsl:if test="gamebody/players">
             <fo:block xsl:use-attribute-sets="subsection">
@@ -207,6 +217,34 @@
             </fo:block>
         </xsl:if>
         <xsl:apply-templates select="gamebody" mode="fo" />
+    </xsl:template>
+
+    <xsl:template match="simpletable" mode="fo">
+        <fo:block>
+            <fo:table>
+                <fo:table-body>
+                    <xsl:apply-templates mode="fo" />
+                </fo:table-body>
+            </fo:table>
+        </fo:block>
+    </xsl:template>
+
+    <xsl:template match="strow" mode="fo">
+                <fo:table-row>
+                    <xsl:apply-templates mode="fo" />
+                </fo:table-row>
+    </xsl:template>
+
+    <xsl:template match="stentry" mode="fo">
+                <fo:table-cell xsl:use-attribute-sets="stentry">
+                    <fo:block text-align="center">
+                        <xsl:apply-templates mode="fo" />
+                    </fo:block>
+                </fo:table-cell>
+    </xsl:template>
+
+    <xsl:template match="space" mode="fo">
+                <fo:leader leader-length.maximum="100%" />
     </xsl:template>
 
     <xsl:template match="name" mode="fo-top">
@@ -576,7 +614,7 @@
       <xsl:apply-templates mode="fo-dt" />
     </xsl:template>
 
-    <xsl:template match="p|ol|ul" mode="fo">
+    <xsl:template match="ol|ul" mode="fo">
       <fo:block xsl:use-attribute-sets="paragraph">
           <xsl:apply-templates mode="fo" />
        </fo:block>
@@ -584,6 +622,9 @@
 
     <xsl:template match="ol/li" mode="fo">
         <fo:block>
+            <xsl:if test="./space">
+                <xsl:attribute name="text-align-last">justify</xsl:attribute>
+            </xsl:if>
             <xsl:if test="ancestor::li">
                 <xsl:attribute name="margin-left">15pt</xsl:attribute>
             </xsl:if>
@@ -602,6 +643,9 @@
 
     <xsl:template match="ul/li" mode="fo">
         <fo:block>
+            <xsl:if test="./space">
+                <xsl:attribute name="text-align-last">justify</xsl:attribute>
+            </xsl:if>
             <xsl:if test="ancestor::li">
                 <xsl:attribute name="margin-left">15pt</xsl:attribute>
             </xsl:if>
@@ -622,8 +666,11 @@
         </fo:block>
     </xsl:template>
 
-    <xsl:template match="dd" mode="fo">
+    <xsl:template match="p|dd" mode="fo">
       <fo:block xsl:use-attribute-sets="paragraph">
+          <xsl:if test="./space">
+              <xsl:attribute name="text-align-last">justify</xsl:attribute>
+          </xsl:if>
           <xsl:apply-templates mode="fo" />
       </fo:block>
     </xsl:template>
