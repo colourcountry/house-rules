@@ -52,6 +52,10 @@
                         Moves to any abutting space.
                     </p>
                     <grid rows="7" columns="7" size="small" id="small-rook">
+                        <square x="3" y="2"> <highlight value="circle" /> </square>
+                        <square x="4" y="3"> <highlight value="circle" /> </square>
+                        <square x="3" y="4"> <highlight value="circle" /> </square>
+                        <square x="2" y="3"> <highlight value="circle" /> </square>
                         <square x="3" y="3">
                             <arrow x="-1" y="0" />
                             <arrow x="1" y="0" />
@@ -59,10 +63,6 @@
                             <arrow x="0" y="1" />
                             <piece colour="black" shape="small-rook" />
                         </square>
-                        <square x="3" y="2"> <highlight value="circle" /> </square>
-                        <square x="4" y="3"> <highlight value="circle" /> </square>
-                        <square x="3" y="4"> <highlight value="circle" /> </square>
-                        <square x="2" y="3"> <highlight value="circle" /> </square>
                     </grid>
                 </dd>
             </dlentry>
