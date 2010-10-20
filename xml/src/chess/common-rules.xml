@@ -32,6 +32,13 @@
                         on their next move
                 </dd>
             </dlentry>
+            <dlentry id="home-space">
+                <dt><keyword>home space</keyword></dt>
+                <dd>
+                        A space which was occupied by one of your
+                        pieces at the beginning of the game
+                </dd>
+            </dlentry>
             <dlentry id="check">
                 <dt><keyword>check</keyword></dt>
                 <dd>

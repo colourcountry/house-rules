@@ -1,0 +1,254 @@
+<game>
+    <name>Archers</name>
+    <gamebody>
+        <about>
+            <author>George Stupecky</author>
+            <date>1982</date>
+        </about>
+        <players>
+            <player value="black" />
+            <pieces>
+                9 ×
+                <piece colour="black" shape="north" />
+                (
+                <piece colour="black" shape="north" /> =
+                <piece colour="black" shape="west" /> =
+                <piece colour="black" shape="south" /> =
+                <piece colour="black" shape="east" /> )
+            </pieces>
+        </players>
+        <players>
+            <player value="white" />
+            <pieces>
+                9 ×
+                <piece colour="white" shape="north" />
+                (
+                <piece colour="white" shape="north" /> =
+                <piece colour="white" shape="west" /> =
+                <piece colour="white" shape="south" /> =
+                <piece colour="white" shape="east" /> )
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <grid id="grid" rows="9" columns="9" size="small"
+                  left="edge" right="edge" bottom="edge" top="edge"/>
+            <legal>
+            <grid use="grid">
+                <square x="1" y="1"> <piece colour="black" shape="north" /> </square>
+                <square x="1" y="2"> <piece colour="black" shape="north" /> </square>
+                <square x="1" y="3"> <piece colour="black" shape="north" /> </square>
+                <square x="2" y="1"> <piece colour="black" shape="north" /> </square>
+                <square x="2" y="2"> <piece colour="black" shape="north" /> </square>
+                <square x="2" y="3"> <piece colour="black" shape="north" /> </square>
+                <square x="3" y="1"> <piece colour="black" shape="north" /> </square>
+                <square x="3" y="2"> <piece colour="black" shape="north" /> </square>
+                <square x="3" y="3"> <piece colour="black" shape="north" /> </square>
+
+                <square x="5" y="5"> <piece colour="white" shape="south" /> </square>
+                <square x="5" y="6"> <piece colour="white" shape="south" /> </square>
+                <square x="5" y="7"> <piece colour="white" shape="south" /> </square>
+                <square x="6" y="5"> <piece colour="white" shape="south" /> </square>
+                <square x="6" y="6"> <piece colour="white" shape="south" /> </square>
+                <square x="6" y="7"> <piece colour="white" shape="south" /> </square>
+                <square x="7" y="5"> <piece colour="white" shape="south" /> </square>
+                <square x="7" y="6"> <piece colour="white" shape="south" /> </square>
+                <square x="7" y="7"> <piece colour="white" shape="south" /> </square>
+            </grid>
+            </legal>
+            <goToPhase>
+                <phaseRef value="1" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="1" />
+                <player value="black" />
+                (<player value="white" />)
+            </phaseName>
+            <ol>
+            <li><condition value="optional" />
+                <keyword>capture</keyword>
+                with any number of
+                <piece colour="black" shape="north" />
+                (1 <keyword>capture</keyword> each)
+            </li>
+            <li>
+                Do 2 <keyword>actions</keyword> with
+                1
+                <piece colour="black" shape="north" />,
+                or 1 <keyword>action</keyword> with each of
+                2
+                <piece colour="black" shape="north" />
+            </li>
+            </ol>
+            <repeat>
+                <goToPhase>
+                    <phaseRef value="1" />
+                    <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseRef value="1" />
+                    <player value="black" />
+                </goToPhase>
+            </repeat>
+        <subphase>
+            <phaseName>
+                <phaseRef value="1" />
+            </phaseName>
+            <p>
+                No piece may move into a <keyword>threatened space</keyword>
+                (a piece already in a <keyword>threatened space</keyword>
+                may remain there, or rotate)
+            </p>
+                    <example>
+                        <player value="white" />
+                        <grid use="zoc-1">
+                            <square x="3" y="2">
+                                <piece shape="west" colour="white" />
+                            </square>
+                        </grid>
+                        <illegal>
+                            <grid use="zoc-1">
+                                <square x="2" y="2">
+                                    <piece shape="west" colour="white" />
+                                    <highlight value="cross" />
+                                </square>
+                            </grid>
+                        </illegal>
+                    </example>
+        </subphase>
+        <subphase>
+            <phaseName>
+                <phaseRef value="1" />
+                <player value="black" />
+                (<player value="white" />)
+            </phaseName>
+            <p>
+                End your turn with a <piece shape="north" colour="black" />
+                in one of your opponent's <keyword>home spaces</keyword>
+            </p>
+            <goToPhase>
+                <phaseRef value="Win" />
+                <player value="black" />
+            </goToPhase>
+        </subphase>
+        </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>action</keyword></dt>
+                <dd>
+                    <ul>
+                        <li>Move forwards to the next square</li>
+                        <li>Move backwards to the next square</li>
+                        <li>Rotate 90° clockwise</li>
+                        <li>Rotate 90° anticlockwise</li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                    <p>
+                        If an enemy piece is in the
+                        square forward of your piece or
+                        one of the squares
+                        diagonally forward of your piece,
+                        remove it
+                    </p>
+                    <p>
+                        If more than one enemy piece is in these
+                        squares, remove one
+                    </p>
+                    <hide>
+                        <grid rows="3" columns="4" size="small" id="zoc-1">
+                            <square x="1" y="1">
+                                <piece shape="east" colour="black" />
+                            </square>
+                            <square x="2" y="0">
+                                <highlight value="red-square" />
+                            </square>
+                            <square x="2" y="1">
+                                <highlight value="red-square" />
+                            </square>
+                            <square x="2" y="2">
+                                <highlight value="red-square" />
+                            </square>
+                        </grid>
+                    </hide>
+                    <example>
+                        <player value="black" />
+                        <grid use="zoc-1">
+                            <square x="2" y="2"> <piece shape="south" colour="white" /> </square>
+                            <square x="2" y="1"> <piece shape="south" colour="white" /> </square>
+                        </grid>
+                        <legal>
+                            <grid use="zoc-1">
+                                <square x="2" y="2">
+                                    <highlight value="cross" />
+                                </square>
+                                <square x="2" y="1"> <piece shape="south" colour="white" /> </square>
+                            </grid>
+                        </legal>
+                    </example>
+                </dd>
+            </dlentry>
+            <dlentry use="common-rules.xml#threatened-space">
+                <dd>
+                    <example>
+                        <player value="black" />
+                        <grid rows="4" columns="6" top="edge" left="edge" size="small">
+                            <square x="1" y="1"> <piece shape="east" colour="white" /> </square>
+                            <square x="1" y="0"> <piece shape="east" colour="white" /> </square>
+                            <square x="3" y="3"> <piece shape="north" colour="white" /> </square>
+                            <square x="4" y="2"> <piece shape="south" colour="white" /> </square>
+                            <square x="5" y="2"> <piece shape="west" colour="white" /> </square>
+                            <square x="0" y="1"> <piece shape="south" colour="black" /> </square>
+                            <square x="1" y="3"> <piece shape="north" colour="black" /> </square>
+                            <square x="2" y="0"> <highlight value="red-square" /> </square>
+                            <square x="2" y="1"> <highlight value="red-square" /> </square>
+                            <square x="2" y="2"> <highlight value="red-square" /> </square>
+                            <square x="3" y="2"> <highlight value="red-square" /> </square>
+                            <square x="4" y="2"> <highlight value="red-square" /> </square>
+                            <square x="3" y="3"> <highlight value="red-square" /> </square>
+                            <square x="4" y="3"> <highlight value="red-square" />
+                            <piece shape="west" colour="black" /> </square>
+                            <square x="5" y="3"> <highlight value="red-square" /> </square>
+                            <square x="4" y="1"> <highlight value="red-square" /> </square>
+                        </grid>
+                    </example>
+                </dd>
+            </dlentry>
+            <dlentry use="common-rules.xml#home-space">
+                <dd>
+            <grid use="grid">
+                <square x="1" y="1"> <piece shape="player" colour="black" /> </square>
+                <square x="1" y="2"> <piece shape="player" colour="black" /> </square>
+                <square x="1" y="3"> <piece shape="player" colour="black" /> </square>
+                <square x="2" y="1"> <piece shape="player" colour="black" /> </square>
+                <square x="2" y="2"> <piece shape="player" colour="black" /> </square>
+                <square x="2" y="3"> <piece shape="player" colour="black" /> </square>
+                <square x="3" y="1"> <piece shape="player" colour="black" /> </square>
+                <square x="3" y="2"> <piece shape="player" colour="black" /> </square>
+                <square x="3" y="3"> <piece shape="player" colour="black" /> </square>
+
+                <square x="5" y="5"> <piece shape="player" colour="white" /> </square>
+                <square x="5" y="6"> <piece shape="player" colour="white" /> </square>
+                <square x="5" y="7"> <piece shape="player" colour="white" /> </square>
+                <square x="6" y="5"> <piece shape="player" colour="white" /> </square>
+                <square x="6" y="6"> <piece shape="player" colour="white" /> </square>
+                <square x="6" y="7"> <piece shape="player" colour="white" /> </square>
+                <square x="7" y="5"> <piece shape="player" colour="white" /> </square>
+                <square x="7" y="6"> <piece shape="player" colour="white" /> </square>
+                <square x="7" y="7"> <piece shape="player" colour="white" /> </square>
+            </grid>
+                </dd>
+            </dlentry>
+        </dl>
+        </defs>
+    </gamebody>
+</game>
