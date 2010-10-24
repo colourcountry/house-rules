@@ -117,19 +117,19 @@
         <xsl:param name="name" />
         <xsl:choose>
             <xsl:when test="$name='edge'">
-                <xsl:attribute name="fill">#cccccc</xsl:attribute>
-                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
-                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+                <xsl:attribute name="fill"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+                <xsl:attribute name="stroke"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+                <xsl:attribute name="stroke-width">2pt</xsl:attribute>
             </xsl:when>
             <xsl:when test="$name='white-edge'">
                 <xsl:attribute name="fill">#ffffff</xsl:attribute>
-                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
-                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+                <xsl:attribute name="stroke"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+                <xsl:attribute name="stroke-width">2pt</xsl:attribute>
             </xsl:when>
             <xsl:when test="$name='black-edge'">
                 <xsl:attribute name="fill">#000000</xsl:attribute>
-                <xsl:attribute name="stroke">#cccccc</xsl:attribute>
-                <xsl:attribute name="stroke-width">0.6pt</xsl:attribute>
+                <xsl:attribute name="stroke"><xsl:value-of select="$rule-colour" /></xsl:attribute>
+                <xsl:attribute name="stroke-width">2pt</xsl:attribute>
             </xsl:when>
         </xsl:choose>
     </xsl:template>

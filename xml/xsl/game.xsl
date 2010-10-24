@@ -10,6 +10,7 @@
     <xsl:include href="pieces-svg.xsl" />
     <xsl:include href="elements-svg.xsl" />
     <xsl:include href="grid-svg.xsl" />
+    <xsl:include href="octa-grid-svg.xsl" />
 
     <xsl:output method="xml"/>
 
