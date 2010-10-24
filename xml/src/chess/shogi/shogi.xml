@@ -69,6 +69,13 @@
             <phaseName>
                 <phaseRef value="Setup" />
             </phaseName>
+            <p>
+                <player value="white" /> <keyword>supply</keyword> : empty
+            </p>
+            <p>
+                <player value="black" /> <keyword>supply</keyword> : empty
+            </p>
+             
             <hide>
                 <grid id="grid" rows="9" columns="9" size="small"
                       left="edge" right="edge" bottom="white-edge" top="black-edge"/>
@@ -132,10 +139,10 @@
             <li>
             <ol>
             <li>
-            <keyword>Move</keyword> or <keyword>capture</keyword> with one of your pieces
+            <keyword>move</keyword> or <keyword>capture</keyword> with one of your pieces
             </li>
             <li>
-            <keyword>Promote</keyword>
+            <keyword>promote</keyword>
             </li>
             </ol>
             </li>
@@ -258,7 +265,7 @@
                     </li>
                     <li>
                         Remove the opponent's piece and add to your
-                        <keyword>prisoners</keyword>
+                        <keyword>supply</keyword> as your own piece
                     </li>
                     </ol>
                 </dd>
@@ -267,8 +274,8 @@
                 <dt><keyword>drop</keyword></dt>
                 <dd>
                     <p>
-                        Take a piece from your <keyword>prisoners</keyword>
-                        you have captured and place it as one of your pieces
+                        Take a piece from your <keyword>supply</keyword>
+                        and place it
                         on a <keyword>drop space</keyword>
                         for that piece
                     </p>
@@ -334,7 +341,7 @@
                         which ended the turn in the farthest 2 rows of the board
                 </li>
                 <li>
-                        Optionally promote any piece
+                        <condition value="optional" /> promote any piece
                         which began or ended the turn in the farthest 3 rows of the board
                 </li>
                 </ol>

@@ -1,0 +1,200 @@
+<game>
+    <name>Apex</name>
+    <gamebody>
+        <about>
+            <author>Jochen Drechsler</author>
+            <date>2001</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                11 ×
+                <piece colour="white" shape="queen" />
+            </pieces>
+        </players>
+        <players>
+            <player value="black" />
+            <pieces>
+                11 ×
+                <piece colour="black" shape="queen" />
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <p>
+                <player value="white" /> <keyword>supply</keyword> : 
+                11 ×
+                <piece colour="white" shape="queen" />
+            </p>
+            <p>
+                <player value="black" /> <keyword>supply</keyword> : 
+                11 ×
+                <piece colour="black" shape="queen" />
+            </p>
+            <grid id="grid" rows="8" columns="8" size="small"
+                  left="black-edge" right="black-edge" bottom="white-edge" top="white-edge"/>
+            8 × 8
+            <goToPhase>
+                <phaseRef value="A" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="A" />
+                <player value="black" />
+                (<player value="white" />)
+            </phaseName>
+            <p>
+                <keyword>drop</keyword>,
+                <keyword>move</keyword>
+                <i>or</i>
+                <keyword>capture</keyword>
+            </p>
+            <repeat>
+                <goToPhase>
+                    <phaseRef value="A" />
+                    <player value="white" />
+                </goToPhase>
+                <goToPhase>
+                    <phaseRef value="A" />
+                    <player value="black" />
+                </goToPhase>
+            </repeat>
+            <subphase>
+                The two edges of the board
+                belonging to <player value="black" />
+                are connected by a sequence of
+                <piece colour="black" shape="queen" />
+                in mutually adjacent squares
+                <goToPhase>
+                    <phaseRef value="Win" />
+                    <player value="black" />
+                </goToPhase>
+                <example>
+                    <grid use="#grid">
+                        <square x="6" y="0"> <piece colour="white" shape="queen" /> </square>
+                        <square x="6" y="1"> <piece colour="white" shape="queen" /> </square>
+                        <square x="5" y="2"> <piece colour="white" shape="queen" /> </square>
+                        <square x="4" y="3"> <piece colour="white" shape="queen" /> </square>
+                        <square x="3" y="3"> <piece colour="white" shape="queen" /> </square>
+                        <square x="2" y="4"> <piece colour="white" shape="queen" /> </square>
+                        <square x="3" y="5"> <piece colour="white" shape="queen" /> </square>
+                        <square x="4" y="6"> <piece colour="white" shape="queen" /> </square>
+                        <square x="4" y="7"> <piece colour="white" shape="queen" />
+                            <arrow>
+                                <arrow-segment x="0" y="-1" />
+                                <arrow-segment x="-1" y="-1" />
+                                <arrow-segment x="-1" y="-1" />
+                                <arrow-segment x="1" y="-1" />
+                                <arrow-segment x="1" y="0" />
+                                <arrow-segment x="1" y="-1" />
+                                <arrow-segment x="1" y="-1" />
+                                <arrow-segment x="0" y="-1" />
+                            </arrow>
+                        </square>
+                        <square x="1" y="1"> <piece colour="white" shape="queen" /> </square>
+                        <square x="0" y="2"> <piece colour="black" shape="queen" /> </square>
+                        <square x="1" y="2"> <piece colour="black" shape="queen" /> </square>
+                        <square x="3" y="4"> <piece colour="black" shape="queen" /> </square>
+                        <square x="3" y="7"> <piece colour="black" shape="queen" /> </square>
+                        <square x="5" y="6"> <piece colour="black" shape="queen" /> </square>
+                        <square x="6" y="5"> <piece colour="black" shape="queen" /> </square>
+                        <square x="7" y="4"> <piece colour="black" shape="queen" /> </square>
+                        <square x="6" y="3"> <piece colour="black" shape="queen" /> </square>
+                    </grid>
+                    <goToPhase>
+                        <phaseRef value="Win" />
+                        <player value="white" />
+                    </goToPhase>
+                </example>
+            </subphase>
+        </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>drop</keyword></dt>
+                <dd>
+                    <ol>
+                        <li>
+                            Place a <piece colour="black" shape="queen" /> from your <keyword>supply</keyword>
+                            in an empty space abutting either of the edges of the board belonging to you
+                        </li>
+                        <li> <condition value="optional" /> <keyword>move</keyword> the dropped piece </li>
+                    </ol>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>move</keyword></dt>
+                <dd>
+                    <p>
+                        Move a <piece colour="black" shape="queen" />
+                        to an empty space
+                        <space />
+                        <grid use="../chess-pieces.xml#queen" scale="0.4"/>
+                    </p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                    <p>
+                        Move a <piece colour="black" shape="queen" />
+                        to a non-adjacent space occupied by
+                        an opponent's <piece colour="white" shape="queen" />, returning that piece
+                        to their <keyword>supply</keyword>
+                    </p>
+                        <grid rows="7" columns="7" size="small" scale="0.4">
+                            <square x="0" y="0"> <highlight value="red-square" /> </square>
+                            <square x="1" y="1"> <highlight value="red-square" /> </square>
+                            <square x="5" y="1"> <highlight value="red-square" /> </square>
+                            <square x="6" y="0"> <highlight value="red-square" /> </square>
+                            <square x="3" y="0"> <highlight value="red-square" /> </square>
+                            <square x="3" y="1"> <highlight value="red-square" /> </square>
+                            <square x="0" y="6"> <highlight value="red-square" /> </square>
+                            <square x="1" y="5"> <highlight value="red-square" /> </square>
+                            <square x="5" y="5"> <highlight value="red-square" /> </square>
+                            <square x="6" y="6"> <highlight value="red-square" /> </square>
+                            <square x="3" y="6"> <highlight value="red-square" /> </square>
+                            <square x="3" y="5"> <highlight value="red-square" /> </square>
+                            <square x="3" y="5"> <highlight value="red-square" /> </square>
+                            <square x="3" y="6"> <highlight value="red-square" /> </square>
+                            <square x="0" y="3"> <highlight value="red-square" /> </square>
+                            <square x="1" y="3"> <highlight value="red-square" /> </square>
+                            <square x="5" y="3"> <highlight value="red-square" /> </square>
+                            <square x="6" y="3"> <highlight value="red-square" /> </square>
+                            <square x="3" y="3">
+                                <piece colour="black" shape="queen" />
+                                <arrow x="-3.7" y="-3.7" />
+                                <arrow x="3.7" y="-3.7" />
+                                <arrow x="-3.7" y="3.7" />
+                                <arrow x="3.7" y="3.7" />
+                                <arrow x="-3.7" y="0" />
+                                <arrow x="3.7" y="0" />
+                                <arrow x="0" y="-3.7" />
+                                <arrow x="0" y="3.7" />
+                            </square>
+                        </grid>
+                </dd>
+            </dlentry>
+        </dl>
+        </defs>
+        <log>
+            <status value="in-progress" />
+            <sources>
+                <source>
+                    <url>http://boardgames.about.com/library/games/on/bl-8x8-apex.htm</url>
+                    <copyright-holder>Erik Arneson</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>
+                    <changedate>2010-10-24</changedate>
+                    <changetext>First draft</changetext>
+                </change>
+            </changelog>
+        </log>
+    </gamebody>
+</game>

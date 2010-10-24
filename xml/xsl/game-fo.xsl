@@ -120,6 +120,11 @@
         <xsl:attribute name="border-top">2pt solid <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
+    <xsl:attribute-set name="section-body">
+        <xsl:attribute name="padding-top">6pt</xsl:attribute>
+        <xsl:attribute name="padding-bottom">18pt</xsl:attribute>
+    </xsl:attribute-set>
+
     <xsl:attribute-set name="subsection">
         <xsl:attribute name="padding-bottom">18pt</xsl:attribute>
     </xsl:attribute-set>
@@ -354,7 +359,7 @@
                         </fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
-                        <fo:block>
+                        <fo:block xsl:use-attribute-sets="section-body">
                             <xsl:apply-templates mode="fo" />
                         </fo:block>
                     </fo:table-cell>
@@ -369,7 +374,7 @@
     <xsl:template match="phase/subphase" mode="fo" />
 
     <xsl:template match="subphase" mode="fo-phase">
-                <fo:table-row xsl:use-attribute-sets="subsection">
+                <fo:table-row>
                     <fo:table-cell>
                         <fo:block>
                             <xsl:choose>

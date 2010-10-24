@@ -218,8 +218,7 @@
                             </square>
                             <square x="3" y="3">
                                 <piece colour="black" shape="double-pawn" />
-                                <arrow x="-1" y="-1" />
-                                <arrow x="1" y="-1" />
+                                <arrow x="0" y="-1" />
                             </square>
                         </grid>
                     </li>
