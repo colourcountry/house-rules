@@ -565,6 +565,35 @@
 -->
     </xsl:template>
 
+    <xsl:template match="octa-grid" mode="fo">
+        <xsl:variable name="height"><xsl:call-template name="get-grid-height"/></xsl:variable>
+        <xsl:variable name="scale">
+            <xsl:choose>
+                <xsl:when test="@scale"><xsl:value-of select="@scale" /></xsl:when>
+                <xsl:otherwise>0.7</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="preceding-sibling::*[1]/name()='octa-grid'">
+            <fo:leader leader-length="40px" />
+        </xsl:if>
+        <fo:external-graphic alignment-baseline="alphabetic"
+                             alignment-adjust="{-$height div 2 * $scale + 5}px" src="octa-grid-{generate-id(.)}.svg" />
+        <xsl:result-document href="scrap/octa-grid-{generate-id(.)}.svg">
+            <xsl:call-template name="svg-with-octa-grid">
+                <xsl:with-param name="scale" select="$scale" />
+            </xsl:call-template>
+        </xsl:result-document>
+
+<!--    causes OutOfMemoryError
+        <fo:instream-foreign-object alignment-baseline="alphabetic"
+                                    alignment-adjust="{-$height div 2 * $scale + 5}px">
+            <xsl:call-template name="svg-with-grid">
+                <xsl:with-param name="scale" select="$scale" />
+            </xsl:call-template>
+        </fo:instream-foreign-object>
+-->
+    </xsl:template>
+
     <xsl:template match="dl" mode="fo" />
 
     <xsl:template match="dt/keyword" mode="fo" priority="5">

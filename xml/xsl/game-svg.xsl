@@ -27,4 +27,8 @@
         <xsl:call-template name="svg-grid"/>
     </xsl:template>
 
+    <xsl:template match="octa-grid" mode="svg">
+        <xsl:call-template name="svg-octa-grid"/>
+    </xsl:template>
+
 </xsl:stylesheet>

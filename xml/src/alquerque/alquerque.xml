@@ -1,0 +1,58 @@
+<game>
+    <name>Alquerque</name>
+    <gamebody>
+        <about>
+            <author>?</author>
+            <date>?</date>
+        </about>
+        <players>
+            <player value="white" />
+            <pieces>
+                12 ×
+                <piece colour="white" />
+            </pieces>
+        </players>
+        <players>
+            <player value="black" />
+            <pieces>
+                12 ×
+                <piece colour="black" />
+            </pieces>
+        </players>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <octa-grid id="grid" rows="5" columns="5" size="small" scale="1"
+                  left="edge" right="edge" bottom="edge" top="edge">
+                <square x="0" y="0"> <piece colour="white" /> </square>
+                <square x="0" y="1"> <piece colour="white" /> </square>
+                <square x="0" y="2"> <piece colour="white" /> </square>
+                <square x="0" y="3"> <piece colour="white" /> </square>
+                <square x="0" y="4"> <piece colour="white" /> </square>
+                <square x="1" y="0"> <piece colour="white" /> </square>
+                <square x="1" y="1"> <piece colour="white" /> </square>
+                <square x="1" y="2"> <piece colour="white" /> </square>
+                <square x="1" y="3"> <piece colour="white" /> </square>
+                <square x="1" y="4"> <piece colour="white" /> </square>
+                <square x="2" y="0"> <piece colour="white" /> </square>
+                <square x="2" y="1"> <piece colour="white" /> </square>
+                <square x="2" y="3"> <piece colour="black" /> </square>
+                <square x="2" y="4"> <piece colour="black" /> </square>
+                <square x="3" y="0"> <piece colour="black" /> </square>
+                <square x="3" y="1"> <piece colour="black" /> </square>
+                <square x="3" y="2"> <piece colour="black" /> </square>
+                <square x="3" y="3"> <piece colour="black" /> </square>
+                <square x="3" y="4"> <piece colour="black" /> </square>
+                <square x="4" y="0"> <piece colour="black" /> </square>
+                <square x="4" y="1"> <piece colour="black" /> </square>
+                <square x="4" y="2"> <piece colour="black" /> </square>
+                <square x="4" y="3"> <piece colour="black" /> </square>
+                <square x="4" y="4"> <piece colour="black" /> </square>
+            </octa-grid>
+            <goToPhase>
+                <phaseRef value="1" />
+            </goToPhase>
+        </phase>
+    </gamebody>
+</game>
