@@ -591,9 +591,27 @@
 
     <xsl:template match="dl" mode="fo" />
 
+    <xsl:template match="dt/keyword" mode="fo" priority="5">
+        <fo:inline xsl:use-attribute-sets="keyword" id="{generate-id(.)}">
+            <xsl:apply-templates mode="fo" />
+        </fo:inline>
+    </xsl:template>
+
     <xsl:template match="keyword" mode="fo">
         <fo:inline xsl:use-attribute-sets="keyword">
-            <xsl:apply-templates mode="fo" />
+            <xsl:variable name="content" select="normalize-space(.)" />
+            <xsl:variable name="def" select="//dt/keyword[normalize-space(.)=$content]" />
+            <xsl:choose>
+                <xsl:when test="$def">
+                    <xsl:attribute name="color">#0000aa</xsl:attribute>
+                    <fo:basic-link internal-destination="{generate-id($def)}">
+                        <xsl:apply-templates mode="fo" />
+                    </fo:basic-link>
+                </xsl:when>
+                <xsl:otherwise>
+                        <xsl:apply-templates mode="fo" />
+                </xsl:otherwise>
+            </xsl:choose>
         </fo:inline>
     </xsl:template>
 

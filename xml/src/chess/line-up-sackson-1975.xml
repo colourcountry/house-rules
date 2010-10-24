@@ -44,114 +44,37 @@
             <repeat>
             <p>
                 <player value="black" />
-                <keyword>Use</keyword> <piece colour="black" shape="small-rook" />
+                <keyword>use</keyword> <piece colour="black" shape="small-rook" />
                 <goToPhase>
                     <player value="white" />
                 </goToPhase>
-                <keyword>Use</keyword> <piece colour="white" shape="small-rook-with-dot" />
+                <keyword>use</keyword> <piece colour="white" shape="small-rook-with-dot" />
                 <goToPhase>
                     <player value="black" />
                 </goToPhase>
-                <keyword>Use</keyword> <piece colour="black" shape="king" />
+                <keyword>use</keyword> <piece colour="black" shape="king" />
             </p>
             <p>
                 <player value="white" />
-                <keyword>Use</keyword> <piece colour="white" shape="small-rook" />
+                <keyword>use</keyword> <piece colour="white" shape="small-rook" />
                 <goToPhase>
                     <player value="black" />
                 </goToPhase>
-                <keyword>Use</keyword> <piece colour="black" shape="small-rook-with-dot" />
+                <keyword>use</keyword> <piece colour="black" shape="small-rook-with-dot" />
                 <goToPhase>
                     <player value="white" />
                 </goToPhase>
-                <keyword>Use</keyword> <piece colour="white" shape="king" />
+                <keyword>use</keyword> <piece colour="white" shape="king" />
             </p>
             <goToPhase>
                 <phaseRef value="1" />
             </goToPhase>
             </repeat>
         </phase>
-        <dl>
-            <dlentry>
-                <dt><keyword>use</keyword></dt>
-                <dd>
-                    If there are any unplaced pieces of this type,
-                    place one in any unoccupied space
-                </dd>
-                <dd>
-                    Otherwise, <keyword>move</keyword>
-                    any piece of this type
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt><keyword>move</keyword></dt>
-                <dd>
-                            <piece colour="black" shape="small-rook" />
-                            <piece colour="black" shape="small-rook-with-dot" />
-                            <piece colour="white" shape="small-rook" />
-                            <piece colour="white" shape="small-rook-with-dot" />
-                            :
-                            1 space orthogonally
-                </dd>
-                <dd>
-                            <piece colour="black" shape="king" />
-                            <piece colour="white" shape="king" />
-                            :
-                            1 space in any direction
-                </dd>
-                <dd>
-                            <example>
-                                <grid rows="3" columns="3" size="small"
-                                      bottom="edge" right="edge" id="small-rook">
-                                    <square x="1" y="1">
-                                        <arrow x="-1" y="0" />
-                                        <arrow x="1" y="0" />
-                                        <arrow x="0" y="-1" />
-                                        <arrow x="0" y="1" />
-                                        <piece colour="black" shape="small-rook" />
-                                    </square>
-                                    <square x="1" y="0"> <highlight value="circle" /> </square>
-                                    <square x="2" y="1"> <highlight value="circle" /> </square>
-                                    <square x="1" y="2"> <highlight value="circle" /> </square>
-                                    <square x="0" y="1"> <highlight value="circle" /> </square>
-                                </grid>
-                                <grid rows="3" columns="3" size="small"
-                                      bottom="edge" right="edge" id="king">
-                                    <square x="1" y="1">
-                                        <arrow x="-1" y="0" />
-                                        <arrow x="1" y="0" />
-                                        <arrow x="0" y="-1" />
-                                        <arrow x="0" y="1" />
-                                        <arrow x="-1" y="-1" />
-                                        <arrow x="1" y="1" />
-                                        <arrow x="1" y="-1" />
-                                        <arrow x="-1" y="1" />
-                                        <piece colour="black" shape="king" />
-                                    </square>
-                                    <square x="1" y="0"> <highlight value="circle" /> </square>
-                                    <square x="2" y="1"> <highlight value="circle" /> </square>
-                                    <square x="1" y="2"> <highlight value="circle" /> </square>
-                                    <square x="0" y="1"> <highlight value="circle" /> </square>
-                                    <square x="0" y="0"> <highlight value="circle" /> </square>
-                                    <square x="2" y="2"> <highlight value="circle" /> </square>
-                                    <square x="0" y="2"> <highlight value="circle" /> </square>
-                                    <square x="2" y="0"> <highlight value="circle" /> </square>
-                                </grid>
-                            </example>
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt>
-                    <keyword>No captures</keyword>
-                </dt>
-                <dd>
-                    No piece may move into an occupied space
-                </dd>
-            </dlentry>
-        </dl>
         <phase>
             <phaseName>
                 <phaseRef value="1" />
+                <player value="black" /> (<player value="white" />)
             </phaseName>
             <p>Make an orthogonal or diagonal line with 4 of your pieces</p>
             <goToPhase>
@@ -197,15 +120,12 @@
                     <player value="black" />
                 </goToPhase>
             </example>
-        </phase>
         <subphase>
-            <phaseName>
-                <phaseRef value="1" />
-            </phaseName>
-            No legal move
+            <p>You have no legal move
             <goToPhase>
                 <phaseRef value="Lose" />
             </goToPhase>
+            </p>
             <example>
                 <player value="black" /> (<piece colour="black" shape="small-rook" />)
                 <grid use="wins" scale="1">
@@ -249,6 +169,45 @@
             </example>
 -->
         </subphase>
+        <subphase>
+            <p>
+                    Pieces may not capture
+            </p>
+        </subphase>
+        </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>use</keyword></dt>
+                <dd>
+                    If there are any pieces of this type not yet in play,
+                    place one in any unoccupied space
+                </dd>
+                <dd>
+                    <p>If all pieces of this type are in play,
+                        <keyword>move</keyword> one piece of this type</p>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>move</keyword></dt>
+                <dd>
+                    <ul>
+                       <li> if moving
+                            <piece colour="black" shape="small-rook" /> or
+                            <piece colour="black" shape="small-rook-with-dot" />:
+                            <space />
+                            <grid use="other-chess-pieces.xml#small-rook" scale="0.4"/>
+                        </li>
+                        <li> if moving
+                            <piece colour="black" shape="king" />:
+                            <space />
+                            <grid use="chess-pieces.xml#king" scale="0.4"/>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+        </dl>
+        </defs>
         <log>
             <status value="complete" />
             <sources>
@@ -262,6 +221,10 @@
                 <change>
                     <changedate>2010-08-31</changedate>
                     <changetext>First release</changetext>
+                </change>
+                <change>
+                    <changedate>2010-09-20</changedate>
+                    <changetext>Updates for tweaked format</changetext>
                 </change>
             </changelog>
         </log>

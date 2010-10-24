@@ -16,6 +16,12 @@
                 <phaseRef value="Lose" />
             </goToPhase>
         </subphase>
+        <subphase id="subphase-stalemate">
+            <keyword>stalemate</keyword>
+            <goToPhase>
+                <phaseRef value="Draw" />
+            </goToPhase>
+        </subphase>
             <dl>
             <dlentry id="threatened-space">
                 <dt><keyword>threatened space</keyword></dt>
@@ -24,6 +30,13 @@
                         make a legal
                         <keyword>capture</keyword>
                         on their next move
+                </dd>
+            </dlentry>
+            <dlentry id="home-space">
+                <dt><keyword>home space</keyword></dt>
+                <dd>
+                        A space which was occupied by one of your
+                        pieces at the beginning of the game
                 </dd>
             </dlentry>
             <dlentry id="check">
@@ -37,10 +50,17 @@
             <dlentry id="checkmate">
                 <dt><keyword>checkmate</keyword></dt>
                 <dd>
-                        A position where you are in 
-                        <keyword>check</keyword>, <i>and</i>
-                        no move is available which enables
-                        you to get out of <keyword>check</keyword>
+                        A position where you are in
+                        <keyword>check</keyword>
+                        <i>and</i> you have no legal moves
+                </dd>
+            </dlentry>
+            <dlentry id="stalemate">
+                <dt><keyword>stalemate</keyword></dt>
+                <dd>
+                        A position where you have no legal moves
+                        but are not in
+                        <keyword>check</keyword>
                 </dd>
             </dlentry>
             </dl>

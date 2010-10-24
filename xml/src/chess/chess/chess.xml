@@ -41,41 +41,41 @@
             </phaseName>
             <hide>
                 <grid id="grid" rows="8" columns="8" size="small"
-                      left="edge" right="edge" bottom="white-edge" top="black-edge"/>
+                      left="edge" right="edge" bottom="black-edge" top="white-edge"/>
             </hide>
             <grid use="grid">
-                <square x="0" y="0"> <piece colour="black" shape="rook" /> </square>
-                <square x="1" y="0"> <piece colour="black" shape="knight" /> </square>
-                <square x="2" y="0"> <piece colour="black" shape="bishop" /> </square>
-                <square x="3" y="0"> <piece colour="black" shape="queen" /> </square>
-                <square x="4" y="0"> <piece colour="black" shape="king" /> </square>
-                <square x="5" y="0"> <piece colour="black" shape="bishop" /> </square>
-                <square x="6" y="0"> <piece colour="black" shape="knight" /> </square>
-                <square x="7" y="0"> <piece colour="black" shape="rook" /> </square>
-                <square x="0" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="1" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="2" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="3" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="4" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="5" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="6" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="7" y="1"> <piece colour="black" shape="pawn" /> </square>
-                <square x="0" y="7"> <piece colour="white" shape="rook" /> </square>
-                <square x="1" y="7"> <piece colour="white" shape="knight" /> </square>
-                <square x="2" y="7"> <piece colour="white" shape="bishop" /> </square>
-                <square x="3" y="7"> <piece colour="white" shape="queen" /> </square>
-                <square x="4" y="7"> <piece colour="white" shape="king" /> </square>
-                <square x="5" y="7"> <piece colour="white" shape="bishop" /> </square>
-                <square x="6" y="7"> <piece colour="white" shape="knight" /> </square>
-                <square x="7" y="7"> <piece colour="white" shape="rook" /> </square>
-                <square x="0" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="1" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="2" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="3" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="4" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="5" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="6" y="6"> <piece colour="white" shape="pawn" /> </square>
-                <square x="7" y="6"> <piece colour="white" shape="pawn" /> </square>
+                <square x="0" y="0"> <piece colour="white" shape="rook" /> </square>
+                <square x="1" y="0"> <piece colour="white" shape="knight" /> </square>
+                <square x="2" y="0"> <piece colour="white" shape="bishop" /> </square>
+                <square x="3" y="0"> <piece colour="white" shape="queen" /> </square>
+                <square x="4" y="0"> <piece colour="white" shape="king" /> </square>
+                <square x="5" y="0"> <piece colour="white" shape="bishop" /> </square>
+                <square x="6" y="0"> <piece colour="white" shape="knight" /> </square>
+                <square x="7" y="0"> <piece colour="white" shape="rook" /> </square>
+                <square x="0" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="1" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="2" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="3" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="4" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="5" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="6" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="7" y="1"> <piece colour="white" shape="pawn" /> </square>
+                <square x="0" y="7"> <piece colour="black" shape="rook" /> </square>
+                <square x="1" y="7"> <piece colour="black" shape="knight" /> </square>
+                <square x="2" y="7"> <piece colour="black" shape="bishop" /> </square>
+                <square x="3" y="7"> <piece colour="black" shape="queen" /> </square>
+                <square x="4" y="7"> <piece colour="black" shape="king" /> </square>
+                <square x="5" y="7"> <piece colour="black" shape="bishop" /> </square>
+                <square x="6" y="7"> <piece colour="black" shape="knight" /> </square>
+                <square x="7" y="7"> <piece colour="black" shape="rook" /> </square>
+                <square x="0" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="1" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="2" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="3" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="4" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="5" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="6" y="6"> <piece colour="black" shape="pawn" /> </square>
+                <square x="7" y="6"> <piece colour="black" shape="pawn" /> </square>
             </grid>
                 8 × 8
             <goToPhase>
@@ -92,7 +92,7 @@
             <ol>
                 <li>
                     <ul>
-                        <li><keyword>Move</keyword>
+                        <li><keyword>move</keyword>
                             <piece colour="black" shape="king" />
                             <piece colour="black" shape="queen" />
                             <piece colour="black" shape="rook" />
@@ -126,7 +126,7 @@
                     </ul>
                 </li>
                 <li>
-                    <keyword>Promote</keyword>
+                    <keyword>promote</keyword>
                 </li>
             </ol>
             <repeat>
@@ -139,8 +139,9 @@
                     <player value="black" />
                 </goToPhase>
             </repeat>
-        <subphase use="../common-rules.xml#subphase-check" />
-        <subphase use="../common-rules.xml#subphase-checkmate" />
+            <subphase use="../common-rules.xml#subphase-check" />
+            <subphase use="../common-rules.xml#subphase-checkmate" />
+            <subphase use="../common-rules.xml#subphase-stalemate" />
         </phase>
         <defs>
         <dl>
@@ -229,7 +230,8 @@
             <dlentry use="../common-rules.xml#threatened-space">
                 <dd>
                 <example>
-                <grid use="#before-promotion" scale="0.6">
+                    <player value="black" />
+                    <grid use="#before-promotion" scale="0.6">
                     <square x="0" y="0"> <highlight value="red-square" /> </square>
                     <square x="1" y="0"> <highlight value="red-square" /> </square>
                     <square x="2" y="0"> <highlight value="red-square" /> </square>
@@ -256,7 +258,8 @@
             <dlentry use="../common-rules.xml#check">
                 <dd>
                 <example>
-                <grid use="#start" scale="0.6">
+                    <player value="black" />
+                    <grid use="#start" scale="0.6">
                                 <square x="3" y="0">
                                     <highlight value="red-square" />
                                     <piece colour="black" shape="pawn" />
@@ -283,6 +286,7 @@
             <dlentry use="../common-rules.xml#checkmate">
                 <dd>
                 <example>
+                        <player value="black" />
                         <grid rows="5" columns="8" size="small" bottom="black-edge" left="edge" right="edge" scale="0.6">
                             <square x="1" y="3"> <piece colour="black" shape="bishop" /> </square>
                             <square x="0" y="1"> <piece colour="black" shape="pawn" /> </square>
@@ -324,6 +328,49 @@
                             <square x="7" y="4"> <piece colour="black" shape="rook" /> </square>
                                 <square x="2" y="2"> <piece colour="black" shape="knight" />
                                 </square>
+                </grid>
+                </example>
+                </dd>
+            </dlentry>
+
+            <dlentry use="../common-rules.xml#stalemate">
+                <dd>
+                <example>
+                        <player value="black" />
+                        <grid rows="5" columns="8" size="small" bottom="black-edge" left="edge" right="edge" scale="0.6">
+                            <square x="1" y="2"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="1" y="1"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="7" y="3"> <piece colour="black" shape="pawn" /> </square>
+                            <square x="7" y="2"> <piece colour="white" shape="pawn" /> </square>
+                            <square x="6" y="3">
+                                <highlight value="red-square" />
+                                <piece colour="white" shape="queen" />
+                            </square>
+                            <square x="5" y="3"> <highlight value="red-square" /> </square>
+                            <square x="4" y="3"> <highlight value="red-square" /> </square>
+                            <square x="3" y="3"> <highlight value="red-square" /> </square>
+                            <square x="2" y="3"> <highlight value="red-square" /> </square>
+                            <square x="1" y="3"> <highlight value="red-square" /> </square>
+                            <square x="0" y="3"> <highlight value="red-square" /> </square>
+                            <square x="6" y="3"> <highlight value="red-square" /> </square>
+                            <square x="7" y="3"> <highlight value="red-square" /> </square>
+                            <square x="5" y="4"> <highlight value="red-square" /> </square>
+                            <square x="6" y="4"> <highlight value="red-square" /> </square>
+                            <square x="7" y="4"> <highlight value="red-square" /> </square>
+                            <square x="5" y="2"> <highlight value="red-square" /> </square>
+                            <square x="6" y="2"> <highlight value="red-square" /> </square>
+                            <square x="7" y="2"> <highlight value="red-square" /> </square>
+                            <square x="4" y="1"> <highlight value="red-square" /> </square>
+                            <square x="6" y="1"> <highlight value="red-square" /> </square>
+                            <square x="3" y="0"> <highlight value="red-square" /> </square>
+                            <square x="6" y="0"> <highlight value="red-square" /> </square>
+                            <square x="7" y="0">
+                                <piece colour="white" shape="bishop" />
+                            </square>
+                            <square x="3" y="4"> <highlight value="red-square" /> </square>
+                            <square x="4" y="4">
+                                <piece colour="black" shape="king" />
+                            </square>
                 </grid>
                 </example>
                 </dd>
@@ -396,12 +443,22 @@
                             If your
                             <piece colour="black" shape="king" />
                             has not yet moved,
-                            <i>and</i> there are no occupied spaces between it
-                            and a
+                            <i>and</i>
+                            is not in <keyword>check</keyword>,
+                            <i>and</i> 
+                            a
                             <piece colour="black" shape="rook" />
-                            which has also not moved, <i>and</i> the
-                            space next to the
+                            has also not moved,
+                            <i>and</i> 
+                            there are no occupied spaces in the
+                            horizontal line between that
+                            <piece colour="black" shape="rook" />
+                            and the
+                            <piece colour="black" shape="king" />,
+                            <i>and</i> 
+                            the
                             <piece colour="black" shape="king" />
+                            space next to the
                             in the direction of the
                             <piece colour="black" shape="rook" />
                             is not a <keyword>threatened space</keyword>
@@ -638,6 +695,10 @@
                 <change>  
                     <changedate>2010-09-13</changedate>
                     <changetext>Complete</changetext>
+                </change>
+                <change>  
+                    <changedate>2010-09-20</changedate>
+                    <changetext>Corrections (thanks APT)</changetext>
                 </change>
             </changelog>
         </log>

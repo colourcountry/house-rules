@@ -446,7 +446,7 @@
 
     <g id="east">
         <path
-              d="M -6 -5 L -6 5 L 3 4 L 6 0 L 3 -4 Z"
+              d="M -5 -4 L -5 4 L 3 3 L 6 0 L 3 -3 Z"
               fill="none"
               stroke="black"
               stroke-width="0.5pt" />
