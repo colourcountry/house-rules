@@ -166,7 +166,9 @@
     </xsl:attribute-set>
 
     <xsl:attribute-set name="subtitle">
-        <xsl:attribute name="font-size">14pt</xsl:attribute>
+        <xsl:attribute name="padding-top">2pt</xsl:attribute>
+        <xsl:attribute name="font-style">italic</xsl:attribute>
+        <xsl:attribute name="color"> <xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="keyword">
@@ -266,12 +268,11 @@
     </xsl:template>
 
     <xsl:template match="about" mode="fo-top">
-        <fo:inline xsl:use-attribute-sets="subtitle">
-            <fo:leader leader-length="5px" />
+        <fo:block xsl:use-attribute-sets="subtitle">
             <xsl:value-of select="author" />
             <fo:leader leader-length="5px" />
             <xsl:value-of select="date" />
-        </fo:inline>
+        </fo:block>
     </xsl:template>
 
     <xsl:template match="players[pieces]" mode="fo-top" priority="2">
@@ -701,7 +702,7 @@
             <xsl:if test="ancestor::li">
                 <xsl:attribute name="margin-left">15pt</xsl:attribute>
             </xsl:if>
-                <fo:inline xsl:use-attribute-sets="list-label">
+                <fo:inline xsl:use-attribute-sets="condition">
                     <xsl:choose>
                         <xsl:when test="preceding-sibling::li">
                             or
@@ -729,7 +730,11 @@
 
     <xsl:template match="condition" mode="fo">
         <fo:inline xsl:use-attribute-sets="condition">
-            <xsl:value-of select="@value" />
+            <xsl:choose>
+                <xsl:when test="@value='optional'">Optionally </xsl:when>
+                <xsl:when test="@value='if-possible'">If possible </xsl:when>
+                <xsl:otherwise> <xsl:value-of select="@value" /> </xsl:otherwise>
+            </xsl:choose>
         </fo:inline>
     </xsl:template>
 

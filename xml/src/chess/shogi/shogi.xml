@@ -142,7 +142,7 @@
             <keyword>move</keyword> or <keyword>capture</keyword> with one of your pieces
             </li>
             <li>
-            <keyword>promote</keyword>
+            <keyword><condition value="if-possible" /> promote</keyword>
             </li>
             </ol>
             </li>

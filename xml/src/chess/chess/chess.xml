@@ -126,7 +126,7 @@
                     </ul>
                 </li>
                 <li>
-                    <keyword>promote</keyword>
+                    <condition value="if-possible" /> <keyword>promote</keyword>
                 </li>
             </ol>
             <repeat>
@@ -206,7 +206,8 @@
                         Move
                         <piece colour="black" shape="pawn" />
                         as a
-                        <piece colour="black" shape="double-pawn" />:
+                        <piece colour="black" shape="double-pawn" />
+                        <space />
                         <grid rows="7" columns="7" size="small" scale="0.4">
                             <square x="2" y="2">
                                 <highlight value="red-square" />
