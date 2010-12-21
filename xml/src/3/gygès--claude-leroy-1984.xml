@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><game>
+    <name>Gygès</name>
+    <gamebody>
+        <about>
+            <author>Claude Leroy</author>
+            <date>2004</date>
+        </about>
+        <pieces><piece count="4" shape="circle"/> ,<piece count="4" shape="double-circle"/>, <piece count="4" shape="triple-circle"/> </pieces>
+        <players>
+            <player value="white"/>
+            
+        <player value="black"/></players>
+        
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup"/>
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="5" columns="5" size="small" scale="1" left="edge" right="edge" bottom="black-edge" top="white-edge"/>
+            </hide>
+            <grid use="grid">
+                <square y="3" x="0"> <piece colour="black" shape="pawn"/> </square>
+                <square y="3" x="4"> <piece colour="black" shape="pawn"/> </square>
+                <square y="4" x="0"> <piece colour="black" shape="knight"/> </square>
+                <square y="4" x="1"> <piece colour="black" shape="pawn"/> </square>
+                <square y="4" x="2"> <piece colour="black" shape="pawn"/> </square>
+                <square y="4" x="3"> <piece colour="black" shape="pawn"/> </square>
+                <square y="4" x="4"> <piece colour="black" shape="knight"/> </square>
+
+                <square y="1" x="0"> <piece colour="white" shape="pawn"/> </square>
+                <square y="1" x="4"> <piece colour="white" shape="pawn"/> </square>
+                <square y="0" x="0"> <piece colour="white" shape="knight"/> </square>
+                <square y="0" x="1"> <piece colour="white" shape="pawn"/> </square>
+                <square y="0" x="2"> <piece colour="white" shape="pawn"/> </square>
+                <square y="0" x="3"> <piece colour="white" shape="pawn"/> </square>
+                <square y="0" x="4"> <piece colour="white" shape="knight"/> </square>
+            </grid>
+            5 × 5
+            <goToPhase>
+                <phaseRef value="A"/>
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="A"/>
+                <player value="black"/>
+                (<player value="white"/>)
+            </phaseName>
+            <ol>
+                <li>
+            <ul>
+                <li>
+                    <keyword>move</keyword>
+                    <piece colour="black" shape="knight"/>
+                    or
+                    <piece colour="black" shape="pawn"/>
+                </li>
+                <li>
+                    <keyword>capture</keyword>
+                    with
+                    <piece colour="black" shape="knight"/>
+                    or
+                    <piece colour="black" shape="pawn"/>
+                </li>
+            </ul>
+                </li>
+                <li> <condition value="if-possible"/> <keyword>promote</keyword></li>
+            </ol>
+            <repeat>
+                <goToPhase>
+                    <phaseRef value="A"/>
+                    <player value="white"/>
+                </goToPhase>
+                <goToPhase>
+                    <phaseRef value="A"/>
+                    <player value="black"/>
+                </goToPhase>
+            </repeat>
+            <subphase>
+                <player value="black"/> has no pieces left
+                <goToPhase>
+                    <phaseRef value="Win"/>
+                    <player value="white"/>
+                </goToPhase>
+            </subphase>
+        </phase>
+        <defs>
+        <dl>
+            <dlentry>
+                <dt><keyword>move</keyword></dt>
+                <dd>
+                    <p>
+                        Move the piece to an empty space
+                    </p>
+                    <ul>
+                    <li>
+                        Move a <piece colour="black" shape="pawn"/>:
+                        <space/>
+                        <grid scale="0.4" use="../chess-pieces.xml#pawn"/>
+                    </li>
+                    <li>
+                        <keyword>knight jump</keyword> with a <piece colour="black" shape="knight"/>:
+                        <space/>
+                        <grid scale="0.4" use="../chess-pieces.xml#knight"/>
+                    </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>knight jump</keyword></dt>
+                <dd>
+                        <piece colour="black" shape="knight"/>
+                        may jump over any other pieces
+                        to <keyword>move</keyword>
+                        or <keyword>capture</keyword>;
+                        other pieces must pass through
+                        only empty spaces
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>capture</keyword></dt>
+                <dd>
+                    Move the piece
+                    to a space occupied by
+                    an enemy piece, removing the enemy piece
+                    <ul>
+                    <li>
+                        Move
+                        <piece colour="black" shape="knight"/>
+                        as for <keyword>move</keyword>
+                    </li>
+                    <li>
+                        Move
+                        <piece colour="black" shape="pawn"/>
+                        as a
+                        <piece colour="black" shape="double-pawn"/>
+                        <space/>
+                        <grid rows="7" columns="7" size="small" scale="0.4">
+                            <square y="2" x="2">
+                                <highlight value="red-square"/>
+                                <square y="2" x="2"> <piece colour="white" shape="pawn"/> </square>
+                            </square>
+                            <square y="2" x="4">
+                                <highlight value="red-square"/>
+                                <square y="2" x="2"> <piece colour="white" shape="knight"/> </square>
+                            </square>
+                            <square y="3" x="3">
+                                <piece colour="black" shape="pawn"/>
+                                <arrow x="-1" y="-1"/>
+                                <arrow x="1" y="-1"/>
+                            </square>
+                        </grid>
+                    </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry>
+                <dt><keyword>promote</keyword></dt>
+                <dd>
+                        <p>
+                            If a
+                            <piece colour="black" shape="pawn"/>
+                            has reached the farthest row of the board
+                            <i>and</i> 2
+                            <piece colour="black" shape="knight"/>
+                            are in play, remove the
+                            <piece colour="black" shape="pawn"/>
+                            and replace it on any empty space
+                        </p>
+                        <p>
+                            If a
+                            <piece colour="black" shape="pawn"/>
+                            has reached the farthest row of the board
+                            <i>and</i> 0 or 1
+                            <piece colour="black" shape="knight"/>
+                            are in play, replace it
+                            (on the same space) with a
+                            <piece colour="black" shape="knight"/>
+                        </p>
+                </dd>
+            </dlentry>
+        </dl>
+        </defs>
+        <log>
+            <status value="in-progress"/>
+            <sources>
+                <source>
+                    <url>http://homepages.di.fc.ul.pt/~jpn/gv/apocalypse.htm</url>
+                    <copyright-holder>João Pedro Neto</copyright-holder>
+                    <copyright-year>2010</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>
+                    <changedate>2010-10-24</changedate>
+                    <changetext>First draft, rules complete</changetext>
+                </change>
+            </changelog>
+        </log>
+    </gamebody>
+</game>
