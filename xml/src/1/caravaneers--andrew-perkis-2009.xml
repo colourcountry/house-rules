@@ -1,0 +1,161 @@
+<game>
+    <name>Caravaneers</name>
+    <gamebody>
+        <about>
+            <author>Andrew Perkis</author>
+            <date>2009</date>
+        </about>
+        <players>
+            <player value="white" />
+            <player value="black" />
+        </players>
+        <pieces>
+                11 ×
+                <piece colour="black" />
+        </pieces>
+        <phase>
+            <phaseName>
+                <phaseRef value="Setup" />
+            </phaseName>
+            <hide>
+                <grid id="grid" rows="6" columns="6" size="small"
+                      left="white" right="edge" bottom="edge" top="black">
+                    <square x="0" y="5"> <highlight value="shade" /> </square>
+                    <square x="5" y="0"> <highlight value="shade" /> </square>
+                </grid>
+            </hide>
+            <grid use="#grid">
+                <square x="0" y="0"> <piece colour="black" /> </square>
+                <square x="1" y="0"> <piece colour="black" /> </square>
+                <square x="2" y="0"> <piece colour="black" /> </square>
+                <square x="3" y="0"> <piece colour="black" /> </square>
+                <square x="4" y="0"> <piece colour="black" /> </square>
+                <square x="5" y="0"> <piece colour="black" /> </square>
+                <square x="0" y="1"> <piece colour="black" /> </square>
+                <square x="0" y="2"> <piece colour="black" /> </square>
+                <square x="0" y="3"> <piece colour="black" /> </square>
+                <square x="0" y="4"> <piece colour="black" /> </square>
+                <square x="0" y="5"> <piece colour="black" /> </square>
+            </grid>
+                6 × 6
+            <goToPhase>
+                <phaseRef value="A" />
+                <player value="black" />
+            </goToPhase>
+        </phase>
+        <phase>
+            <phaseName>
+                <phaseRef value="A" />
+                <player value="black" />
+                (<player value="white" />)
+            </phaseName>
+            <p>
+                    <keyword>move</keyword> any <keyword>caravan</keyword>
+                    whose furthest piece is not in the shaded square
+                    at the far edge of the board
+                    (far right for
+                    <player value="black" />; far left for
+                    <player value="white" />)
+            </p>
+            <subphase>
+                No legal moves
+                <goToPhase>
+                    <phaseRef value="A" />
+                    <player value="white" /> (pass)
+                </goToPhase>
+            </subphase>
+            <subphase>
+                No legal moves for either player
+                <goToPhase>
+                    <phaseRef value="End" />
+                </goToPhase>
+            </subphase>
+        </phase>
+        <defs>
+            <dl>
+                <dlentry>
+                    <dt><keyword>move</keyword></dt>
+                <dd>
+                    <p>
+                        Move every piece in the <keyword>caravan</keyword>
+                        one space away from you
+                    </p>
+                    <p>
+                        If a piece to be moved
+                        is already at the far edge of
+                        the board, capture it
+                        and score 1 <keyword>victory point</keyword>
+                    </p>
+                </dd>
+                </dlentry>
+                <dlentry>
+                    <dt><keyword>caravan</keyword></dt>
+                    <dd>
+                        <p>
+                        A line in a near-to-far direction
+                        which contains either
+                        only 1
+                        <piece colour="black" />,
+                        or more than 1
+                        <piece colour="black" />
+                        in
+                        mutually abutting spaces
+                        </p>
+                    <example>
+                        For <player value="white" />:
+                        <hide>
+                            <grid id="grid-caravans" use="#grid">
+                                <square x="1" y="2"> <piece colour="black" /> </square>
+                                <square x="2" y="2"> <piece colour="black" /> </square>
+                                <square x="3" y="2"> <piece colour="black" /> </square>
+                                <square x="4" y="2"> <piece colour="black" /> </square>
+                                <square x="5" y="2"> <piece colour="black" /> </square>
+                                <square x="1" y="3"> <piece colour="black" /> </square>
+                                <square x="1" y="4"> <piece colour="black" /> </square>
+                                <square x="4" y="4"> <piece colour="black" /> </square>
+                                <square x="4" y="5"> <piece colour="black" /> </square>
+                                <square x="2" y="5"> <piece colour="black" /> </square>
+                            </grid>
+                        </hide>
+                        <grid use="#grid-caravans">
+                                <square x="0" y="2"> 
+                                    <arrow x="6" y="0" />
+                                </square>
+                                <square x="0" y="3"> 
+                                    <arrow x="6" y="0" />
+                                </square>
+                        </grid>
+                    </example>
+                    <example>
+                        For <player value="black" />:
+                        <grid use="#grid-caravans">
+                                <square x="1" y="0"> 
+                                    <arrow x="0" y="6" />
+                                </square>
+                                <square x="3" y="0"> 
+                                    <arrow x="0" y="6" />
+                                </square>
+                        </grid>
+                    </example>
+                    </dd>
+                </dlentry>
+            </dl>
+        </defs>
+        <log>
+            <status value="in-progress" />
+            <sources>
+                <source>
+                    <url>http://superdupergames.org/rules/caravan.pdf</url>
+                    <copyright-holder>GAMES</copyright-holder>
+                    <copyright-year>2009</copyright-year>
+                </source>
+            </sources>
+            <changelog>
+                <change>
+                    <changedate>2011-03-15</changedate>
+                    <changetext>First draft, rules complete</changetext>
+                </change>
+            </changelog>
+        </log>
+    </gamebody>
+</game>
