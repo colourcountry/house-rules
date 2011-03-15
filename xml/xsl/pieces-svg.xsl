@@ -39,10 +39,30 @@
 
     <xsl:template name="svg-player">
         <xsl:param name="colour"><xsl:value-of select="@value" /></xsl:param>
-            <svg:g clip-path="url(../svg/pieces.svg#clip-path-player)">
-                <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
-            </svg:g>
-            <svg:use xlink:href="../svg/pieces.svg#player"/>
+        <xsl:choose>
+            <xsl:when test="$colour='north'">
+                <svg:text text-anchor="middle" y="3"
+                    >N</svg:text>
+            </xsl:when>
+            <xsl:when test="$colour='south'">
+                <svg:text text-anchor="middle" y="3"
+                    >S</svg:text>
+            </xsl:when>
+            <xsl:when test="$colour='east'">
+                <svg:text text-anchor="middle" y="3"
+                    >E</svg:text>
+            </xsl:when>
+            <xsl:when test="$colour='west'">
+                <svg:text text-anchor="middle" y="3"
+                    >W</svg:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <svg:g clip-path="url(../svg/pieces.svg#clip-path-player)">
+                    <svg:use xlink:href="../svg/pieces.svg#fill-{$colour}"/>
+                </svg:g>
+                <svg:use xlink:href="../svg/pieces.svg#player"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template name="svg-with-piece">

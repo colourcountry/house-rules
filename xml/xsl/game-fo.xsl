@@ -11,6 +11,16 @@
         <xsl:value-of select="." />
     </xsl:template>
 
+    <xsl:template match="text()[not(normalize-space(.)='')]" mode="fo-lower">
+        <fo:inline text-transform="lowercase">
+            <xsl:value-of select="." />
+        </fo:inline>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="fo-lower">
+        <xsl:apply-templates select="." mode="fo" />
+    </xsl:template>
+
     <xsl:template match="/" mode="fo">
         <fo:root>
           <fo:layout-master-set>
@@ -131,6 +141,11 @@
 
     <xsl:attribute-set name="paragraph">
         <xsl:attribute name="padding-bottom">8pt</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="comment">
+        <xsl:attribute name="font-style">italic</xsl:attribute>
+        <xsl:attribute name="color"><xsl:value-of select="$rule-colour" /></xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="stentry">
@@ -715,7 +730,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </fo:inline>
-                <xsl:apply-templates mode="fo" />
+                <xsl:apply-templates mode="fo-lower" />
         </fo:block>
     </xsl:template>
 
@@ -726,6 +741,12 @@
           </xsl:if>
           <xsl:apply-templates mode="fo" />
       </fo:block>
+    </xsl:template>
+
+    <xsl:template match="comment/text()" mode="fo" priority="2">
+      <fo:inline xsl:use-attribute-sets="comment">
+          <xsl:value-of select="." />
+      </fo:inline>
     </xsl:template>
 
     <xsl:template match="condition" mode="fo">

@@ -68,7 +68,7 @@
                 becomes
                 <player value="black"/>
                 <goToPhase>
-                    <phaseRef value="C"/>new
+                    <phaseRef value="C"/> new
                     <player value="black"/>
                 </goToPhase>
             </li>
@@ -102,7 +102,7 @@
                 becomes
                 <player value="white"/>
                 <goToPhase>
-                    <phaseRef value="C"/>new
+                    <phaseRef value="C"/> new
                     <player value="white"/>
                 </goToPhase>
             </li>

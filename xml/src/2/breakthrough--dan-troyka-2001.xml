@@ -103,10 +103,10 @@
                 <dt><keyword>move</keyword></dt>
                 <dd>
                     <p>
-                        Move a <piece colour="black" shape="triple-pawn" />
+                        Slide a <piece colour="black" shape="triple-pawn" />
                         to an empty space
                         <space />
-                        <grid use="../other-chess-pieces.xml#triple-pawn" scale="0.4"/>
+                        <grid use="../info/chess/other-chess-pieces.xml#triple-pawn" scale="0.4"/>
                     </p>
                 </dd>
             </dlentry>
@@ -114,8 +114,8 @@
                 <dt><keyword>capture</keyword></dt>
                 <dd>
                     <p>
-                        Move a <piece colour="black" shape="triple-pawn" />
-                        as a
+                        Slide a <piece colour="black" shape="triple-pawn" />
+                        like a
                         <piece colour="black" shape="double-pawn" />
                         to a space occupied by
                         an enemy piece, removing that piece

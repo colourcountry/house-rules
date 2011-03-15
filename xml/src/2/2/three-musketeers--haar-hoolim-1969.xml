@@ -66,7 +66,7 @@
                 <player value="white" />
             </phaseName>
                 Move a <piece colour="white" shape="small-rook" />
-                1 space orthogonally, to an empty square
+                to an abutting empty square
             <goToPhase>
                 <phaseRef value="1" />
                 <player value="black" />
@@ -81,7 +81,7 @@
                 <piece colour="white" shape="small-rook" />
                 by moving a
                 <piece colour="black" shape="small-rook-with-dot" />
-                1 space orthogonally onto its space
+                on an abutting empty square onto its space
             <goToPhase>
                 <phaseRef value="1" />
                 <player value="white" />
@@ -104,7 +104,7 @@
                     <player value="black" />
                 </phaseName>
                     All <piece colour="black" shape="small-rook-with-dot" />
-                    are on the same rank or file
+                    are in the same rank or file
                 <goToPhase>
                     <phaseRef value="Win" />
                     <player value="white" />
@@ -145,3 +145,4 @@
             </subphase>
     </gamebody>
 </game>
+

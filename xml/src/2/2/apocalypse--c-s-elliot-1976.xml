@@ -29,7 +29,7 @@
             </phaseName>
             <hide>
                 <grid id="grid" rows="5" columns="5" size="small" scale="1"
-                      left="edge" right="edge" bottom="black-edge" top="white-edge"/>
+                      left="edge" right="edge" bottom="black" top="white"/>
             </hide>
             <grid use="grid">
                 <square y="3" x="0"> <piece colour="black" shape="pawn" /> </square>
@@ -107,27 +107,16 @@
                     </p>
                     <ul>
                     <li>
-                        Move a <piece colour="black" shape="pawn" />:
+                        A <piece colour="black" shape="pawn" /> slides
                         <space />
-                        <grid use="../chess-pieces.xml#pawn" scale="0.4"/>
+                        <grid use="../../info/chess/chess-pieces.xml#pawn" scale="0.4"/>
                     </li>
                     <li>
-                        <keyword>knight jump</keyword> with a <piece colour="black" shape="knight" />:
+                        A <piece colour="black" shape="knight" /> jumps
                         <space />
-                        <grid use="../chess-pieces.xml#knight" scale="0.4"/>
+                        <grid use="../../info/chess/chess-pieces.xml#knight" scale="0.4"/>
                     </li>
                     </ul>
-                </dd>
-            </dlentry>
-            <dlentry>
-                <dt><keyword>knight jump</keyword></dt>
-                <dd>
-                        <piece colour="black" shape="knight" />
-                        may jump over any other pieces
-                        to <keyword>move</keyword>
-                        or <keyword>capture</keyword>;
-                        other pieces must pass through
-                        only empty spaces
                 </dd>
             </dlentry>
             <dlentry>
@@ -138,14 +127,13 @@
                     an enemy piece, removing the enemy piece
                     <ul>
                     <li>
-                        Move
-                        <piece colour="black" shape="knight" />
+                        A <piece colour="black" shape="knight" /> jumps
                         as for <keyword>move</keyword>
                     </li>
                     <li>
-                        Move
-                        <piece colour="black" shape="pawn" />
-                        as a
+                        A 
+                        <piece colour="black" shape="pawn" /> slides
+                        like a
                         <piece colour="black" shape="double-pawn" />
                         <space />
                         <grid rows="7" columns="7" size="small" scale="0.4">
@@ -174,21 +162,20 @@
                             If a
                             <piece colour="black" shape="pawn" />
                             has reached the farthest row of the board
-                            <i>and</i> 2
+                            <i>and</i> 0 or 1
                             <piece colour="black" shape="knight" />
-                            are in play, remove the
-                            <piece colour="black" shape="pawn" />
-                            and replace it on any empty space
+                            are in play, replace it
+                            with a
+                            <piece colour="black" shape="knight" />
                         </p>
                         <p>
                             If a
                             <piece colour="black" shape="pawn" />
                             has reached the farthest row of the board
-                            <i>and</i> 0 or 1
+                            <i>and</i> 2
                             <piece colour="black" shape="knight" />
-                            are in play, replace it
-                            (on the same space) with a
-                            <piece colour="black" shape="knight" />
+                            are in play,
+                            jump it to any empty space
                         </p>
                 </dd>
             </dlentry>
