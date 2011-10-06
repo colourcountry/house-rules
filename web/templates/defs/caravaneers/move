@@ -1,0 +1,11 @@
+<p>
+    Choose a $keywords("caravan")
+    and move every $piece[0] in it
+    one space further
+</p>
+<p>
+    If a $piece[0] cannot be moved because it
+    is already at the far edge of
+    the board, trash it
+    and score 1 $keywords("../common/victory-point")
+</p>
