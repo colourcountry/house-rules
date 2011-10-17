@@ -17,3 +17,9 @@ def piece(colour="grey", shape="rook"):
     </svg:svg>
     </span>
 ''' % (shape, colour, shape)
+
+
+def keyword(name="word",link="word",cclass="keyword"):
+    return '''
+    <a href="#keyword-%s" class="%s">%s</a>
+''' % (link,cclass,name)

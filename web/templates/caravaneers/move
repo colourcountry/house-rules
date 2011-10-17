@@ -1,0 +1,5 @@
+{
+    "keywords": ["piece","group"],
+    "template": "<p>Choose a $group and move every $piece in it one space further</p>"
+}
+

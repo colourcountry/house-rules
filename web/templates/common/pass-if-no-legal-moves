@@ -1,0 +1,5 @@
+{
+    "keywords": ["pass"],
+    "template": "<p> If you have no legal moves, $pass</p>"
+}
+
