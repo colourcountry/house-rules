@@ -1,45 +1,78 @@
 {
     "date": "2009",
 
-    "en": {
-        "name": "Caravaneers",
-        "author": "Andrew Perkis",
+    "locales": {
 
-        "keywords": {
-            "CARAVAN": {
-                "type": "keyword",
-                "base": "caravan",
-                "forms": {
-                    "pl": "caravans",
-                    "an": "any caravan"
-                }
-            },
+        "en": {
+            "name": "Caravaneers",
+            "author": "Andrew Perkis",
 
-            "MARKED": {
-                "type": "keyword",
-                "base":"mountain space",
-                "forms": {
-                    "pl":"mountain spaces",
-                    "an":"a mountain space"
+            "keywords": {
+                "CARAVAN": {
+                    "type": "keyword",
+                    "base": "caravan",
+                    "forms": {
+                        "pl": "caravans",
+                        "an": "a caravan"
+                    }
+                },
+
+                "MARKED": {
+                    "type": "keyword",
+                    "base":"mountain space",
+                    "forms": {
+                        "pl":"mountain spaces",
+                        "an":"a mountain space"
+                    }
+                },
+
+                "PIECE": {
+                    "type": "piece",
+                    "colour":"black",
+                    "shape":"circle"
                 }
             }
+        },
 
-            "PIECE": {
-                "type": "piece",
-                "colour":"black",
-                "shape":"circle"
+        "pig": {
+            "name": "Aravaneerscay",
+            "author": "Andreway Erkispay",
+
+            "keywords": {
+                "CARAVAN": {
+                    "type": "keyword",
+                    "base": "aravancay",
+                    "forms": {
+                        "pl": "aravanscay",
+                        "an": "an aravancay"
+                    }
+                },
+
+                "MARKED": {
+                    "type": "keyword",
+                    "base":"ountainmay airsquay",
+                    "forms": {
+                        "pl":"ountainmay airzsquay",
+                        "an":"an ountainmay airsquay"
+                    }
+                },
+
+                "PIECE": {
+                    "type": "piece",
+                    "colour":"black",
+                    "shape":"circle"
+                }
             }
         }
     },
-
 
     "phases": {
         "A": {
             "rule": "caravaneers/move",
             "vars": { 
-                "$piece":"PIECE",
-                "$group":"CARAVAN"
-            }
+                "piece":"PIECE",
+                "group":"CARAVAN"
+            },
             "constraints": [
                 {
                     "rule": "common/pass-if-no-legal-moves"
@@ -50,7 +83,7 @@
                 {
                     "rule": "common/score-if-move-off-board",
                     "vars": {
-                        "$piece":"PIECE"
+                        "piece":"PIECE"
                     }
                 }
             ]
@@ -61,8 +94,8 @@
         "CARAVAN": {
             "rule": "caravaneers/caravan", 
             "vars": {
-                "$piece":"PIECE",
-                "$space":"MARKED"
+                "piece":"PIECE",
+                "space":"MARKED"
             }
         },
         "MARKED": {
