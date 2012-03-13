@@ -5,6 +5,16 @@ import inlines
 import urlparse
 import json
 import os
+import sys
+
+class SafeDict(dict):
+    def __getitem__(self, item):
+        if super(SafeDict,self).__contains__(item):
+            return super(SafeDict,self).__getitem__(item)
+        return "<b>"+item.replace("_"," ")+"</b>"
+
+    def __contains__(self, item):
+        return True
 
 class TemplateSet:
     def __init__(self, prefix):
@@ -13,15 +23,19 @@ class TemplateSet:
 
     def __getitem__(self, item):
         if item not in self.cache:
-            self.cache[item] = json.load( file( os.path.join(self.prefix,item), "r" ) )
+            self.cache[item] = {'src':file( os.path.join(self.prefix,item), "r" ).read()}
         
         return self.cache[item]
 
     def getTemplate(self, item):
-        return Template(self[item]['template'])
+        if "template" not in self[item]:
+            mytemplate = Template(self[item]["src"],searchList=[SafeDict()])
+            self[item]["template"] = mytemplate
+            
+        return self[item]["template"]
 
-    def getKeywordMap(self, item):
-        return {k:None for k in self[item]['keywords']}
+
+
 
 class Variable:
     def __init__(self, default, **args):
@@ -44,14 +58,22 @@ class Variable:
         return Variable(self.default.html(), **{a:b.html() for (a,b) in self.forms.items()})
 
 class Keyword:
-    def __init__(self, name, link=''):
+    def __init__(self, name, qNames, baseName=None):
         self.name = name
-        self.link = link
+        # dict which will at render time map self.name to a qname
+        self.qNames = qNames
+        if baseName is None:
+            self.baseName = name
+        else:
+            self.baseName = baseName
 
     def html(self):
-        return inlines.keyword(self.name,self.link)
+        return inlines.keyword(self.name,self.qNames[self.baseName])
 
     def __str__(self):
+        return "(("+self.name +"))"
+
+    def __repr__(self):
         return "(("+self.name +"))"
 
 class Piece:
@@ -65,12 +87,14 @@ class Piece:
     def __str__(self):
         return "<<"+self.colour+" "+self.shape+">>"
 
+    def __repr__(self):
+        return "<<"+self.colour+" "+self.shape+">>"
+
 
 class Rule:
     def __init__(self, definition, templateSet):
         self.definition = definition
         self.template = templateSet.getTemplate(definition)
-        self.keywordMap = templateSet.getKeywordMap(definition) # don't know this yet
 
     def findKeyword(self,keyword):
         theId = urlparse.urljoin(self.definition,keyword)
@@ -80,8 +104,7 @@ class Rule:
             return ("unknown", "keyword unknown", theId)
 
     def html(self, keywordMap):
-        self.keywordMap.update(keywordMap)
-        renderedMap = {a:b.html() for (a,b) in self.keywordMap.items()}
+        renderedMap = {a:b.html() for (a,b) in keywordMap.items()}
         self.template.searchList()[0].update(renderedMap)
         return str(self.template)
 
@@ -106,25 +129,33 @@ class RuleSpec:
         self.metadata = metadata
 
     def addKeyword(self, localName, default, **args):
-        self.variables[localName] = Variable(Keyword(default), **{a:Keyword(b,'link') for (a,b) in args.items()})
+        self.variables[localName] = Variable(Keyword(default,self.qNames,localName), **{a:Keyword(b,self.qNames,localName) for (a,b) in args.items()})
 
     def addPiece(self, localName, colour, shape):
         self.variables[localName] = Variable(Piece(colour, shape))
 
-    def addPhase(self,localName, qName, keywords=None):
+    def addPhase(self,localName, qName, keywords={}):
+        self.variables[localName] = Variable(Keyword(localName,self.qNames))
         self.qNames[localName] = qName
-        self.keywordMaps[localName] = keywords
+        self.keywordMaps[localName] = {"this":localName}
+        self.keywordMaps[localName].update(keywords)
         self.phaseTemplates[localName] = Rule(qName, self.templateSet)
 
-    def addConstraint(self,localName, qName, keywords=None):
-        self.keywordMaps[localName] = keywords
-        if localName not in self.constraintTemplates:
-            self.constraintTemplates[localName] = []
-        self.constraintTemplates[localName].append( Rule(qName, self.templateSet) )    
-
-    def addDef(self,localName, qName, keywords=None):
+    def addConstraint(self,phaseName, qName, keywords={}):
+        # Constraints don't have visible names so just use the qName
+        localName = qName
+        self.variables[localName] = Variable(Keyword(localName,self.qNames))
         self.qNames[localName] = qName
-        self.keywordMaps[localName] = keywords
+        self.keywordMaps[localName] = {"this":localName}
+        self.keywordMaps[localName].update(keywords)
+        if phaseName not in self.constraintTemplates:
+            self.constraintTemplates[phaseName] = []
+        self.constraintTemplates[phaseName].append( Rule(qName, self.templateSet) )    
+
+    def addDef(self,localName, qName, keywords={}):
+        self.qNames[localName] = qName
+        self.keywordMaps[localName] = {"this":localName}
+        self.keywordMaps[localName].update(keywords)
         self.defTemplates[localName] = Rule(qName, self.templateSet)
 
     def html(self):
@@ -132,11 +163,11 @@ class RuleSpec:
 
         result.append('<div class="phases"><dl>')
         for localName in self.phaseTemplates:
-            keywordMap = {a:self.variables[b].html() for (b,a) in self.qNames.items()}
+            keywordMap = SafeDict({a:self.variables[b] for (b,a) in self.qNames.items()})
             if self.keywordMaps[localName]:
-                keywordMap.update( {a:self.variables[b].html() for (a,b) in self.keywordMaps[localName].items()} )
+                keywordMap.update( {a:self.variables[b] for (a,b) in self.keywordMaps[localName].items()} )
 
-            result.extend([ '<dt><p><a name="phase-'+self.qNames[localName]+'"></a><span class="keyword">',localName,"</span></p></dt>",
+            result.extend([ '<dt><a name="phase-'+self.qNames[localName]+'"></a><span class="keyword">',localName,"</span></dt>",
                             "<dd>",self.phaseTemplates[localName].html(keywordMap),"</dd>" ])
 
             if localName in self.constraintTemplates:
@@ -152,7 +183,7 @@ class RuleSpec:
             if self.keywordMaps[localName]:
                 keywordMap.update( {a:self.variables[b] for (a,b) in self.keywordMaps[localName].items()} )
 
-            result.extend([ '<dt><p><a name="keyword-'+self.qNames[localName]+'"></a><span class="keyword">',localName,"</span></p></dt>",
+            result.extend([ '<dt><a name="keyword-'+self.qNames[localName]+'"></a><span class="keyword">',str(self.variables[localName].html()),"</span></dt>",
                             "<dd>",self.defTemplates[localName].html(keywordMap),"</dd>" ])
         result.append("</dl></div>")
 

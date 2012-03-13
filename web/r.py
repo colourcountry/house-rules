@@ -7,19 +7,23 @@ import cgi
 import inlines
 import rules
 
-myrules = rules.RuleSpec("Caravaneers","/var/www/rules/templates",date="2009",author="Andrew Perkis")
+myrules = rules.RuleSpec("Caravaneers","/var/www/rules/en",date="2009",author="Andrew Perkis")
 
-myrules.addKeyword("caravan","caravan",pl="caravans",an="an caravan")
-myrules.addKeyword("mountain space","mountain space",pl="mountain spaces",an="a mountain space")
-myrules.addPiece("piece","black","circle")
+myrules.addKeyword("scaravan","caravan",pl="caravans",an="a caravan")
+myrules.addKeyword("svictory","camel",pl="camels",an="a camel")
+myrules.addKeyword("send","game over")
+myrules.addKeyword("smountain space","mountain space",pl="mountain spaces",an="a mountain space")
+myrules.addPiece("spiece","black","circle")
 
 
-#myrules.addPhase("A", "caravaneers/move", {'piece':'piece', 'group':'caravan'})
-#myrules.addConstraint("A","common/pass-if-no-legal-moves")
-#myrules.addConstraint("A","common/end-if-two-consecutive-passes")
-#myrules.addConstraint("A","common/score-if-move-off-board")
-myrules.addDef("caravan","caravaneers/caravan", {'piece':'piece', 'space':'mountain space'})
-myrules.addDef("mountain space","caravaneers/marked-space")
+myrules.addPhase("A", "caravaneers/move", {'piece':'spiece', 'group':'scaravan', 'victory_point':'svictory', 'end':'send'})
+myrules.addConstraint("A","common/pass-if-no-legal-moves")
+myrules.addConstraint("A","common/end-if-two-consecutive-passes")
+myrules.addConstraint("A","common/score-if-move-off-board")
+myrules.addDef("scaravan","caravaneers/caravan", {'piece':'spiece', 'space':'smountain space'})
+myrules.addDef("smountain space","caravaneers/marked-space")
+myrules.addDef("svictory","common/victory-point")
+myrules.addDef("send","common/end/count-victory-points", {'victory_point':'svictory'})
 
 if __name__=="__main__":
     print myrules.html()

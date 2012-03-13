@@ -1,0 +1,60 @@
+body {
+        font-family: helvetica, sans-serif;
+        margin: 5%;
+}
+
+.svg {
+        display: inline-block;
+        height: 20pt;
+        width: 20pt;
+        vertical-align: middle
+}
+
+.keyword {
+        font-weight: bold;
+        color: blue
+}
+
+.unknown {
+        color: red !important
+}
+
+
+dl {
+        border-top: 4px solid orange;
+        padding-top: 0;
+}
+
+dt {
+        float: left;
+        clear: both;
+        width: 20%;
+        text-align: right;
+        font-weight: bold;
+        color: green;
+        padding: 0 0;
+        margin: 0 0;
+        padding: 0 0 1em 0;
+}
+
+dd {
+        float: right;
+        width: 75%;
+        padding: 0 0;
+        margin: 0 0;
+        padding: 0 0 1em 0;
+}
+
+.defs {
+        position: absolute;
+        right: 5%;
+        top: 100px;
+        width: 40%;
+}
+
+.phases {
+        position: absolute;
+        left: 5%;
+        top: 100px;
+        width: 40%;
+}

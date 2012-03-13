@@ -1,4 +1,0 @@
-{
-    "keywords": ["piece","space"],
-    "template": "<p>A line in a near-to-far direction which contains either 1 $piece, or 2 or more $piece['pl'] in mutually abutting spaces, and whose furthest $piece is not in $space['an']</p>"
-}

@@ -1,0 +1,72 @@
+{
+    "date": "2009",
+
+    "en": {
+        "name": "Caravaneers",
+        "author": "Andrew Perkis",
+
+        "keywords": {
+            "CARAVAN": {
+                "type": "keyword",
+                "base": "caravan",
+                "forms": {
+                    "pl": "caravans",
+                    "an": "any caravan"
+                }
+            },
+
+            "MARKED": {
+                "type": "keyword",
+                "base":"mountain space",
+                "forms": {
+                    "pl":"mountain spaces",
+                    "an":"a mountain space"
+                }
+            }
+
+            "PIECE": {
+                "type": "piece",
+                "colour":"black",
+                "shape":"circle"
+            }
+        }
+    },
+
+
+    "phases": {
+        "A": {
+            "rule": "caravaneers/move",
+            "vars": { 
+                "$piece":"PIECE",
+                "$group":"CARAVAN"
+            }
+            "constraints": [
+                {
+                    "rule": "common/pass-if-no-legal-moves"
+                },
+                {
+                    "rule": "common/end-if-two-consecutive-passes"
+                },
+                {
+                    "rule": "common/score-if-move-off-board",
+                    "vars": {
+                        "$piece":"PIECE"
+                    }
+                }
+            ]
+        }
+    },
+
+    "definitions": {
+        "CARAVAN": {
+            "rule": "caravaneers/caravan", 
+            "vars": {
+                "$piece":"PIECE",
+                "$space":"MARKED"
+            }
+        },
+        "MARKED": {
+            "rule": "caravaneers/marked-space"
+        }
+    }
+}
