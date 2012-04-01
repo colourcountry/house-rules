@@ -3,7 +3,8 @@
     "defaults":
     {
         "pc": "common/piece",
-        "vp": "common/victory-point"
+        "vp": "common/victory-point",
+        "trash": "common/trash"
     }
 }
 

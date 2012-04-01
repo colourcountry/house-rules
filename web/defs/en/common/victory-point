@@ -1,12 +1,12 @@
 {
     "type": "keyword",
-    "base": "victory point",
+    "base": "victory cake",
     "forms": 
     {
-        "pl":"victory points",
-        "an":"a victory point"
+        "pl":"victory cakes",
+        "an":"a victory cake"
     },
-    "description": "Used at the end of the game to decide who wins."
+    "template": "Used at the end of the game to decide who wins."
 }
 
 

@@ -1,7 +1,7 @@
 {
     "type": "keyword",
     "base": "Endgame",
-    "description": "Determine the winner and end the game."
+    "template": "Determine the winner and end the game."
 }
 
 

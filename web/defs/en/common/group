@@ -1,0 +1,14 @@
+{
+    "type": "keyword",
+    "base": "group",
+    "forms": 
+    {
+        "pl":"groups",
+        "an":"a group"
+    },
+    "template": "There is only one kind of group in this game."
+}
+
+
+
+

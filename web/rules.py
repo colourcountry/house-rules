@@ -17,23 +17,45 @@ class SafeDict(dict):
     def __contains__(self, item):
         return True
 
-class TemplateSet:
-    def __init__(self, prefix):
-        self.prefix = prefix
+class RuleSet:
+    def __init__(self, path, qNames, defPath=None):
+        self.path = path
+        self.qNames = qNames
+
+        if defPath is None:
+            self.defPath = path
+        else:
+            self.defPath = defPath
+
         self.cache = {}
+        self.defs = None # create this as necessary otherwise infinite loop
 
     def __getitem__(self, item):
         if item not in self.cache:
-            self.cache[item] = {'src':file( os.path.join(self.prefix,item), "r" ).read().decode("utf-8") }
+            self.cache[item] = json.load( file( os.path.join(self.path,item), "r" ) )
         
         return self.cache[item]
 
+    def getDefaults(self, item):
+        theRule = self[item]
+        if "_defaults" not in theRule:
+            if self.defs is None:
+                self.defs = RuleSet( self.defPath, self.qNames )
+            defaults = {}
+            for key, value in theRule["defaults"].items():
+                theDef = self.defs[value]
+                defaults[key] = Variable(Keyword(theDef["base"], self.qNames), **theDef.get("forms",{}))
+            theRule["_defaults"] = defaults
+
+        return theRule["_defaults"]
+
     def getTemplate(self, item):
-        if "template" not in self[item]:
-            mytemplate = Template(self[item]["src"],searchList=[SafeDict()])
-            self[item]["template"] = mytemplate
+        theRule = self[item]
+        if "_template" not in theRule:
+            mytemplate = Template(theRule["template"])
+            theRule["_template"] = mytemplate
             
-        return self[item]["template"]
+        return theRule["_template"]
 
 
 
@@ -96,10 +118,11 @@ class Piece:
 
 
 class Rule:
-    def __init__(self, localName, definition, templateSet):
+    def __init__(self, localName, definition, ruleSet):
         self.localName = localName
         self.definition = definition
-        self.template = templateSet.getTemplate(definition)
+        self.template = ruleSet.getTemplate(definition)
+        self.defaultKeywordMap = ruleSet.getDefaults(definition)
 
     def findKeyword(self,keyword):
         theId = urlparse.urljoin(self.definition,keyword)
@@ -109,13 +132,19 @@ class Rule:
             return ("unknown", "keyword unknown", theId)
 
     def html(self, keywordMap):
+        sys.stderr.write("rule %s has keywordmap %s\n" % (self.localName, pprint.pformat(self.defaultKeywordMap)))
         renderedMap = {a:b.html() for (a,b) in keywordMap.items()}
+        for (a,b) in self.defaultKeywordMap.items():
+            if a not in renderedMap:
+                renderedMap[a]=b.html()
+        sys.stderr.write("rule %s has renderedmap %s\n" % (self.localName, pprint.pformat(renderedMap)))
+    
         self.template.searchList()[0].update(renderedMap)
         return str(self.template).decode('utf-8')
 
 class RuleSpec:
     @classmethod
-    def fromJson( cclass, theme, ruleRoot, gameRoot, source=None  ):
+    def fromJson( cclass, theme, ruleRoot, gameRoot, defRoot, source=None  ):
 
         gameFile = file(os.path.join( gameRoot, theme['rules'] ))
         game = json.load( gameFile )
@@ -130,7 +159,7 @@ class RuleSpec:
         if source:
             theme['source'] = source
 
-        ruleSpec = cclass( name, os.path.join(ruleRoot,locale), **theme )
+        ruleSpec = cclass( name, os.path.join(ruleRoot,locale), os.path.join(defRoot,locale), **theme )
 
         for localName, kwSpec in keywords.items():
             if kwSpec['type']=='piece':
@@ -159,7 +188,7 @@ class RuleSpec:
         return ruleSpec
         
 
-    def __init__(self, name, templatePrefix, **metadata):
+    def __init__(self, name, rulePath, defPath, **metadata):
         # Map of local-name --> rule qualified-name (filename)
         self.qNames = {}
 
@@ -175,7 +204,7 @@ class RuleSpec:
         self.constraintTemplates = {}
 
         self.name = name
-        self.templateSet = TemplateSet(templatePrefix)
+        self.ruleSet = RuleSet(rulePath, self.qNames, defPath)
         self.metadata = metadata
 
     def finish(self):
@@ -195,7 +224,7 @@ class RuleSpec:
         self.qNames[localName] = qName
         self.keywordMaps[localName] = {u"this":localName}
         self.keywordMaps[localName].update(keywords)
-        self.phaseTemplates[localName] = Rule(localName, qName, self.templateSet)
+        self.phaseTemplates[localName] = Rule(localName, qName, self.ruleSet)
 
     def addConstraint(self,phaseName, qName, **keywords):
         # Constraints don't have visible names so just use the qName
@@ -206,19 +235,19 @@ class RuleSpec:
         self.keywordMaps[localName].update(keywords)
         if phaseName not in self.constraintTemplates:
             self.constraintTemplates[phaseName] = []
-        self.constraintTemplates[phaseName].append( Rule(localName, qName, self.templateSet) )    
+        self.constraintTemplates[phaseName].append( Rule(localName, qName, self.ruleSet) )    
 
     def addDef(self,localName, qName, **keywords):
         self.qNames[localName] = qName
         self.keywordMaps[localName] = {u"this":localName}
         self.keywordMaps[localName].update(keywords)
-        self.defTemplates[localName] = Rule(localName, qName, self.templateSet)
+        self.defTemplates[localName] = Rule(localName, qName, self.ruleSet)
 
     def getVariableMap(self, localName):
         if localName not in self.variableMaps:
             result = SafeDict({})
             if self.keywordMaps[localName]:
-                result.update({a:self.variables[b] for (a,b) in self.keywordMaps[localName].items()})
+                result.update({a:self.variables.get(b,Keyword("MISSING KEY "+b,[])) for (a,b) in self.keywordMaps[localName].items()})
             self.variableMaps[localName] = result
 
         return self.variableMaps[localName]

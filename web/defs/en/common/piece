@@ -6,7 +6,7 @@
         "pl":"pieces",
         "an":"a piece"
     },
-    "description": "All pieces in this game are equivalent."
+    "template": "All pieces in this game are equivalent."
 }
 
 

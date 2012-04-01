@@ -1,0 +1,9 @@
+{
+    "type": "keyword",
+    "base": "trash",
+    "template": "Remove the item from the playing area. It takes no further part in the game."
+}
+
+
+
+

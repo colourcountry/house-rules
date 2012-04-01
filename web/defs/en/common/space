@@ -6,7 +6,7 @@
         "pl":"spaces",
         "an":"a space"
     },
-    "description": "A location which can hold a piece."
+    "template": "A location which can hold a piece."
 }
 
 
