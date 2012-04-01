@@ -1,16 +1,20 @@
 #!/usr/bin/python
 
-import os, sys
+import os, sys, json
 sys.path.append(os.path.dirname(__file__))
 
 import cgi
 import inlines
 import rules
 
-GAME_ROOT= "/var/www/rules/games"
+ROOT= "/var/www/rules"
+GAME_ROOT= os.path.join(ROOT, "games")
+RULE_ROOT= os.path.join(ROOT, "rules")
+THEME_ROOT= os.path.join(ROOT, "themes")
 
 class NotFound(Exception):
     pass
+
 
 #myrules = rules.RuleSpec("Caravaneers","/var/www/rules/en",date="2009",author="Andrew Perkis")
 
@@ -30,30 +34,45 @@ class NotFound(Exception):
 #myrules.addDef("svictory","common/victory-point")
 #myrules.addDef("send","common/end/count-victory-points", victory_point='svictory')
 
+
 if __name__=="__main__":
     print myrules['en'].html()
     raise SystemExit
 
+def update( old, new ):
+    '''Recursively update a dictionary and any of its dictionary children'''
+    for key, value in new.items():
+        if isinstance(value, dict) and key in old:
+            old[key] = update( old[key], value )
+        else:
+            old[key] = value
+    return old
 
 def application(environ, start_response):
     query = cgi.parse_qs(environ['QUERY_STRING'])
 
     method = query.get("method",['html'])[0]
     locale = query.get("locale",['en'])[0]
-    gamePath = query.get("game",[None])[0]
+    gameName = query.get("game",[None])[0]
     status = '200 OK'
+
 
     try:
         try:
-            gameFile = file(os.path.join(GAME_ROOT,gamePath),'r')
+            defaultFile = file(os.path.join(THEME_ROOT,locale,'default'),'r')
         except:
-            raise NotFound("%s not found" % gamePath)
+            raise NotFound("default theme not found for locale %s" % locale)
+        try:
+            themeFile = file(os.path.join(THEME_ROOT,locale,gameName),'r')
+        except:
+            raise NotFound("%s not found for locale %s" % (themePath, locale))
 
-        myrules = rules.RuleSpec.fromFile(gameFile, source=gamePath)
+        theme = json.load(defaultFile)
+        update( theme, json.load(themeFile) )
 
-        if locale not in myrules:
-            raise NotFound("Locale %s not available for %s" % (locale,gamePath))
-    
+
+        myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, source = locale+"/"+gameName)
+
         output = '''<html  xmlns="http://www.w3.org/1999/xhtml"
                      xmlns:svg="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -67,7 +86,7 @@ def application(environ, start_response):
         %s
     </body>
 </html>
-''' % (myrules[locale].name, myrules[locale].name, myrules[locale].html())
+''' % (myrules.name, myrules.name, myrules.html())
 
     except (NotFound, IOError) as e:
         status = '404 Not Found'

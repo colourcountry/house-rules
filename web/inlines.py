@@ -19,7 +19,12 @@ def piece(colour="grey", shape="rook"):
 ''' % (shape, colour, shape)
 
 
-def keyword(name="word",link="word",cclass="keyword"):
+def link(name,link,cclass="link"):
     return '''
     <a href="#keyword-%s" class="%s">%s</a>
 ''' % (link,cclass,name)
+
+def keyword(name,cclass="keyword"):
+    return '''
+    <span class="%s">%s</span>
+''' % (cclass,name)

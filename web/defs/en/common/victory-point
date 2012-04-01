@@ -1,0 +1,14 @@
+{
+    "type": "keyword",
+    "base": "victory point",
+    "forms": 
+    {
+        "pl":"victory points",
+        "an":"a victory point"
+    },
+    "description": "Used at the end of the game to decide who wins."
+}
+
+
+
+

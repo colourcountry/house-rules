@@ -1,0 +1,18 @@
+{
+    "type": "keyword",
+    "base": "square",
+    "forms": 
+    {
+        "pl":"squares",
+        "an":"a square"
+    },
+    "description": "A $sp in a rectangular game board.",
+    "defaults":
+    {
+        "sp": "common/space"
+    }
+}
+
+
+
+

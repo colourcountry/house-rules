@@ -10,9 +10,13 @@ body {
         vertical-align: middle
 }
 
-.keyword {
+.link {
         font-weight: bold;
         color: blue
+}
+
+.keyword {
+        font-weight: bold;
 }
 
 .unknown {

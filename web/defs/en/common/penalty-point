@@ -1,0 +1,11 @@
+{
+    "type": "keyword",
+    "base": "penalty point",
+    "forms":
+    {
+        "pl":"penalty points",
+        "an":"a penalty point"
+    },
+    "description": "A scoring unit which has no meaning during the game, but counts against a player at the end of the game."
+}
+

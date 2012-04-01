@@ -1,0 +1,9 @@
+{
+    "template": "The 2 spaces in the $SW and $NE corners of the board",
+    "defaults":
+    {
+        "SW": "common/southwest",
+        "NE": "common/northeast"
+    }
+}
+

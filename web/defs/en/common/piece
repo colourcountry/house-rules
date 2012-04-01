@@ -1,0 +1,14 @@
+{
+    "type": "keyword",
+    "base": "piece",
+    "forms": 
+    {
+        "pl":"pieces",
+        "an":"a piece"
+    },
+    "description": "All pieces in this game are equivalent."
+}
+
+
+
+

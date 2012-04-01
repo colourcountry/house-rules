@@ -1,0 +1,66 @@
+{
+        "date": "Undated",
+
+        "name": "Game",
+        "author": "Anonymous",
+
+        "locale": "en",
+
+        "keywords":
+        {
+                "PIECE":
+                {
+                    "type": "piece",
+                    "colour": "black",
+                    "shape": "pawn"
+                },
+
+                "TRASH":
+                {
+                    "type": "keyword",
+                    "base": "thrash",
+                    "forms":
+                    {
+                        "ing": "thrashing",
+                        "ed": "thrashed",
+                        "s": "thrashes"
+                    }
+                },
+
+                "VICTORY POINT":
+                {
+                    "type": "keyword",
+                    "base": "cake victory point",
+                    "forms":
+                    {
+                        "pl": "cake victory points",
+                        "an": "a cake victory point"
+                    }
+                },
+
+                "SW":
+                {
+                    "type": "keyword",
+                    "base": "southwest"
+                },
+
+                "NE":
+                {
+                    "type": "keyword",
+                    "base": "northeast"
+                },
+
+                "PASS":
+                {
+                    "type": "keyword",
+                    "base": "pass"
+                },
+
+                "END":
+                {
+                    "type": "keyword",
+                    "base": "end",
+                    "tooltip": "Game over, now determine who has won"
+                }
+        }
+}

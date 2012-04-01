@@ -1,0 +1,10 @@
+{
+    "template": "Choose $grp['an'] and move every $pc in it one space further",
+    "defaults":
+    {
+        "grp": "common/group",
+        "pc": "common/piece"
+    }
+}
+
+

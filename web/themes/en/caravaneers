@@ -1,0 +1,38 @@
+{
+    "date": "2009",
+
+    "name": "Caravaneers",
+    "author": "Andrew Perkis",
+
+    "rules": "caravaneers",
+    "locale": "en",
+
+    "description": "Get your caravan to the other side of the desert!",
+
+    "keywords": {
+                "CARAVAN": {
+                    "type": "keyword",
+                    "base": "caravan",
+                    "forms": {
+                        "pl": "caravans",
+                        "an": "a caravan"
+                    }
+                },
+
+                "OTHER PIECE":
+                {   
+                    "type": "piece",
+                    "colour": "black",
+                    "shape": "circle"
+                },
+
+                "MARKED": {
+                    "type": "keyword",
+                    "base":"mountain space",
+                    "forms": {
+                        "pl":"mountain spaces",
+                        "an":"a mountain space"
+                    }
+                }
+    }
+}

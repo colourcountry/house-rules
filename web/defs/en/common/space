@@ -1,0 +1,14 @@
+{
+    "type": "keyword",
+    "base": "space",
+    "forms": 
+    {
+        "pl":"spaces",
+        "an":"a space"
+    },
+    "description": "A location which can hold a piece."
+}
+
+
+
+
