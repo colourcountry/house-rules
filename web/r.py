@@ -36,16 +36,16 @@ class NotFound(Exception):
 #myrules.addDef("send","common/end/count-victory-points", victory_point='svictory')
 
 
+def update( old, new ):
+    '''Recursively update a dictionary and any of its dictionary children'''
+    for key, value in new.items():
+        if isinstance(value, dict) and key in old:
+            old[key] = update( old[key], value )
+        else:
+            old[key] = value
+    return old
+
 class Application:
-    @staticmethod
-    def update( old, new ):
-        '''Recursively update a dictionary and any of its dictionary children'''
-        for key, value in new.items():
-            if isinstance(value, dict) and key in old:
-                old[key] = update( old[key], value )
-            else:
-                old[key] = value
-        return old
 
     @classmethod
     def loadTheme( cclass, gameName, locale ):
@@ -64,7 +64,11 @@ class Application:
 
         return theme
 
-    def __call__(environ, start_response):
+    def __init__(self, *args):
+        # no idea what Apache is passing here
+        self.initArgs = args
+
+    def __call__(self,environ, start_response):
         query = cgi.parse_qs(environ['QUERY_STRING'])
 
         method = query.get("method",['html'])[0]
@@ -74,7 +78,7 @@ class Application:
 
 
         try:
-            theme = loadTheme(gameName, locale)
+            theme = Application.loadTheme(gameName, locale)
 
             myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, defRoot = DEF_ROOT, source = locale+"/"+gameName)
 
@@ -111,11 +115,15 @@ class Application:
         return [output.encode("utf-8")]
 
 
+# Apache mod_wsgi is very weird
+def application(environ, start_response):
+    return Application().__call__(environ, start_response)
+
 # For debugging, you can run this script from command line
-#if __name__=="__main__":
-#    gameName = "caravaneers"
-#    locale = "en"
-#    theme = loadTheme(gameName, locale)
-#    myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, defRoot = DEF_ROOT, source = locale+"/"+gameName)
-#    print(myrules.html())
-#    raise SystemExit
+if __name__=="__main__":
+    gameName = "caravaneers"
+    locale = "en"
+    theme = Application.loadTheme(gameName, locale)
+    myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, defRoot = DEF_ROOT, source = locale+"/"+gameName)
+    print(myrules.html())
+    raise SystemExit

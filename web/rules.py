@@ -2,7 +2,14 @@
 
 from mako.template import Template
 import inlines
-import urllib.parse
+
+try:
+    import urlparse
+    PYTHON3=False
+except ImportError:
+    PYTHON3=True
+    import urllib.parse as urlparse
+
 import json
 import os
 import sys
@@ -128,7 +135,7 @@ class Rule:
         self.defaultKeywordMap = ruleSet.getDefaults(definition)
 
     def findKeyword(self,keyword):
-        theId = urllib.parse.urljoin(self.definition,keyword)
+        theId = urlparse.urljoin(self.definition,keyword)
         if theId in self.keywordMap:
             return (theId, "keyword", self.keywordMap[theId])
         else:
