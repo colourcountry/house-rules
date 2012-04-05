@@ -1,5 +1,5 @@
 {
-    "template": "After 2 consecutive passes, $end",
+    "template": "After 2 consecutive passes, ${end}",
     "defaults":
     {
         "end": "common/end"

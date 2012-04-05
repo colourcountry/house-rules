@@ -1,8 +1,8 @@
 {
-    "template": "If you have no legal moves, $pass",
+    "template": "If you have no legal moves, ${next}",
     "defaults":
     {
-        "pass": "common/pass"
+        "next": "common/pass"
     }
 }
 

@@ -1,12 +1,14 @@
 #!/usr/bin/python
 
-from Cheetah.Template import Template
+from mako.template import Template
 import inlines
-import urlparse
+import urllib.parse
 import json
 import os
 import sys
 import pprint,cgi
+
+
 
 class SafeDict(dict):
     def __getitem__(self, item):
@@ -32,7 +34,7 @@ class RuleSet:
 
     def __getitem__(self, item):
         if item not in self.cache:
-            self.cache[item] = json.load( file( os.path.join(self.path,item), "r" ) )
+            self.cache[item] = json.load( open( os.path.join(self.path,item), "r" ) )
         
         return self.cache[item]
 
@@ -44,7 +46,7 @@ class RuleSet:
             defaults = {}
             for key, value in theRule["defaults"].items():
                 theDef = self.defs[value]
-                defaults[key] = Variable(Keyword(theDef["base"], self.qNames), **theDef.get("forms",{}))
+                defaults[key] = Variable(Keyword(theDef["base"], self.qNames), **{a:Keyword(b, self.qNames, key) for (a, b) in theDef.get("forms",{}).items()})
             theRule["_defaults"] = defaults
 
         return theRule["_defaults"]
@@ -65,19 +67,20 @@ class Variable:
         self.forms = args
         self.default = default
 
-    def __getitem__(self, name):
+    def __getattr__(self, name):
         try:
             return self.forms[name]
         except KeyError:
             return self.default
 
     def __str__(self):
-        return unicode(self.default)
+        return str(self.default)
 
     def __repr__(self):
-        return "<variable "+unicode(self.default)+" with forms "+repr(self.forms.items())+">"
+        return "<variable "+str(self.default)+" with forms "+repr(self.forms.items())+">"
 
     def html(self):
+        #sys.stderr.write(str(self.forms))
         return Variable(self.default.html(), **{a:b.html() for (a,b) in self.forms.items()})
 
 class Keyword:
@@ -125,7 +128,7 @@ class Rule:
         self.defaultKeywordMap = ruleSet.getDefaults(definition)
 
     def findKeyword(self,keyword):
-        theId = urlparse.urljoin(self.definition,keyword)
+        theId = urllib.parse.urljoin(self.definition,keyword)
         if theId in self.keywordMap:
             return (theId, "keyword", self.keywordMap[theId])
         else:
@@ -139,14 +142,13 @@ class Rule:
                 renderedMap[a]=b.html()
         sys.stderr.write("rule %s has renderedmap %s\n" % (self.localName, pprint.pformat(renderedMap)))
     
-        self.template.searchList()[0].update(renderedMap)
-        return str(self.template).decode('utf-8')
+        return self.template.render_unicode(**renderedMap)
 
 class RuleSpec:
     @classmethod
     def fromJson( cclass, theme, ruleRoot, gameRoot, defRoot, source=None  ):
 
-        gameFile = file(os.path.join( gameRoot, theme['rules'] ))
+        gameFile = open(os.path.join( gameRoot, theme['rules'] ))
         game = json.load( gameFile )
 
         results = {}
@@ -222,7 +224,7 @@ class RuleSpec:
     def addPhase(self,localName, qName, **keywords):
         self.variables[localName] = Variable(Keyword(localName,self.qNames))
         self.qNames[localName] = qName
-        self.keywordMaps[localName] = {u"this":localName}
+        self.keywordMaps[localName] = {"this":localName}
         self.keywordMaps[localName].update(keywords)
         self.phaseTemplates[localName] = Rule(localName, qName, self.ruleSet)
 
@@ -231,7 +233,7 @@ class RuleSpec:
         localName = "rule:"+qName
         self.variables[localName] = Variable(Keyword(localName,self.qNames))
         self.qNames[localName] = qName
-        self.keywordMaps[localName] = {u"this":localName}
+        self.keywordMaps[localName] = {"this":localName}
         self.keywordMaps[localName].update(keywords)
         if phaseName not in self.constraintTemplates:
             self.constraintTemplates[phaseName] = []
@@ -239,7 +241,7 @@ class RuleSpec:
 
     def addDef(self,localName, qName, **keywords):
         self.qNames[localName] = qName
-        self.keywordMaps[localName] = {u"this":localName}
+        self.keywordMaps[localName] = {"this":localName}
         self.keywordMaps[localName].update(keywords)
         self.defTemplates[localName] = Rule(localName, qName, self.ruleSet)
 
@@ -257,39 +259,39 @@ class RuleSpec:
 
         DEBUG = ''
 
-        result.append(u'<div class="phases"><dl>')
+        result.append('<div class="phases"><dl>')
 
         for localName in self.phaseTemplates:
             variableMap = self.getVariableMap(localName)
-            result.extend([ u'<dt><a name="phase-'+self.qNames[localName]+'"></a><span class="keyword">',localName,u"</span></dt>",
-                            u"<dd>",self.phaseTemplates[localName].html( self.getVariableMap(localName) ),u"</dd>" ])
+            result.extend([ '<dt><a name="phase-'+self.qNames[localName]+'"></a><span class="keyword">',localName,"</span></dt>",
+                            "<dd>",self.phaseTemplates[localName].html( self.getVariableMap(localName) ),"</dd>" ])
 
             if localName in self.constraintTemplates:
                 for constraint in self.constraintTemplates[localName]:
                     variableMap = self.getVariableMap(constraint.localName)
-                    result.extend([ u'<dt></dt>',
-                                    u"<dd>",constraint.html( self.getVariableMap(constraint.localName) ),u"</dd>" ])
+                    result.extend([ '<dt></dt>',
+                                    "<dd>",constraint.html( self.getVariableMap(constraint.localName) ),"</dd>" ])
 
-        result.append(u"</dl></div>")
+        result.append("</dl></div>")
 
-        result.append(u'<div class="defs"><dl>')
+        result.append('<div class="defs"><dl>')
         for localName in self.defTemplates:
             variableMap = self.getVariableMap(localName)
-            result.extend([ u'<dt><a name="keyword-'+self.qNames[localName]+'"></a><span class="keyword">',str(self.variables[localName].html()),u"</span></dt>",
-                            u"<dd>",self.defTemplates[localName].html(self.getVariableMap(localName)),u"</dd>" ])
-        result.append(u"</dl></div>")
+            result.extend([ '<dt><a name="keyword-'+self.qNames[localName]+'"></a><span class="keyword">',str(self.variables[localName].html()),"</span></dt>",
+                            "<dd>",self.defTemplates[localName].html(self.getVariableMap(localName)),"</dd>" ])
+        result.append("</dl></div>")
 
         #DEBUG += pprint.pformat(self.variableMaps)
         #DEBUG += pprint.pformat(self.qNames)
         
         if DEBUG:
-            result.append(u'<pre style="background-color:yellow;z-index:50;opacity:0.4;position:absolute">%s</pre>' % cgi.escape(DEBUG))
+            result.append('<pre style="background-color:yellow;z-index:50;opacity:0.4;position:absolute">%s</pre>' % cgi.escape(DEBUG))
 
         #s = result[0].decode('utf-8')
         #for t in result[1:]:
         #    if not isinstance(t,unicode):
         #        raise AssertionError("Not Unicode: %s" % t)
-        #    s += u"\n"+t
+        #    s += "\n"+t
         #
         #return s
-        return u"\n".join(result)
+        return "\n".join(result)
