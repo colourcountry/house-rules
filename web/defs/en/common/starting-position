@@ -1,0 +1,5 @@
+{
+    "type": "keyword",
+    "base": "starting position",
+    "template": "${board}"
+}

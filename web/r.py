@@ -97,14 +97,14 @@ class Application:
 </html>
 ''' % (myrules.name, myrules.name, myrules.html())
 
-        except (NotFound, IOError) as e:
+        except Exception as e:
             status = '404 Not Found'
 
             output = '''<html  xmlns="http://www.w3.org/1999/xhtml">
     <head><title>404 Not Found</title></head>
-    <body><h1>%s</h1></body>
+    <body><h1>%s</h1><p>%s</p></body>
 </html>
-''' % e
+''' % (e.__class__.__name__, e)
 
 
         response_headers = [('Content-type', 'application/xhtml+xml; charset=utf-8'),

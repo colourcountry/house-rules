@@ -3,6 +3,20 @@ body {
         margin: 5%;
 }
 
+h1	{
+	margin: 0;
+	padding: 0;
+}
+
+.authorInfo	{
+	font-size: small;
+}
+
+.description	{
+	padding-top: 10pt;
+}
+
+
 .svg {
         display: inline-block;
         height: 20pt;
@@ -24,9 +38,14 @@ body {
 }
 
 
-dl {
+table {
         border-top: 4px solid orange;
         padding-top: 0;
+        margin-top: 20pt;
+}
+
+td {
+        vertical-align: top;
 }
 
 dt {
@@ -49,16 +68,11 @@ dd {
         padding: 0 0 1em 0;
 }
 
+
 .defs {
-        position: absolute;
-        right: 5%;
-        top: 100px;
         width: 40%;
 }
 
 .phases {
-        position: absolute;
-        left: 5%;
-        top: 100px;
         width: 40%;
 }

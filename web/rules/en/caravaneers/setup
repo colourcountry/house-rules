@@ -1,0 +1,10 @@
+{
+    "template": "Arrange 11 ${pc.pl} over a 7 × 7 board in the ${board}",
+    "defaults":
+    {
+        "pc": "common/piece",
+        "board": "common/starting-position"
+    }
+}
+
+

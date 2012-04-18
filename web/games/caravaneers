@@ -1,6 +1,13 @@
 {
     "rules": {
-        "A": {
+	"1": {
+            "rule": "caravaneers/setup",
+            "vars": { 
+                "pc":"PIECE"
+            }
+	},
+
+        "2": {
             "rule": "caravaneers/move",
             "vars": { 
                 "pc":"PIECE",
@@ -14,22 +21,31 @@
                     "rule": "common/end-if-two-consecutive-passes"
                 },
                 {
-                    "rule": "common/score-if-move-off-board"
+                    "rule": "common/score-if-move-off-board",
+		    "vars": {
+                        "pc":"PIECE"
+                    }
                 }
             ]
         }
     },
 
-    "definitions": {
+    "defs": {
+        "STARTING": {
+            "def": "common/starting-position",
+            "vars": {
+                "board":"PIECE"
+            }
+        },
         "CARAVAN": {
-            "rule": "caravaneers/caravan", 
+            "def": "caravaneers/caravan", 
             "vars": {
                 "pc":"PIECE",
                 "sq":"MARKED"
             }
         },
         "MARKED": {
-            "rule": "caravaneers/marked-space",
+            "def": "caravaneers/marked-space",
             "vars": {
                 "SW":"SW",
                 "NE":"NE"

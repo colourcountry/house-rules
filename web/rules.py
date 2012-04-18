@@ -41,7 +41,10 @@ class RuleSet:
 
     def __getitem__(self, item):
         if item not in self.cache:
-            self.cache[item] = json.load( open( os.path.join(self.path,item), "r" ) )
+            if PYTHON3:
+                self.cache[item] = json.loads( open( os.path.join(self.path,item), "r", encoding="utf-8").read() )
+            else:
+                self.cache[item] = json.loads( open( os.path.join(self.path,item), "r" ).read().decode("utf-8") )
         
         return self.cache[item]
 
@@ -51,9 +54,10 @@ class RuleSet:
             if self.defs is None:
                 self.defs = RuleSet( self.defPath, self.qNames )
             defaults = {}
-            for key, value in theRule["defaults"].items():
-                theDef = self.defs[value]
-                defaults[key] = Variable(Keyword(theDef["base"], self.qNames), **{a:Keyword(b, self.qNames, key) for (a, b) in theDef.get("forms",{}).items()})
+            if "defaults" in theRule:
+                for key, value in theRule["defaults"].items():
+                    theDef = self.defs[value]
+                    defaults[key] = Variable(Keyword(theDef["base"], self.qNames), **{a:Keyword(b, self.qNames, key) for (a, b) in theDef.get("forms",{}).items()})
             theRule["_defaults"] = defaults
 
         return theRule["_defaults"]
@@ -65,7 +69,6 @@ class RuleSet:
             theRule["_template"] = mytemplate
             
         return theRule["_template"]
-
 
 
 
@@ -155,8 +158,12 @@ class RuleSpec:
     @classmethod
     def fromJson( cclass, theme, ruleRoot, gameRoot, defRoot, source=None  ):
 
-        gameFile = open(os.path.join( gameRoot, theme['rules'] ))
-        game = json.load( gameFile )
+        if PYTHON3:
+            gameFile = open(os.path.join( gameRoot, theme['rules'] ), 'r', encoding="utf-8" )
+            game = json.loads( gameFile.read() )
+        else:
+            gameFile = open(os.path.join( gameRoot, theme['rules'] ), 'r')
+            game = json.loads( gameFile.read().decode("utf-8") )
 
         results = {}
 
@@ -171,25 +178,21 @@ class RuleSpec:
         ruleSpec = cclass( name, os.path.join(ruleRoot,locale), os.path.join(defRoot,locale), **theme )
 
         for localName, kwSpec in keywords.items():
-            if kwSpec['type']=='piece':
-                ruleSpec.addPiece(localName, kwSpec['colour'], kwSpec['shape'])
-            elif kwSpec['type']=='keyword':
-                ruleSpec.addKeyword(localName, kwSpec['base'], **kwSpec.get('forms',{}))
-            else:
-                raise ValueError("Unsupported keyword-type")
+            ruleSpec.addVariable(localName, kwSpec)
 
         
-        # no localized content below here
+        # no themed content below here
 
 
         for phaseName, phaseSpec in game['rules'].items():
             ruleSpec.addPhase(phaseName, phaseSpec['rule'], **phaseSpec.get('vars',{}))
 
-            for constraint in phaseSpec['constraints']:
-                ruleSpec.addConstraint(phaseName, constraint['rule'], **constraint.get('vars',{}))
+            if 'constraints' in phaseSpec:
+                for constraint in phaseSpec['constraints']:
+                    ruleSpec.addConstraint(phaseName, constraint['rule'], **constraint.get('vars',{}))
 
-        for defName, defSpec in game['definitions'].items():
-            ruleSpec.addDef(defName, defSpec['rule'], **defSpec.get('vars',{}))
+        for defName, defSpec in game['defs'].items():
+            ruleSpec.addDef(defName, defSpec['def'], **defSpec.get('vars',{}))
 
 
         ruleSpec.finish()
@@ -221,6 +224,14 @@ class RuleSpec:
         self.variableMaps = {}
 
 
+    def addVariable(self, localName, spec):
+        if spec['type']=='piece':
+            self.addPiece(localName, spec['colour'], spec['shape'])
+        elif spec['type']=='keyword':
+            self.addKeyword(localName, spec['base'], **spec.get('forms',{}))
+        else:
+            raise ValueError("Unsupported keyword-type")
+
 
     def addKeyword(self, localName, default, **args):
         self.variables[localName] = Variable(Keyword(default,self.qNames,localName), **{a:Keyword(b,self.qNames,localName) for (a,b) in args.items()})
@@ -250,7 +261,11 @@ class RuleSpec:
         self.qNames[localName] = qName
         self.keywordMaps[localName] = {"this":localName}
         self.keywordMaps[localName].update(keywords)
-        self.defTemplates[localName] = Rule(localName, qName, self.ruleSet)
+        self.defTemplates[localName] = Rule(localName, qName, self.ruleSet.defs)
+
+        if localName not in self.variables:
+            # add the default rendering for locale, as theme didn't supply one
+            self.addVariable(localName, self.ruleSet.defs[qName])
 
     def getVariableMap(self, localName):
         if localName not in self.variableMaps:
@@ -266,7 +281,18 @@ class RuleSpec:
 
         DEBUG = ''
 
-        result.append('<div class="phases"><dl>')
+        authorInfo = ''
+        if 'author' in self.metadata:
+            authorInfo += '<span class="author">%s </span>' % self.metadata['author']
+        if 'date' in self.metadata:
+            authorInfo += '<span class="date">%s</span>' % self.metadata['date']
+        if authorInfo:
+            result.append('<div class="authorInfo">%s</div>' % authorInfo)
+
+        if 'description' in self.metadata:
+            result.append('<div class="description">%s</div>' % self.metadata['description'])
+
+        result.append('<table><tr><td class="phases"><dl>')
 
         for localName in self.phaseTemplates:
             variableMap = self.getVariableMap(localName)
@@ -279,14 +305,14 @@ class RuleSpec:
                     result.extend([ '<dt></dt>',
                                     "<dd>",constraint.html( self.getVariableMap(constraint.localName) ),"</dd>" ])
 
-        result.append("</dl></div>")
+        result.append("</dl></td>")
 
-        result.append('<div class="defs"><dl>')
+        result.append('<td class="defs"><dl>')
         for localName in self.defTemplates:
             variableMap = self.getVariableMap(localName)
             result.extend([ '<dt><a name="keyword-'+self.qNames[localName]+'"></a><span class="keyword">',str(self.variables[localName].html()),"</span></dt>",
                             "<dd>",self.defTemplates[localName].html(self.getVariableMap(localName)),"</dd>" ])
-        result.append("</dl></div>")
+        result.append("</dl></td></tr></table>")
 
         #DEBUG += pprint.pformat(self.variableMaps)
         #DEBUG += pprint.pformat(self.qNames)

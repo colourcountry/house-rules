@@ -1,8 +1,0 @@
-{
-    "template": "A line in a near-to-far direction which contains either 1 ${pc}, or 2 or more ${pc.pl} in neighbouring spaces, and whose furthest ${pc} is not in ${sq.an}",
-    "defaults":
-    {
-        "pc":"common/piece",
-        "sq":"common/square"
-    }
-}
