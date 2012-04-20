@@ -9,8 +9,8 @@
 
     "description": "Get your caravan to the other side of the desert!",
 
-    "keywords": {
-                "CARAVAN": {
+    "defs": {
+                "caravaneers/def/caravan": {
                     "type": "keyword",
                     "base": "caravan",
                     "forms": {
@@ -19,14 +19,14 @@
                     }
                 },
 
-                "OTHER PIECE":
+                "common/def/piece":
                 {   
                     "type": "piece",
                     "colour": "black",
                     "shape": "circle"
                 },
 
-                "MARKED": {
+                "caravaneers/def/marked-space": {
                     "type": "keyword",
                     "base":"mountain space",
                     "forms": {

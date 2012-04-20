@@ -1,55 +1,46 @@
 {
     "rules": {
-	"1": {
-            "rule": "caravaneers/setup",
-            "vars": { 
-                "pc":"PIECE"
+    	"caravaneers/phase/setup": {
+            "order": 1,
+            "vars": {
+                "pc":"common/def/piece"
             }
-	},
+    	},
 
-        "2": {
-            "rule": "caravaneers/move",
-            "vars": { 
-                "pc":"PIECE",
-                "grp":"CARAVAN"
+        "caravaneers/phase/move": {
+            "order": 2,
+            "vars": {
+                "grp":"caravaneers/def/caravan",
+                "pc":"common/def/piece"
             },
-            "constraints": [
-                {
-                    "rule": "common/pass-if-no-legal-moves"
-                },
-                {
-                    "rule": "common/end-if-two-consecutive-passes"
-                },
-                {
-                    "rule": "common/score-if-move-off-board",
-		    "vars": {
-                        "pc":"PIECE"
+            "constraints": {
+                "common/rule/pass-if-no-legal-moves": null,
+                "common/rule/end-if-two-consecutive-passes": null,
+                "common/rule/score-if-move-off-board": {
+                    "vars": {
+                        "pc":"common/def/piece"
                     }
                 }
-            ]
+            }
+        },
+
+        "common/phase/count-victory-points": {
+            "order": 3
         }
     },
 
     "defs": {
-        "STARTING": {
-            "def": "common/starting-position",
+        "common/def/starting-position": {
             "vars": {
-                "board":"PIECE"
+                "board":"common/def/piece"
             }
         },
-        "CARAVAN": {
-            "def": "caravaneers/caravan", 
+        "caravaneers/def/caravan": {
             "vars": {
-                "pc":"PIECE",
-                "sq":"MARKED"
+                "pc":"common/def/piece",
+                "sq":"caravaneers/def/marked-space"
             }
         },
-        "MARKED": {
-            "def": "caravaneers/marked-space",
-            "vars": {
-                "SW":"SW",
-                "NE":"NE"
-            }
-        }
+        "caravaneers/def/marked-space": null
     }
 }

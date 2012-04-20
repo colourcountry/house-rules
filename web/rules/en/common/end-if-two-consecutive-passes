@@ -1,9 +1,0 @@
-{
-    "template": "After 2 consecutive passes, ${end}",
-    "defaults":
-    {
-        "end": "common/end"
-    }
-}
-
-

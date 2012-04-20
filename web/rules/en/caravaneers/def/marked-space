@@ -1,0 +1,15 @@
+{
+    "type": "keyword",
+    "base":"marked space",
+    "forms": {
+        "pl":"marked spaces",
+        "an":"a marked space"
+    },
+    "template": "The 2 spaces in the ${SW} and ${NE} corners of the board",
+    "defaults":
+    {
+        "SW": "common/def/southwest",
+        "NE": "common/def/northeast"
+    }
+}
+

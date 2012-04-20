@@ -8,7 +8,7 @@
 
         "keywords":
         {
-                "PIECE":
+                "common/def/piece":
                 {
                     "type": "piece",
                     "colour": "black",

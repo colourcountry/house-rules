@@ -1,0 +1,9 @@
+{
+    "template": "If you have no legal moves, ${p_ass}",
+    "defaults":
+    {
+        "p_ass": "common/def/pass"
+    }
+}
+
+

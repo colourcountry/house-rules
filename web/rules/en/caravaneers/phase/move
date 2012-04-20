@@ -1,9 +1,11 @@
 {
+    "type": "keyword",
+    "base": "Action",
     "template": "Choose ${grp.an} and move every ${pc} in it one space further",
     "defaults":
     {
-        "grp": "common/group",
-        "pc": "common/piece"
+        "grp": "common/def/group",
+        "pc": "common/def/piece"
     }
 }
 

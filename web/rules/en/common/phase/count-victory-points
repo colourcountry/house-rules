@@ -1,0 +1,11 @@
+{
+    "type": "keyword",
+    "base": "Endgame",
+    "template": "The player with most ${vp.pl} wins. If two or more players have the most, the game is drawn.",
+    "defaults":
+    {
+        "vp": "common/def/victory-point"
+    }
+}
+
+

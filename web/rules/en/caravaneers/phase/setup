@@ -1,0 +1,13 @@
+{
+    "type": "keyword",
+    "base": "Setup",
+    "template": "Arrange 11 ${pc.pl} over a 7 × 7 board in the ${board} and proceed to the ${nextphase}",
+    "defaults":
+    {
+        "pc": "common/def/piece",
+        "board": "common/def/starting-position",
+        "nextphase": "caravaneers/phase/move"
+    }
+}
+
+

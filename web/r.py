@@ -9,7 +9,6 @@ import rules
 
 ROOT= "/var/www/rules"
 GAME_ROOT= os.path.join(ROOT, "games")
-DEF_ROOT= os.path.join(ROOT, "defs")
 RULE_ROOT= os.path.join(ROOT, "rules")
 THEME_ROOT= os.path.join(ROOT, "themes")
 
@@ -80,7 +79,7 @@ class Application:
         try:
             theme = Application.loadTheme(gameName, locale)
 
-            myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, defRoot = DEF_ROOT, source = locale+"/"+gameName)
+            myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, source = locale+"/"+gameName)
 
             output = '''<html  xmlns="http://www.w3.org/1999/xhtml"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -124,6 +123,6 @@ if __name__=="__main__":
     gameName = "caravaneers"
     locale = "en"
     theme = Application.loadTheme(gameName, locale)
-    myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, defRoot = DEF_ROOT, source = locale+"/"+gameName)
+    myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, source = locale+"/"+gameName)
     print(myrules.html())
     raise SystemExit

@@ -1,9 +1,0 @@
-{
-    "template": "If you have no legal moves, ${next}",
-    "defaults":
-    {
-        "next": "common/pass"
-    }
-}
-
-

@@ -1,6 +1,9 @@
 {
     "type": "keyword",
     "base": "pass",
+    "forms": {
+        "pl": "passes"
+    },
     "template": "Do nothing and end your turn."
 }
 

@@ -1,0 +1,10 @@
+{
+    "template": "After 2 consecutive ${p_ass.pl}, ${end}",
+    "defaults":
+    {
+        "p_ass": "common/def/pass",
+        "end": "common/phase/count-victory-points"
+    }
+}
+
+
