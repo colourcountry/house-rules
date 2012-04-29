@@ -1,0 +1,11 @@
+{
+    "type": "keyword",
+    "base": "Action",
+    "template": "Move one ${pc}",
+    "defaults":
+    {
+        "pc": "common/def/piece"
+    }
+}
+
+

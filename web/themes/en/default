@@ -6,13 +6,19 @@
 
         "locale": "en",
 
-        "keywords":
+        "defs":
         {
                 "common/def/piece":
                 {
                     "type": "piece",
                     "colour": "black",
-                    "shape": "pawn"
+                    "shape": "circle",
+                    "base": "piece",
+                    "forms":
+                    {
+                        "an": "a piece",
+                        "pl": "pieces"
+                    }
                 }
         }
 }

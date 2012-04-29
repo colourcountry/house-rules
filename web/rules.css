@@ -1,11 +1,28 @@
 body {
         font-family: helvetica, sans-serif;
-        margin: 5%;
+        height: 100%;
 }
 
 h1	{
 	margin: 0;
 	padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    border: 4px solid transparent;
+    padding: 4px;
+}
+
+.callout {
+    display: block;
+    background-color: white;
+    border: 4px solid red;
+    padding: 4px;
 }
 
 .authorInfo	{
@@ -19,8 +36,6 @@ h1	{
 
 .svg {
         display: inline-block;
-        height: 20pt;
-        width: 20pt;
         vertical-align: middle
 }
 

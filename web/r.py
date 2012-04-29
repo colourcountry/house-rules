@@ -12,6 +12,8 @@ GAME_ROOT= os.path.join(ROOT, "games")
 RULE_ROOT= os.path.join(ROOT, "rules")
 THEME_ROOT= os.path.join(ROOT, "themes")
 
+PIECES_SVG = "\n".join( open(os.path.join(ROOT,"pieces.svg"),"r").readlines()[1:] )
+
 class NotFound(Exception):
     pass
 
@@ -81,20 +83,77 @@ class Application:
 
             myrules = rules.RuleSpec.fromJson(theme, ruleRoot = RULE_ROOT, gameRoot = GAME_ROOT, source = locale+"/"+gameName)
 
-            output = '''<html  xmlns="http://www.w3.org/1999/xhtml"
+            output = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
                      xmlns:svg="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink"
 >
     <head>
         <title>%s</title>
         <link rel="stylesheet" type="text/css" href="../rules/rules.css"></link>
+        <script src="/zoomooz/jquery.min.js"></script>
+        <script src="/zoomooz/jquery.zoomooz.min.js"></script>
+        <script type="text/javascript">
+            init = function() {
+                $(".hiddenLink").each( function(index) {
+                    var qName = $(this).attr("href").substring(9);
+                    var dt = $("#dt-"+qName);
+                    var dd = $("#dd-"+qName);
+                    $(this).click(function() {
+                        dt.toggleClass("hidden callout");
+                        dd.toggleClass("hidden callout");
+                    });
+                    $(this).mouseenter(function() {
+                        dt.addClass("callout");
+                        dd.addClass("callout");
+                        dt.removeClass("hidden");
+                        dd.removeClass("hidden");
+                    });
+                    $(this).mouseleave(function() {
+                        dt.addClass("hidden");
+                        dd.addClass("hidden");
+                        dt.removeClass("callout");
+                        dd.removeClass("callout");
+                    });
+                });
+                $(".visibleLink").each( function(index) {
+                    var qName = $(this).attr("href").substring(9);
+                    var dt = $("#dt-"+qName);
+                    var dd = $("#dd-"+qName);
+                    $(this).click(function() {
+                        dt.toggleClass("visible callout");
+                        dd.toggleClass("visible callout");
+                    });
+                    $(this).mouseenter(function() {
+                        dt.addClass("callout");
+                        dd.addClass("callout");
+                        dt.removeClass("visible");
+                        dd.removeClass("visible");
+                    });
+                    $(this).mouseleave(function() {
+                        dt.addClass("visible");
+                        dd.addClass("visible");
+                        dt.removeClass("callout");
+                        dd.removeClass("callout");
+                    });
+                });
+            };
+        </script>
     </head>
-    <body>
-        <h1>%s</h1>
-        %s
+    <body onload="init()">
+        <div class="zoomViewport">
+            <div class="zoomContainer">
+                <h1>%s</h1>
+                %s
+            </div>
+        </div>
+        <div style="display: none">
+            <!-- Workaround for Safari not supporting external svg:use -->
+            %s
+        </div>
     </body>
 </html>
-''' % (myrules.name, myrules.name, myrules.html())
+''' % (myrules.name, myrules.name, myrules.html(), PIECES_SVG)
 
         except Exception as e:
             status = '404 Not Found'
@@ -105,13 +164,14 @@ class Application:
 </html>
 ''' % (e.__class__.__name__, e)
 
+        outBytes = output.encode("utf-8")
 
         response_headers = [('Content-type', 'application/xhtml+xml; charset=utf-8'),
-                        ('Content-length', str(len(output)))]
+                        ('Content-length', str(len(outBytes)))]
 
         start_response(status, response_headers)
 
-        return [output.encode("utf-8")]
+        return [outBytes]
 
 
 # Apache mod_wsgi is very weird

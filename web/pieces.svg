@@ -186,8 +186,20 @@
 
 
 
+    <!-- SQUARE DESIGNS -->
 
+    <g id="patch">
+        <rect id="path-patch"
+            x="-5" y="-5" width="10" height="10"
+            fill="none" stroke="none" />
+    </g>
 
+    <clipPath id="clip-path-patch">
+        <use xlink:href="#path-patch"/>
+    </clipPath>
+
+    <rect id="bounding-box-patch"
+          x="-5" y="-5" width="10" height="10" />
 
 
 
@@ -196,7 +208,7 @@
     <!-- SIMPLE PIECES -->
 
     <g id="circle">
-        <circle
+        <circle id="path-circle"
             cx="0" cy="0"
             r="4"
             stroke-width="0.5pt"

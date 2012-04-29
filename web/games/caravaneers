@@ -1,8 +1,9 @@
 {
     "rules": {
-    	"caravaneers/phase/setup": {
+    	"common/phase/set-up-starting-position": {
             "order": 1,
             "vars": {
+                "nextPhase": "caravaneers/phase/move",
                 "pc":"common/def/piece"
             }
     	},
@@ -14,9 +15,10 @@
                 "pc":"common/def/piece"
             },
             "constraints": {
-                "common/rule/pass-if-no-legal-moves": null,
-                "common/rule/end-if-two-consecutive-passes": null,
+                "common/rule/pass-if-no-legal-moves": { "order": 1 },
+                "common/rule/end-if-two-consecutive-passes": { "order": 2 },
                 "common/rule/score-if-move-off-board": {
+                    "order": 3,
                     "vars": {
                         "pc":"common/def/piece"
                     }
@@ -31,13 +33,14 @@
 
     "defs": {
         "common/def/starting-position": {
+            "order": 1,
             "vars": {
-                "board":"common/def/piece"
+                "empty":"caravaneers/def/empty-board",
+                "start":"caravaneers/def/starting-position"
             }
         },
         "caravaneers/def/caravan": {
             "vars": {
-                "pc":"common/def/piece",
                 "sq":"caravaneers/def/marked-space"
             }
         },

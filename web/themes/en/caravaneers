@@ -19,20 +19,16 @@
                     }
                 },
 
-                "common/def/piece":
-                {   
-                    "type": "piece",
-                    "colour": "black",
-                    "shape": "circle"
-                },
-
                 "caravaneers/def/marked-space": {
-                    "type": "keyword",
+                    "type": "piece",
                     "base":"mountain space",
                     "forms": {
                         "pl":"mountain spaces",
                         "an":"a mountain space"
-                    }
+                    },
+                    "colour": "grey",
+                    "shape": "patch"
                 }
+
     }
 }

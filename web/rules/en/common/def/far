@@ -1,0 +1,14 @@
+{
+    "type": "keyword",
+    "base": "far",
+    "forms":
+    {
+        "er": "farther",
+        "est": "farthest"
+    },
+    "template": "The direction away from the active player."
+}
+
+
+
+

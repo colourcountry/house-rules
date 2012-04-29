@@ -1,6 +1,6 @@
 {
     "type": "keyword",
-    "base": "northbeast",
+    "base": "northeast",
     "template": "An absolute direction."
 }
 

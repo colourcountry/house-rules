@@ -1,5 +1,5 @@
 {
     "type": "keyword",
-    "base": "starting arrangement",
-    "template": "${board}"
+    "base": "starting position",
+    "template": "${empty} ➡ ${start}"
 }

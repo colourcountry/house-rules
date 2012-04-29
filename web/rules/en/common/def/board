@@ -1,0 +1,9 @@
+{
+    "type": "keyword",
+    "base": "board",
+    "template": "This game uses a single board."
+}
+
+
+
+
