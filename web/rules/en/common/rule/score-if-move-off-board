@@ -1,4 +1,5 @@
 {
+    "role": "constraint",
     "template": "If you move a ${pc} off the edge of the board, ${trash} it and score 1 ${vp}",
     "defaults":
     {

@@ -1,4 +1,5 @@
 {
+    "role": "phase",
     "type": "keyword",
     "base": "Action",
     "template": "Move one ${pc}",

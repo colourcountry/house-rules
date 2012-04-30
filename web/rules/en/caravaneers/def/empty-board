@@ -1,4 +1,5 @@
 {
+    "role": "definition",
     "type": "board",
     "geometry": "square",
     "width": 7,

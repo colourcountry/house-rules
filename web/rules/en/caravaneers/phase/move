@@ -1,4 +1,5 @@
 {
+    "role": "phase",
     "type": "keyword",
     "base": "Action",
     "template": "Choose ${grp.an} and move every ${pc} in it one space ${far.er}: <div>${From} ➡ ${To}</div>",

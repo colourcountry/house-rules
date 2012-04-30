@@ -1,4 +1,5 @@
 {
+    "role": "constraint",
     "template": "If you have no legal moves, ${p_ass}",
     "defaults":
     {

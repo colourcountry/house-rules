@@ -1,4 +1,5 @@
 {
+    "role": "definition",
     "type": "keyword",
     "base": "northeast",
     "template": "An absolute direction."

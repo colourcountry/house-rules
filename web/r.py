@@ -91,6 +91,8 @@ class Application:
     <head>
         <title>%s</title>
         <link rel="stylesheet" type="text/css" href="../rules/rules.css"></link>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <script src="/zoomooz/jquery.min.js"></script>
         <script src="/zoomooz/jquery.zoomooz.min.js"></script>
         <script type="text/javascript">

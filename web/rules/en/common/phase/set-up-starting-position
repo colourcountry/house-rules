@@ -1,4 +1,5 @@
 {
+    "role": "phase",
     "type": "keyword",
     "base": "Setup",
     "template": "Arrange the ${pc.pl} over the ${board} in the ${start} and proceed to the ${nextPhase}",

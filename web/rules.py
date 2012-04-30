@@ -56,6 +56,10 @@ class RuleSet:
         theRule = self[item]
         return theRule.get("defaults", {})
 
+    def getRole(self, item):
+        theRule = self[item]
+        return theRule["role"]
+
 
 class Variable:
     def __init__(self, base, **args):
@@ -237,6 +241,7 @@ class Rule:
         self.localName = None
         self.visible = visible
 
+        self.role = ruleSet.getRole(qName)
         # The template for the rule is not overridable - only fields inside the template
         # so we can get it straight away
         self.template = ruleSet.getTemplate(qName)
@@ -258,7 +263,7 @@ class Rule:
 
     def overrideFields(self, overrides):
         if overrides:
-            sys.stderr.write("Overriding %s with %s" % (pprint.pformat(self.templateFields), pprint.pformat(overrides)))
+            sys.stderr.write("\nUpdating %s with %s" % (pprint.pformat(self.templateFields), pprint.pformat(overrides)))
             self.templateFields.update(overrides)
 
 
@@ -406,6 +411,12 @@ class RuleSpec:
             rule = Rule(qName, self.ruleSet, order, visibility, vars) 
             self.rules[qName] = rule
 
+            if rule.role == 'phase':
+                self.phaseTemplates.append( qName )
+            elif rule.role == 'definition':
+                self.defTemplates.append( qName )
+
+
         sys.stderr.write('\nvars for %s were %s' % (qName, vars))
         for templateName, qName in rule.getTemplateFields().items():
             if vars and templateName in vars:
@@ -417,7 +428,7 @@ class RuleSpec:
 
 
     def getVariable(self, qName, spec):
-        sys.stderr.write("\nBuilding keyword for %s from %s" % (qName,pprint.pformat(spec)))
+        #sys.stderr.write("\nBuilding keyword for %s from %s" % (qName,pprint.pformat(spec)))
         t_ype = spec.get('type','keyword')
         if t_ype=='piece':
             return self.getPieceVar(qName, spec['colour'], spec['shape'], spec.get('base',None), spec.get('forms',{}))
@@ -443,11 +454,10 @@ class RuleSpec:
             raise ValueError("Unsupported board-geometry %s" % geometry)
 
     def addPhase(self, qName, order=LAST, vars=None):
-        if qName not in self.rules:
-            self.phaseTemplates.append( qName )
         self.addRule(qName, order, True, vars)
 
     def addConstraint(self, phaseName, qName, order=LAST, vars=None):
+        # does not automatically add, as is child of a phase
         if phaseName not in self.constraintTemplates:
             self.constraintTemplates[phaseName] = []
         if qName not in self.constraintTemplates[phaseName]:
@@ -455,8 +465,6 @@ class RuleSpec:
         self.addRule(qName, order, True, vars)
 
     def addDef(self, qName, order=LAST, visibility=True, vars=None):
-        if qName not in self.rules:
-            self.defTemplates.append( qName )
         self.addRule(qName, order, visibility, vars)
 
 
