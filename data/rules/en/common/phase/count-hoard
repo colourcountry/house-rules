@@ -1,0 +1,13 @@
+{
+    "role": "phase"
+,   "type": "keyword"
+,   "base": "Endgame"
+,   "template": "The player with most ${pc.pl} in their ${Hoard} wins. If two or more players have the most, the game is drawn."
+,   "defaults":
+    {
+        "pc": "common/def/piece"
+,       "Hoard": "common/def/hoard"
+    }
+}
+
+

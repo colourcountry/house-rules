@@ -1,0 +1,12 @@
+{
+    "role": "constraint"
+,   "template": "If you move a ${pc.sg} off the edge of the board, ${trash} it and score 1 ${vp}"
+,   "defaults":
+    {
+        "pc": "common/def/piece"
+    ,   "trash": "common/def/trash"
+    ,   "vp": "common/def/victory-point"
+    }
+}
+
+

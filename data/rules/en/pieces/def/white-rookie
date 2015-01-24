@@ -1,0 +1,16 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "white"
+,   "shape": "small-rook"
+,   "base": "white rookie"
+,   "template": "This piece belongs to ${WhitePlayer} and moves as ${Rookie.an} ${Rookie}"
+,   "defaults": {
+        "WhitePlayer": "common/def/white-player"
+    ,   "Rookie": "pieces/def/rookie"
+    }
+}
+
+
+
+

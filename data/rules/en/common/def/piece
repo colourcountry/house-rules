@@ -1,0 +1,10 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "piece"
+,   "forms": {
+        "pl":"pieces"
+    ,   "an":"a piece"
+    }
+,   "template": "A game piece."
+}

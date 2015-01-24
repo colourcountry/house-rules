@@ -1,0 +1,17 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "near",
+    "forms":
+    {
+        "er": "nearer",
+        "est": "nearest"
+    },
+    "template": "The direction towards the player: ${North} for ${NorthPlayer}",
+    "defaults":
+    {
+        "North": "common/def/north",
+        "NorthPlayer": "common/def/north-player"
+    }
+}
+

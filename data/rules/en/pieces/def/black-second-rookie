@@ -1,0 +1,16 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "black"
+,   "shape": "small-rook-with-dot"
+,   "base": "second black rookie"
+,   "template": "This piece belongs to ${BlackPlayer} and moves as ${Rookie.an} ${Rookie}. It is visually distinguishable from the first kind of black ${Rookie.sg}."
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    ,   "Rookie": "pieces/def/rookie"
+    }
+}
+
+
+
+

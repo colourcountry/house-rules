@@ -1,0 +1,17 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "white",
+    "shape": "player",
+    "template": "The player at the ${South} side of the board.<br/>Owns ${King}, ${Queen}, 2 × ${Bishop}, 2 × ${Knight}, 2 × ${Rook}, 8 × ${Pawn}",
+    "defaults":
+    {
+        "South": "common/def/south",
+        "King": "chess/def/white-king",
+        "Queen": "chess/def/white-queen",
+        "Bishop": "chess/def/white-bishop",
+        "Knight": "chess/def/white-knight",
+        "Rook": "chess/def/white-rook",
+        "Pawn": "chess/def/white-pawn"
+    }
+}

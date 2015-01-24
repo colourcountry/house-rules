@@ -1,0 +1,19 @@
+{
+    "role": "definition"
+,   "type": "board"
+,   "geometry": "square"
+,   "width": 4
+,   "height": 4
+,   "spaces": 
+    {
+        "c3": "pieces/def/rookie"
+    ,   "b3": "common/def/highlighted-square"
+    ,   "d3": "common/def/highlighted-square"
+    ,   "c2": "common/def/highlighted-square"
+    ,   "c4": "common/def/highlighted-square"
+    }
+,   "template": "Move of a rookie."
+}
+
+
+

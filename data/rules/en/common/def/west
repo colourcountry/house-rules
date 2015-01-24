@@ -1,0 +1,15 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "west",
+    "template": "The ${AbsoluteDirection}: behind you, if facing ${East}.",
+    "defaults":
+    {
+        "East": "common/def/east",
+        "AbsoluteDirection": "common/def/absolute-direction"
+    }
+}
+
+
+
+

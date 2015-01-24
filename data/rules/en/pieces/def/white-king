@@ -1,0 +1,12 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "white",
+    "shape": "king",
+    "base": "white king",
+    "template": "TODO describe the move here"
+}
+
+
+
+

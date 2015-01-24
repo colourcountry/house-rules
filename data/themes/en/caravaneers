@@ -1,0 +1,48 @@
+{
+    "date": "2009"
+
+,   "name": "Caravaneers"
+,   "author": "Andrew Perkis"
+
+,   "rules": "caravaneers"
+,   "locale": "en"
+
+,   "description": "Get your caravan to the other side of the desert!"
+
+,   "defs": {
+                "caravaneers/def/caravan": {
+                    "type": "keyword"
+                ,   "base": "caravan"
+                ,   "forms": {
+                        "sg": "caravan"
+                    ,   "pl": "caravans"
+                    ,   "an": "a caravan"
+                    }
+                }
+
+            ,   "common/def/piece": {
+                    "type": "piece"
+                ,   "base": "camel"
+                ,   "colour": "white"
+                ,   "shape": "circle"
+                ,   "forms": {
+                        "sg": "camel"
+                    ,   "pl": "camels"
+                    ,   "an": "a camel"
+                    }
+                }
+
+            ,   "caravaneers/def/marked-space": {
+                    "type": "piece"
+                ,   "base":"mountain square"
+                ,   "colour": "grey"
+                ,   "shape": "patch"
+                ,   "forms": {
+                        "sg":"mountain square"
+                    ,   "pl":"mountain squares"
+                    ,   "an":"a mountain square"
+                    }
+                }
+
+    }
+}

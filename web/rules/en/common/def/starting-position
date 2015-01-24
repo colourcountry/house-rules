@@ -1,6 +1,0 @@
-{
-    "role": "definition",
-    "type": "keyword",
-    "base": "starting position",
-    "template": "${empty} ➡ ${start}"
-}

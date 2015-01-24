@@ -1,0 +1,18 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "black",
+    "shape": "player",
+    "template": "The player at the ${North} side of the board.<br/>Owns ${King}, ${Queen}, 2 × ${Bishop}, 2 × ${Knight}, 2 × ${Rook}, 8 × ${Pawn}",
+    "defaults":
+    {
+        "North": "common/def/north",
+        "King": "chess/def/black-king",
+        "Queen": "chess/def/black-queen",
+        "Bishop": "chess/def/black-bishop",
+        "Knight": "chess/def/black-knight",
+        "Rook": "chess/def/black-rook",
+        "Pawn": "chess/def/black-pawn"
+    }
+}
+

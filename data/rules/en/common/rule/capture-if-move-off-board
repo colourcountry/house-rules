@@ -1,0 +1,11 @@
+{
+    "role": "constraint"
+,   "template": "If you move a ${pc.sg} off the edge of the board, ${Capture} it"
+,   "defaults":
+    {
+        "pc": "common/def/piece"
+    ,   "Capture": "common/def/capture"
+    }
+}
+
+

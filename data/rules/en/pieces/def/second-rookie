@@ -1,0 +1,16 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "grey"
+,   "shape": "small-rook-with-dot"
+,   "base": "second rookie"
+,   "forms": {
+        "sg": "second rookie"
+    ,   "pl": "second rookies"
+    ,   "an": "a second rookie"
+    }
+,   "template": "This piece moves as ${Rookie.an} ${Rookie}, but is visually distinguishable from the regular ${Rookie.sg}."
+,   "defaults": {
+        "Rookie": "pieces/def/rookie"
+    }
+}

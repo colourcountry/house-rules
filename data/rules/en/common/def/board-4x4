@@ -1,0 +1,6 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "Board"
+,   "template": "4 &#x00d7; 4 square board"
+}

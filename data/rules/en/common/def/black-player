@@ -1,0 +1,15 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "black",
+    "shape": "player",
+    "template": "The player at the ${North} side of the board; owner of the black pieces",
+    "defaults":
+    {
+        "North": "common/def/north"
+    }
+}
+
+
+
+

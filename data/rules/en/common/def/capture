@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "capture"
+,   "template": "Remove the ${pc.sg} from the playing area and put it in your ${Hoard}."
+,   "defaults":
+    {
+        "pc": "common/def/piece"
+,       "Hoard": "common/def/hoard"
+    }
+}
+
+
+
+

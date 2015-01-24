@@ -1,0 +1,10 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "next player",
+    "template": "The player to the left of the active player."
+}
+
+
+
+

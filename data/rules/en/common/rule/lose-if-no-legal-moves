@@ -1,0 +1,6 @@
+{
+    "role": "constraint"
+,   "template": "If you have no legal moves, you lose."
+}
+
+

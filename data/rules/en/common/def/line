@@ -1,0 +1,19 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "line",
+    "forms":
+    {
+        "pl": "lines",
+        "an": "a line"
+    },
+    "template": "A group of ${pc.pl} arranged so that each either has one ${Neighbour}, or two ${Neighbour.pl} in opposite directions",
+    "defaults":
+    {
+        "Neighbour": "common/def/neighbour",
+        "South": "common/def/south",
+        "NorthPlayer": "common/def/north-player",
+        "pc": "common/def/piece"
+    }
+}
+

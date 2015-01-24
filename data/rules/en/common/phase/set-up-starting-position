@@ -1,0 +1,14 @@
+{
+    "role": "phase",
+    "type": "keyword",
+    "base": "Setup",
+    "template": "Arrange ${Piece.pl} over the ${Board} in the ${Start}.",
+    "defaults":
+    {
+        "Piece": "common/def/piece",
+        "Board": "common/def/board",
+        "Start": "common/def/starting-position"
+    }
+}
+
+

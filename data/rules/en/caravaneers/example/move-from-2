@@ -1,0 +1,33 @@
+{
+    "role": "definition",
+    "type": "board",
+    "geometry": "square",
+    "width": 7,
+    "height": 7,
+    "edges":
+    {
+        "north": "common/def/north-player",
+        "west": "common/def/west-player"
+    },
+    "spaces": 
+    {
+        "0,0": "common/def/piece-equivalent",
+        "3,1": "common/def/piece-equivalent",
+        "0,3": "common/def/piece-equivalent",
+        "4,4": "common/def/piece-equivalent",
+        "5,5": "common/def/piece-equivalent",
+        "0,6": "caravaneers/def/marked-space",
+        "1,2": "common/def/piece-equivalent",
+        "2,2": "common/def/piece-equivalent",
+        "3,2": "common/def/piece-equivalent",
+        "3,3": "common/def/north-player",
+        "3,0": "common/def/piece-equivalent",
+        "4,0": "common/def/piece-equivalent",
+        "5,2": "common/def/piece-equivalent",
+        "6,0": "caravaneers/def/marked-space"
+    },
+    "template": "Before West's move in Caravaneers."
+}
+
+
+

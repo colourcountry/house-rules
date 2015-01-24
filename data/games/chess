@@ -1,0 +1,18 @@
+{
+    "rules": [
+        {
+            "src":"common/def/players-2-no-pieces",
+            "vars": {
+                "NorthPlayer": "chess/def/black-player",
+                "SouthPlayer": "chess/def/white-player"
+            }
+        },
+        {
+            "src":"common/phase/set-up-starting-position",
+            "vars": {
+                "Start": "chess/def/starting-position"
+            }
+    	}
+    ]
+}
+

@@ -1,0 +1,18 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "group",
+    "forms": {
+        "pl":"groups",
+        "an":"a group"
+    },
+    "template": "<ul><li>A single ${pc.sg} not in ${sq.an}, or</li><li>a ${Line} of ${pc.pl} running from ${Near} to ${Far}, whose ${Far.est} ${pc.sg} is not in ${sq.an}</li></ul>",
+    "defaults":
+    {
+        "pc":"common/def/piece-equivalent",
+        "sq":"caravaneers/def/marked-space",
+        "Far":"common/def/far",
+        "Near":"common/def/near",
+        "Line":"common/def/line"
+    }
+}

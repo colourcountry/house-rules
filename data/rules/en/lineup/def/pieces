@@ -1,0 +1,20 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "Pieces"
+,   "template": "<ul><li>To ${BlackPlayer}: 2 ${Rook.pl} ${BlackRook1}, 2 ${Rook2.pl} ${BlackRook2}, 1 ${King.sg} ${BlackKing}</li><li>To ${WhitePlayer}: 2 ${Rook.pl} ${WhiteRook1}, 2 ${Rook2.pl} ${WhiteRook2}, 1 ${King.sg} ${WhiteKing}</li></ul>"
+,   "defaults":
+    {
+        "BlackPlayer": "common/def/black-player"
+    ,   "Rook":  "pieces/def/rookie"
+    ,   "Rook2":  "pieces/def/second-rookie"
+    ,   "King":  "pieces/def/king"
+    ,   "BlackRook1":  "pieces/def/black-rookie"
+    ,   "BlackRook2":  "pieces/def/black-second-rookie"
+    ,   "BlackKing":  "pieces/def/black-king"
+    ,   "WhitePlayer": "common/def/white-player"
+    ,   "WhiteRook1":  "pieces/def/white-rookie"
+    ,   "WhiteRook2":  "pieces/def/white-second-rookie"
+    ,   "WhiteKing":  "pieces/def/white-king"
+    }
+}

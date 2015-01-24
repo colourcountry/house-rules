@@ -1,0 +1,9 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "neighbouring"
+,   "template": "Two ${Space.pl} are neighbouring if they share an edge."
+,   "defaults": {
+        "Space": "common/def/space"
+    }
+}

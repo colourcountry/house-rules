@@ -1,0 +1,12 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "black",
+    "shape": "pawn",
+    "base": "black pawn",
+    "template": "TODO describe the move here"
+}
+
+
+
+

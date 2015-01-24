@@ -1,0 +1,14 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "yellow"
+,   "shape": "patch"
+,   "base":"highlighted square"
+,   "forms": {
+        "sg":"highlighted square"
+    ,   "pl":"highlighted squares"
+    ,   "an":"a highlighted square"
+    }
+,   "template":"Highlighted squares are used to indicate positions in the example diagrams, such as where a piece can move. They are not otherwise special."
+}
+

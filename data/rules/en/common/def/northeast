@@ -1,0 +1,15 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "north-east",
+    "template": "The ${AbsoluteDirection}: ahead and to the left, if facing ${East}.",
+    "defaults":
+    {
+        "East": "common/def/east",
+        "AbsoluteDirection": "common/def/absolute-direction"
+    }
+}
+
+
+
+

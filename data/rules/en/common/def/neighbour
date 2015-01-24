@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "neighbour"
+,   "forms":
+    {
+        "pl": "neighbours"
+    }
+,   "template": "Two ${Item.pl} are neighbours of each other if they occupy ${Space.pl} that share an edge."
+,   "defaults": {
+        "Item": "common/def/item"
+    ,   "Space": "common/def/space"
+    }
+}
+

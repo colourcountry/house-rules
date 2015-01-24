@@ -1,0 +1,15 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "red",
+    "shape": "player",
+    "template": "The player at the ${West} side of the board.",
+    "defaults":
+    {
+        "West": "common/def/west"
+    }
+}
+
+
+
+

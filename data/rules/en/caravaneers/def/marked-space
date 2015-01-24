@@ -1,0 +1,18 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base":"marked space"
+,   "forms": {
+        "sg":"marked space"
+    ,   "pl":"marked spaces"
+    ,   "an":"a marked space"
+    }
+,   "template": "The ${Space.pl} in the ${SW} and ${NE} corners of the board"
+,   "defaults":
+    {
+        "SW": "common/def/southwest"
+    ,   "NE": "common/def/northeast"
+    ,   "Space": "common/def/space"
+    }
+}
+

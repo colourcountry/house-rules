@@ -1,0 +1,51 @@
+{
+    "role": "definition",
+    "type": "board",
+    "geometry": "square",
+    "width": 8,
+    "height": 8,
+    "edges":
+    {
+        "north": "chess/def/black-player",
+        "south": "chess/def/white-player"
+    },
+    "spaces": 
+    {
+        "a1": "chess/def/white-rook",
+        "b1": "chess/def/white-knight",
+        "c1": "chess/def/white-bishop",
+        "d1": "chess/def/white-queen",
+        "e1": "chess/def/white-king",
+        "f1": "chess/def/white-bishop",
+        "g1": "chess/def/white-knight",
+        "h1": "chess/def/white-rook",
+        "a2": "chess/def/white-pawn",
+        "b2": "chess/def/white-pawn",
+        "c2": "chess/def/white-pawn",
+        "d2": "chess/def/white-pawn",
+        "e2": "chess/def/white-pawn",
+        "f2": "chess/def/white-pawn",
+        "g2": "chess/def/white-pawn",
+        "h2": "chess/def/white-pawn",
+        "a7": "chess/def/black-pawn",
+        "b7": "chess/def/black-pawn",
+        "c7": "chess/def/black-pawn",
+        "d7": "chess/def/black-pawn",
+        "e7": "chess/def/black-pawn",
+        "f7": "chess/def/black-pawn",
+        "g7": "chess/def/black-pawn",
+        "h7": "chess/def/black-pawn",
+        "a8": "chess/def/black-rook",
+        "b8": "chess/def/black-knight",
+        "c8": "chess/def/black-bishop",
+        "d8": "chess/def/black-queen",
+        "e8": "chess/def/black-king",
+        "f8": "chess/def/black-bishop",
+        "g8": "chess/def/black-knight",
+        "h8": "chess/def/black-rook"
+    },
+    "template": "The board for chess."
+}
+
+
+

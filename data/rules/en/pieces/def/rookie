@@ -1,0 +1,23 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "grey"
+,   "shape": "small-rook"
+,   "base": "rookie"
+,   "forms": {
+        "sg": "rookie"
+    ,   "pl": "rookies"
+    ,   "an": "a rookie"
+    }
+,   "template": "This piece can move to any ${Neighbouring} ${Space} (the ${Highlight.pl})<br>${Example}"
+,   "defaults": {
+        "Neighbouring": "common/def/neighbouring"
+    ,   "Space": "common/def/space"
+    ,   "Highlight": "common/def/highlighted-square"
+    ,   "Example": "pieces/example/rookie-move"
+    }
+}
+
+
+
+

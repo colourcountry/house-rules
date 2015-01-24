@@ -1,0 +1,10 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "other player",
+    "template": "The player who is not currently active."
+}
+
+
+
+

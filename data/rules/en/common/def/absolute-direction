@@ -1,0 +1,13 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "absolute direction",
+    "template": "A fixed direction relative to the world at large, rather than anything within the game. By convention, the absolute directions are denoted ${North}, ${East}, ${South} and ${West}, although you can fix them to any convenient landmark. For example, in backgammon it is conventional to have the light source to one side of the board, which is then denoted ${East}, so that the players sit to the ${North} and ${South}.",
+    "defaults":
+    {
+        "North": "common/def/north",
+        "South": "common/def/south",
+        "East": "common/def/east",
+        "West": "common/def/west"
+    }
+}

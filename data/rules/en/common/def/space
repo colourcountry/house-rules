@@ -1,0 +1,11 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "space"
+,   "forms": 
+    {
+        "pl":"spaces"
+    ,   "an":"a space"
+    }
+,   "template": "A demarcated location on the board."
+}

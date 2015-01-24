@@ -1,0 +1,10 @@
+{
+    "role": "constraint",
+    "template": "After 2 consecutive ${p_ass.pl}, ${go} ${end}",
+    "defaults":
+    {
+        "p_ass": "common/def/pass",
+        "end": "common/phase/count-victory-points",
+        "go": "common/def/go"
+    }
+}

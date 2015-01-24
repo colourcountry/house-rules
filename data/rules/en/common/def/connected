@@ -1,0 +1,10 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "connected"
+,   "template": "Two ${Space.pl} are connected if they share an edge or corner."
+,   "defaults": {
+        "Space": "common/def/space"
+    }
+}
+

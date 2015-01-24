@@ -1,0 +1,13 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "hoard"
+,   "template": "A collection of captured ${Item.pl} belonging to a player."
+,   "defaults": {
+        "Item": "common/def/item"
+    }
+}
+
+
+
+

@@ -1,0 +1,15 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "victory point",
+    "forms": 
+    {
+        "pl":"victory points",
+        "an":"a victory point"
+    },
+    "template": "Used at the end of the game to decide who wins. You can use tokens, peg board or pen and paper to keep track of victory points. Victory points are accumulated during gameplay but are not compared until the end of the game."
+}
+
+
+
+

@@ -1,0 +1,17 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "far",
+    "forms":
+    {
+        "er": "farther",
+        "est": "farthest"
+    },
+    "template": "The direction away from the player:${South} for ${NorthPlayer}",
+    "defaults":
+    {
+        "South": "common/def/south",
+        "NorthPlayer": "common/def/north-player"
+    }
+}
+

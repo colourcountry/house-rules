@@ -1,0 +1,25 @@
+{
+    "role": "phase"
+,   "type": "keyword"
+,   "base": "Action"
+,   "forms":
+    {
+        "an": "an Action"
+    }
+,   "template": "<ol><li>Choose ${grp.an} and move every ${pc.sg} in it one ${Space} ${Far.er}.<br />${WestPlayer} to play:${From} &#x27a1; ${To}<br />${NorthPlayer} to play: ${FromN} &#x27a1; ${ToN}</li><li>The ${NextPlayer} takes ${NextPhase.an}</li></ol>"
+,   "defaults":
+    {
+        "grp": "caravaneers/def/caravan"
+    ,   "pc": "common/def/piece-equivalent"
+    ,   "Space": "common/def/space"
+    ,   "WestPlayer": "common/def/west-player"
+    ,   "From": "caravaneers/example/move-from"
+    ,   "To": "caravaneers/example/move-to"
+    ,   "NorthPlayer": "common/def/north-player"
+    ,   "FromN": "caravaneers/example/move-from-2"
+    ,   "ToN": "caravaneers/example/move-to-2"
+    ,   "Far": "common/def/far"
+    ,   "NextPlayer": "common/def/other-player"
+    ,   "NextPhase": "caravaneers/phase/move"
+    }
+}

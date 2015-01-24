@@ -1,0 +1,23 @@
+{
+    "role": "definition"
+,   "type": "board"
+,   "geometry": "square"
+,   "width": 7
+,   "height": 7
+,   "spaces": 
+    {
+        "d4": "pieces/def/king"
+    ,   "c4": "common/def/highlighted-square"
+    ,   "e4": "common/def/highlighted-square"
+    ,   "c3": "common/def/highlighted-square"
+    ,   "d3": "common/def/highlighted-square"
+    ,   "e3": "common/def/highlighted-square"
+    ,   "c5": "common/def/highlighted-square"
+    ,   "d5": "common/def/highlighted-square"
+    ,   "e5": "common/def/highlighted-square"
+    }
+,   "template": "Move of a king."
+}
+
+
+

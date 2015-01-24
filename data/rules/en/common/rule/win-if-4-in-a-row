@@ -1,0 +1,9 @@
+{
+    "role": "constraint"
+,   "template": "If 4 of your pieces form a ${Line}, you win."
+,   "defaults": {
+        "Line": "common/def/line"
+    }
+}
+
+

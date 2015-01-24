@@ -1,0 +1,12 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "white",
+    "shape": "bishop",
+    "base": "white bishop",
+    "template": "TODO describe the move here"
+}
+
+
+
+

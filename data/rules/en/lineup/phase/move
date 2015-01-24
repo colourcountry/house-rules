@@ -1,0 +1,21 @@
+{
+    "role": "phase"
+,   "type": "keyword"
+,   "base": "Action"
+,   "forms":
+    {
+        "an": "an Action"
+    }
+,   "template": "<ol><li>${BlackPlayer} moves ${BlackRook}</li><li>${WhitePlayer} moves ${WhiteRook2}</li><li>${BlackPlayer} moves ${BlackKing}</li><li>${WhitePlayer} moves ${WhiteRook}</li><li>${BlackPlayer} moves ${BlackRook2}</li><li>${WhitePlayer} moves ${WhiteKing}</li><li>Repeat</li></ol>"
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    ,   "WhitePlayer": "common/def/white-player"
+    ,   "BlackRook": "pieces/def/black-rookie"
+    ,   "BlackRook2": "pieces/def/black-second-rookie"
+    ,   "BlackKing": "pieces/def/black-king"
+    ,   "WhiteRook": "pieces/def/white-rookie"
+    ,   "WhiteRook2": "pieces/def/white-second-rookie"
+    ,   "WhiteKing": "pieces/def/white-king"
+    ,   "Phase": "lineup/phase/move"
+    }
+}

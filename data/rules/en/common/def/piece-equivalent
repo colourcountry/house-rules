@@ -1,0 +1,13 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "white"
+,   "shape": "circle"
+,   "base": "piece"
+,   "forms": 
+    {
+        "pl":"pieces"
+    ,   "an":"a piece"
+    }
+,   "template": "All pieces in this game are equivalent and do not have an owner."
+}

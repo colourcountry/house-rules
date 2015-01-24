@@ -1,0 +1,28 @@
+{
+    "rules": [
+        {   "src": "common/def/players-white-black" }
+    ,   {   "src": "common/def/board-4x4" }
+    ,   {   "src": "lineup/def/pieces" }
+    ,   {   "src": "pieces/def/rookie"
+        ,   "vars": {
+                "Example": "pieces/example/rookie-move-4x4"
+            }
+        }
+    ,   {   "src": "pieces/def/second-rookie" }
+    ,   {   "src": "pieces/def/king"
+        ,   "vars": {
+                "Example": "pieces/example/king-move-4x4"
+            }
+        }
+    ,   {   "src": "lineup/phase/move"
+        ,   "constraints": [
+                {   "src": "common/rule/lose-if-no-legal-moves" }
+            ,   {   "src": "common/rule/win-if-4-in-a-row" }
+            ]
+        }
+    ]
+,   "specializations": {
+        "common/def/item": "common/def/piece"
+    ,   "common/def/space": "common/def/square"
+    }
+}

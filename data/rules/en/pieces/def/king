@@ -1,0 +1,23 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "grey"
+,   "shape": "king"
+,   "base": "king"
+,   "forms": {
+        "sg": "king"
+    ,   "pl": "kings"
+    ,   "an": "a king"
+    }
+,   "template": "This piece can move to any ${Connected} ${Space} (the ${Highlight.pl})<br>${Example}"
+,   "defaults": {
+        "Connected": "common/def/connected"
+    ,   "Space": "common/def/space"
+    ,   "Highlight": "common/def/highlighted-square"
+    ,   "Example": "pieces/example/king-move"
+    }
+}
+
+
+
+

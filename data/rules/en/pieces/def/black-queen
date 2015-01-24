@@ -1,0 +1,12 @@
+{
+    "role": "definition",
+    "type": "piece",
+    "colour": "black",
+    "shape": "queen",
+    "base": "black queen",
+    "template": "TODO describe the move here"
+}
+
+
+
+

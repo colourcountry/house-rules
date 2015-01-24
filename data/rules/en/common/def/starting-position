@@ -1,0 +1,6 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "Setup",
+    "template": "${empty} &#x27a1; ${start}"
+}

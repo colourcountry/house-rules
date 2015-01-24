@@ -1,0 +1,10 @@
+{
+    "role": "definition",
+    "type": "keyword",
+    "base": "east",
+    "template": "The ${AbsoluteDirection}.",
+    "defaults":
+    {
+        "AbsoluteDirection": "common/def/absolute-direction"
+    }
+}
