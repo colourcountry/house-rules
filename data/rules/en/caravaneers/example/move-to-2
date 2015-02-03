@@ -23,7 +23,8 @@
         "3,3": "common/def/piece-equivalent",
         "4,0": "common/def/piece-equivalent",
         "5,2": "common/def/piece-equivalent",
-        "6,0": "caravaneers/def/marked-space"
+        "6,0": "caravaneers/def/marked-space",
+        "6,6": "caravaneers/def/marked-space"
     },
     "template": "Before West's move in Caravaneers."
 }

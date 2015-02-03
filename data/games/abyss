@@ -1,55 +1,25 @@
 {
     "rules": [
-        {
-            "src": "common/def/players-2-no-pieces"
+        {   "src": "common/def/players-white-black" }
+    ,   {   "src": "common/def/board-5x5" }
+    ,   {   "src": "common/def/pieces-6-white-6-black"
         ,   "vars": {
-                "SouthPlayer": "common/def/west-player"
-            ,   "South": "common/def/west"
+                "BlackPiece": "pieces/def/black-stone"
+            ,   "WhitePiece": "pieces/def/white-stone"
+            ,   "pc": "pieces/def/stone"
             }
         }
-    ,   {
-            "src": "caravaneers/def/bits"
-        }
-    ,   {
-            "src":"common/def/starting-position"
+    ,   {   "src": "abyss/phase/setup" }
+    ,   {   "src": "common/def/first-player"
         ,   "vars": {
-                "empty":"caravaneers/def/empty-board"
-            ,   "start":"caravaneers/def/starting-position"
-            }
+                "Phase": "abyss/phase/move"
+            }    
         }
-    ,   {
-            "src": "caravaneers/phase/move"
-        ,   "constraints": [
-                { "src": "common/rule/pass-if-no-legal-moves" }
-            ,   { "src": "common/rule/end-if-two-consecutive-passes" }
-            ,   { 
-                    "src": "common/rule/capture-if-move-off-board"
-                ,   "vars": {
-                        "pc":"common/def/piece-equivalent"
-                    }
-                }
-            ]
-        }
-    ,   {
-            "src":"common/phase/count-hoard"
-        ,   "vars": {
-                "pc":"common/def/piece-equivalent"
-            }
-        }
-    ,   {
-            "src":"caravaneers/def/caravan"
-        ,   "vars": {
-                "sq":"caravaneers/def/marked-space"
-            }
-        }
-    ,   {
-            "src":"caravaneers/def/marked-space"
-        }
+    ,   {   "src": "abyss/phase/move" }
     ]
 ,   "specializations": {
         "common/def/item": "common/def/piece"
+    ,   "common/def/piece": "pieces/def/stone"
     ,   "common/def/space": "common/def/square"
-    ,   "common/def/piece": "common/def/piece-equivalent"
-    ,   "common/def/marked-space": "caravaneers/def/marked-space"
     }
 }

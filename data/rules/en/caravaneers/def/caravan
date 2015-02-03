@@ -6,13 +6,13 @@
         "pl":"groups",
         "an":"a group"
     },
-    "template": "<ul><li>A single ${pc.sg} not in ${sq.an}, or</li><li>a ${Line} of ${pc.pl} running from ${Near} to ${Far}, whose ${Far.est} ${pc.sg} is not in ${sq.an}</li></ul>",
+    "template": "<ul><li>A single ${pc.sg} with no other ${pc.pl} in ${Near.er} or ${Far.er} ${sq.pl}, or</li><li>a ${Line} of ${pc.pl} running from ${Near} to ${Far}, with no other ${pc.pl} in ${Near.er} or ${Far.er} ${sq.pl}</li></ul>",
     "defaults":
     {
-        "pc":"common/def/piece-equivalent",
-        "sq":"caravaneers/def/marked-space",
-        "Far":"common/def/far",
+        "pc":"common/def/piece",
+        "sq":"common/def/square",
         "Near":"common/def/near",
+        "Far":"common/def/far",
         "Line":"common/def/line"
     }
 }

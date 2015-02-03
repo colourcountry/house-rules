@@ -1,0 +1,16 @@
+{
+    "role": "phase"
+,   "type": "keyword"
+,   "base": "Action"
+,   "forms":
+    {
+        "an": "an Action"
+    }
+,   "template": "<ol><li></li><li>The ${NextPlayer} takes ${NextPhase.an}</li></ol>"
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    ,   "WhitePlayer": "common/def/white-player"
+    ,   "NextPlayer": "common/def/other-player"
+    ,   "NextPhase": "lineup/phase/move"
+    }
+}

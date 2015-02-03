@@ -1,8 +1,8 @@
 {
-    "date": "2009"
-
-,   "name": "Caravaneers"
+    "name": "Caravaneers"
+,   "date": "2009"
 ,   "author": "Andrew Perkis"
+,   "licensed": false
 
 ,   "rules": "caravaneers"
 ,   "locale": "en"
@@ -17,6 +17,16 @@
                         "sg": "caravan"
                     ,   "pl": "caravans"
                     ,   "an": "a caravan"
+                    }
+                }
+
+            ,   "common/def/hoard": {
+                    "type": "keyword"
+                ,   "base": "herd"
+                ,   "forms": {
+                        "sg": "herd"
+                    ,   "pl": "herds"
+                    ,   "an": "a herd"
                     }
                 }
 

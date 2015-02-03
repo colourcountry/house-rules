@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "black"
+,   "shape": "double-circle"
+,   "base": "black draught"
+,   "template": "This piece belongs to ${BlackPlayer}. It may have other pieces stacked on top of it."
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    }
+}
+
+
+
+

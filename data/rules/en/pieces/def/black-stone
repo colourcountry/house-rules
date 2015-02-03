@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "black"
+,   "shape": "circle"
+,   "base": "black stone"
+,   "template": "This piece belongs to ${BlackPlayer}."
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    }
+}
+
+
+
+

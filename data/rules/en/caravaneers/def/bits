@@ -2,7 +2,7 @@
     "role": "definition",
     "type": "keyword",
     "base": "Bits",
-    "template": "<ul><li>7 &#x00d7; 7 square board with 2 ${sq.pl} ${sq}</li><li>11 ${pc.pl} ${pc}</li></ul>",
+    "template": "<ul><li>7 &#x00d7; 7 square board with 3 ${sq.pl} ${sq}</li><li>11 ${pc.pl} ${pc}</li></ul>",
     "defaults":
     {
         "pc":"common/def/piece-equivalent",

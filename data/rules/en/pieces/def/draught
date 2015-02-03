@@ -1,0 +1,17 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "grey"
+,   "shape": "double-circle"
+,   "base": "draught"
+,   "forms": {
+        "sg": "draught"
+    ,   "pl": "draughts"
+    ,   "an": "a draught"
+    }
+,   "template": "These pieces can be stacked on top of each other."
+}
+
+
+
+

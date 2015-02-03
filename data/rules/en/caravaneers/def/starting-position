@@ -1,29 +1,30 @@
 {
-    "role": "definition",
-    "type": "board",
-    "geometry": "square",
-    "width": 7,
-    "height": 7,
-    "edges":
+    "role": "definition"
+,   "type": "board"
+,    "geometry": "square"
+,   "width": 7
+,   "height": 7
+,   "edges":
     {
-        "north": "common/def/north-player",
-        "west": "common/def/west-player"
-    },
-    "spaces": 
+        "north": "common/def/north-player"
+    ,   "west": "common/def/west-player"
+    }
+,   "spaces": 
     {
-        "0,0": "common/def/piece-equivalent",
-        "0,1": "common/def/piece-equivalent",
-        "0,2": "common/def/piece-equivalent",
-        "0,3": "common/def/piece-equivalent",
-        "0,4": "common/def/piece-equivalent",
-        "0,5": "common/def/piece-equivalent",
-        "0,6": "caravaneers/def/marked-space",
-        "1,0": "common/def/piece-equivalent",
-        "2,0": "common/def/piece-equivalent",
-        "3,0": "common/def/piece-equivalent",
-        "4,0": "common/def/piece-equivalent",
-        "5,0": "common/def/piece-equivalent",
-        "6,0": "caravaneers/def/marked-space"
-    },
-    "template": "The board for Caravaneers."
+        "0,0": "common/def/piece-equivalent"
+    ,   "0,1": "common/def/piece-equivalent"
+    ,   "0,2": "common/def/piece-equivalent"
+    ,   "0,3": "common/def/piece-equivalent"
+    ,   "0,4": "common/def/piece-equivalent"
+    ,   "0,5": "common/def/piece-equivalent"
+    ,   "0,6": "caravaneers/def/marked-space"
+    ,   "1,0": "common/def/piece-equivalent"
+    ,   "2,0": "common/def/piece-equivalent"
+    ,   "3,0": "common/def/piece-equivalent"
+    ,   "4,0": "common/def/piece-equivalent"
+    ,   "5,0": "common/def/piece-equivalent"
+    ,   "6,0": "caravaneers/def/marked-space"
+    ,   "6,6": "caravaneers/def/marked-space"
+    }
+,   "template": "The board for Caravaneers."
 }

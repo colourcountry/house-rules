@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "white"
+,   "shape": "double-circle"
+,   "base": "white draught"
+,   "template": "This piece belongs to ${WhitePlayer}. It may have other pieces stacked on top of it."
+,   "defaults": {
+        "WhitePlayer": "common/def/white-player"
+    }
+}
+
+
+
+

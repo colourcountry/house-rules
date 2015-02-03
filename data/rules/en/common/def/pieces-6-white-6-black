@@ -1,0 +1,14 @@
+{
+    "role": "definition"
+,   "type": "keyword"
+,   "base": "Pieces"
+,   "template": "<ul><li>To ${BlackPlayer}: 6 ${pc.pl} ${BlackPiece}</li><li>To ${WhitePlayer}: 6 ${pc.pl} ${WhitePiece}</li></ul>"
+,   "defaults":
+    {
+        "pc":  "common/def/piece"
+    ,   "BlackPlayer": "common/def/black-player"
+    ,   "BlackPiece":  "common/def/piece"
+    ,   "WhitePlayer": "common/def/white-player"
+    ,   "WhitePiece":  "common/def/piece"
+    }
+}

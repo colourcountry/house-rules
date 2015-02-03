@@ -1,0 +1,17 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "grey"
+,   "shape": "circle"
+,   "base": "stone"
+,   "forms": {
+        "sg": "stone"
+    ,   "pl": "stones"
+    ,   "an": "a stone"
+    }
+,   "template": "You can use any suitable object for these pieces."
+}
+
+
+
+

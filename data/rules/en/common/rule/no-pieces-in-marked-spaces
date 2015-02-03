@@ -1,0 +1,9 @@
+{
+    "role": "constraint"
+,   "template": "No ${pc.sg} may move into ${sq.an}"
+,   "defaults":
+    {
+        "pc": "common/def/piece"
+    ,   "sq": "common/def/marked-space"
+    }
+}

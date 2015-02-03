@@ -13,18 +13,22 @@
     {
         "0,0": "common/def/piece-equivalent",
         "3,1": "common/def/piece-equivalent",
-        "0,3": "common/def/piece-equivalent",
-        "4,4": "common/def/piece-equivalent",
-        "5,5": "common/def/piece-equivalent",
-        "0,6": "caravaneers/def/marked-space",
+        "4,1": ["common/def/highlighted-square","common/def/west-player"],
         "1,2": "common/def/piece-equivalent",
         "2,2": "common/def/piece-equivalent",
         "3,2": "common/def/piece-equivalent",
-        "4,2": "common/def/west-player",
+        "5,2": "common/def/piece-equivalent",
+        "0,3": "common/def/piece-equivalent",
+        "1,3": "common/def/highlighted-square",
+        "4,4": "common/def/piece-equivalent",
+        "5,4": "common/def/highlighted-square",
+        "5,5": "common/def/piece-equivalent",
+        "6,5": "common/def/highlighted-square",
+        "0,6": "caravaneers/def/marked-space",
         "3,0": "common/def/piece-equivalent",
         "4,0": "common/def/piece-equivalent",
-        "5,2": "common/def/piece-equivalent",
-        "6,0": "caravaneers/def/marked-space"
+        "6,0": "caravaneers/def/marked-space",
+        "6,6": "caravaneers/def/marked-space"
     },
     "template": "Before West's move in Caravaneers."
 }

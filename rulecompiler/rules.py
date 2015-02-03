@@ -238,7 +238,10 @@ class SquareBoard:
         for location, obj in self.spaces.items():
             if obj:
                 xy = self.getXy(location)
-                board += '<g transform="translate(%d %d)">%s</g>' % (5+int(xy[0])*10,5+int(xy[1])*10,qNamesKnown[obj].localName.svg(qNamesKnown))
+                if not isinstance(obj, list):
+                    obj = [obj]
+                for item in obj:
+                    board += '<g transform="translate(%d %d)">%s</g>' % (5+int(xy[0])*10,5+int(xy[1])*10,qNamesKnown[item].localName.svg(qNamesKnown))
 
         board += '''<rect fill="none" stroke="black" stroke-width="1" x="0" y="0" width="%d" height="%d"/>
 <g fill="none" stroke="black" stroke-width="0.2">''' % (self.width*10, self.height*10)

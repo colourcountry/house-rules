@@ -1,0 +1,15 @@
+{
+    "role": "definition"
+,   "type": "piece"
+,   "colour": "white"
+,   "shape": "circle"
+,   "base": "white stone"
+,   "template": "This piece belongs to ${WhitePlayer}."
+,   "defaults": {
+        "WhitePlayer": "common/def/white-player"
+    }
+}
+
+
+
+

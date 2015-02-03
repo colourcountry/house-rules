@@ -238,7 +238,7 @@
     </clipPath>
 
     <rect id="bounding-box-double-circle"
-          x="-6" y="-6" width="12" height="12" />
+          x="-10" y="-10" width="20" height="20" />
 
     <g id="triple-circle">
         <path id="path-triple-circle"

@@ -1,7 +1,7 @@
 {
     "role": "phase",
     "type": "keyword",
-    "base": "Action",
+    "base": "Move",
     "template": "Move one ${pc}",
     "defaults":
     {

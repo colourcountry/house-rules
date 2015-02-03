@@ -1,0 +1,15 @@
+{
+    "role": "phase"
+,   "type": "keyword"
+,   "base": "Setup"
+,   "template": "<ol><li>${BlackPlayer} places all the ${pc.pl} onto ${sq.pl} as they will.</li><li>${WhitePlayer} decides:<ul><li>To be ${SecondPlayer} and stay ${WhitePlayer}, or</li><li>To be ${SecondPlayer} and swap sides, becoming ${BlackPlayer}, or</li><li>To be ${FirstPlayer}</li></ul></li><li>If ${WhitePlayer} chose to be ${FirstPlayer}, ${BlackPlayer} may swap sides, becoming ${WhitePlayer}</li><li>Begin the ${Phase}</li></ol>"
+,   "defaults": {
+        "BlackPlayer": "common/def/black-player"
+    ,   "WhitePlayer": "common/def/white-player"
+    ,   "FirstPlayer": "common/def/first-player"
+    ,   "SecondPlayer": "common/def/second-player"
+    ,   "pc": "common/def/piece"
+    ,   "sq": "common/def/space"
+    ,   "Phase": "abyss/phase/move"
+    }
+}

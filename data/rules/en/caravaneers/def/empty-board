@@ -1,21 +1,21 @@
 {
-    "role": "definition",
-    "type": "board",
-    "geometry": "square",
-    "width": 7,
-    "height": 7,
-    "edges":
+    "role": "definition"
+,   "type": "board"
+,   "geometry": "square"
+,   "width": 7
+,   "height": 7
+,   "edges":
     {
-        "north": "common/def/north-player",
-        "west": "common/def/west-player"
-    },
-    "spaces": 
+        "north": "common/def/north-player"
+    ,   "west": "common/def/west-player"
+    }
+,   "spaces": 
     {
-        "0,6": "caravaneers/def/marked-space",
-        "6,0": "caravaneers/def/marked-space"
-    },
-    "template": "The board for Caravaneers."
+        "0,6": "caravaneers/def/marked-space"
+    ,   "6,0": "caravaneers/def/marked-space"
+    ,   "6,6": "caravaneers/def/marked-space"
+    }
+,   "template": "The board for Caravaneers."
 }
-
 
 

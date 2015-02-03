@@ -1,0 +1,12 @@
+{
+        "name": "Abyss"
+,       "date": "2002"
+,       "author": "Walter Joris"
+,       "licensed": false
+
+,       "rules": "abyss"
+,       "locale": "en"
+
+,       "defs": {}
+
+}

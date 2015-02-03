@@ -1,7 +1,8 @@
 {
-        "date": "Undated"
-,       "name": "Game"
+        "name": "Game"
+,       "date": "Undated"
 ,       "author": "Anonymous"
+,       "licensed": false
 
 ,       "locale": "en"
 

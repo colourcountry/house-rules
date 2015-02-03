@@ -1,6 +1,6 @@
 {
     "role": "constraint"
-,   "template": "If 4 of your pieces form a ${Line}, you win."
+,   "template": "If 4 of a player's pieces form a ${Line}, they win."
 ,   "defaults": {
         "Line": "common/def/line"
     }

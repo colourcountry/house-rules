@@ -7,10 +7,11 @@
     ,   "pl":"marked spaces"
     ,   "an":"a marked space"
     }
-,   "template": "The ${Space.pl} in the ${SW} and ${NE} corners of the board"
+,   "template": "The ${Space.pl} in the ${SW}, ${SE} and ${NE} corners of the board"
 ,   "defaults":
     {
         "SW": "common/def/southwest"
+    ,   "SE": "common/def/southeast"
     ,   "NE": "common/def/northeast"
     ,   "Space": "common/def/space"
     }

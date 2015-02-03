@@ -1,8 +1,8 @@
 {
     "role": "definition"
 ,   "type": "keyword"
-,   "base": "south-west"
-,   "template": "The ${AbsoluteDirection}: behind and to the right, if facing ${East}."
+,   "base": "south-east"
+,   "template": "The ${AbsoluteDirection}: ahead and to the right, if facing ${East}."
 ,   "defaults":
     {
         "East": "common/def/east"
